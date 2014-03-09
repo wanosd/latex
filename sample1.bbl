@@ -1,0 +1,504 @@
+\begin{thebibliography}{}
+
+\bibitem[Angeline P.J.]{Angeline:94}
+Angeline P.J. (1994)
+\newblock Two Self-Adaptive Crossover Operators for Genetic Programming.
+\newblock In \emph{Advances in Genetic ProgrammingII},
+          P. Angeline and K.Kinnear(eds.), Cambridge, MA: MIT Press.
+
+\bibitem[Angeline P.J.]{Angeline:95}
+Angeline P.J. (1995)
+\newblock Adaptive and Self-Adaptive Evolutionary Computations.
+\newblock In \emph{Computational Intelligence: A Dynamic System Perespective},
+	M. Palaniswami, Y. Attikiouzel, R. Marks, D. fogel and T. Fukuda (eds.), 
+	Piscataway, NJ: IEEE Press, pp. 152-163.
+
+\bibitem[Arabas et al, 1994]{Arabas-al:94}
+Arabas J., Michalewicz Z., Mulawka J. (1994)
+\newblock GAVaPS - a Genetic Algorithm with Varying Population Size.
+\newblock In \emph{Proc. of the 1st Int. Conf. on Evolutionary Computation},
+          v.1, pp. 73-78.
+
+%\bibitem[Arkin, 1998]{Arkin:98}
+%Arkin Ronald C. (1998)
+%\newblock Behaviour-based Robotics
+%\newblock {\em The MIT Press, Cambridge, Massachusetts, London, UK} pages 1-2
+
+\bibitem[B\"{a}ck T., Sch\"{u}tz M., 1996]{Back-al:96}
+B\"{a}ck T., Sch\"{u}tz M., (1996)
+\newblock In {\em Foundation of Intelligent Systems 9th International 
+	Symposium, ISMIS '96}., pp. 158-167,  Springer, Berlin, 1996. 
+
+
+\bibitem[B\"{a}ck T., 1992]{Back:92}
+B\"{a}ck T., (1992)
+\newblock Self-adaptation in Genetic Algorithms (1992).
+\newblock In \emph{Proceedings of the First European Conference on Artificial Life},
+	Cambridge, 1992, MIT Press pp. 263-271
+
+\bibitem[B\"{a}ck T., Hoffmeister F., and Schwefel H., 1991]{Back-al:91}
+B\"{a}ck T., Hoffmeister F., and Schwefel H., (1991)
+\newblock A Survey of Evolution Strategies (1991).
+\newblock In \emph{Proc. of the fourth International Conference of
+Genetic Algorithms}.   pp. 2-9
+
+\bibitem[Bennett F.H. et al, 1999]{Bennett-al:99}
+Bennett F.H., Koza J.R., Keane M.A., Yu J., Mydlowec W., Stiffelman O., (1999)
+\newblock Evolution by Means of Genetic Programming of Analog Circuits
+	that Perform Digital Functions.
+\newblock In {\em Genetic and Evolutionary
+	Computation Conference (GECCO '99)}, July 14-17, 1999, 
+	Orlando, Florida USA, pp. 1477-1483.
+
+\bibitem[Bentley, P. J. 1999]{Bentley:99}
+Bentley, P. J. (1999)
+\newblock Evolving Fuzzy Detectives: An Investigation into the 
+	Evolution of Fuzzy Rules. 
+\newblock  A late-breaking paper in Genetic and Evolutionary
+	Computation Conference (GECCO '99), July 14-17, 1999, 
+	Orlando, Florida USA, pp. 38-47.
+
+\bibitem[B\'{e}ssiere P., and Talbi E. G., 1991]{Bessiere-al:91}
+[B\'{e}ssiere P., and Talbi E. G., (1991).
+\newblock Parallel genetic algorithms on distributed-memory architecures.
+\newblock In {\em ACM Int. Conf. on Supercomputing ICS91}, Cologne, Germany.
+
+
+\bibitem[Brizuela C. A., and Sannomiya N., 1999]{Brizuela:99}
+Brizuela C. A., and Sannomiya N., (1999).
+\newblock A Diversity Study in Genetic Algorithms for Job
+	Shop Scheduling Problems
+\newblock  In {\em Genetic and Evolutionary
+	Computation Conference (GECCO '99)}, July 14-17, 1999, 
+	Orlando, Florida USA, pp. 75-82.
+
+\bibitem[Cant\'{u}-Paz E., 1995]{Cantu:95}
+Cant\'{u}-Paz E., (1995).
+\newblock A Summary of Research on Parallel Genetic Algorithms
+\newblock IlliGAL Report No 95007.
+
+\bibitem[Cobb H., 1990]{Cobb:90}
+\newblock An Investigation into the Use of Hypermutation as an adaptive
+Operator in Genetic Algorithm having Continuous, Time-Dependent Nonstationary
+Environments
+\newblock In \emph{Navel Research Laboratory} Memorandum Report 6760, 1990.
+
+\bibitem[Cobb H. and Grefenstette J., 1993]{Cobb-al:93}
+Cobb H. and Grefenstette J. (1993)
+\newblock Genetic Algorithms for Tracking Changing Environments.
+\newblock In \emph{Proc. of the 5th Intl. Conf. on Genetic Algorithms}, Morgan
+Kaufmann Publishers, Inc. (1993) 523-530.
+                                                   
+
+\bibitem[Corne D., Ross P., Fang H. 1994]{Corne-al:94}
+[Corne D., Ross P., Fang H. (1994)
+\newblock Fast Practical Evolutionary Timetabling
+\newblock In {\em Evolutionary Computing: AISB Workshop} 1994, 
+	Selected Papers, Springer Verlag Lecture Notes in 
+	Computer Science 865, T. Fogarty (ed), Springer Verlag, 1994
+
+\bibitem[Collins J.J., Sheehan L., and Casey C. 1998]{Collins-al:98}
+Collins J.J., Sheehan L., and Casey C.  (1998)
+\newblock Evolutionary Path Generation for Navigation in Mobile Robots.  
+\newblock In \emph{EWLR-98}. Edinburg  1998.
+ 
+
+%\bibitem[Connell, 1992]{Connell:92}
+%Connell, J.~H. (1992).
+%\newblock SSS: A Hybrid Architecture Applied to Robot navigation.
+%\newblock In {\em Proc. of the IEEE Int. Conf. on Robotics and Automation}, pages 27%19--2724.
+
+\bibitem[Culotta, 1994]{Culotta:94}
+Culotta, E.,
+\newblock A Boost for 'Adaptive' Mutation (1994)
+\newblock In \emph {Science}, 265:318, 1994
+
+\bibitem[Darwin C., 1859]{Darwin:59}
+Darwin C., (1859).
+\newblock On the Origin of Species by Means of Natural Selection, or 
+	the Preservation of Favoured Races in the Struggle for Life.
+\newblock Murray, London, 1859
+
+\bibitem[Davis L., 1985]{Davis:85} 
+Davies L., (1985).
+\newblock Job-Shop Scheduling with Genetic Algorithms.
+\newblock In {\em Proceedings of the 1st International
+Conference on Genetic Algorithms},
+
+\bibitem[Davis L., 1989]{Davis:89}
+Davies L., (1989).
+\newblock Adapting Operator Probabilities In Genetic Algorithms.
+\newblock In J.D. Schaffer, editor, {\em Proceedings of the 3rd International
+Conference on Genetic Algorithms}, Morgan Kaufmann, 1989.
+
+\bibitem[De Jong K. A., and Potter M. A. 1995]{DeJong-al:95}
+Kenneth A. De Jong and Mitchell A. Potter (1995). 
+\newblock Evolving Complex Structures via Cooperative Coevolution. 
+\newblock In {\em Proceedings of the Fourth Annual
+          Conference on Evolutionary Programming}, pages 307-317. MIT Press. 
+
+\bibitem[De Jong K. A., and Spears W. 1995]{DeJong-al:92}
+Kenneth A. De Jong and Spears W. (1992). 
+\newblock On the State of Evolutionary Computation
+\newblock In 
+
+\bibitem[De Jong, 1975]{DeJong:75}
+De Jong, K. A. (1975).
+\newblock An analysis of the behavior of a class of genetic adaptive systems.
+\newblock Doctoral disseration, University of Michigan, Ann Arbor 
+(University Microfilms No. 76-9381)
+
+\bibitem[Eiben et Al, 1998]{Eiben-al:98}
+Eiben A.E., and van der Hauw J.K. (1998)
+\newblock Graph coloring with Adaptive Evolutionary Algorithms
+\newblock Journal of Heuristics, 4(1):25-46, 1998.
+
+%Technical Report TR-96-11, Leiden University, August 1996
+
+
+\bibitem[Eiben A.E., 1998]{Eiben:98}
+Eiben A.E. (1998)
+\newblock Multi-parent Recombination to Overcome Premature Convergence
+	in Genetic Algorithms.
+\newblock 
+
+\bibitem[Eiben et Al, 1996]{Eiben-al:96a}
+Eiben A.E., and Ruttkay Zs. (1996)
+\newblock Self-adaptivity for constraint satisfaction: 
+	Learning penalty functions.
+\newblock In {\em Proceedings of the 3rd IEEE Conference on 
+	Evolutionary Computation}, pages 258-261. IEEE Service Center,
+      	1996.
+
+\bibitem[Fogarty T., 1989]{Fogarty:89}
+Fogarty T. (1989)
+\newblock Varying the probability of mutation in the genetic algorithm.
+\newblock In J.D. Schaffer, editor, {\em Proceedings of the 3rd International
+Conference on Genetic Algorithms}, pages 104-109.  Morgan Kaufmann, 1989.
+
+\bibitem[Fogal et Al, 1966]{Fogal-al:66}
+Fogal l., Owens J., and Walsh M. (1966)
+\newblock In {\em Artificial Intelligence through simulated evolution}.  
+Wiley and Sons. 
+
+\bibitem[Fogel D.B., Fogel L.J., and Atmar J.W., 1991]{Fogel-al:91}
+Fogel DB, Fogel LJ, and Atmar JW (1991)
+\newblock Meta-Evolutionary Programming.
+\newblock In {Proceedings of 25th Asilomar Conference on Signals}, 
+	Systems and Computers, R.R. Chen (ed.), Pacific Grove, CA, pp. 540-545.
+
+\bibitem[Fogel D. B., 1997]{Fogal:97}
+Fogel D. B., (1997).
+%\newblock 
+\newblock In {\em Handbook of Evolutionary Computation}, 
+          A1.1:1.  Oxford University Press.
+
+\bibitem[Freisleben B.,  and H\H{a}rtfelder M., 1993]{Freisleben-al:93}
+Freisleben B. and H\H{a}rtfelder M., (1993).
+\newblock Optimization of Genetic Algorithms by Genetic Algorithms.
+\newblock In {\em Proceedings of the 1993 International
+  Conference on Artificial Neural Nets
+  and Genetic Algorithms}, Innsbruck, Austria,
+  pp. 392-399, Springer-Verlag, 1993.
+
+\bibitem[Goldberg D.E., \& Richardson J., 1987]{Goldberg-al:87}
+Goldberg D.E., \& Richardson J., (1987).
+\newblock Genetic Algorithms with Sharing for Multimodal Function 
+	Optimization.
+\newblock In {\em Proceedings of the Second International
+	Conference on Genetic Algorithms (ICGA 87)}, 
+	Hillsdale, MJ: Lawrence Erlbaum Associates.
+
+
+\bibitem[Goldberg D. E., 1989]{Goldberg:89}
+Goldberg, D. E., (1989).
+\newblock Genetic Algorithms in Search, Optimization and Machine Learning.
+\newblock Addison-Wesley Publishing.
+
+
+\bibitem[Goldberg, D.E. 1991]{Goldberg:91} 
+Goldberg, D.E. (1991).  
+\newblock  Real-coded genetic algorithms, virtual alphabets, and blocking. 
+\newblock  Complex Systems, 5(2). 139-168.
+
+
+\bibitem[Grefenstette, 1986]{Grefenstette:86}
+Grefenstette J.J. (1986)
+\newblock Optimization of control parameters for genetic algorithms.
+\newblock In {\em IEEE Transactions on Systems, Man, and Cybernetics},
+	vol. 16(1), pp. 122-128, 1986.
+
+\bibitem[Harik G., and Lobo F., 1999]{Harik-al:99}
+Harik G., and Lobo F., (1999)
+\newblock A parameter-less genetic algorithm
+\newblock In {\em Genetic and Evolutionary
+	Computation Conference (GECCO '99)}, July 14-17, 1999, 
+	Orlando, Florida USA, pp. 258-265.
+
+\bibitem[Hinterding-al, 1997]{Hinterding-al:97}
+Hinterding R., Michalewicz Z., and Eiben A. (1997)
+\newblock Adaptation in Evolutionary Computation: A Survey.
+\newblock In \emph{Proc. of the 4th IEEE Int. Conf. on Evolutionary 
+	Computation}, 1997, pp. 65-69.
+
+\bibitem[Hinterding-al, 1996]{Hinterding-al:96}
+Hinterding R.,  Michalewicz Z., and Peachey T.C. (1996)
+\newblock Self-adaptive genetic algorithm for numeric functions.
+\newblock \emph{Parellel Problem Solving from Nature},
+                Springer LNCS 1141. pp. 420-429.
+
+\bibitem[Hocaglou C and Sanerson A.C., 1996]{Hocaoglu-Sanderson:96}
+Hocaglou C and Sanerson A.C., (1996).
+\newblock Planning Multi-paths using speciation in Genetic Algorithms.  
+\newblock In \emph{Proc. 1996 IEEE International Conference on Evolutionary Computation}, pages 378-383.
+
+\bibitem[Holland J., 1975]{Holland:75}
+Holland J., (1975).
+\newblock Adaptation in Natural and Artificial Systems
+\newblock University of Michigan Press, Ann Arbor, USA, 1975.
+
+
+\bibitem[Horn and Goldberg, 1994]{Horn-Goldberg:94}
+Horn, J. and Goldberg, D. (1994).
+\newblock Genetic Algorithms Difficulty and the Moadality of Fitness Landscape.
+\newblock In {\em Proc. of the Foundations of Genetic Algorithms 3 (FOGA3)}, pages 243--270.
+
+\bibitem[Joines, J., and Houck, C., 1994]{Joines-al:94}
+Joines, J., and Houck, C., (1994).  
+\newblock On the Use of Non-Stationary Penalty Functions to 
+	Solve Nonlinear Constrained Optimization Problems
+      with GA's.
+\newblock  In {\em 1994 IEEE International Symposium on 
+	Evolutionary Computation}, pp. 579-584.
+
+
+\bibitem[Karafyllidis I., Thanailakis A., 1995]{Kara:95}
+Karafyllidis I. and Thanailakis A.  (1995).
+\newblock An adaptive genetic algorithm for VLSI circuit partioning.
+\newblock International Journal of Electronics, 79(2):205-214.
+
+\bibitem[Kim and Zeigler, 1995]{Kim-Zeigler:95}
+Kim, J. and Zeigler, B.~P. (1995).
+\newblock Beneficial Effects of Intentional Noise.
+\newblock In Chambers, editors, {\em Practical Handbook of Genetic
+          Algorithms: Applications Volume I}, 
+          pages 431--458. CRC Press.
+
+\bibitem[Koza J., 1992]{Koza:92}
+Koza J., (1992)
+\newblock Genetic Programming, On the Programming of Computers
+	by means of Natural Selection.
+\newblock MIT Press.
+
+\bibitem[Kumar S. and Bently P. 1999]{Kumar-al:99}
+Kumar S. and Bently P. (1999).
+\newblock The ABCs of Evolutionary Design: Investigating the Evolability
+	of Embryogenies for Morphogenesis.
+\newblock A late-breaking paper in Genetic and Evolutionary Computation 
+	Conference (GECCO '99), July 14-17, 1999, Orlando, Florida USA, 
+	pp. 164-170.
+
+\bibitem[Mathias K. and Whitley L., 1998]{Mathias-al:94}
+Mathias K. E. and Whitley L. D. (1998)
+\newblock Transforming the Search Space with Gray Coding
+\newblock  In {\em Proceedings of the IEEE International Conference
+		on Evolutionary Computation}, pps 513-518, 1994.
+
+\bibitem[Mauldin M.L., 1984]{Mauldin:84}
+Mauldin M.L., (1984).
+\newblock Maintaining Diversity in Genetic Search
+\newblock In {\em Proceedings of the National Conference on
+	Artificial Intelligence} (AAAI-84), pp 247-250.
+
+
+\bibitem[Michalewicz Z., 1996]{Michalewicz:96}
+Michalewicz Z., (1996)
+\newblock  Genetic algorithms + Data Structures = Evolution Programs. 
+\newblock  Springer 1996, pages 1-15
+
+\bibitem[Miller, J.H., 1989]{Miller:89}
+Miller, J.H., (1989)
+\newblock The Coevolution of Automata in the Repeated Prisoner's 
+	Delemma.
+\newblock Santa Fe Institute, Working Paper 89-003.
+
+\bibitem[Miller, B.L. and Shaw M.J., 1989]{Miller-al:9a}
+Miller, B.L. and Shaw M.J., (1989)
+\newblock Genetic Algorithms with Dynamic Niche Sharing for
+	Multimodal Function Optimization
+\newblock 
+
+
+\bibitem[M\"{u}ller, 1996]{Muller:96:13}	
+M\"uller J. P. (1996).
+\newblock M\"{u}ller J. P.  The Design of Intelligent Agents
+\newblock 2:27, Springer 1996. 
+
+\bibitem[O'Neill M. and Ryan C., 1999]{ONeill-al:99}
+O'Neill M. and Ryan C., (1999).
+\newblock Evolving Multi-line Compilable C Programs
+\newblock In {\em Proceedings of 2nd European Workshop on
+	Genetic Programming, EuroGP '99}, G\"{o}teborg, Sweden, May 1999.
+\newblock Lecture Notes in Computer Science 1598, pps 83-92. Springer.
+
+\bibitem[Oppacher F. and Wineberg M., 1999]{Oppacher-al:99}
+Oppacher F. and Wineberg M., (1999)
+\newblock The Shifting Balance Genetic Algorithm: Improving the GA in Dynamic Environment
+\newblock In {\em Genetic and Evolutionary
+	Computation Conference (GECCO '99)}, July 14-17, 1999, 
+	Orlando, Florida USA, pp. 504-510.
+
+
+\bibitem[O\v{s}mera P., Kvasni\v{c}ka V., Posp\'{i}chal J., 1997]{Osmera-al:97}
+O\v{s}mera P., Kvasni\v{c}ka V., Posp\'{i}chal J., (1997)
+\newblock In {\em 3rd Intl. Mendel Conf. on Genetic Algorithms,
+Optimization problems, Fuzzy Logic, Neural networks, Rough Sets, pages
+111--116}
+
+\bibitem[Paredis J., 1995]{Paredis:95}
+Paredis J., (1995)
+\newblock The Symbiotic Evolution of Solutions and their Representations.
+\newblock  In {\em Proceedings of the Sixth International
+	Conference on Genetic Algorithms (ICGA 95)}, 
+	Eshelman, L. (ed.), Morgan Kaufmann Publishers. 
+
+\bibitem[Ridley M., 1996]{Ridley-96}
+Ridley M. ,(1996). 
+\newblock Evolution
+\newblock Blackwell Science, Inc. 1996.
+
+
+\bibitem[Rosin C. D. and Belew R. K. Belew, 1997]{Rosin-al:97}
+Rosin C. D. and Belew R. K. Belew, (1997).
+\newblock  New methods for competitive evolution. 
+\newblock  In {\em Evolutionary Computation}, 5(1), Spring 1997. 
+
+
+\bibitem[Rich and Knight, 1991]{Rich-Knight:91}
+Rich E. and Knight K., (1991)
+\newblock Artificial Intelligence.  
+\newblock McGraw-Hill, New York, second edition, 1991.
+
+\bibitem[Russell and Norvig, 1995]{Russell-Norvig:95}
+Russell S. and Norvig P. (1995)  
+\newblock Artificial Intelligence, A Modern Approach. 
+\newblock 25:773-4, Prentice Hall 1995.
+
+\bibitem[Ryan and Collins, 1998]{Ryan-Collins:98}
+Ryan, C. and Collins, J.J. (1998).
+\newblock Polygenic Inheritance: a scheme that can outperform diploidy.
+\newblock To appear in {\em Parallel Problem Solving from Nature 98 (PPSN-98)}.
+
+%\bibitem[Schoppers, 1987]{Schoppers:87}
+%Schoppers, M.~J. (1987).
+%\newblock Universal Plans for Reactive Robots in Unpredictable Environments.
+%\newblock In {\em Proc. 10th Int. Joint Conf. on Artificial Intelligence}, 
+%pages 1039--1046.
+
+%\bibitem[Sipper et al., 1997]{Sipper-al:97}
+%Sipper, M., Sanchez, E., Mange, D., Tomassini, M, {P\'{e}rez-Uribe}, A. and Stauffer, A. (1997).
+%\newblock A Phylogenetic, Ontogenetic, and Epigenetic View of Bio-Inspired Hardware Systems.
+%\newblock {\em IEEE Trans. on Evolutionary Computation}, Vol.~1, No.~1, pages 83--97.
+
+
+\bibitem[Schwefel H.P., 1981]{Schwefel:81}
+Schwefel H.P., (1981).
+\newblock Numerical optimization of computer models,
+\newblock Chichester: Wiley \& Sons, 1981.
+
+\bibitem[Shapiro B., and Navetta J., 1994]{Shapiro-al:94}
+Shapiro B., and Navetta J.,(1994).
+\newblock A massively parallel genetic algorithm for RNA secondary
+	structure prediction.
+\newblock In {\em The Journal of Supercomputing}, 8:195-207.
+
+\bibitem[Shapiro J. A., 1995]{Shapiro:95}
+Shapiro J.A., (1995).
+\newblock Adaptive Mutation: Who's Really in the Garden?
+\newblock In {\em Science}, 268:373, 1995.
+
+\bibitem[Shimodaira H., 1999]{Shimodaira:99}
+Shimodaira H., (1999)
+\newblock A diversity Control Oriented Genetic Algorithm (DCGA): Development
+and Experimental Results
+\newblock In \emph{Gecco '99 , July 1999, Florida, USA}.  pg 603-611    
+
+\bibitem[Sirinival M. Patnaik L.M., 1994]{Sirinival-Patnaik:94}
+Sirinival M. Patnaik L.M. (1994).
+\newblock Adaptive probabilities of crossover and mutation in genetic algorithms.
+\newblock IEEE Transactions on Systems, Man and Cybernetics, 24(4).
+
+\bibitem[Smith, J.E., Fogarty T.C., 1997]{Smith-Fogarty:1997}
+Smith, J.E., Fogarty T.C., (1997)
+\newblock Operator and parameter adaptation in genetic algorithms
+\newblock In {\em Soft Computing 1}, (1997), pp 81-87, Springer-Verlag 1997.
+
+\bibitem[Spears W. M., 1995]{Spears:95}
+Spears W. M (1995)
+\newblock Adapting Crossover in Evolutionary Algorithms.
+\newblock In {\em M.J.R., R.R.G., and F.D.B.}, editors, Proceedings of the fourth
+	Annual Conference on Evolutionary Programming, pp 367-384.  MIT Press.
+
+\bibitem[Spears W. M., De Jong K. A., B\"{a}ck T., Fogel D. B., and 
+de Garis H., 1993]{Spears-al:93}
+Spears W. M, De Jong K. A., B\"{a}ck T., Fogel D. B., and 
+de Garis H., (1993)
+\newblock An Overview of Evolutionary Computation.
+\newblock In {\em Proceedings of the 1993 European Conference on 
+	Machine Learning}., v667, 442-459. 
+
+
+%\bibitem[Thrun et al., 1998]{Thrun-al:98}
+%Thrun, S., B\"{u}cken, A., Burgard, W., Fox, D., Fr\"{o}hlinghaus, T., Hennig, D.,
+%Hofmann, T., Krell, M. and Schmidt, T. (1998).
+%\newblock Map Learning and High Speed Navigation in RHINO.
+%\newblock In Kortenkamp, Bonasso and Murphy, editors
+%          {\em Artificial Intelligence and Mobile Robots}, 
+%          pages 21--52. AAAI/MIT Press.
+
+Torn, A and Zilinskas, A., Global Optimization,  
+
+\bibitem[Torn A. and Zilinskas A., 1989]{Torn-al:89}
+Torn A. and Zilinskas A., (1989)
+\newblock Global Optimization
+\newblock {\em Lecture Notes in Computer Science}, vol. 350 Springer-Verlag, 
+\newblock Berlin, FRG, 1989.
+
+\bibitem[Tuson A. and Ross P., 1998]{Tuson-al:98}
+Tuson A., and Ross P, 1998
+\newblock Adapting Operator Settings in Genetic Algorithms.
+\newblock  In {\em Evolutionary Computation}, 6(2), pps 161-184, 1998.
+
+\bibitem[Vavak F., Fogarty T. C. and Jukes K., 1996]{Vavak-al:96}
+Vavak F., Fogarty T. C. and Jukes K., (1996)
+\newblock A Genetic Algorithm with Variable Range of Local Search
+	for Adaptive Control of the Dynamic Systems.
+\newblock In {\em Proceedings of 2nd Mendelian Conference on Genetic
+	Algorithms}, 1996.
+
+Building Better Test Functions. D. Whitley, K. Mathias, S. Rana and J.
+Dzubera. International Conference on Genetic
+Algorithms. L. Eshelman, ed. Morgan Kaufmann, 1995.
+
+\bibitem[Whitley et al, 1995]{Whitley:95}
+Whitley, D., Mathias, K., Rana, S. and Dzubera, J. (1996)
+\newblock Building Better Test Functions
+\newblock In {\em Sixth International Conference on Genetic
+Algorithms}. L. Eshelman, ed. Morgan Kaufmann, 1995.
+pages 239--246.
+
+\bibitem[Whitley et al, 1996]{Whitley:96}
+Whitley, D., Mathias, K., Rana, S. and Dzubera, J. (1996)
+\newblock Evaluating evolutionary algorithms.
+\newblock Artificial Intelligence, 85: pages 2745--2761.
+
+%\bibitem[Woodrige and Jennings]{Woodrige-Jennings:95}
+%\newblock Wooldrige M. and Jennings N. R. Intelligent agents:  theory and practice.  
+%\newblock The Knowledge Engineering Review, Vol. 10:2, , 115-152, 1995.
+
+\bibitem[Xiao et al., 1997]{Xiao-al:97}
+Xiao, J., Michalewicz, Z., Zhang, L., and Trojanowski, K. (1997).
+\newblock Adaptive Evolutionary Planner/Navigator for Mobile Robots.
+\newblock In {\em IEEE Trans.  on Evolutionary Computation}, Vol. 1, No.1 pages 18--28.
+
+\end{thebibliography}

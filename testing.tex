@@ -1,0 +1,84 @@
+\chapter{Implementation and Testing}
+\label{impltesting}
+
+\section{Implemention}
+\subsection{Spring}
+In order to begin implementation with the Spring MVC framework, there are a number of configuration files that are necessary. The core file is the \textit{web.xml} file. This file is reponsible for the configuration for the framework. One of the key responsibilities is the definition of the context xml files, whose purpose will be elaborated on later. Different development profiles can be configured within this file in order to produce different development environments, such as production and testing environments.\newline 
+
+\begin{lstlisting}
+<context-param>
+<param-name>contextConfigLocation</param-name>
+<param-value>
+	classpath:beans/dao-context.xml
+	classpath:beans/service-context.xml
+	classpath:beans/security-context.xml
+</param-value>
+ </context-param>
+\end{lstlisting}
+
+Of particular importance are the definition of the context parameters. In this project, there were three main context files.
+
+\begin{itemize}
+\item Data Access Object Context
+\item Service Context
+\item Security Context
+\end{itemize}
+
+The DAO Context file specifies the packages that contain the various DAO classes within the application. It also contains configurations for both the database connection details, and Hibernate configurations. Packages containing entity classes for Hibernate are specified within this context also. \newline
+
+\begin{lstlisting}
+<property name="hibernateProperties">
+<props>
+<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+</props>
+</property>
+\end{lstlisting}
+
+The Service Context file is responsible for specifying the base package containing the Service classes necessary to facilitate the collaboration between the Controller classes and the DAO classes. This file specifies that annotations will be used to configure the Service classes.\newline
+
+\begin{lstlisting}
+<context:annotation-config></context:annotation-config>
+<context:component-scan base-package="service"></context:component-scan>
+\end{lstlisting}
+
+The Security Context file is the larger of the three files, and is responsible for the security configuration of the web application. There are four main areas within the file that were used to configure the web application created in this project. \newline The User Service aspect of the configuration file is responsible for retrieving users and their authority within the scope of the web application. \newline The URL access configuration ensures that only users who are authorised to access certain portions of the site are allowed access. \newline The Security Annotations allow the creation of an extra level of security into an application. At class level, annotations can be placed on methods to further ensure that proper access is enforced throughout the application. \newline Lastly, the Security Context is responsible for creating the password encoder bean in which passwords are encoded, and decoded, upon account creation and login. This ensures that no passwords in plain text form are ever stored on either the server or the database within the web application
+
+\begin{itemize}
+\item User Service
+\begin{lstlisting}
+<security:authentication-manager>	
+	<security:authentication-provider>
+	<security:jdbc-user-service data-source-ref="dataSource"
+		id="jdbcUserService" authorities-by-username-query="select username, authority from users where binary username = ?" />
+	<security:password-encoder ref="passwordEncoder"></security:password-encoder>
+	</security:authentication-provider>
+</security:authentication-manager>
+\end{lstlisting}
+\item URL Access
+\begin{lstlisting}
+<security:intercept-url pattern="/timetable" access="permitAll"/>
+<security:intercept-url pattern="/reportNoShow" access="permitAll"/>
+<security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
+<security:intercept-url pattern="/approveMembers" access="hasRole('ROLE_ADMIN')"/>
+\end{lstlisting}
+\item Security Annotation for Service Class
+\begin{lstlisting}
+<security:global-method-security secured-annotations="enabled"></security:global-method-security>
+//Java Code from TimetableService class. 
+//This code is invoked when booking a slot on the timetable and is only accessible by registered members.
+@Secured({"ROLE_ADMIN", "ROLE_MEMBER", "ROLE_COMMITTEE", "ROLE_WARNING", "ROLE_SUSPEND"})
+	public void update(Timetable t){
+		timetableDAO.updateTimetable(t);
+	}
+\end{lstlisting}
+\item Password Encoding
+\begin{lstlisting}
+<bean id="passwordEncoder"
+class="org.springframework.security.crypto.password.StandardPasswordEncoder">
+</bean>
+\end{lstlisting}
+\end{itemize}
+
+
+
+

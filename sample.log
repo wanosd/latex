@@ -1,0 +1,190 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.25)  3 MAR 2014 17:58
+entering extended mode
+**C:/Users/0144266/Dropbox/FYP/LaTeX*Report/sample.tex
+("C:/Users/0144266/Dropbox/FYP/LaTeX Report/sample.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fleqn.clo"
+File: fleqn.clo 1998/08/17 v1.1c Standard LaTeX option (flush left equations)
+\mathindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen103
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\epsf\epsf.sty"
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read1
+\epsfframemargin=\dimen104
+\epsfframethickness=\dimen105
+\epsfrsize=\dimen106
+\epsftmp=\dimen107
+\epsftsize=\dimen108
+\epsfxsize=\dimen109
+\epsfysize=\dimen110
+\pspoints=\dimen111
+) ("C:\Users\0144266\Dropbox\FYP\LaTeX Report\psfig.sty"
+\@unused=\write3
+\ps@stream=\read2
+\p@intvaluex=\dimen112
+\p@intvaluey=\dimen113
+
+psfig/tex 1.10-dvips
+) ("C:\Users\0144266\Dropbox\FYP\LaTeX Report\sample.aux"
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\abstract.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\intro.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\evaluation.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\research.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\design.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\testing.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\conclusion.aux"))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 29.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 29.
+ [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [1]
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\abstract.tex") [2
+
+] [3
+
+]
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\sample.toc"
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+ [1
+
+])
+\tf@toc=\write4
+ [2]
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\sample.lof")
+\tf@lof=\write5
+ [3
+
+]
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\sample.lot")
+\tf@lot=\write6
+ [4
+
+]
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\intro.tex"
+Chapter 1.
+[5
+
+
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 15.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
+ [6] [7]) [8]
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\evaluation.tex"
+Chapter 2.
+) [9
+
+
+
+] ("C:\Users\0144266\Dropbox\FYP\LaTeX Report\research.tex"
+Chapter 3.
+) [10
+
+
+
+]
+Overfull \vbox (384.39044pt too high) has occurred while \output is active []
+
+
+[11] ("C:\Users\0144266\Dropbox\FYP\LaTeX Report\design.tex"
+Chapter 4.
+) [12
+
+
+
+] ("C:\Users\0144266\Dropbox\FYP\LaTeX Report\testing.tex"
+Chapter 5.
+) [13
+
+
+
+] ("C:\Users\0144266\Dropbox\FYP\LaTeX Report\conclusion.tex"
+Chapter 6.
+) [14
+
+
+
+] ("C:\Users\0144266\Dropbox\FYP\LaTeX Report\sample.bbl"
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [15
+
+
+] ("C:\Users\0144266\Dropbox\FYP\LaTeX Report\sample.aux"
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\abstract.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\intro.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\evaluation.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\research.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\design.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\testing.aux")
+("C:\Users\0144266\Dropbox\FYP\LaTeX Report\conclusion.aux")) ) 
+Here is how much of TeX's memory you used:
+ 644 strings out of 493921
+ 9430 string characters out of 3147276
+ 58920 words of memory out of 3000000
+ 3939 multiletter control sequences out of 15000+200000
+ 9414 words of font info for 33 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 25i,6n,24p,870b,177s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb>
+Output written on sample.pdf (19 pages, 74686 bytes).
+PDF statistics:
+ 80 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
