@@ -172,15 +172,67 @@ The Security Context XML file is key to maintaining the integrity of the applica
 
 This code fragment from the \textit{Security-Context.xml} file displays how access for the web application is configured. While there are five roles within the system, it is not necessary to explicitly define what actions a role can perform. For example, all registered users should be able to register for an existing tournament. In this case, once the framework detects that a user is authenticated, that is sufficient to allow access to that part of the application. Other examples are the display of static images, such as banners and advertising. These should be visible to all visitors to the site, regardless of their authentication status. Accordingly, this area of the application is set to permitAll allowing such access.
 
+\subsection{Maven}
+
 \subsection{Hibernate}
 
 \subsection{Apache Tiles}
+
+Apache Tiles is configured within the web application core xml file. There are two classes that the configuration is concerned with: TilesViewResolver and TileConfigurer. Both are declared as beans within the configuration file and automatically created when the application is launched. The TilesConfigurer object takes one parameter: a location of the template that the default tile, and its subsequent children, will use. \newline
+
+\begin{lstlisting}
+
+<bean id="tilesViewResolver"
+	class="org.springframework.web.servlet.view.tiles2.TilesViewResolver">
+</bean>
+
+<bean id="tilesConfig"
+	class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+	<property name="definitions">
+	<list>
+		<value>/WEB-INF/layout/default.xml</value>
+	</list>
+	</property>
+</bean>
+\end{lstlisting}
+
+The default tile consists of a number of sections identified by a specific tag. These tags correspond to values within the tile layout configuration file. Using a version of inheritance, these can be overwritten and replaced with other pages in order to change the content of a page, while maintaining cohesion across the design of the application. 
+
+The following examples shows the implementation within the configuration file. The first section of code is the overall template. This specifies the default values that make up a JSP page within the application. The second segment of code is the the definition for the initial home page for the web application. By the inclusion of the \textit{extends="users.base"} within the definition tags, it is defining the index as a sub class of the users.base definition. Consequently, it is possible to override any of the attributes within the users.base definition. In this example, the title and content of the default page are being overridden with different values in order construct a more suitable page. The header, links and footer however remain the same, and will do so will all pages following this format.
+
+\begin{lstlisting}
+
+<definition name="users.base" template="/WEB-INF/templates/default.jsp">
+	<put-attribute name="title" value="Monaleen Tennis Club - Default Template"></put-attribute>
+	<put-attribute name="header" value="/WEB-INF/tiles/header.jsp"></put-attribute>
+	<put-attribute name="links" value="/WEB-INF/tiles/links.jsp"></put-attribute>
+	<put-attribute name="content" value="/WEB-INF/tiles/content.jsp"></put-attribute>
+	<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp"></put-attribute>
+</definition>
+
+<definition name="index" extends="users.base">
+	<put-attribute name="title" value="Monaleen Tennis Club - Home Page"></put-attribute>
+	<put-attribute name="content" value="/WEB-INF/tiles/index.jsp"></put-attribute>
+</definition>
+
+<definition name="admin" extends="users.base">
+	<put-attribute name="title" value="Monaleen Tennis Club - Admin"></put-attribute>
+	<put-attribute name="content" value="/WEB-INF/tiles/admin.jsp"></put-attribute>
+</definition>
+
+\end{lstlisting}
 
 \subsection{Services}
 
 \subsection{Logging}
 
-\subsection{JSTL}
+\subsection{JSP Standard Tag Libraries}
+
+JSTL was use within the application to manage how information was displayed. It was preferred, during the development of the application, that all of the logic be handled at the Controller level, and that the JSP pages would resolve the models passed to it into the view seen by the user. It was not desirable for the pages to contain JSP directives, or to use the implicit objects contained within JSP pages. 
+
+The main tags used within the application were the JSTL Core tags. 
 
 \subsection{External Code}
+
+
 
