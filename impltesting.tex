@@ -130,7 +130,7 @@ String username;
 \end{lstlisting}
 
 Another aspect of the Spring Security platform was Form Validation. When registering a user, there are a number a validation constraints that are placed upon the User class. Spring provides a facility to ensure these constraints are enforced, and to also provide a positive user experience. It does this through the use of a BindingResult object. This object holds a record of any errors from the form that the user populates. The controller that deals with the form will check the BindResult object for errors, and can respond appropriately. In order for this to work, both the Controller and the form need to be defined clearly. The form needs to be creating using the Spring Framework form tag library, and errors needs to be specified for each input within the form. These inputs, when used with Hibernate, all need to match with the attribute names given in the class they represent. This example references the User class. \pagebreak
-
+\begin{table}[H]
 \begin{lstlisting}
 <!-- Excerpt from the User registration form. Formatting removed for clarity --!>
 <sf:form id="details" method="post" action="${pageContext.request.contextPath}/register" commandName="member">
@@ -166,6 +166,8 @@ if (userService.exists(member.getUsername())) {
 		}
 }
 \end{lstlisting}
+\caption{User Registration Form}
+\end{table}
 
 The UserDAO class then encodes the password using the already configured Password Encoder bean prior to saving it to the database. It was this process that introduced an issue with the validation process. When defining the constraints placed upon the password attribute within the User class, the encoding of the password at a later stage was not taken into account. When encoded, the length of the password increased well beyond the scope of the initial constraint. When Hibernate attempted to persist the User object, it found that the password was now in violation of the constraints placed upon this attribute within the User class. This issue did not occur in the application when using a JDBC database, and is a result of the close links that Hibernate has with its entity classes. In order to resolve this issue, Validation Groups were introduced. A Validation Group is a mechanism in which a class is used to define the validity of attributes within a class. Using these groups, the web application can enforce validation on attributes depending on the validation group specified in the Controller. As respects the application developed for this project, the constraint for the password only had to be enforced within the scope of the form. Once the form validation had passed, enforcement of the constraint was not a concern. By using a separate group for Hibernate persistence, the issue was resolved. (This needs revising! Bit wobbly and lacks structure, also previous code excerpt shows this in action also. Move up to there?)
 
@@ -331,7 +333,7 @@ public List<User> getCommittee() {
 
 \subsubsection{Update}
 
-Update operations are identical to Save operations in Hibernate. An object is passed to the SessionFactory update() method, and Hibernate will save any changes to the object in the database.
+Update operations are identical to Save operations in Hibernate. An object is passed to the SessionFactory update() method, and Hibernate will save any changes to the object in the database. Hibernate checks the indentifier of the object, and if the identifier does not exist, it will throw an exception. This can be circumvented by using the saveOrUpdate() method of the SessionFactory object. In the event that a record does not exist to update, Hibernate will persist that object as a new record.
 
 \begin{table}[H]
 \begin{lstlisting}
@@ -349,7 +351,66 @@ public void disableMember(String username) {
 
 \subsubsection{Delete}
 
+Delete operations are implemented in a very similar fashion to Update queries. 
+
+\begin{table}[H]
+\begin{lstlisting}
+public void deleteTournament(Tournament t){
+	session().delete(t);
+}
+\end{lstlisting}
+\caption{Hibernate Update Object }
+\end{table}
+
+
 \subsubsection{Comparison with JDBC Queries}
+
+A considerable advantage of Hibernate over JDBC is the reduction in complexity in creating queries. Since Hibernate encapsulates the table structure of the database table within the entity class, there is no need to explicitly state column names within the query structure. This was made clear during the conversion from a JDBC database to a Hibernate one during the development of this project.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Transactional
+public void createUser(User user) {
+	user.setPassword(passwordEncoder.encode(user.getPassword()));
+	user.setBookings_left(0);
+	session().save(user);
+}
+\caption{Hibernate Create User Query }
+\end{lstlisting}
+\end{table}
+
+The JDBC query for the above Hibernate query was much larger, and much more needed to be explicitly stated. While the configuration of the User class was not necessary for the JDBC connection, the risk of possible errors introduced by the length of the SQL query contain within, made it a very difficult solution to manage.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Transactional
+public boolean createUserJDBC(User user) {
+	MapSqlParameterSource params = new MapSqlParameterSource();
+	params.addValue("username", user.getUsername());
+	params.addValue("name", user.getName());
+	params.addValue("password", passwordEncoder.encode(user.getPassword()));
+	params.addValue("gender", user.getGender());
+	params.addValue("member_type", user.getMember_type());
+	params.addValue("grade", user.getGrade());
+	params.addValue("ad_line1", user.getAd_line1());
+	params.addValue("ad_line2", user.getAd_line2());
+	params.addValue("ad_city", user.getAd_city());
+	params.addValue("ad_county", user.getAd_county());
+	params.addValue("contact_num", user.getContact_num());
+	params.addValue("em_con_name", user.getEm_con_name());
+	params.addValue("em_con_num", user.getEm_con_num());
+	params.addValue("role", "ROLE_MEMBER");
+
+	return jdbc.update("insert into users (username, password, name, gender, member_type, grade, ad_line1, ad_line2, ad_city, ad_county, 
+	contact_num, em_con_name, em_con_num, enabled. authority) values (:username, :password, :name, :gender, :member_type, :grade, 
+	:ad_line1, :ad_line1, :ad_city, :ad_county, :contact_num, :em_con_name, :em_con_num, false, :role)",params) == 1;
+}
+\end{lstlisting}
+\caption{JDBC Create User Query }
+\end{table}
+
+
+
 
 \subsection{Apache Tiles}
 
@@ -375,8 +436,8 @@ The default tile consists of a number of sections identified by a specific tag. 
 
 The following examples shows the implementation within the configuration file. The first section of code is the overall template. This specifies the default values that make up a JSP page within the application. The second segment of code is the the definition for the initial home page for the web application. By the inclusion of the \textit{extends="users.base"} within the definition tags, it is defining the index as a sub class of the users.base definition. Consequently, it is possible to override any of the attributes within the users.base definition. In this example, the title and content of the default page are being overridden with different values in order construct a more suitable page. The header, links and footer however remain the same, and will do so will all pages following this format.
 
+\begin{table}[H]
 \begin{lstlisting}
-
 <definition name="users.base" template="/WEB-INF/templates/default.jsp">
 	<put-attribute name="title" value="Monaleen Tennis Club - Default Template"></put-attribute>
 	<put-attribute name="header" value="/WEB-INF/tiles/header.jsp"></put-attribute>
@@ -394,16 +455,82 @@ The following examples shows the implementation within the configuration file. T
 	<put-attribute name="title" value="Monaleen Tennis Club - Admin"></put-attribute>
 	<put-attribute name="content" value="/WEB-INF/tiles/admin.jsp"></put-attribute>
 </definition>
-
 \end{lstlisting}
+\caption{Apache Tiles Configuration}
+\end{table}
 
 \subsection{Services}
 
+In this application, Services are the layers between the Controllers and the DAO classes and enable communication between the two sets of objects. This allows us to encapsulate the logic of what a service needs to do within a set of classes, rather than allowing the Controllers to access to DAO directly. Any changes required to the DAO need only be changed in the Service classes, allowing the Controllers to remain unchanged. 
+
 \subsection{Logging}
+
+The logging for this application was provided by \textit{log4j.} Logging became very useful for tracking down, and isolating bugs, throughout the application. Since there were a considerable number of dependencies and different technologies working together, it rapidly became very difficult to see where errors originated from. Stack-traces quickly became unmanageable. \textit{Log4j} works by allowing the developer to view a number of logs of varying types within the application.
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+    Log Type & Description \\ \hline
+    INFO & Messages that highlight the progress of the application at coarse-grained level  \\ \hline
+    DEBUG & Fine-grained informational events that are most useful to debug an application\\ \hline
+	TRACE & Finer-grained informational events than the DEBUG\\ \hline
+	WARN & Potentially harmful situations\\ \hline
+	ERROR & Error events that might still allow the application to continue running\\ \hline
+    FATAL & Very severe error events that will presumably lead the application to abort\\ \hline
+    \end{tabular}
+\end{center}
+\caption{Log Types}
+\end{table}
+
+\textit{Log4j} is configured with a properties file that allows you to see the various levels of logs displays by the applications running. Implementation of a logging system resolved a number of Spring Security issues within the web application. Spring Security, concerned with access rights to mappings within the application, did not output failed access attempts to the console. This made it very difficult to debug. When configuring \textit{Log4j} to catch the logs created by the security components, the application became much easier to debug. The properties file for this web application is detailed below.
+
+\begin{table}[H]
+\begin{lstlisting}
+log4j.rootLogger=INFO, CONSOLE
+log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+log4j.appender.CONSOLE.layout=org.apache.log4j.SimpleLayout
+log4j.logger.org.hibernate.SQL=DEBUG
+log4j.logger.org.hibernate.type=TRACE
+log4j.logger.org.springframework.security=DEBUG
+\end{lstlisting}
+\caption{Log4j Configuration}
+\end{table}
+
+Logging can be implemented on a class by class basis. Within this application, it was used to display informational messages to the developer. These included items such as database access, objects being created and updated. In order to enable logging on a class, a logger must be instantiated with reference to the class that requires logging. The logger object then is called with a method corresponding to the type of log you wish to throw along with a message.
+
+\begin{table}[H]
+\begin{lstlisting}
+private static Logger logger = Logger.getLogger(UserDAO.class);
+
+public Session session(){ 
+	logger.info("Session Factory returning current session.....");
+	return sessionFactory.getCurrentSession();
+}
+
+public List<User> getUsers() {
+	logger.info("Selecting All Enabled Members....");
+	return session().createQuery("from User where enabled = '1'").list();
+}
+
+public User getUserByName(String name) {
+	Criteria crit = session().createCriteria(User.class);
+	crit.add(Restrictions.eq("name", name)); 
+	try{
+	User user = (User) crit.uniqueResult();
+	}
+	catch(Exception e){
+	logger.error{"Must be unique result : Thrown from UserDAO.getUserByName(String name));
+	}
+	return user;
+}
+\end{lstlisting}
+\caption{Logger Usage within UserDAO.class}
+\end{table}
+
 
 \subsection{JSP Standard Tag Libraries}
 
-JSTL was use within the application to manage how information was displayed. It was preferred, during the development of the application, that all of the logic be handled at the Controller level, and that the JSP pages would resolve the models passed to it into the view seen by the user. It was not desirable for the pages to contain JSP directives, or to use the implicit objects contained within JSP pages. 
+JSTL is used within the application to manage how information was displayed. It was preferred, during the development of the application, that all of the logic be handled at the Controller level, and that the JSP pages would resolve the models passed to it into the view seen by the user. It was not desirable for the pages to contain JSP directives, or to use the implicit objects contained within JSP pages. 
 
 The main tags used within the application were the JSTL Core tags.  These tags allow the usage of conditional statements and the definition of parameters within the JSP page. In order to use this technology, the relevant jar must be made available in the build path or within the Maven dependencies of the project. The following statement must be included in all JSP pages that wish to make use of the tags also.\newline
 
@@ -523,6 +650,63 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 \end{lstlisting}
 \caption{Code Showing Google Maps Integration}
+\end{table}
+\pagebreak
+\subsection{Application Breakdown}
+
+The following section is a breakdown of the application into its various packages and files. (Move to appendices perhaps?)
+\subsubsection{Package: beans}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | p{5cm} |}
+    \hline
+    File Name & File Type & Function\\ \hline
+    beans.xml & XML & Context Component Scan, Datasource Definition \\ \hline
+	dao-context.xml & XML & Hibernate Configuration, Database Exception Translator \\ \hline
+	security-context.xml & XML & Security Configuration, Access Control \\ \hline
+	service.xml & XML & Service Configuration \\ \hline
+    \end{tabular}
+\end{center}
+\caption{beans package}
+\end{table}
+
+\subsubsection{Package: controllers}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | p{5cm} |}
+    \hline
+    File Name & File Type & Function\\ \hline
+    ErrorHandler & JAVA & Handles application errors \\ \hline
+	EventController & JAVA & Handles Event actions \\ \hline
+	HomeControler & JAVA & Displays Home Page \\ \hline
+	LoginController & JAVA & Manages user login \\ \hline
+	MembersController & JAVA & Handles Member actions \\ \hline
+	NewsController & JAVA & Handles display and creation of News \\ \hline
+	SiteController & JAVA & Displays site pages with static data \\ \hline
+	TimetableController & JAVA & Controls the Timetable Creation and Display \\ \hline
+	TournamentController & JAVA & Handles Creation and Management of Tournaments \\ \hline
+    \end{tabular}
+\end{center}
+\caption{controllers package}
+\end{table}
+
+\subsubsection{Package: dao}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | p{5cm} |}
+    \hline
+    File Name & File Type & Function\\ \hline
+    EventDAO & JAVA & DAO for IEvent\\ \hline
+	LogDAO & JAVA & DAO for ILog\\ \hline
+	NewsDAO & JAVA & DAO for News\\ \hline
+	RoleDAO & JAVA & DAO for Role\\ \hline
+	TimetableDAO & JAVA & DAO for Timetable\\ \hline
+	TournamentDAO & JAVA & DAO for Tournament\\ \hline
+	UserDAO & JAVA & DAO for User\\ \hline
+	UserRowMapper & JAVA & JDBC Row Mapper to handle multiple User objects \\ \hline	
+    \end{tabular}
+\end{center}
+\caption{dao package}
 \end{table}
 
 

@@ -1,46 +1,50 @@
-\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}
-\contentsline {section}{\numberline {1.1}General Introduction}{5}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}General Introduction}{5}{subsection.1.1.1}
-\contentsline {section}{\numberline {1.2}Objectives}{6}{section.1.2}
-\contentsline {section}{\numberline {1.3}Scope}{6}{section.1.3}
-\contentsline {section}{\numberline {1.4}Methodoloy}{6}{section.1.4}
-\contentsline {section}{\numberline {1.5}Overview of Report}{7}{section.1.5}
-\contentsline {section}{\numberline {1.6}Motivation}{7}{section.1.6}
-\contentsline {chapter}{\numberline {2}Background}{8}{chapter.2}
-\contentsline {section}{\numberline {2.1}Architectures of Web Applications}{8}{section.2.1}
-\contentsline {section}{\numberline {2.2}Technologies}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Web Application Framework}{8}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Application Server}{9}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Project Management Tool}{9}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Database Model}{9}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Source Control}{9}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}Integrated Development Environment}{9}{subsection.2.2.6}
-\contentsline {subsection}{\numberline {2.2.7}Logging}{9}{subsection.2.2.7}
-\contentsline {subsection}{\numberline {2.2.8}Web Page Creation}{9}{subsection.2.2.8}
-\contentsline {section}{\numberline {2.3}Software Engineering}{9}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Requirements}{9}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Design}{9}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Testing}{9}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Software Quality}{9}{subsection.2.3.4}
-\contentsline {chapter}{\numberline {3}Requirements}{10}{chapter.3}
-\contentsline {chapter}{\numberline {4}Design}{11}{chapter.4}
-\contentsline {chapter}{\numberline {5}Implementation and Testing}{12}{chapter.5}
-\contentsline {section}{\numberline {5.1}Implemention}{12}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Spring}{12}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Security}{15}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Maven}{19}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Hibernate}{19}{subsection.5.1.4}
+\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}General Introduction}{4}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}General Introduction}{4}{subsection.1.1.1}
+\contentsline {section}{\numberline {1.2}Objectives}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Scope}{5}{section.1.3}
+\contentsline {section}{\numberline {1.4}Methodoloy}{5}{section.1.4}
+\contentsline {section}{\numberline {1.5}Overview of Report}{6}{section.1.5}
+\contentsline {section}{\numberline {1.6}Motivation}{6}{section.1.6}
+\contentsline {chapter}{\numberline {2}Background}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Architectures of Web Applications}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Technologies}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Web Application Framework}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Application Server}{8}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Project Management Tool}{8}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Database Model}{8}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Source Control}{8}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Integrated Development Environment}{8}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}Logging}{8}{subsection.2.2.7}
+\contentsline {subsection}{\numberline {2.2.8}Web Page Creation}{8}{subsection.2.2.8}
+\contentsline {section}{\numberline {2.3}Software Engineering}{8}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Requirements}{8}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Design}{8}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Testing}{8}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Software Quality}{8}{subsection.2.3.4}
+\contentsline {chapter}{\numberline {3}Requirements}{9}{chapter.3}
+\contentsline {chapter}{\numberline {4}Design}{10}{chapter.4}
+\contentsline {chapter}{\numberline {5}Implementation and Testing}{11}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implemention}{11}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Spring}{11}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Security}{14}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Maven}{18}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Hibernate}{18}{subsection.5.1.4}
 \contentsline {subsection}{\numberline {5.1.5}Class Configuration}{20}{subsection.5.1.5}
 \contentsline {subsubsection}{Create}{21}{section*.4}
-\contentsline {subsubsection}{Read}{22}{section*.5}
-\contentsline {subsubsection}{Update}{23}{section*.6}
+\contentsline {subsubsection}{Read}{21}{section*.5}
+\contentsline {subsubsection}{Update}{22}{section*.6}
 \contentsline {subsubsection}{Delete}{23}{section*.7}
 \contentsline {subsubsection}{Comparison with JDBC Queries}{23}{section*.8}
-\contentsline {subsection}{\numberline {5.1.6}Apache Tiles}{23}{subsection.5.1.6}
-\contentsline {subsection}{\numberline {5.1.7}Services}{25}{subsection.5.1.7}
-\contentsline {subsection}{\numberline {5.1.8}Logging}{25}{subsection.5.1.8}
-\contentsline {subsection}{\numberline {5.1.9}JSP Standard Tag Libraries}{25}{subsection.5.1.9}
-\contentsline {subsection}{\numberline {5.1.10}External Code}{27}{subsection.5.1.10}
-\contentsline {chapter}{\numberline {6}Software Quality}{29}{chapter.6}
-\contentsline {chapter}{\numberline {7}Evaluation}{30}{chapter.7}
-\contentsline {chapter}{\numberline {8}Conclusions}{31}{chapter.8}
+\contentsline {subsection}{\numberline {5.1.6}Apache Tiles}{24}{subsection.5.1.6}
+\contentsline {subsection}{\numberline {5.1.7}Services}{26}{subsection.5.1.7}
+\contentsline {subsection}{\numberline {5.1.8}Logging}{26}{subsection.5.1.8}
+\contentsline {subsection}{\numberline {5.1.9}JSP Standard Tag Libraries}{28}{subsection.5.1.9}
+\contentsline {subsection}{\numberline {5.1.10}External Code}{31}{subsection.5.1.10}
+\contentsline {subsection}{\numberline {5.1.11}Application Breakdown}{33}{subsection.5.1.11}
+\contentsline {subsubsection}{Package: beans}{33}{section*.9}
+\contentsline {subsubsection}{Package: controllers}{33}{section*.10}
+\contentsline {subsubsection}{Package: dao}{34}{section*.11}
+\contentsline {chapter}{\numberline {6}Software Quality}{35}{chapter.6}
+\contentsline {chapter}{\numberline {7}Evaluation}{36}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusions}{37}{chapter.8}
