@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  10 MAR 2014 11:49
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  10 MAR 2014 12:47
 entering extended mode
 **0144266.tex
 (C:\Users\0144266\Documents\GitHub\latex\0144266.tex
@@ -107,6 +107,149 @@ Package color Info: Driver file: xetex.def on input line 130.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen118
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen119
+\Hy@linkcounter=\count97
+\Hy@pagecounter=\count98
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count99
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count100
+
+("C:\Program Files\MiKTeX 2.9\tex\xelatex\xetexurl\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2004/03/15  ver 3.1  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen120
+Requested font "pzdr" at 0.00002pt
+ -> pzdr
+\Fld@menulength=\count101
+\Field@Width=\dimen121
+\Fld@charsize=\dimen122
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count102
+\c@Item=\count103
+\c@Hfootnote=\count104
+)
+
+Package hyperref Message: Driver (autodetected): hxetex.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hxetex.def"
+File: hxetex.def 2012/11/06 v6.83m Hyperref driver for XeTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
+File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\stringenc.sty"
+Package: stringenc 2011/12/02 v1.10 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box28
+\c@Hy@AnnotLevel=\count105
+\HyField@AnnotCount=\count106
+\Fld@listcount=\count107
+\c@bookmark@seq@number=\count108
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package rerunfilecheck Info: Feature \pdfmdfivesum is not available
+(rerunfilecheck)             (e.g. pdfTeX or LuaTeX with package `pdftexcmds').
+
+(rerunfilecheck)             Therefore file contents cannot be checked efficien
+tly
+(rerunfilecheck)             and the loading of the package is aborted.
+)
+\Hy@SectionHShift=\skip43
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count109
+\float@exts=\toks16
+\float@box=\box29
+\@float@everytoks=\toks17
+\@floatcapt=\box30
+)
+\@float@every@table=\toks18
+
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
@@ -120,19 +263,41 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (C:\Users\0144266\Documents\GitHub\latex\squality.aux)
 (C:\Users\0144266\Documents\GitHub\latex\evaluation.aux)
 (C:\Users\0144266\Documents\GitHub\latex\conclusion.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-\c@lstlisting=\count97
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+\c@lstlisting=\count110
+\AtBeginShipoutBox=\box31
+Package hyperref Info: Link coloring OFF on input line 50.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count111
+)
+LaTeX Info: Redefining \ref on input line 50.
+LaTeX Info: Redefining \pageref on input line 50.
+LaTeX Info: Redefining \nameref on input line 50.
+
+(C:\Users\0144266\Documents\GitHub\latex\0144266.out)
+(C:\Users\0144266\Documents\GitHub\latex\0144266.out)
+\@outlinefile=\write3
 Requested font "cmr17" at 17.28pt
  -> cmr17
 Requested font "cmr12" at 12.0pt
@@ -154,18 +319,22 @@ Requested font "cmsy8" at 8.0pt
 Requested font "cmsy6" at 6.0pt
  -> cmsy6
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 52.
+(Font)              <12> on input line 56.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 52.
+(Font)              <8> on input line 56.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 52.
- [1
+(Font)              <6> on input line 56.
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\se-ascii-print.def"
+File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
+
+)
+[1
 
 ]
 Requested font "cmbx10" at 10.0pt
  -> cmbx10
- [1]
-(C:\Users\0144266\Documents\GitHub\latex\abstract.tex) [2
+ [1] (C:\Users\0144266\Documents\GitHub\latex\abstract.tex) [2
 
 ] [3
 
@@ -183,15 +352,15 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 ])
-\tf@toc=\write3
+\tf@toc=\write4
  [2]
 (C:\Users\0144266\Documents\GitHub\latex\0144266.lof)
-\tf@lof=\write4
+\tf@lof=\write5
  [3
 
 ]
 (C:\Users\0144266\Documents\GitHub\latex\0144266.lot)
-\tf@lot=\write5
+\tf@lot=\write6
  [4
 
 ]
@@ -253,7 +422,7 @@ Requested font "cmr9" at 9.0pt
 Requested font "cmtt9" at 9.0pt
  -> cmtt9
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
 
@@ -262,32 +431,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
 
 [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
 [15] [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
 [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
 
  []
 
@@ -296,21 +475,26 @@ Overfull \hbox (66.68245pt too wide) in paragraph at lines 267--279
  [] 
  []
 
-[21]) [22] [23] (C:\Users\0144266\Documents\GitHub\latex\squality.tex
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+
+ []
+
+[22] [23]) [24] (C:\Users\0144266\Documents\GitHub\latex\squality.tex
 Chapter 6.
-) [24
+) [25
 
 
 
 ] (C:\Users\0144266\Documents\GitHub\latex\evaluation.tex
 Chapter 7.
-) [25
+) [26
 
 
 
 ] (C:\Users\0144266\Documents\GitHub\latex\conclusion.tex
 Chapter 8.
-) [26
+) [27
 
 
 
@@ -318,10 +502,14 @@ Chapter 8.
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [27
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
+ [28
 
 
-] (C:\Users\0144266\Documents\GitHub\latex\0144266.aux
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
+ (C:\Users\0144266\Documents\GitHub\latex\0144266.aux
 (C:\Users\0144266\Documents\GitHub\latex\abstract.aux)
 (C:\Users\0144266\Documents\GitHub\latex\intro.aux)
 (C:\Users\0144266\Documents\GitHub\latex\background.aux)
@@ -330,14 +518,18 @@ LaTeX Warning: Empty `thebibliography' environment on input line 3.
 (C:\Users\0144266\Documents\GitHub\latex\impltesting.aux)
 (C:\Users\0144266\Documents\GitHub\latex\squality.aux)
 (C:\Users\0144266\Documents\GitHub\latex\evaluation.aux)
-(C:\Users\0144266\Documents\GitHub\latex\conclusion.aux)) ) 
+(C:\Users\0144266\Documents\GitHub\latex\conclusion.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 90.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 90.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
+ ) 
 Here is how much of TeX's memory you used:
- 2277 strings out of 429035
- 31360 string characters out of 3167909
- 144852 words of memory out of 3000000
- 5473 multiletter control sequences out of 15000+200000
- 9919 words of font info for 35 fonts, out of 3000000 for 9000
+ 9795 strings out of 429035
+ 136390 string characters out of 3167909
+ 269205 words of memory out of 3000000
+ 12936 multiletter control sequences out of 15000+200000
+ 10279 words of font info for 36 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 26i,9n,40p,1574b,1490s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,8n,47p,1574b,1098s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 0144266.pdf (31 pages).
+Output written on 0144266.pdf (32 pages).

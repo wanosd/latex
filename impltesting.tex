@@ -5,6 +5,7 @@
 \subsection{Spring}
 In order to begin implementation with the Spring MVC framework, there are a number of configuration files that are necessary. The core file is the \textit{web.xml} file. This file is reponsible for the configuration for the framework. One of the key responsibilities is the definition of the context xml files, whose purpose will be elaborated on later. Different development profiles can be configured within this file in order to produce different development environments, such as production and testing environments.\newline 
 
+\begin{table}[H]
 \begin{lstlisting}
 <context-param>
 <param-name>contextConfigLocation</param-name>
@@ -15,8 +16,10 @@ In order to begin implementation with the Spring MVC framework, there are a numb
 </param-value>
  </context-param>
 \end{lstlisting}
+\caption{Spring Context File Defintion}
+\end{table}
 
-Of particular importance are the definition of the context parameters. In this project, there were three main context files.
+Of particular importance are the definition of the context parameters. In this project, there were three main context files.\newline
 
 \begin{itemize}
 \item Data Access Object Context
@@ -26,6 +29,7 @@ Of particular importance are the definition of the context parameters. In this p
 
 The DAO Context file specifies the packages that contain the various DAO classes within the application. It also contains configurations for both the database connection details, and Hibernate configurations. Packages containing entity classes for Hibernate are specified within this context also. \newline
 
+\begin{table}[H]
 \begin{lstlisting}
 <property name="hibernateProperties">
 <props>
@@ -33,15 +37,20 @@ The DAO Context file specifies the packages that contain the various DAO classes
 </props>
 </property>
 \end{lstlisting}
+\caption{DAO Context Configuration}
+\end{table}
 
 The Service Context file is responsible for specifying the base package containing the Service classes necessary to facilitate the collaboration between the Controller classes and the DAO classes. This file specifies that annotations will be used to configure the Service classes.\newline
 
+\begin{table}[H]
 \begin{lstlisting}
 <context:annotation-config></context:annotation-config>
 <context:component-scan base-package="service"></context:component-scan>
 \end{lstlisting}
+\caption{Service Context Configuration}
+\end{table}
 
-The Security Context file is the larger of the three files, and is responsible for the security configuration of the web application. There are four main areas within the file that were used to configure the web application created in this project. \newline The User Service aspect of the configuration file is responsible for retrieving users and their authority within the scope of the web application. \newline The URL access configuration ensures that only users who are authorised to access certain portions of the site are allowed access. \newline The Security Annotations allow the creation of an extra level of security into an application. At class level, annotations can be placed on methods to further ensure that proper access is enforced throughout the application. \newline Lastly, the Security Context is responsible for creating the password encoder bean in which passwords are encoded, and decoded, upon account creation and login. This ensures that no passwords in plain text form are ever stored on either the server or the database within the web application \pagebreak
+The Security Context file is the larger of the three files, and is responsible for the security configuration of the web application. There are four main areas within the file that were used to configure the web application created in this project. \newline The User Service aspect of the configuration file is responsible for retrieving users and their authority within the scope of the web application. \newline The URL access configuration ensures that only users who are authorised to access certain portions of the site are allowed access. \newline The Security Annotations allow the creation of an extra level of security into an application. At class level, annotations can be placed on methods to further ensure that proper access is enforced throughout the application. \newline Lastly, the Security Context is responsible for creating the password encoder bean in which passwords are encoded, and decoded, upon account creation and login. This ensures that no passwords in plain text form are ever stored on either the server or the database within the web application. \newline
 
 \begin{itemize}
 \item User Service
@@ -84,7 +93,7 @@ class="org.springframework.security.crypto.password.StandardPasswordEncoder">
 A core part of the Spring platform is the Security support. Security is an important aspect for any application, but more-so for one that stores user data, particularly sensitive data such as names, addresses, phone numbers, and payment details. While there is no payment infrastructure within this application, there is scope for a system to be implemented, and it could certainly be a future requirement. 
 
 Spring handles security a number of ways. Firstly, it uses an \textit{authority} hierarchy to separate different levels of users. For this web application, there were three main levels of authority, with one level containing three different branches.
-
+\begin{table}[H]
 \begin{itemize}
 \item ROLE ADMIN
 \begin{itemize}
@@ -107,6 +116,8 @@ Spring handles security a number of ways. Firstly, it uses an \textit{authority}
 \item A further restriction placed upon a member.
 \end{itemize}
 \end{itemize}
+\caption{Security Roles within the Web Application}
+\end{table}
 
 To ensure that the correct user is logged in, the framework provides a SecurityContextHolder class which can be used by the Controllers in order to ensure that that any actions performed by the system are attributed to the correct user. In this regard, it was important that the system ensures that the duplication of a user-name is restricted. In this project, the user table had two keys: an integer id, which was the primary key, and the user-name was an email address. The validity of the email address was enforced at class level with the use on annotations on the user-name attribute within the User class. \newline
 
@@ -174,7 +185,18 @@ This code fragment from the \textit{Security-Context.xml} file displays how acce
 
 \subsection{Maven}
 
-Maven was used within the scope of this project to manage the dependencies required by the web application. Maven came preinstalled and configured within the Spring Tool Suite IDE. (how dependencies were added here)
+Maven was used within the scope of this project to manage the dependencies required by the web application. Maven came preinstalled and configured within the Spring Tool Suite IDE. Dependency Management can be handled one of two ways. Dependencies can be added using the GUI interface provided by an IDE, in this case, Spring Tool Suite. This GUI links to the repository located at http://mvnrepository.com/, and the user searches for the required files. Otherwise, the \textit{pom.xml} file may be edited manually. 
+
+\begin{table}[H]
+\begin{lstlisting}
+<dependency>
+	<groupId>org.apache.tiles</groupId>
+	<artifactId>tiles-core</artifactId>
+	<version>3.0.3</version>
+</dependency>
+\end{lstlisting}
+\caption{Dependency XML Structure for Maven}
+\end{table}
 
 \subsection{Hibernate}
 
@@ -240,6 +262,24 @@ The main tags used within the application were the JSTL Core tags.  These tags a
 
 Within the application, the controller will create a model and pass it to the JSP page. The page uses the JSTL tags to manage and display relevant information from the model, and user actions based on the information contained within. The example below is taken from the Timetable display page from the application.\newline
 
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+    Model Name & Summary \\ \hline
+    name & The username of the currently authenticated user  \\ \hline
+    realName & The real name of the currently authenticated user\\ \hline
+	bookings & The number of remaining bookings of the currently authenticated users\\ \hline
+	date & The current week of the year and the current date. Calculated using separate method.\\ \hline
+	next & The id number of the court following the current court, if applicable\\ \hline
+    prev & The id number of the court preceding the current court, if applicable\\ \hline
+	court & The current court, determined by the current week, provided by the java.util.Date class \\
+    \hline
+    \end{tabular}
+\end{center}
+\caption{Model Attributes}
+\end{table}
+\pagebreak
 \begin{lstlisting}
 @RequestMapping(value = "/gotoCourt", method = RequestMethod.POST)
 public String chooseCourt(Model model, HttpServletRequest request) {
@@ -261,26 +301,11 @@ public String chooseCourt(Model model, HttpServletRequest request) {
 }
 \end{lstlisting}	
 
-This example is an excerpt from the TimetableContoller class. The logic determining the values has been removed. This is to highlight how attributes are added to the model from within the controller. This is the information that the JSP page will have access to once it has been displayed.\newline
-\begin{table}
-\begin{center}
-    \begin{tabular}{ | l | l | p{5cm} |}
-    \hline
-    Model Name & Summary \\ \hline
-    name & The username of the currently authenticated user  \\ \hline
-    realName & The real name of the currently authenticated user\\ \hline
-	bookings & The number of remaining bookings of the currently authenticated users\\ \hline
-	date & The current week of the year and the current date. Calculated using separate method.\\ \hline
-	next & The id number of the court following the current court, if applicable\\ \hline
-    prev & The id number of the court preceding the current court, if applicable\\ \hline
-	court & The current court, determined by the current week, provided by the java.util.Date class \\
-    \hline
-    \end{tabular}
-\end{center}
-\caption{Model Attributes}
-\end{table}
+This example is an excerpt from the TimetableContoller class. The logic determining the values has been removed. This is to highlight how attributes are added to the model from within the controller. This is the information that the JSP page will have access to once it has been displayed.
 
+The above code deals with the display of \textit{Monday} within the Timetable display page. In the \textit{c:forEach} tags, it loops through each value in the \textit{court.monday} list that has been passed to it by the controller. The size of this list is determined by the user when the timetable is created, and the number of slots per day is specified. If the current value being examined in the loop is equal to the value "Free Court", it will display a link to the Book Form mapping. This aspect of the Timetable Controller will check that a user has any remaining bookings left and respond as appropriate. In the event that the value in the list does not equal "Free Court", it will make a choice. If the currently authenticated user made the booking, it will display an option to remove their booking from the slot. Otherwise, it will give any other user an option to report the user as a "no show" should a user fail to show for a previously booked slot. \newline
 
+\begin{table}[H]
 \begin{lstlisting}
 <c:forEach var="row" varStatus="loop" items="${court.monday}">
 <c:choose>
@@ -310,11 +335,46 @@ method="POST">
 <input type="submit" value="Report User">
 </form></c:otherwise>
 \end{lstlisting}
+\caption{Code Showing Display of Timetable}
+\end{table}
 
-The above code deals with the display of \textit{Monday} within the Timetable display page. In the \textit{<c:forEach>} tags, it loops through each value in the \textit{court.monday} list that has been passed to it by the controller. The size of this list is determined by the user when the timetable is created, and the number of slots per day is specified. If the current value being examined in the loop is equal to the value "Free Court", it will display a link to the Book Form mapping. This aspect of the Timetable Controller will check that a user has any remaining bookings left and respond as appropriate. In the event that the value in the list does not equal "Free Court", it will make a choice. If the currently authenticated user made the booking, it will display an option to remove their booking from the slot. Otherwise, it will give any other user an option to report the user as a "no show" should a user fail to show for a previously booked slot. 
+(another example maybe? Can show how JSTL used to hide null attributes within the models to ensure page looks well)
  
 
 \subsection{External Code}
+
+There are two aspects of external code being used within this web application. The first is the CSS file that the site is using. This was a free template obtained from \href{http://skylinestemplates.blogspot.ie/2011/11/greefies-solution-xhtml-and-css.html}{Skylines Templates}
+
+This template was modified in order to fit in with certain aspects of the site, but the look, feel and images remain consistent with those of the template.
+
+The other code used in this application that was not original is the Google Maps script, visible in the Contact Us page of the web application. This is provided at \href{https://developers.google.com/maps/documentation/javascript/examples/map-simple}{Google Maps Simple Map Example} and is available to use freely. The code was slightly modified to change both the GPS co-ordinates and the initial zoom level of the map. The page is included in the Contact Us tile.
+\begin{table}[H]
+\begin{lstlisting}
+//code to include maps.jsp in contactus.jsp
+<div align="center"><%@include file="maps.jsp"%></div>
+
+//code of the maps.jsp change with modified Google javascript
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false">
+</script>
+<script>
+function initialize()
+{
+var mapProp = {
+center:new google.maps.LatLng(52.6565176,-8.5537577),
+zoom:18,
+mapTypeId:google.maps.MapTypeId.ROADMAP
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+\end{lstlisting}
+\caption{Code Showing Google Maps Integration}
+\end{table}
+
+Should show
+
 
 
 
