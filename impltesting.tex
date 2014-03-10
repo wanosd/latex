@@ -174,6 +174,8 @@ This code fragment from the \textit{Security-Context.xml} file displays how acce
 
 \subsection{Maven}
 
+Maven was used within the scope of this project to manage the dependencies required by the web application. Maven came preinstalled and configured within the Spring Tool Suite IDE. (how dependencies were added here)
+
 \subsection{Hibernate}
 
 \subsection{Apache Tiles}
@@ -230,7 +232,87 @@ The following examples shows the implementation within the configuration file. T
 
 JSTL was use within the application to manage how information was displayed. It was preferred, during the development of the application, that all of the logic be handled at the Controller level, and that the JSP pages would resolve the models passed to it into the view seen by the user. It was not desirable for the pages to contain JSP directives, or to use the implicit objects contained within JSP pages. 
 
-The main tags used within the application were the JSTL Core tags. 
+The main tags used within the application were the JSTL Core tags.  These tags allow the usage of conditional statements and the definition of parameters within the JSP page. In order to use this technology, the relevant jar must be made available in the build path or within the Maven dependencies of the project. The following statement must be included in all JSP pages that wish to make use of the tags also.\newline
+
+\begin{lstlisting}
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+\end{lstlisting}
+
+Within the application, the controller will create a model and pass it to the JSP page. The page uses the JSTL tags to manage and display relevant information from the model, and user actions based on the information contained within. The example below is taken from the Timetable display page from the application.\newline
+
+\begin{lstlisting}
+@RequestMapping(value = "/gotoCourt", method = RequestMethod.POST)
+public String chooseCourt(Model model, HttpServletRequest request) {
+	//abbreviated method to display court, logic removed
+	//highlighting the attributes within the model
+	model = addDateToTimetable(model, id));
+	model.addAttribute("series",timetableService.getById(id).getSeries());
+	model.addAttribute("name", SecurityContextHolder.getContext().getAuthentication().getName());
+	model.addAttribute("court", current);
+	model.addAttribute("realname", name);
+	model.addAttribute("bookings", left);
+	if (seriesMatch(courtID, nextCourt)) {
+		model.addAttribute("next", (current.getId() + 1));
+	}
+	if (seriesMatch(courtID, prevCourt)) {
+		model.addAttribute("prev", (current.getId() - 1));
+	}
+	return "court";
+}
+\end{lstlisting}	
+
+This example is an excerpt from the TimetableContoller class. The logic determining the values has been removed. This is to highlight how attributes are added to the model from within the controller. This is the information that the JSP page will have access to once it has been displayed.\newline
+\begin{table}
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+    Model Name & Summary \\ \hline
+    name & The username of the currently authenticated user  \\ \hline
+    realName & The real name of the currently authenticated user\\ \hline
+	bookings & The number of remaining bookings of the currently authenticated users\\ \hline
+	date & The current week of the year and the current date. Calculated using separate method.\\ \hline
+	next & The id number of the court following the current court, if applicable\\ \hline
+    prev & The id number of the court preceding the current court, if applicable\\ \hline
+	court & The current court, determined by the current week, provided by the java.util.Date class \\
+    \hline
+    \end{tabular}
+\end{center}
+\caption{Model Attributes}
+\end{table}
+
+
+\begin{lstlisting}
+<c:forEach var="row" varStatus="loop" items="${court.monday}">
+<c:choose>
+<c:when test='${row eq "Free Court"}'><tr>
+<td class="inner"><form action="${pageContext.request.contextPath}/bookCourt"
+method="POST">
+<input type="hidden" value="${loop.index}" name="position" />
+<input type="hidden" value="monday" name="day" /> 
+<input type="hidden" value="${court.id }" name="ttid" />
+<input type="submit" value="Book">
+</form></td></tr>
+</c:when>
+<c:otherwise><tr><td class="inner">${row}
+<c:choose>
+<c:when test="${name eq pageContext['request'].userPrincipal.name && row eq realname }">
+<form action="${pageContext.request.contextPath}/unbookCourt" method="POST">
+<input type="hidden" value="${loop.index}" name="position" />
+<input type="hidden" value="monday" name="day" /> 
+<input type="hidden" value="${court.id }" name="ttid" /> 
+<input type="submit" value="Unbook">
+</form></c:when>
+<c:otherwise>
+<form action="${pageContext.request.contextPath}/reportNoShow" method="POST">
+<input type="hidden" value="${row}" name="bookedUser" />
+<input type="hidden" value="monday" name="day" /> 
+<input type="hidden" value="${court.id }" name="ttid" /> 
+<input type="submit" value="Report User">
+</form></c:otherwise>
+\end{lstlisting}
+
+The above code deals with the display of \textit{Monday} within the Timetable display page. In the \textit{<c:forEach>} tags, it loops through each value in the \textit{court.monday} list that has been passed to it by the controller. The size of this list is determined by the user when the timetable is created, and the number of slots per day is specified. If the current value being examined in the loop is equal to the value "Free Court", it will display a link to the Book Form mapping. This aspect of the Timetable Controller will check that a user has any remaining bookings left and respond as appropriate. In the event that the value in the list does not equal "Free Court", it will make a choice. If the currently authenticated user made the booking, it will display an option to remove their booking from the slot. Otherwise, it will give any other user an option to report the user as a "no show" should a user fail to show for a previously booked slot. 
+
 
 \subsection{External Code}
 
