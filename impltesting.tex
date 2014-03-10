@@ -19,7 +19,7 @@ In order to begin implementation with the Spring MVC framework, there are a numb
 \caption{Spring Context File Defintion}
 \end{table}
 
-Of particular importance are the definition of the context parameters. In this project, there were three main context files.\newline
+Of particular importance are the definition of the context parameters. In this project, there were three main context files. These files are important, as they are the foundation for Springs dependency injection facilities. Dependency Injection is a software design pattern. It allows an application to be configured so that hard coded dependencies are removed and the necessary objects can be inserted during run time or at compile time. In Spring, this is done with the \textit{@Autowired} annotation. This instantiates a reference with a relevant bean, and removes having to use the \textit{new} keyword. \newline
 
 \begin{itemize}
 \item Data Access Object Context
@@ -185,7 +185,7 @@ This code fragment from the \textit{Security-Context.xml} file displays how acce
 
 \subsection{Maven}
 
-Maven was used within the scope of this project to manage the dependencies required by the web application. Maven came preinstalled and configured within the Spring Tool Suite IDE. Dependency Management can be handled one of two ways. Dependencies can be added using the GUI interface provided by an IDE, in this case, Spring Tool Suite. This GUI links to the repository located at http://mvnrepository.com/, and the user searches for the required files. Otherwise, the \textit{pom.xml} file may be edited manually. 
+Maven was used within the scope of this project to manage the dependencies required by the web application. Maven came pre-installed and configured within the Spring Tool Suite IDE. Dependency Management can be handled one of two ways. Dependencies can be added using the GUI interface provided by an IDE, in this case, Spring Tool Suite. This GUI links to the repository located at http://mvnrepository.com/, and the user searches for the required files. Otherwise, the \textit{pom.xml} file may be edited to define dependencies manually. Below is an example of the Apache Tiles v3.0.3 dependency.
 
 \begin{table}[H]
 \begin{lstlisting}
@@ -199,6 +199,157 @@ Maven was used within the scope of this project to manage the dependencies requi
 \end{table}
 
 \subsection{Hibernate}
+
+Hibernate requires a SessionFactory object in order to connect to the database. Spring provides a class in order to facilitate this requirement, AnnotationSessionFactoryBean. This bean must be defined and configured within the \textit{DAO-Context.xml} file explained previously. 
+
+\begin{table}[H]
+\begin{lstlisting}
+<bean id="sessionFactory"
+class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+<property name="dataSource" ref="dataSource"></property>
+<property name="hibernateProperties">
+	<props>
+		<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+	</props>
+</property>
+<property name="packagesToScan">
+	<list>
+		...
+	</list>
+</property>
+</bean>
+\end{lstlisting}
+\caption{Hibernate SessionFactory Configuration}
+\end{table}
+
+Once the SessionFactory is configured, it needs to be called from within the DAO classes in the web application. In this web application, the SessionFactoryBean was derived from the AnnotationSessionFactoryBean class, and needed to be configured via annotations. The annotation used in the DAO classes is \textit{@Autowired}. This allows the object to be set using Springs dependency injection facilities.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Autowired
+private SessionFactory sessionFactory;
+
+public Session session(){
+	logger.info("Session Factory returning current session.....");
+	return sessionFactory.getCurrentSession();
+}
+\end{lstlisting}
+\caption{Declarion of SessionFactory in DAO Class}
+\end{table}
+
+Once this SessionFactory object is configured within the DAO class, it can be used to perform queries on the database. There are four operations that this application is concerned with: \textit{Create}, \textit{Read}, \textit{Update} and \textit{Delete}, commonly known as CRUD. As discussed earlier, Hibernate is an Object Relational Mapping persistence solution. In order to ensure the correct mapping of classes to database schema, some preparatory work needs to be undertaken upon the entity classes.
+
+\subsection{Class Configuration}
+
+When defining the class, it is necessary to do one of two things with the class attributes. The attribute names much match both the type and name of the database schema, or they attributes must be annotated with the column name within the same schema. The number of attributes within a class must also not be less than the number of attributes on the database table. If an attribute is an auto-incrementing primary key, it needs to be stated within the class. It is also important to define getters and setters for each attribute, as these will be called by Hibernate without the application having to explicitly use them. 
+
+\begin{table}[H]
+\begin{lstlisting}
+@Component
+@Entity
+@Table(name="users")
+public class User {
+	@Id
+	@GeneratedValue
+	int id;
+	
+	@NotNull(groups={PersistenceValidationGroup.class, FormValidationGroup.class})
+	@Pattern(regexp=".+\\@.+\\..+", message="This does not appear to be a valid email address", groups={PersistenceValidationGroup.class, FormValidationGroup.class})
+	@Column(name="username")
+	String username;
+	
+	@Size(min=5, max=45, message="Named must be between 5 and 45 characters",groups={PersistenceValidationGroup.class, FormValidationGroup.class})
+	@Column(name="name")
+	String name;
+	
+	@Column(name="password")
+	@Size(min=5, max=15, message="Password must be between 5 and 15 characters", groups=FormValidationGroup.class)
+	String password;
+	
+	// rest of class truncated, getters and setters defined
+\end{lstlisting}
+\caption{Hibernate Entity Class Configuration}
+\end{table}
+	
+Once the entity classes are configured correction, the SessionFactory object can be used to perform the CRUD operations upon the database.
+	
+\subsubsection{Create}
+
+In order to create an entry in the database, an object is passed to the save() method within the SessionFactory object. Due to the mapping defined within the entity class, there is no need to specify parameters.
+
+\begin{table}[H]
+\begin{lstlisting}
+public void createNewEvent(I_Event e){
+	logger.info("Creating new event....");
+	session().save(e);
+}
+\end{lstlisting}
+\caption{Hibernate Create}
+\end{table}
+
+\subsubsection{Read}
+
+Hibernate can return an individual object, or a list of those objects, to the Service class. Restrictions can also be applied to retrieve objects based on certain values within the attributes. This is specified using Hibernate Query Language (HQL).
+
+The below example shows how a list of all User objects would be returned to the Service layer. The criteria, such as table name and column names, are specified within the User class. 
+
+\begin{table}[H]
+\begin{lstlisting}
+public List<User> getAllUsers() {
+	logger.info("Selecting All Members....(Hibernate)");
+	return session().createQuery("from User").list();
+}
+\end{lstlisting}
+\caption{Hibernate Retrieve All Objects }
+\end{table}
+
+In order to retrieve a unique object, Hibernate provides a Criteria interface for representing a query against an entity class, as outlined below. This will throw an error if there is more than one unique result. 
+
+\begin{table}[H]
+\begin{lstlisting}
+public User getUserByName(String name) {
+	Criteria crit = session().createCriteria(User.class);
+	crit.add(Restrictions.eq("name", name)); 
+	User user = (User) crit.uniqueResult();
+	return user;
+	}
+\end{lstlisting}
+\caption{Hibernate Retrieve Specific Objects }
+\end{table}
+
+It is also possible to specify attributes within the SessionFactory query using HQL. 
+
+\begin{table}[H]
+\begin{lstlisting}
+public List<User> getCommittee() {
+	logger.info("Selecting All Admin Members....");
+	return session().createQuery("from User where authority = 'ROLE_COMMITTEE'").list();
+}
+\end{lstlisting}
+\caption{Hibernate Retrieve Subset Objects using HQL }
+\end{table}
+
+\subsubsection{Update}
+
+Update operations are identical to Save operations in Hibernate. An object is passed to the SessionFactory update() method, and Hibernate will save any changes to the object in the database.
+
+\begin{table}[H]
+\begin{lstlisting}
+public void disableMember(String username) {
+	Criteria crit = session().createCriteria(User.class);
+	crit.add(Restrictions.eq("username", username)); // Restrictions.idEq for primary key integer
+	User user = (User) crit.uniqueResult();
+	user.setEnabled(false);
+	session().update(user);
+	logger.info("User Disabled");
+	}
+\end{lstlisting}
+\caption{Hibernate Update Object }
+\end{table}
+
+\subsubsection{Delete}
+
+\subsubsection{Comparison with JDBC Queries}
 
 \subsection{Apache Tiles}
 
@@ -347,7 +498,8 @@ There are two aspects of external code being used within this web application. T
 
 This template was modified in order to fit in with certain aspects of the site, but the look, feel and images remain consistent with those of the template.
 
-The other code used in this application that was not original is the Google Maps script, visible in the Contact Us page of the web application. This is provided at \href{https://developers.google.com/maps/documentation/javascript/examples/map-simple}{Google Maps Simple Map Example} and is available to use freely. The code was slightly modified to change both the GPS co-ordinates and the initial zoom level of the map. The page is included in the Contact Us tile.
+The other code used in this application that was not original is the Google Maps script, visible in the Contact Us page of the web application. This is provided at \href{https://developers.google.com/maps/documentation/javascript/examples/map-simple}{Google Maps Simple Map Example} and is available to use freely. The code was slightly modified to change both the GPS co-ordinates and the initial zoom level of the map. The page is included in the Contact Us tile.\newline
+
 \begin{table}[H]
 \begin{lstlisting}
 //code to include maps.jsp in contactus.jsp
@@ -373,7 +525,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 \caption{Code Showing Google Maps Integration}
 \end{table}
 
-Should show
 
 
 
