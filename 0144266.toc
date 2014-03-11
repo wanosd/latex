@@ -36,18 +36,19 @@
 \contentsline {subsubsection}{Update}{24}{section*.6}
 \contentsline {subsubsection}{Delete}{25}{section*.7}
 \contentsline {subsubsection}{Comparison with JDBC Queries}{25}{section*.8}
-\contentsline {subsection}{\numberline {5.1.6}Apache Tiles}{26}{subsection.5.1.6}
-\contentsline {subsection}{\numberline {5.1.7}Services}{28}{subsection.5.1.7}
-\contentsline {subsection}{\numberline {5.1.8}Logging}{28}{subsection.5.1.8}
-\contentsline {subsection}{\numberline {5.1.9}JSP Standard Tag Libraries}{30}{subsection.5.1.9}
-\contentsline {subsection}{\numberline {5.1.10}External Code}{33}{subsection.5.1.10}
-\contentsline {subsection}{\numberline {5.1.11}Application Breakdown}{35}{subsection.5.1.11}
-\contentsline {subsubsection}{Package: beans}{35}{section*.9}
-\contentsline {subsubsection}{Package: controllers}{35}{section*.10}
-\contentsline {subsubsection}{Package: dao}{36}{section*.11}
-\contentsline {subsubsection}{Package: email}{36}{section*.12}
-\contentsline {section}{\numberline {5.2}Testing}{36}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}JUnit Testing}{36}{subsection.5.2.1}
-\contentsline {chapter}{\numberline {6}Software Quality}{39}{chapter.6}
-\contentsline {chapter}{\numberline {7}Evaluation}{40}{chapter.7}
-\contentsline {chapter}{\numberline {8}Conclusions}{41}{chapter.8}
+\contentsline {subsubsection}{Timetable Hibernate Structure}{26}{section*.9}
+\contentsline {subsection}{\numberline {5.1.6}Apache Tiles}{29}{subsection.5.1.6}
+\contentsline {subsection}{\numberline {5.1.7}Services}{30}{subsection.5.1.7}
+\contentsline {subsection}{\numberline {5.1.8}Logging}{30}{subsection.5.1.8}
+\contentsline {subsection}{\numberline {5.1.9}JSP Standard Tag Libraries}{32}{subsection.5.1.9}
+\contentsline {subsection}{\numberline {5.1.10}External Code}{35}{subsection.5.1.10}
+\contentsline {subsection}{\numberline {5.1.11}Application Breakdown}{37}{subsection.5.1.11}
+\contentsline {subsubsection}{Package: beans}{37}{section*.10}
+\contentsline {subsubsection}{Package: controllers}{37}{section*.11}
+\contentsline {subsubsection}{Package: dao}{38}{section*.12}
+\contentsline {subsubsection}{Package: email}{38}{section*.13}
+\contentsline {section}{\numberline {5.2}Testing}{38}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}JUnit Testing}{38}{subsection.5.2.1}
+\contentsline {chapter}{\numberline {6}Software Quality}{41}{chapter.6}
+\contentsline {chapter}{\numberline {7}Evaluation}{42}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusions}{43}{chapter.8}

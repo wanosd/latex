@@ -200,6 +200,8 @@ Maven was used within the scope of this project to manage the dependencies requi
 \caption{Dependency XML Structure for Maven}
 \end{table}
 
+Maven also provided the archetype, or structure, for the application. It defined the folder structure for both the production and tests environments. It also sets up JUnit within the project.
+
 \subsection{Hibernate}
 
 Hibernate requires a SessionFactory object in order to connect to the database. Spring provides a class in order to facilitate this requirement, AnnotationSessionFactoryBean. This bean must be defined and configured within the \textit{DAO-Context.xml} file explained previously. 
@@ -411,15 +413,97 @@ public boolean createUserJDBC(User user) {
 
 \subsubsection{Timetable Hibernate Structure}
 
-One of the most difficult features to implement within the application was the Timetable. While the goal was to create a timetable suitable for Monaleen GAA Tennis Club, it was desirable that the timetable retain the ability to have some dynamic features, not pre-set features that were not user definable. One issue this raised was how to handle a varying number of slots in each day. If a user could defined 10 slots a day, how would be store this in such a way that a user could also define a timetable with 20 slots a day. 
+One of the most difficult features to implement within the application was the Timetable. While the goal was to create a timetable suitable for Monaleen GAA Tennis Club, it was desirable that the timetable retain the ability to have some dynamic features, not pre-set features that were not user definable. One issue this raised was how to handle a varying number of slots in each day. If a user could defined 10 slots a day, how would be store this in such a way that a user could also define a timetable with 20 slots a day. Hibernate was able to facilitate this design with considerably less input from a developer.
 
+The solution implemented in this application was to use List objects to store the values for each day. There would be seven lists in the Timetable class, one for each day.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Entity
+@Component
+@Table(name = "timetable")
+public class MonaleenTTV1 implements Timetable {
+	@Id
+	@GeneratedValue
+	private int id;
+	/**
+	* Other Attributes Here
+	**/
+	
+	@ElementCollection
+	@CollectionTable (name = "monday", joinColumns=@JoinColumn(name="id"))
+	private List<String> monday;
+	
+	@ElementCollection
+	@CollectionTable (name = "tuesday", joinColumns=@JoinColumn(name="id"))
+	private List<String> tuesday;
+	
+	@ElementCollection
+	@CollectionTable (name = "wednesday", joinColumns=@JoinColumn(name="id"))
+	private List<String> wednesday;
+	
+	@ElementCollection
+	@CollectionTable (name = "thursday", joinColumns=@JoinColumn(name="id"))
+	private List<String> thursday;
+	
+	@ElementCollection
+	@CollectionTable (name = "friday", joinColumns=@JoinColumn(name="id"))
+	private List<String> friday;
+	
+	@ElementCollection
+	@CollectionTable (name = "saturday", joinColumns=@JoinColumn(name="id"))
+	private List<String> saturday;
+	
+	@ElementCollection
+	@CollectionTable (name = "sunday", joinColumns=@JoinColumn(name="id"))
+	private List<String> sunday;
+	
+	//getters and setters
+}
+\end{lstlisting}
+\caption{Timetable Class List Configuration}
+\end{table}
+
+This results in the Timetable object being made up of 8 database tables. The core of the class is stored in the 'Timetable' database table. This table contains the primary keys and all other attributes, such as name, number of slots, timetable series. The seven other tables each represent a collection within the Timetable class. Each of these tables has a non unique, foreign key that ties it back to the central table. For example, if we were to create a Timetable with 10 slots, with the primary key being 1, each of the collection tables would have 10 entries. Each of these entries would have an id of 1, to match the primary key in the core table, plus a value, such as 'Free Court'. The position in the table corresponds to the position within the collection class. 
+
+The following example shows a Timetable configured with two slots. Upon creation, a series is created for each timetable. Each series contains 52 timetables, one for each week. The currently displayed timetable is determined by its position in the series in relation to the current week of the year, as shown by the Java Calendar class. The 'preview' attribute determines how far ahead the application will display the next number of timetables. In this example, the next three weeks of timetables are available for viewing and booking. This allows the administrator to dynamically restrict how far in advance users can book slots.
+
+\begin{table}
+    \begin{tabular}{| l | l | l | l | l | l | l | l | p{.8cm} |}
+    \hline
+    pid & name & slots & startTime & endTime & enabled & preview & series & total\\ \hline
+    1 & Court One Week 1 & 2 & 8 & 22 & 1 & 3 & 1 & 52\\ \hline
+	2 & Court One Week 2 & 2 & 8 & 22 & 0 & 3 & 1 & 52\\ \hline
+	3 & Court One Week 3 & 2 & 8 & 22 & 0 & 3 & 1 & 52\\ \hline
+	4 & Court One Week 4 & 2 & 8 & 22 & 0 & 3 & 1 & 52\\ \hline
+    \end{tabular}
+	\caption{Timetable Core Database Table}
+\end{table}
+
+\begin{table}
+\begin {center}
+    \begin{tabular}{| l | l | p{.8cm} |}
+	\hline
+	pid & monday \\ \hline
+	1 & Free Court \\ \hline
+	1 & Free Court \\ \hline
+	2 & Tournament \\ \hline
+	2 & Free Court \\ \hline
+	3 & User Booking \\ \hline
+	3 & Free Court \\ \hline
+	4 & Training \\ \hline
+	4 & Free Court \\ \hline
+	\end{tabular}
+	\end{center}
+	\caption{Timetable Storage Table for Monday Collection}
+\end{table}
 
 \subsection{Apache Tiles}
 
-Apache Tiles is configured within the web application core xml file. There are two classes that the configuration is concerned with: TilesViewResolver and TileConfigurer. Both are declared as beans within the configuration file and automatically created when the application is launched. The TilesConfigurer object takes one parameter: a location of the template that the default tile, and its subsequent children, will use. \newline
+Apache Tiles is configured within the web application core XML file. There are two classes that the configuration is concerned with: TilesViewResolver and TileConfigurer. Both are declared as beans within the configuration file and automatically created when the application is launched. The TilesConfigurer object takes one parameter: a location of the template that the default tile, and its subsequent children, will use. \newline
 
+\begin{table}[H]
 \begin{lstlisting}
-
 <bean id="tilesViewResolver"
 	class="org.springframework.web.servlet.view.tiles2.TilesViewResolver">
 </bean>
@@ -433,6 +517,8 @@ Apache Tiles is configured within the web application core xml file. There are t
 	</property>
 </bean>
 \end{lstlisting}
+\caption{Apache Tiles Configuration}
+\end{table}
 
 The default tile consists of a number of sections identified by a specific tag. These tags correspond to values within the tile layout configuration file. Using a version of inheritance, these can be overwritten and replaced with other pages in order to change the content of a page, while maintaining cohesion across the design of the application. 
 
