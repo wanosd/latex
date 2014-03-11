@@ -3,32 +3,37 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Spring Context File Defintion}}{11}{table.5.1}
-\contentsline {table}{\numberline {5.2}{\ignorespaces DAO Context Configuration}}{12}{table.5.2}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Service Context Configuration}}{12}{table.5.3}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Security Roles within the Web Application}}{14}{table.5.4}
-\contentsline {table}{\numberline {5.5}{\ignorespaces User Registration Form}}{16}{table.5.5}
-\contentsline {table}{\numberline {5.6}{\ignorespaces Dependency XML Structure for Maven}}{18}{table.5.6}
-\contentsline {table}{\numberline {5.7}{\ignorespaces Hibernate SessionFactory Configuration}}{19}{table.5.7}
-\contentsline {table}{\numberline {5.8}{\ignorespaces Declarion of SessionFactory in DAO Class}}{19}{table.5.8}
-\contentsline {table}{\numberline {5.9}{\ignorespaces Hibernate Entity Class Configuration}}{20}{table.5.9}
-\contentsline {table}{\numberline {5.10}{\ignorespaces Hibernate Create}}{21}{table.5.10}
-\contentsline {table}{\numberline {5.11}{\ignorespaces Hibernate Retrieve All Objects }}{21}{table.5.11}
-\contentsline {table}{\numberline {5.12}{\ignorespaces Hibernate Retrieve Specific Objects }}{22}{table.5.12}
-\contentsline {table}{\numberline {5.13}{\ignorespaces Hibernate Retrieve Subset Objects using HQL }}{22}{table.5.13}
-\contentsline {table}{\numberline {5.14}{\ignorespaces Hibernate Update Object }}{22}{table.5.14}
-\contentsline {table}{\numberline {5.15}{\ignorespaces Hibernate Update Object }}{23}{table.5.15}
-\contentsline {table}{\numberline {5.16}{\ignorespaces JDBC Create User Query }}{24}{table.5.16}
-\contentsline {table}{\numberline {5.17}{\ignorespaces Apache Tiles Configuration}}{26}{table.5.17}
-\contentsline {table}{\numberline {5.18}{\ignorespaces Log Types}}{27}{table.5.18}
-\contentsline {table}{\numberline {5.19}{\ignorespaces Log4j Configuration}}{27}{table.5.19}
-\contentsline {table}{\numberline {5.20}{\ignorespaces Logger Usage within UserDAO.class}}{28}{table.5.20}
-\contentsline {table}{\numberline {5.21}{\ignorespaces Model Attributes}}{29}{table.5.21}
-\contentsline {table}{\numberline {5.22}{\ignorespaces Code Showing Display of Timetable}}{31}{table.5.22}
-\contentsline {table}{\numberline {5.23}{\ignorespaces Code Showing Google Maps Integration}}{32}{table.5.23}
-\contentsline {table}{\numberline {5.24}{\ignorespaces beans package}}{33}{table.5.24}
-\contentsline {table}{\numberline {5.25}{\ignorespaces controllers package}}{33}{table.5.25}
-\contentsline {table}{\numberline {5.26}{\ignorespaces dao package}}{34}{table.5.26}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Spring Context File Defintion}}{13}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces DAO Context Configuration}}{14}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Service Context Configuration}}{14}{table.5.3}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Security Roles within the Web Application}}{16}{table.5.4}
+\contentsline {table}{\numberline {5.5}{\ignorespaces User Registration Form}}{18}{table.5.5}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Dependency XML Structure for Maven}}{20}{table.5.6}
+\contentsline {table}{\numberline {5.7}{\ignorespaces Hibernate SessionFactory Configuration}}{21}{table.5.7}
+\contentsline {table}{\numberline {5.8}{\ignorespaces Declarion of SessionFactory in DAO Class}}{21}{table.5.8}
+\contentsline {table}{\numberline {5.9}{\ignorespaces Hibernate Entity Class Configuration}}{22}{table.5.9}
+\contentsline {table}{\numberline {5.10}{\ignorespaces Hibernate Create}}{23}{table.5.10}
+\contentsline {table}{\numberline {5.11}{\ignorespaces Hibernate Retrieve All Objects }}{23}{table.5.11}
+\contentsline {table}{\numberline {5.12}{\ignorespaces Hibernate Retrieve Specific Objects }}{24}{table.5.12}
+\contentsline {table}{\numberline {5.13}{\ignorespaces Hibernate Retrieve Subset Objects using HQL }}{24}{table.5.13}
+\contentsline {table}{\numberline {5.14}{\ignorespaces Hibernate Update Object }}{24}{table.5.14}
+\contentsline {table}{\numberline {5.15}{\ignorespaces Hibernate Update Object }}{25}{table.5.15}
+\contentsline {table}{\numberline {5.16}{\ignorespaces JDBC Create User Query }}{26}{table.5.16}
+\contentsline {table}{\numberline {5.17}{\ignorespaces Apache Tiles Configuration}}{28}{table.5.17}
+\contentsline {table}{\numberline {5.18}{\ignorespaces Log Types}}{29}{table.5.18}
+\contentsline {table}{\numberline {5.19}{\ignorespaces Log4j Configuration}}{29}{table.5.19}
+\contentsline {table}{\numberline {5.20}{\ignorespaces Logger Usage within UserDAO.class}}{30}{table.5.20}
+\contentsline {table}{\numberline {5.21}{\ignorespaces Model Attributes}}{31}{table.5.21}
+\contentsline {table}{\numberline {5.22}{\ignorespaces Code Showing Display of Timetable}}{33}{table.5.22}
+\contentsline {table}{\numberline {5.23}{\ignorespaces Code Showing Google Maps Integration}}{34}{table.5.23}
+\contentsline {table}{\numberline {5.24}{\ignorespaces beans package}}{35}{table.5.24}
+\contentsline {table}{\numberline {5.25}{\ignorespaces controllers package}}{35}{table.5.25}
+\contentsline {table}{\numberline {5.26}{\ignorespaces dao package}}{36}{table.5.26}
+\contentsline {table}{\numberline {5.27}{\ignorespaces email package}}{36}{table.5.27}
+\contentsline {table}{\numberline {5.28}{\ignorespaces JUnit Test Example}}{37}{table.5.28}
+\contentsline {table}{\numberline {5.29}{\ignorespaces JUnit @Before Test Configuration}}{37}{table.5.29}
+\contentsline {table}{\numberline {5.30}{\ignorespaces JUnit UserDAO Exists() Test}}{38}{table.5.30}
+\contentsline {table}{\numberline {5.31}{\ignorespaces JUnit Create and Size Test}}{38}{table.5.31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

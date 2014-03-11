@@ -709,7 +709,98 @@ The following section is a breakdown of the application into its various package
 \caption{dao package}
 \end{table}
 
+\subsubsection{Package: email}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | p{5cm} |}
+    \hline
+    File Name & File Type & Function\\ \hline
+    Email & JAVA & Create and Send Email Message\\ \hline
+	IEmail & JAVA & Interface for Email class\\ \hline	
+    \end{tabular}
+\end{center}
+\caption{email package}
+\end{table}
 
+
+\section{Testing}
+
+\subsection{JUnit Testing}
+
+The primary method of testing was implemented using JUnit. A Test Suite of JUnit tests were prepared to test the key features of the application. A separate test database was constructed. It was important to ensure that the testing environment was using the same context files as the production environment. The test class had to be annotated to enforce this. While the context files were the same, the DataSource file has changed as a different database is being using in this environment.
+
+
+\begin{table}[H]
+\begin{lstlisting}
+@ActiveProfiles("dev")
+@ContextConfiguration(locations = { "file:src/main/java/beans/dao-context.xml",
+"file:src/main/java/beans/security-context.xml",
+"classpath:test/config/datasource.xml" })
+@RunWith(SpringJUnit4ClassRunner.class)
+public class HibernateTests {
+	
+	@Autowired
+	private UserDAO userDAO;
+	
+	@Autowired
+	private TournamentDAO tournamentDAO;
+	
+	@Autowired
+	private DataSource dataSource;
+	
+	//Class truncated 
+}
+
+\end{lstlisting}
+\caption{JUnit Test Example}
+\end{table}
+
+The database is then initialised to ensure the tests are being run against the same database, and that repeat tests are consistent.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Before
+public void init(){
+	JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+	jdbc.execute("delete from users"); 
+}
+\end{lstlisting}
+\caption{JUnit @Before Test Configuration}
+\end{table}
+
+In these example tests, the UserDAO is being tested to ensure that it returns true when the exists() method is called on it. This is important within the scope of the application to ensure that primary keys are not duplicated. The method is annotated with \textit{@Test}. The methods \textit{assertTrue} and \textit{assertFalse} expect a return value of true and false respectively. They take two parameters: an error message and a boolean value, or a method that returns a boolean value. In the \textit{assertTrue} method below, the UserDAO will return true if the user exists. In the event that the user does not exist, it will fail the test and return the message "User should exist".\newline 
+
+\begin{table}[H]
+\begin{lstlisting}
+@Test
+public void testExists(){
+	userDAO.createUser(user1);
+	assertTrue("User should exist", userDAO.exists(user1.getUsername()));
+	assertFalse("User should not exist", userDAO.exists("jkljfksakfjahghdsopjclkhfkjafhkjdshFHajhgouwe"));
+}
+\end{lstlisting}
+\caption{JUnit UserDAO Exists() Test}
+\end{table}
+
+Another test with the UserDAO was to ensure that users were being saved correctly. In this example, users are being created and saved to the database. The method \textit{assertEquals} checks two interger values and returns an error message if they do not match.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Test 
+public void testCreateRetrieve(){
+	userDAO.createUser(user1);
+	List<User> users1 = userDAO.getAllUsers();
+	assertEquals("One user should have been created and retrieved", 1, users1.size());
+	assertEquals("Inserted user should match retrieved", user1, users1.get(0));
+	userDAO.createUser(user2);
+	userDAO.createUser(user3);
+	userDAO.createUser(user4);
+	List<User> users2 = userDAO.getAllUsers();
+	assertEquals("Number of users should be four", 4, users2.size());
+}
+\end{lstlisting}
+\caption{JUnit Create and Size Test}
+\end{table}
 
 
 
