@@ -3,41 +3,53 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Spring Context File Defintion}}{13}{table.5.1}
-\contentsline {table}{\numberline {5.2}{\ignorespaces DAO Context Configuration}}{14}{table.5.2}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Service Context Configuration}}{14}{table.5.3}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Security Roles within the Web Application}}{16}{table.5.4}
-\contentsline {table}{\numberline {5.5}{\ignorespaces User Registration Form}}{18}{table.5.5}
-\contentsline {table}{\numberline {5.6}{\ignorespaces Dependency XML Structure for Maven}}{20}{table.5.6}
-\contentsline {table}{\numberline {5.7}{\ignorespaces Hibernate SessionFactory Configuration}}{21}{table.5.7}
-\contentsline {table}{\numberline {5.8}{\ignorespaces Declarion of SessionFactory in DAO Class}}{21}{table.5.8}
-\contentsline {table}{\numberline {5.9}{\ignorespaces Hibernate Entity Class Configuration}}{22}{table.5.9}
-\contentsline {table}{\numberline {5.10}{\ignorespaces Hibernate Create}}{23}{table.5.10}
-\contentsline {table}{\numberline {5.11}{\ignorespaces Hibernate Retrieve All Objects }}{23}{table.5.11}
-\contentsline {table}{\numberline {5.12}{\ignorespaces Hibernate Retrieve Specific Objects }}{24}{table.5.12}
-\contentsline {table}{\numberline {5.13}{\ignorespaces Hibernate Retrieve Subset Objects using HQL }}{24}{table.5.13}
-\contentsline {table}{\numberline {5.14}{\ignorespaces Hibernate Update Object }}{24}{table.5.14}
-\contentsline {table}{\numberline {5.15}{\ignorespaces Hibernate Update Object }}{25}{table.5.15}
-\contentsline {table}{\numberline {5.16}{\ignorespaces JDBC Create User Query }}{26}{table.5.16}
-\contentsline {table}{\numberline {5.17}{\ignorespaces Timetable Class List Configuration}}{27}{table.5.17}
-\contentsline {table}{\numberline {5.18}{\ignorespaces Timetable Core Database Table}}{28}{table.5.18}
-\contentsline {table}{\numberline {5.19}{\ignorespaces Timetable Storage Table for Monday Collection}}{28}{table.5.19}
-\contentsline {table}{\numberline {5.20}{\ignorespaces Apache Tiles Configuration}}{29}{table.5.20}
-\contentsline {table}{\numberline {5.21}{\ignorespaces Apache Tiles Configuration}}{30}{table.5.21}
-\contentsline {table}{\numberline {5.22}{\ignorespaces Log Types}}{31}{table.5.22}
-\contentsline {table}{\numberline {5.23}{\ignorespaces Log4j Configuration}}{31}{table.5.23}
-\contentsline {table}{\numberline {5.24}{\ignorespaces Logger Usage within UserDAO.class}}{32}{table.5.24}
-\contentsline {table}{\numberline {5.25}{\ignorespaces Model Attributes}}{33}{table.5.25}
-\contentsline {table}{\numberline {5.26}{\ignorespaces Code Showing Display of Timetable}}{35}{table.5.26}
-\contentsline {table}{\numberline {5.27}{\ignorespaces Code Showing Google Maps Integration}}{36}{table.5.27}
-\contentsline {table}{\numberline {5.28}{\ignorespaces beans package}}{37}{table.5.28}
-\contentsline {table}{\numberline {5.29}{\ignorespaces controllers package}}{37}{table.5.29}
-\contentsline {table}{\numberline {5.30}{\ignorespaces dao package}}{38}{table.5.30}
-\contentsline {table}{\numberline {5.31}{\ignorespaces email package}}{38}{table.5.31}
-\contentsline {table}{\numberline {5.32}{\ignorespaces JUnit Test Example}}{39}{table.5.32}
-\contentsline {table}{\numberline {5.33}{\ignorespaces JUnit @Before Test Configuration}}{39}{table.5.33}
-\contentsline {table}{\numberline {5.34}{\ignorespaces JUnit UserDAO Exists() Test}}{40}{table.5.34}
-\contentsline {table}{\numberline {5.35}{\ignorespaces JUnit Create and Size Test}}{40}{table.5.35}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Spring Context File Defintion}}{14}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces DAO Context Configuration}}{15}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Service Context Configuration}}{15}{table.5.3}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Security Roles within the Web Application}}{17}{table.5.4}
+\contentsline {table}{\numberline {5.5}{\ignorespaces User Registration Form}}{19}{table.5.5}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Dependency XML Structure for Maven}}{21}{table.5.6}
+\contentsline {table}{\numberline {5.7}{\ignorespaces Hibernate SessionFactory Configuration}}{22}{table.5.7}
+\contentsline {table}{\numberline {5.8}{\ignorespaces Declarion of SessionFactory in DAO Class}}{22}{table.5.8}
+\contentsline {table}{\numberline {5.9}{\ignorespaces Hibernate Entity Class Configuration}}{23}{table.5.9}
+\contentsline {table}{\numberline {5.10}{\ignorespaces Hibernate Create}}{24}{table.5.10}
+\contentsline {table}{\numberline {5.11}{\ignorespaces Hibernate Retrieve All Objects }}{24}{table.5.11}
+\contentsline {table}{\numberline {5.12}{\ignorespaces Hibernate Retrieve Specific Objects }}{25}{table.5.12}
+\contentsline {table}{\numberline {5.13}{\ignorespaces Hibernate Retrieve Subset Objects using HQL }}{25}{table.5.13}
+\contentsline {table}{\numberline {5.14}{\ignorespaces Hibernate Update Object }}{25}{table.5.14}
+\contentsline {table}{\numberline {5.15}{\ignorespaces Hibernate Update Object }}{26}{table.5.15}
+\contentsline {table}{\numberline {5.16}{\ignorespaces JDBC Create User Query }}{27}{table.5.16}
+\contentsline {table}{\numberline {5.17}{\ignorespaces Timetable Class List Configuration}}{28}{table.5.17}
+\contentsline {table}{\numberline {5.18}{\ignorespaces Timetable Core Database Table}}{29}{table.5.18}
+\contentsline {table}{\numberline {5.19}{\ignorespaces Timetable Storage Table for Monday Collection}}{29}{table.5.19}
+\contentsline {table}{\numberline {5.20}{\ignorespaces Apache Tiles Configuration}}{30}{table.5.20}
+\contentsline {table}{\numberline {5.21}{\ignorespaces Apache Tiles Configuration}}{31}{table.5.21}
+\contentsline {table}{\numberline {5.22}{\ignorespaces Log Types}}{32}{table.5.22}
+\contentsline {table}{\numberline {5.23}{\ignorespaces Log4j Configuration}}{32}{table.5.23}
+\contentsline {table}{\numberline {5.24}{\ignorespaces Logger Usage within UserDAO.class}}{33}{table.5.24}
+\contentsline {table}{\numberline {5.25}{\ignorespaces Model Attributes}}{34}{table.5.25}
+\contentsline {table}{\numberline {5.26}{\ignorespaces Code Showing Display of Timetable}}{36}{table.5.26}
+\contentsline {table}{\numberline {5.27}{\ignorespaces Code Showing Google Maps Integration}}{37}{table.5.27}
+\contentsline {table}{\numberline {5.28}{\ignorespaces JUnit Test Example}}{38}{table.5.28}
+\contentsline {table}{\numberline {5.29}{\ignorespaces JUnit @Before Test Configuration}}{38}{table.5.29}
+\contentsline {table}{\numberline {5.30}{\ignorespaces JUnit UserDAO Exists() Test}}{39}{table.5.30}
+\contentsline {table}{\numberline {5.31}{\ignorespaces JUnit Create and Size Test}}{39}{table.5.31}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces beans package}}{40}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces controllers package}}{41}{table.6.2}
+\contentsline {table}{\numberline {6.3}{\ignorespaces dao package}}{41}{table.6.3}
+\contentsline {table}{\numberline {6.4}{\ignorespaces email package}}{42}{table.6.4}
+\contentsline {table}{\numberline {6.5}{\ignorespaces event package}}{42}{table.6.5}
+\contentsline {table}{\numberline {6.6}{\ignorespaces events.tournament package}}{42}{table.6.6}
+\contentsline {table}{\numberline {6.7}{\ignorespaces log package}}{42}{table.6.7}
+\contentsline {table}{\numberline {6.8}{\ignorespaces news package}}{43}{table.6.8}
+\contentsline {table}{\numberline {6.9}{\ignorespaces properties package}}{43}{table.6.9}
+\contentsline {table}{\numberline {6.10}{\ignorespaces reports package}}{43}{table.6.10}
+\contentsline {table}{\numberline {6.11}{\ignorespaces service package}}{44}{table.6.11}
+\contentsline {table}{\numberline {6.12}{\ignorespaces timetable package}}{44}{table.6.12}
+\contentsline {table}{\numberline {6.13}{\ignorespaces reports package}}{45}{table.6.13}
+\contentsline {table}{\numberline {6.14}{\ignorespaces struts layout}}{45}{table.6.14}
+\contentsline {table}{\numberline {6.15}{\ignorespaces templates layout}}{45}{table.6.15}
+\contentsline {table}{\numberline {6.16}{\ignorespaces templates layout}}{47}{table.6.16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
