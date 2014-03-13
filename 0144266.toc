@@ -42,10 +42,10 @@
 \contentsline {subsection}{\numberline {4.1.6}Look and Feel}{13}{subsection.4.1.6}
 \contentsline {chapter}{\numberline {5}Implementation and Testing}{14}{chapter.5}
 \contentsline {section}{\numberline {5.1}Implemention}{14}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Spring}{14}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Security}{17}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Maven}{21}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Hibernate}{21}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.1}Implmention of the Spring Framework}{14}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Security Specification within Spring MVC}{17}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Maven Integration with Spring Tool Suite}{21}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Hibernate Configuration}{21}{subsection.5.1.4}
 \contentsline {subsection}{\numberline {5.1.5}Class Configuration}{23}{subsection.5.1.5}
 \contentsline {subsubsection}{Create}{24}{section*.11}
 \contentsline {subsubsection}{Read}{24}{section*.12}
@@ -53,37 +53,40 @@
 \contentsline {subsubsection}{Delete}{26}{section*.14}
 \contentsline {subsubsection}{Comparison with JDBC Queries}{26}{section*.15}
 \contentsline {subsubsection}{Timetable Hibernate Structure}{27}{section*.16}
-\contentsline {subsection}{\numberline {5.1.6}Apache Tiles}{30}{subsection.5.1.6}
+\contentsline {subsection}{\numberline {5.1.6}Apache Tiles Configuration and Implementation}{30}{subsection.5.1.6}
 \contentsline {subsection}{\numberline {5.1.7}Services}{31}{subsection.5.1.7}
-\contentsline {subsection}{\numberline {5.1.8}Logging}{31}{subsection.5.1.8}
-\contentsline {subsection}{\numberline {5.1.9}JSP Standard Tag Libraries}{33}{subsection.5.1.9}
-\contentsline {subsection}{\numberline {5.1.10}External Code}{36}{subsection.5.1.10}
-\contentsline {section}{\numberline {5.2}Testing}{38}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}JUnit Testing}{38}{subsection.5.2.1}
-\contentsline {chapter}{\numberline {6}Software Quality}{40}{chapter.6}
-\contentsline {section}{\numberline {6.1}Application Breakdown}{40}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Java Source}{40}{subsection.6.1.1}
-\contentsline {subsubsection}{Package: beans}{40}{section*.17}
-\contentsline {subsubsection}{Package: controllers}{41}{section*.18}
-\contentsline {subsubsection}{Package: dao}{41}{section*.19}
-\contentsline {subsubsection}{Package: email}{42}{section*.20}
-\contentsline {subsubsection}{Package: events}{42}{section*.21}
-\contentsline {subsubsection}{Package: events.tournaments}{42}{section*.22}
-\contentsline {subsubsection}{Package: logs}{42}{section*.23}
-\contentsline {subsubsection}{Package: news}{43}{section*.24}
-\contentsline {subsubsection}{Package: properties}{43}{section*.25}
-\contentsline {subsubsection}{Package: reports}{43}{section*.26}
-\contentsline {subsubsection}{Package: service}{44}{section*.27}
-\contentsline {subsubsection}{Package: timetable}{44}{section*.28}
-\contentsline {subsubsection}{Package: users}{45}{section*.29}
-\contentsline {section}{\numberline {6.2}Apache Struts and JSP Pages}{45}{section.6.2}
-\contentsline {subsubsection}{layout}{45}{section*.30}
-\contentsline {subsubsection}{templates}{45}{section*.31}
-\contentsline {subsubsection}{tiles}{46}{section*.32}
-\contentsline {section}{\numberline {6.3}Code Metrics and Visualisations}{48}{section.6.3}
-\contentsline {section}{\numberline {6.4}Sample Refactorings}{48}{section.6.4}
-\contentsline {chapter}{\numberline {7}Evaluation}{49}{chapter.7}
-\contentsline {section}{\numberline {7.1}Usability}{49}{section.7.1}
-\contentsline {section}{\numberline {7.2}Architectural Quality}{49}{section.7.2}
-\contentsline {section}{\numberline {7.3}Process Metrics}{49}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusions}{50}{chapter.8}
+\contentsline {subsection}{\numberline {5.1.8}Logging Implementation and Configuration}{31}{subsection.5.1.8}
+\contentsline {subsection}{\numberline {5.1.9}JSTL Definition and Usage}{33}{subsection.5.1.9}
+\contentsline {subsection}{\numberline {5.1.10}Version Control Configuration and Usage}{36}{subsection.5.1.10}
+\contentsline {subsection}{\numberline {5.1.11}External Code}{37}{subsection.5.1.11}
+\contentsline {section}{\numberline {5.2}Testing}{39}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}JUnit Testing}{39}{subsection.5.2.1}
+\contentsline {chapter}{\numberline {6}Software Quality}{41}{chapter.6}
+\contentsline {section}{\numberline {6.1}Application Summary}{41}{section.6.1}
+\contentsline {section}{\numberline {6.2}Software Quality Tools and Visualisations}{42}{section.6.2}
+\contentsline {section}{\numberline {6.3}Sample Refactorings}{44}{section.6.3}
+\contentsline {chapter}{\numberline {7}Evaluation}{45}{chapter.7}
+\contentsline {section}{\numberline {7.1}Usability}{45}{section.7.1}
+\contentsline {section}{\numberline {7.2}Architectural Quality}{45}{section.7.2}
+\contentsline {section}{\numberline {7.3}Process Metrics}{45}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusions}{46}{chapter.8}
+\contentsline {chapter}{\numberline {A}Appendices}{48}{appendix.A}
+\contentsline {section}{\numberline {A.1}Application Breakdown}{48}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Java Source}{48}{subsection.A.1.1}
+\contentsline {subsubsection}{Package: beans}{48}{section*.18}
+\contentsline {subsubsection}{Package: controllers}{49}{section*.19}
+\contentsline {subsubsection}{Package: dao}{49}{section*.20}
+\contentsline {subsubsection}{Package: email}{50}{section*.21}
+\contentsline {subsubsection}{Package: events}{50}{section*.22}
+\contentsline {subsubsection}{Package: events.tournaments}{50}{section*.23}
+\contentsline {subsubsection}{Package: logs}{50}{section*.24}
+\contentsline {subsubsection}{Package: news}{51}{section*.25}
+\contentsline {subsubsection}{Package: properties}{51}{section*.26}
+\contentsline {subsubsection}{Package: reports}{51}{section*.27}
+\contentsline {subsubsection}{Package: service}{51}{section*.28}
+\contentsline {subsubsection}{Package: timetable}{52}{section*.29}
+\contentsline {subsubsection}{Package: users}{52}{section*.30}
+\contentsline {section}{\numberline {A.2}Apache Struts and JSP Pages}{52}{section.A.2}
+\contentsline {subsubsection}{layout}{52}{section*.31}
+\contentsline {subsubsection}{templates}{52}{section*.32}
+\contentsline {subsubsection}{tiles}{53}{section*.33}

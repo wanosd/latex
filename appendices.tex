@@ -1,0 +1,294 @@
+\chapter{Appendices}
+\label{appendices}
+
+\section{Application Breakdown}
+
+The following section is a breakdown of the application into its various packages and files.
+\subsection{Java Source}
+\subsubsection{Package: beans}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    beans.xml & XML & Context Component Scan, Datasource Definition & 0 \\ \hline
+	dao-context.xml & XML & Hibernate Configuration, Database Exception Translator & 0 \\ \hline
+	security-context.xml & XML & Security Configuration, Access Control & 0 \\ \hline
+	service.xml & XML & Service Configuration & 0 \\ \hline
+    \end{tabular}
+\end{center}
+\caption{beans package}
+\end{table}
+
+\subsubsection{Package: controllers}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    ErrorHandler & JAVA & Handles application errors \\ \hline
+	EventController & JAVA & Handles Event actions \\ \hline
+	HomeControler & JAVA & Displays Home Page \\ \hline
+	LoginController & JAVA & Manages user login \\ \hline
+	MembersController & JAVA & Handles Member actions \\ \hline
+	NewsController & JAVA & Handles display and creation of News \\ \hline
+	SiteController & JAVA & Displays site pages with static data \\ \hline
+	TimetableController & JAVA & Controls the Timetable Creation and Display \\ \hline
+	TournamentController & JAVA & Handles Creation and Management of Tournaments \\ \hline
+    \end{tabular}
+\end{center}
+\caption{controllers package}
+\end{table}
+
+\subsubsection{Package: dao}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    EventDAO & JAVA & DAO for IEvent\\ \hline
+	LogDAO & JAVA & DAO for ILog\\ \hline
+	NewsDAO & JAVA & DAO for News\\ \hline
+	RoleDAO & JAVA & DAO for Role\\ \hline
+	TimetableDAO & JAVA & DAO for Timetable\\ \hline
+	TournamentDAO & JAVA & DAO for Tournament\\ \hline
+	UserDAO & JAVA & DAO for User\\ \hline
+	UserRowMapper & JAVA & JDBC Row Mapper to handle multiple User objects \\ \hline	
+    \end{tabular}
+\end{center}
+\caption{dao package}
+\end{table}
+
+\subsubsection{Package: email}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    Email & JAVA & Create and Send Email Message\\ \hline
+	IEmail & JAVA & Interface for Email class\\ \hline	
+    \end{tabular}
+\end{center}
+\caption{email package}
+\end{table}
+
+\subsubsection{Package: events}
+\begin{table}[H]
+\begin{center}
+     \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    Event & JAVA & Defines an event used by the Timetable\\ \hline
+	IEvent & JAVA & Interface for Event class\\ \hline	
+    \end{tabular}
+\end{center}
+\caption{event package}
+\end{table}
+
+\subsubsection{Package: events.tournaments}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    Tournament & JAVA & Defines an Tournament object\\ \hline
+    \end{tabular}
+\end{center}
+\caption{events.tournament package}
+\end{table}
+
+\subsubsection{Package: logs}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    Log & JAVA & Defines the structure of a system log file\\ \hline
+	ILog & JAVA & Interface for Log class\\ \hline
+    \end{tabular}
+\end{center}
+\caption{log package}
+\end{table}
+
+\subsubsection{Package: news}
+\begin{table}[H]
+\begin{center}
+     \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    News & JAVA & Defines the structure of a News object\\ \hline
+    \end{tabular}
+\end{center}
+\caption{news package}
+\end{table}
+
+\subsubsection{Package: properties}
+\begin{table}[H]
+\begin{center}
+     \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    jdbc & PROPERTIES & Holds log in values for the JDBC connection\\ \hline
+	mail & PROPERTIES & Holds the log in values for the email system\\ \hline
+    \end{tabular}
+\end{center}
+\caption{properties package}
+\end{table}
+
+\subsubsection{Package: reports}
+\begin{table}[H]
+\begin{center}
+     \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    IReport & PROPERTIES & Interface for Reports\\ \hline
+	CSVCreator & PROPERTIES & Creates a CSV file for User Data\\ \hline
+    \end{tabular}
+\end{center}
+\caption{reports package}
+\end{table}
+
+\subsubsection{Package: service}
+\begin{table}[H]
+\begin{center}
+     \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    EventService & JAVA & Layer between EventController and EventDAO\\ \hline
+    LogService & JAVA & Layer between Controllers and LogDAO\\ \hline
+	NewsService & JAVA & Layer between NewsController and NewsDAO\\ \hline
+	RoleService & JAVA & Layer between Controllers and RoleDAO\\ \hline
+	TimetableService & JAVA & Layer between TimetableController and TimetableDAO\\ \hline
+	TournamentService & JAVA & Layer between TournamentController and TournamentDAO\\ \hline
+	UserService & JAVA & Layer between MemberController and UserDAO\\ \hline
+    \end{tabular}
+\end{center}
+\caption{service package}
+\end{table}
+
+\subsubsection{Package: timetable}
+\begin{table}[H]
+\begin{center}
+     \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    Timetable & JAVA & Interface for Timetable\\ \hline
+	MonaleenTTV1 & JAVA & Defines structure and behaviour of Timetable object\\ \hline
+    \end{tabular}
+\end{center}
+\caption{timetable package}
+\end{table}
+
+\subsubsection{Package: users}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+    FormValidationGroup & JAVA & Form Validation Class\\ \hline
+	PersistenceValidationGroup & JAVA & Hibernate Validation Class\\ \hline
+	Grade & JAVA & Defines structure of a Grade object. Used in  User class.\\ \hline
+	User & JAVA & Defines structure of a User object\\ \hline
+	Role & JAVA & Defines structure of Role object, and its attributes\\ \hline	
+    \end{tabular}
+\end{center}
+\caption{reports package}
+\end{table}
+
+\section{Apache Struts and JSP Pages}
+
+\subsubsection{layout}
+\begin{table}[H]
+\begin{center}
+     \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+	default & XML & Defines the structure for each JSP page in the application\\ \hline	
+    \end{tabular}
+\end{center}
+\caption{struts layout}
+\end{table}
+
+\subsubsection{templates}
+\begin{table}[H]
+\begin{center}
+     \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+	default & JSP & The default JSP page that is used as the template for all others\\ \hline	
+    \end{tabular}
+\end{center}
+\caption{templates layout}
+\end{table}
+
+\subsubsection{tiles}
+\begin{table}[H]
+\begin{center}
+     \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+	accessdenied & JSP & Access Denied page\\ \hline	
+	admin & JSP & Displays administrator page with admin options\\ \hline	
+	adminAnalysis & JSP & Displays site analytics\\ \hline	
+	adminEditProfile & JSP & Allows admin to edit user accounts\\ \hline	
+	alreadyReg & JSP & Error page when attempting to re-register for tournament \\ \hline	
+	approveMembers & JSP & Admin approve members page\\ \hline	
+	blockMembers & JSP & Admin suspend members page\\ \hline	
+	bookingExists & JSP & Error page to handle duplicate bookings\\ \hline	
+	checkRegistered & JSP & Displays users registered for a selected tournament\\ \hline	
+	chooseEdit & JSP & Choice for which Timetable to edit\\ \hline	
+	confirmEdit & JSP & Detailed layout for editing individual slots in Timetable\\ \hline	
+	contactus & JSP & Contact Us page for application\\ \hline	
+	content & JSP & Place-holder page for default JSP template\\ \hline	
+	court & JSP & Displays selected Timetable and available options\\ \hline	
+	createEvent & JSP & Admin Create Event page\\ \hline	
+	createmembers & JSP & User Registration page\\ \hline	
+	createNewRole & JSP & Admin create new User Role\\ \hline	
+	createNews & JSP & Admin Create News page\\ \hline	
+	createTimetable & JSP & Admin Create Timetable page\\ \hline	
+	createTournament & JSP & Admin Create Tournament page\\ \hline	
+	deleteNews & JSP & Admin Delete News entry\\ \hline	
+	deleteTimetable & JSP & Admin Delete Timetable object\\ \hline	
+	deleteTournament & JSP & Admin Delete Tournament object\\ \hline	
+	displayUsers & JSP & Admin Displays all users to choose which one to edit\\ \hline	
+	editDetails & JSP & User Edit Profile\\ \hline	
+	emailSent & JSP & Email Sent Confirmation Page\\ \hline	
+	error & JSP & Default Error Page. Displays Class Error. \\ \hline	
+	fillTimetable & JSP & Page that allows admin to create Timetable template for series.\\ \hline	
+    \end{tabular}
+\end{center}
+\end{table}
+\pagebreak
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | l| p{1cm} |}
+    \hline
+    File Name & File Type & Function & No. Lines\\ \hline
+	index & JSP & Default Home page & 0\\ \hline
+	footer & JSP & Place-holder page for default JSP template\\ \hline	
+	header & JSP & Place-holder page for default JSP template\\ \hline		
+	links & JSP & Displays Site Navigation links\\ \hline	
+	loggedout & JSP & Logout Confirmation page\\ \hline	
+	login & JSP & Login Page - Linked to Spring Security\\ \hline	
+	maps & JSP & Displays Google Maps Location for Club\\ \hline	
+	members & JSP & Displays Members Address Book for authenticated users\\ \hline	
+	membership & JSP & Displays Membership Information\\ \hline	
+	news & JSP & Displays News Page\\ \hline	
+	profile & JSP & Displays User Profile\\ \hline	
+	profileUpdated & JSP & Confirmation of profile being updated\\ \hline	
+	registerSuccess & JSP & Confirmation that user has successfully registered\\ \hline	
+	resetAllTimetable & JSP & Removes all bookings for a Timetable\\ \hline	
+	seriesChoice & JSP & Choose which Timetable series to edit/reset\\ \hline	
+	timetable & JSP & Displays enabled timetables for users\\ \hline	
+	timetableStatus & JSP & Allows admin to enable or disable timetables\\ \hline	
+	tournaments & JSP & Displays Enabled Tournaments for Users\\ \hline	
+	tournamentStatus & JSP & Allows admin to enable/disable/activate/deactivate tournaments\\ \hline	
+	tournamentSuccess & JSP & Displays success upon successful tournament creation\\ \hline	
+	viewAllMembers & JSP & Admin View of Members\\ \hline	
+	viewEvents & JSP & Admin Event Management\\ \hline	
+    \end{tabular}
+\end{center}
+\caption{templates layout}
+\end{table}
+\pagebreak

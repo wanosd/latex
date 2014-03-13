@@ -2,7 +2,7 @@
 \label{impltesting}
 
 \section{Implemention}
-\subsection{Spring}
+\subsection{Implmention of the Spring Framework}
 In order to begin implementation with the Spring MVC framework, there are a number of configuration files that are necessary. The core file is the \textit{web.xml} file. This file is reponsible for the configuration for the framework. One of the key responsibilities is the definition of the context xml files, whose purpose will be elaborated on later. Different development profiles can be configured within this file in order to produce different development environments, such as production and testing environments.\newline 
 
 \begin{table}[H]
@@ -88,7 +88,7 @@ class="org.springframework.security.crypto.password.StandardPasswordEncoder">
 \end{lstlisting}
 \end{itemize}
 
-\subsection{Security}
+\subsection{Security Specification within Spring MVC}
 
 A core part of the Spring platform is the Security support. Security is an important aspect for any application, but more-so for one that stores user data, particularly sensitive data such as names, addresses, phone numbers, and payment details. While there is no payment infrastructure within this application, there is scope for a system to be implemented, and it could certainly be a future requirement. 
 
@@ -185,7 +185,7 @@ The Security Context XML file is key to maintaining the integrity of the applica
 
 This code fragment from the \textit{Security-Context.xml} file displays how access for the web application is configured. While there are five roles within the system, it is not necessary to explicitly define what actions a role can perform. For example, all registered users should be able to register for an existing tournament. In this case, once the framework detects that a user is authenticated, that is sufficient to allow access to that part of the application. Other examples are the display of static images, such as banners and advertising. These should be visible to all visitors to the site, regardless of their authentication status. Accordingly, this area of the application is set to permitAll allowing such access.
 
-\subsection{Maven}
+\subsection{Maven Integration with Spring Tool Suite}
 
 Maven was used within the scope of this project to manage the dependencies required by the web application. Maven came pre-installed and configured within the Spring Tool Suite IDE. Dependency Management can be handled one of two ways. Dependencies can be added using the GUI interface provided by an IDE, in this case, Spring Tool Suite. This GUI links to the repository located at http://mvnrepository.com/, and the user searches for the required files. Otherwise, the \textit{pom.xml} file may be edited to define dependencies manually. Below is an example of the Apache Tiles v3.0.3 dependency.
 
@@ -202,7 +202,7 @@ Maven was used within the scope of this project to manage the dependencies requi
 
 Maven also provided the archetype, or structure, for the application. It defined the folder structure for both the production and tests environments. It also sets up JUnit within the project.
 
-\subsection{Hibernate}
+\subsection{Hibernate Configuration}
 
 Hibernate requires a SessionFactory object in order to connect to the database. Spring provides a class in order to facilitate this requirement, AnnotationSessionFactoryBean. This bean must be defined and configured within the \textit{DAO-Context.xml} file explained previously. 
 
@@ -498,7 +498,7 @@ The following example shows a Timetable configured with two slots. Upon creation
 	\caption{Timetable Storage Table for Monday Collection}
 \end{table}
 
-\subsection{Apache Tiles}
+\subsection{Apache Tiles Configuration and Implementation}
 
 Apache Tiles is configured within the web application core XML file. There are two classes that the configuration is concerned with: TilesViewResolver and TileConfigurer. Both are declared as beans within the configuration file and automatically created when the application is launched. The TilesConfigurer object takes one parameter: a location of the template that the default tile, and its subsequent children, will use. \newline
 
@@ -551,7 +551,7 @@ The following examples shows the implementation within the configuration file. T
 
 In this application, Services are the layers between the Controllers and the DAO classes and enable communication between the two sets of objects. This allows us to encapsulate the logic of what a service needs to do within a set of classes, rather than allowing the Controllers to access to DAO directly. Any changes required to the DAO need only be changed in the Service classes, allowing the Controllers to remain unchanged. 
 
-\subsection{Logging}
+\subsection{Logging Implementation and Configuration}
 
 The logging for this application was provided by \textit{log4j.} Logging became very useful for tracking down, and isolating bugs, throughout the application. Since there were a considerable number of dependencies and different technologies working together, it rapidly became very difficult to see where errors originated from. Stack-traces quickly became unmanageable. \textit{Log4j} works by allowing the developer to view a number of logs of varying types within the application.
 \begin{table}[H]
@@ -616,7 +616,7 @@ public User getUserByName(String name) {
 \end{table}
 
 
-\subsection{JSP Standard Tag Libraries}
+\subsection{JSTL Definition and Usage}
 
 JSTL is used within the application to manage how information was displayed. It was preferred, during the development of the application, that all of the logic be handled at the Controller level, and that the JSP pages would resolve the models passed to it into the view seen by the user. It was not desirable for the pages to contain JSP directives, or to use the implicit objects contained within JSP pages. 
 
@@ -706,6 +706,13 @@ method="POST">
 
 (another example maybe? Can show how JSTL used to hide null attributes within the models to ensure page looks well)
  
+\subsection{Version Control Configuration and Usage}
+
+The version control used for this project was GitHub. Spring Tool Suite came pre-installed with eGit, an open source Eclipse plug-in for GitHub. In order to configure Git, a repository must be created on the github.com website. Once created, the user imports that repository through the File/Import command within the IDE. A dialog box is presented to the user in order to specify the Uniform Resource Identifier (URI) of the github project. The URI for the application is \textit{https://github.com/wanosd/mts}. This was initiated as a private repository, meaning that a user-name and password needed to be specified in order for STS to clone the project. Projects that are public do not need this level of authorisation to clone a copy of the project, however a project may explicitly define who is allowed to make adjustments to a project, even if the project is open source.
+
+The mechanics of github, having been explained in a previous section, are accessed through \textit{Team} menu, accessed by right clicking on the project within the Project Viewer pane. This allows the users to pull down the most recent version, or to commit a new version of the project to the repository for all to access. When performing a commit, each user within the repository will be able to see what files have changed, showing both additions and removals from the files. An optional summary message to describe the commit is also recommended. 
+
+A feature that was also used within the scope of this project was the Replace With action. This allows a user to swap between commits in the event that they want to see older versions, or in this case, broke something and need to go back to an older version.
 
 \subsection{External Code}
 
