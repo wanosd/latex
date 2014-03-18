@@ -1,6 +1,152 @@
 \chapter{Implementation and Testing}
 \label{impltesting}
 
+\section{Introduction}
+
+\section{Application Entities}
+\subsection{Users - Persistence}
+\subsection{Timetable - Persistance Changes}
+\subsection{Tournaments and Events}
+\subsection{Administration - Security and Session Management}
+
+\section{Model View Controller}
+\subsection{Controller Layer}
+\subsection{View Layer}
+\subsubsection{Apache Tiles Configuration and Implementation}
+
+Apache Tiles is configured within the web application core XML file. There are two classes that the configuration is concerned with: TilesViewResolver and TileConfigurer. Both are declared as beans within the configuration file and automatically created when the application is launched. The TilesConfigurer object takes one parameter: a location of the template that the default tile, and its subsequent children, will use. \newline
+
+\begin{table}[H]
+\begin{lstlisting}
+<bean id="tilesViewResolver"
+	class="org.springframework.web.servlet.view.tiles2.TilesViewResolver">
+</bean>
+
+<bean id="tilesConfig"
+	class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+	<property name="definitions">
+	<list>
+		<value>/WEB-INF/layout/default.xml</value>
+	</list>
+	</property>
+</bean>
+\end{lstlisting}
+\caption{Apache Tiles Configuration}
+\end{table}
+
+The default tile consists of a number of sections identified by a specific tag. These tags correspond to values within the tile layout configuration file. Using a version of inheritance, these can be overwritten and replaced with other pages in order to change the content of a page, while maintaining cohesion across the design of the application. 
+
+The following examples shows the implementation within the configuration file. The first section of code is the overall template. This specifies the default values that make up a JSP page within the application. The second segment of code is the the definition for the initial home page for the web application. By the inclusion of the \textit{extends="users.base"} within the definition tags, it is defining the index as a sub class of the users.base definition. Consequently, it is possible to override any of the attributes within the users.base definition. In this example, the title and content of the default page are being overridden with different values in order construct a more suitable page. The header, links and footer however remain the same, and will do so will all pages following this format.
+
+\begin{table}[H]
+\begin{lstlisting}
+<definition name="users.base" template="/WEB-INF/templates/default.jsp">
+	<put-attribute name="title" value="Monaleen Tennis Club - Default Template"></put-attribute>
+	<put-attribute name="header" value="/WEB-INF/tiles/header.jsp"></put-attribute>
+	<put-attribute name="links" value="/WEB-INF/tiles/links.jsp"></put-attribute>
+	<put-attribute name="content" value="/WEB-INF/tiles/content.jsp"></put-attribute>
+	<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp"></put-attribute>
+</definition>
+
+<definition name="index" extends="users.base">
+	<put-attribute name="title" value="Monaleen Tennis Club - Home Page"></put-attribute>
+	<put-attribute name="content" value="/WEB-INF/tiles/index.jsp"></put-attribute>
+</definition>
+
+<definition name="admin" extends="users.base">
+	<put-attribute name="title" value="Monaleen Tennis Club - Admin"></put-attribute>
+	<put-attribute name="content" value="/WEB-INF/tiles/admin.jsp"></put-attribute>
+</definition>
+\end{lstlisting}
+\caption{Apache Tiles Configuration}
+\end{table}
+\subsubsection{Apache Tiles}
+\subsubsection{JSTL}
+
+\section{Logging the Application}
+
+\section{Configuration of the Application}
+
+\section{Test Driven Development}
+
+The primary method of testing was implemented using JUnit. A Test Suite of JUnit tests were prepared to test the key features of the application. A separate test database was constructed. It was important to ensure that the testing environment was using the same context files as the production environment. The test class had to be annotated to enforce this. While the context files were the same, the DataSource file has changed as a different database is being using in this environment.
+
+
+\begin{table}[H]
+\begin{lstlisting}
+@ActiveProfiles("dev")
+@ContextConfiguration(locations = { "file:src/main/java/beans/dao-context.xml",
+"file:src/main/java/beans/security-context.xml",
+"classpath:test/config/datasource.xml" })
+@RunWith(SpringJUnit4ClassRunner.class)
+public class HibernateTests {
+	
+	@Autowired
+	private UserDAO userDAO;
+	
+	@Autowired
+	private TournamentDAO tournamentDAO;
+	
+	@Autowired
+	private DataSource dataSource;
+	
+	//Class truncated 
+}
+
+\end{lstlisting}
+\caption{JUnit Test Example}
+\end{table}
+
+The database is then initialised to ensure the tests are being run against the same database, and that repeat tests are consistent.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Before
+public void init(){
+	JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+	jdbc.execute("delete from users"); 
+}
+\end{lstlisting}
+\caption{JUnit @Before Test Configuration}
+\end{table}
+
+In these example tests, the UserDAO is being tested to ensure that it returns true when the exists() method is called on it. This is important within the scope of the application to ensure that primary keys are not duplicated. The method is annotated with \textit{@Test}. The methods \textit{assertTrue} and \textit{assertFalse} expect a return value of true and false respectively. They take two parameters: an error message and a boolean value, or a method that returns a boolean value. In the \textit{assertTrue} method below, the UserDAO will return true if the user exists. In the event that the user does not exist, it will fail the test and return the message "User should exist".\newline 
+
+\begin{table}[H]
+\begin{lstlisting}
+@Test
+public void testExists(){
+	userDAO.createUser(user1);
+	assertTrue("User should exist", userDAO.exists(user1.getUsername()));
+	assertFalse("User should not exist", userDAO.exists("jkljfksakfjahghdsopjclkhfkjafhkjdshFHajhgouwe"));
+}
+\end{lstlisting}
+\caption{JUnit UserDAO Exists() Test}
+\end{table}
+
+Another test with the UserDAO was to ensure that users were being saved correctly. In this example, users are being created and saved to the database. The method \textit{assertEquals} checks two interger values and returns an error message if they do not match.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Test 
+public void testCreateRetrieve(){
+	userDAO.createUser(user1);
+	List<User> users1 = userDAO.getAllUsers();
+	assertEquals("One user should have been created and retrieved", 1, users1.size());
+	assertEquals("Inserted user should match retrieved", user1, users1.get(0));
+	userDAO.createUser(user2);
+	userDAO.createUser(user3);
+	userDAO.createUser(user4);
+	List<User> users2 = userDAO.getAllUsers();
+	assertEquals("Number of users should be four", 4, users2.size());
+}
+\end{lstlisting}
+\caption{JUnit Create and Size Test}
+\end{table}
+
+
+\section{Conclusion}
+
 \section{Implemention}
 \subsection{Implmention of the Spring Framework}
 In order to begin implementation with the Spring MVC framework, there are a number of configuration files that are necessary. The core file is the \textit{web.xml} file. This file is reponsible for the configuration for the framework. One of the key responsibilities is the definition of the context xml files, whose purpose will be elaborated on later. Different development profiles can be configured within this file in order to produce different development environments, such as production and testing environments.\newline 
@@ -498,54 +644,7 @@ The following example shows a Timetable configured with two slots. Upon creation
 	\caption{Timetable Storage Table for Monday Collection}
 \end{table}
 
-\subsection{Apache Tiles Configuration and Implementation}
 
-Apache Tiles is configured within the web application core XML file. There are two classes that the configuration is concerned with: TilesViewResolver and TileConfigurer. Both are declared as beans within the configuration file and automatically created when the application is launched. The TilesConfigurer object takes one parameter: a location of the template that the default tile, and its subsequent children, will use. \newline
-
-\begin{table}[H]
-\begin{lstlisting}
-<bean id="tilesViewResolver"
-	class="org.springframework.web.servlet.view.tiles2.TilesViewResolver">
-</bean>
-
-<bean id="tilesConfig"
-	class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
-	<property name="definitions">
-	<list>
-		<value>/WEB-INF/layout/default.xml</value>
-	</list>
-	</property>
-</bean>
-\end{lstlisting}
-\caption{Apache Tiles Configuration}
-\end{table}
-
-The default tile consists of a number of sections identified by a specific tag. These tags correspond to values within the tile layout configuration file. Using a version of inheritance, these can be overwritten and replaced with other pages in order to change the content of a page, while maintaining cohesion across the design of the application. 
-
-The following examples shows the implementation within the configuration file. The first section of code is the overall template. This specifies the default values that make up a JSP page within the application. The second segment of code is the the definition for the initial home page for the web application. By the inclusion of the \textit{extends="users.base"} within the definition tags, it is defining the index as a sub class of the users.base definition. Consequently, it is possible to override any of the attributes within the users.base definition. In this example, the title and content of the default page are being overridden with different values in order construct a more suitable page. The header, links and footer however remain the same, and will do so will all pages following this format.
-
-\begin{table}[H]
-\begin{lstlisting}
-<definition name="users.base" template="/WEB-INF/templates/default.jsp">
-	<put-attribute name="title" value="Monaleen Tennis Club - Default Template"></put-attribute>
-	<put-attribute name="header" value="/WEB-INF/tiles/header.jsp"></put-attribute>
-	<put-attribute name="links" value="/WEB-INF/tiles/links.jsp"></put-attribute>
-	<put-attribute name="content" value="/WEB-INF/tiles/content.jsp"></put-attribute>
-	<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp"></put-attribute>
-</definition>
-
-<definition name="index" extends="users.base">
-	<put-attribute name="title" value="Monaleen Tennis Club - Home Page"></put-attribute>
-	<put-attribute name="content" value="/WEB-INF/tiles/index.jsp"></put-attribute>
-</definition>
-
-<definition name="admin" extends="users.base">
-	<put-attribute name="title" value="Monaleen Tennis Club - Admin"></put-attribute>
-	<put-attribute name="content" value="/WEB-INF/tiles/admin.jsp"></put-attribute>
-</definition>
-\end{lstlisting}
-\caption{Apache Tiles Configuration}
-\end{table}
 
 \subsection{Services}
 
@@ -752,80 +851,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 \subsection{JUnit Testing}
 
-The primary method of testing was implemented using JUnit. A Test Suite of JUnit tests were prepared to test the key features of the application. A separate test database was constructed. It was important to ensure that the testing environment was using the same context files as the production environment. The test class had to be annotated to enforce this. While the context files were the same, the DataSource file has changed as a different database is being using in this environment.
-
-
-\begin{table}[H]
-\begin{lstlisting}
-@ActiveProfiles("dev")
-@ContextConfiguration(locations = { "file:src/main/java/beans/dao-context.xml",
-"file:src/main/java/beans/security-context.xml",
-"classpath:test/config/datasource.xml" })
-@RunWith(SpringJUnit4ClassRunner.class)
-public class HibernateTests {
-	
-	@Autowired
-	private UserDAO userDAO;
-	
-	@Autowired
-	private TournamentDAO tournamentDAO;
-	
-	@Autowired
-	private DataSource dataSource;
-	
-	//Class truncated 
-}
-
-\end{lstlisting}
-\caption{JUnit Test Example}
-\end{table}
-
-The database is then initialised to ensure the tests are being run against the same database, and that repeat tests are consistent.
-
-\begin{table}[H]
-\begin{lstlisting}
-@Before
-public void init(){
-	JdbcTemplate jdbc = new JdbcTemplate(dataSource);
-	jdbc.execute("delete from users"); 
-}
-\end{lstlisting}
-\caption{JUnit @Before Test Configuration}
-\end{table}
-
-In these example tests, the UserDAO is being tested to ensure that it returns true when the exists() method is called on it. This is important within the scope of the application to ensure that primary keys are not duplicated. The method is annotated with \textit{@Test}. The methods \textit{assertTrue} and \textit{assertFalse} expect a return value of true and false respectively. They take two parameters: an error message and a boolean value, or a method that returns a boolean value. In the \textit{assertTrue} method below, the UserDAO will return true if the user exists. In the event that the user does not exist, it will fail the test and return the message "User should exist".\newline 
-
-\begin{table}[H]
-\begin{lstlisting}
-@Test
-public void testExists(){
-	userDAO.createUser(user1);
-	assertTrue("User should exist", userDAO.exists(user1.getUsername()));
-	assertFalse("User should not exist", userDAO.exists("jkljfksakfjahghdsopjclkhfkjafhkjdshFHajhgouwe"));
-}
-\end{lstlisting}
-\caption{JUnit UserDAO Exists() Test}
-\end{table}
-
-Another test with the UserDAO was to ensure that users were being saved correctly. In this example, users are being created and saved to the database. The method \textit{assertEquals} checks two interger values and returns an error message if they do not match.
-
-\begin{table}[H]
-\begin{lstlisting}
-@Test 
-public void testCreateRetrieve(){
-	userDAO.createUser(user1);
-	List<User> users1 = userDAO.getAllUsers();
-	assertEquals("One user should have been created and retrieved", 1, users1.size());
-	assertEquals("Inserted user should match retrieved", user1, users1.get(0));
-	userDAO.createUser(user2);
-	userDAO.createUser(user3);
-	userDAO.createUser(user4);
-	List<User> users2 = userDAO.getAllUsers();
-	assertEquals("Number of users should be four", 4, users2.size());
-}
-\end{lstlisting}
-\caption{JUnit Create and Size Test}
-\end{table}
 
 
 

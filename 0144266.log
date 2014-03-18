@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  13 MAR 2014 18:49
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  18 MAR 2014 11:32
 entering extended mode
 **0144266.tex
 (C:\Users\0144266\Documents\GitHub\latex\0144266.tex
@@ -259,30 +259,30 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (C:\Users\0144266\Documents\GitHub\latex\background.aux)
 (C:\Users\0144266\Documents\GitHub\latex\requirements.aux)
 (C:\Users\0144266\Documents\GitHub\latex\design.aux)
-(C:\Users\0144266\Documents\GitHub\latex\impltesting.aux)
+(C:\Users\0144266\Documents\GitHub\latex\impltesting1.aux)
 (C:\Users\0144266\Documents\GitHub\latex\squality.aux)
 (C:\Users\0144266\Documents\GitHub\latex\evaluation.aux)
 (C:\Users\0144266\Documents\GitHub\latex\conclusion.aux)
 (C:\Users\0144266\Documents\GitHub\latex\appendices.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
 \c@lstlisting=\count110
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 50.
+Package hyperref Info: Link coloring OFF on input line 52.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -292,9 +292,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count111
 )
-LaTeX Info: Redefining \ref on input line 50.
-LaTeX Info: Redefining \pageref on input line 50.
-LaTeX Info: Redefining \nameref on input line 50.
+LaTeX Info: Redefining \ref on input line 52.
+LaTeX Info: Redefining \pageref on input line 52.
+LaTeX Info: Redefining \nameref on input line 52.
 
 (C:\Users\0144266\Documents\GitHub\latex\0144266.out)
 (C:\Users\0144266\Documents\GitHub\latex\0144266.out)
@@ -320,11 +320,11 @@ Requested font "cmsy8" at 8.0pt
 Requested font "cmsy6" at 6.0pt
  -> cmsy6
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 56.
+(Font)              <12> on input line 58.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 56.
+(Font)              <8> on input line 58.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 56.
+(Font)              <6> on input line 58.
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\se-ascii-print.def"
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
@@ -405,115 +405,81 @@ Chapter 3.
 
 ] (C:\Users\0144266\Documents\GitHub\latex\design.tex
 Chapter 4.
-) [13
-
-
-
-] (C:\Users\0144266\Documents\GitHub\latex\impltesting.tex
-Chapter 5.
 Requested font "cmti10" at 10.0pt
  -> cmti10
+[13
 
-Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
- []
 
+]) [14] [15] (C:\Users\0144266\Documents\GitHub\latex\impltesting1.tex
+Chapter 5.
 Requested font "cmr9" at 9.0pt
  -> cmr9
 Requested font "cmtt9" at 9.0pt
  -> cmtt9
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
-
- []
-
-[14
+[16
 
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-
+] [17]
+Overfull \hbox (49.12692pt too wide) in paragraph at lines 57--65
+ [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
-
- []
-
-[15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
-
- []
-
-[17] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
 [20]
-Overfull \hbox (2.39996pt too wide) in paragraph at lines 216--217
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
- []
-
-[21] [22] [23] [24] [25] [26] [27]
-Overfull \vbox (4.86621pt too high) has occurred while \output is active []
-
-
-[28]
-Overfull \hbox (20.88902pt too wide) in paragraph at lines 472--481
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 503--504
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
-[29] [30]
-Overfull \hbox (14.54362pt too wide) in paragraph at lines 559--569
+
+Overfull \hbox (66.68245pt too wide) in paragraph at lines 145--157
  [] 
  []
 
-[31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 623--624
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 629--630
-
- []
-
-
-Overfull \hbox (66.68245pt too wide) in paragraph at lines 633--645
+[22]
+Overfull \hbox (14.54362pt too wide) in paragraph at lines 225--235
  [] 
  []
 
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 672--673
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 286--300
 
  []
 
-[35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 723--724
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
-[37] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 796--797
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
-[39]) [40] (C:\Users\0144266\Documents\GitHub\latex\squality.tex
+[26] [27] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
+
+ []
+
+[29]) [30] (C:\Users\0144266\Documents\GitHub\latex\squality.tex
 Chapter 6.
 File: infusion1.PNG Graphic file (type QTm)
-<use  "infusion1.PNG" > [41
+<use  "infusion1.PNG" > [31
 
 
 
@@ -522,24 +488,24 @@ File: infusion3.PNG Graphic file (type QTm)
  <use  "infusion3.PNG" >
 File: infusion2.PNG Graphic file (type QTm)
  <use  "infusion2.PNG" >
-[42]
+[32]
 File: codecity2d.png Graphic file (type QTm)
  <use  "codecity2d.png" >
 File: codecity3d.png Graphic file (type QTm)
- <use  "codecity3d.png" > [43]) [44]
+ <use  "codecity3d.png" > [33]) [34]
 (C:\Users\0144266\Documents\GitHub\latex\evaluation.tex
 Chapter 7.
-) [45
+) [35
 
 
 
 ] (C:\Users\0144266\Documents\GitHub\latex\conclusion.tex
 Chapter 8.
-) [46
+) [36
 
 
 
-] (C:\Users\0144266\Documents\GitHub\latex\0144266.bbl) [47
+] (C:\Users\0144266\Documents\GitHub\latex\0144266.bbl) [37
 
 
 ]
@@ -565,7 +531,7 @@ Overfull \hbox (45.74629pt too wide) in paragraph at lines 26--39
  [] 
  []
 
-[48
+[38
 
 
 ]
@@ -583,7 +549,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--67
 []\OT1/cmr/m/n/10 No.
  []
 
-[49]
+[39]
 Underfull \hbox (badness 10000) in paragraph at lines 80--80
 []\OT1/cmr/m/n/10 No.
  []
@@ -603,7 +569,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []\OT1/cmr/m/n/10 No.
  []
 
-[50]
+[40]
 Underfull \hbox (badness 10000) in paragraph at lines 130--130
 []\OT1/cmr/m/n/10 No.
  []
@@ -633,7 +599,7 @@ Overfull \hbox (19.9962pt too wide) in paragraph at lines 172--178
  [] 
  []
 
-[51]
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 187--187
 []\OT1/cmr/m/n/10 No.
  []
@@ -673,7 +639,7 @@ Overfull \hbox (79.82959pt too wide) in paragraph at lines 227--259
  [] 
  []
 
-[52] [53]
+[42] [43]
 Underfull \hbox (badness 10000) in paragraph at lines 267--267
 []\OT1/cmr/m/n/10 No.
  []
@@ -683,35 +649,31 @@ Overfull \hbox (88.8853pt too wide) in paragraph at lines 265--291
  [] 
  []
 
-) [54]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 89.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
+) [44]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
  (C:\Users\0144266\Documents\GitHub\latex\0144266.aux
 (C:\Users\0144266\Documents\GitHub\latex\abstract.aux)
 (C:\Users\0144266\Documents\GitHub\latex\intro.aux)
 (C:\Users\0144266\Documents\GitHub\latex\background.aux)
 (C:\Users\0144266\Documents\GitHub\latex\requirements.aux)
 (C:\Users\0144266\Documents\GitHub\latex\design.aux)
-(C:\Users\0144266\Documents\GitHub\latex\impltesting.aux)
+(C:\Users\0144266\Documents\GitHub\latex\impltesting1.aux)
 (C:\Users\0144266\Documents\GitHub\latex\squality.aux)
 (C:\Users\0144266\Documents\GitHub\latex\evaluation.aux)
 (C:\Users\0144266\Documents\GitHub\latex\conclusion.aux)
 (C:\Users\0144266\Documents\GitHub\latex\appendices.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 89.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 89.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 91.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 91.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
- 9945 strings out of 429035
- 138602 string characters out of 3167909
+ 9849 strings out of 429035
+ 137305 string characters out of 3167909
  271205 words of memory out of 3000000
- 13072 multiletter control sequences out of 15000+200000
+ 12976 multiletter control sequences out of 15000+200000
  10279 words of font info for 36 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 30i,10n,47p,1574b,1100s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,10n,47p,1126b,1146s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 0144266.pdf (58 pages).
+Output written on 0144266.pdf (48 pages).

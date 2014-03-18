@@ -4,8 +4,33 @@
 \section{Key Features}
 
 \subsection{Users}
-
+Spring handles security a number of ways. Firstly, it uses an \textit{authority} hierarchy to separate different levels of users. For this web application, there were three main levels of authority, with one level containing three different branches.
 \subsubsection{Roles}
+\begin{table}[H]
+\begin{itemize}
+\item ROLE ADMIN
+\begin{itemize}
+\item This refers to the main administration group. The group retains full rights across the web application
+\end{itemize}
+\item ROLE COMMITTEE
+\begin{itemize}
+\item This refers to the committee, as defined by the club themselves. This group with have the ability to perform some administrator privileges, but only those directly related to club activities, not site activities.
+\end{itemize}
+\item ROLE MEMBER
+\begin{itemize}
+\item The default user state. This group can perform actions such as booking slots in a timetable, registering for a tournament, and will have access to parts of the site unavailable to non-registered users.
+\end{itemize}
+\item ROLE WARNING 
+\begin{itemize}
+\item A restriction placed upon a member. For example, a member who books time slots, but does not attend.
+\end{itemize}
+\item ROLE SUSPEND
+\begin{itemize}
+\item A further restriction placed upon a member.
+\end{itemize}
+\end{itemize}
+\label{fig:secRoles}
+\end{table}
 
 \subsection{Tournaments}
 

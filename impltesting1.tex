@@ -1,0 +1,447 @@
+\chapter{Implementation and Testing}
+\label{impltesting}
+
+\section{Introduction}
+
+This chapters focuses on the implementation of the application, with the focus on the application entities, and how they were configured.
+
+\section{Application Entities}
+\subsection{Users - Persistence}
+
+The \textit{User} class represents every user account within the application. (Link to appendice showing class attributes). This section will focus on a regular user, how it is configured within the application in terms of bean definition and persistence. 
+
+Firstly, as show in line one of Figure ~\ref{fig:userDef}, the class needs to be configured as a \textit{Component} for the application. This ensures that the Spring framework considers the User class as one for auto-detection, as the use of class path scanning and annotations prevalent within this application. The framework instantiates this bean, or object, automatically, without the developer having to use the \textit{new} keyword.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Component
+@Entity
+@Table(name="users")
+public class User {
+	@Id
+	@GeneratedValue
+	int id;
+	
+	@NotNull(groups={PersistenceValidationGroup.class, FormValidationGroup.class})
+	@Pattern(regexp=".+\\@.+\\..+", message="This does not appear to be a valid email address", groups={PersistenceValidationGroup.class, FormValidationGroup.class})
+	@Column(name="username")
+	String username;
+	
+	@Size(min=5, max=45, message="Named must be between 5 and 45 characters",groups={PersistenceValidationGroup.class, FormValidationGroup.class})
+	@Column(name="name")
+	String name;
+	
+	@Column(name="password")
+	@Size(min=5, max=15, message="Password must be between 5 and 15 characters", groups=FormValidationGroup.class)
+	String password;
+	
+	@Column(name="gender")
+	String gender;
+	
+	@Pattern(regexp="08[35679]([0-9]{7})", message="Number must be in the format 083, 085, 086, 087, 089 and 7 additional numbers eg 0851234567", groups={PersistenceValidationGroup.class, FormValidationGroup.class})
+	@Column(name="contact_num")
+	String contact_num;
+	//Class truncated. Some repetitive attributes omitted
+	//Getters and Setters below here.
+\end{lstlisting}
+\caption{User Class Definition and Configuration}
+\label{fig:userDef}
+\end{table}
+
+The \textit{Entity} and \textit{Table} annotations that belong to the javax.persistance package. These annotations are used by Hibernate in order to manage and persist the class. The \textit{@Table} annotation has a 'name' attribute that refers to the schema table the class maps to. There are two ways that an attribute can be assigned to a table column by Hibernate. Both methods are shown in Figure ~\ref{fig:userDef}. An annotation may be placed on the attribute in order to specify a column name. Line 12 in Figure ~\ref{fig:userDef} shows the username attribute being mapped to the username column within the User database schema. The other way of specifying where an attribute should be persisted is to ensure that the attribute name matches the column name within the table. This implicitly allows Hibernate to map a class, without having to explicitly define the mapping for the persistence framework.
+
+The User class has a number of attribute constraints placed upon it. There are two types of constraints within this application: \textit{FormValidationGroup} and \textit{PersistenceValidationGroup}. These are interface classes with no attributes that just serve as identifiers. As shown in lines 10, 14, 19 and 25 of Figure ~\ref{fig:userDef}, an attribute may be constrained by one or more groups. An annotation, from the javax.validation.constraints, is applied to the attribute. The annotations used within this applicated were as detailed in Table ~\ref{fig:classConstraints}.
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+    Constraint Name & Description\\ \hline
+    Pattern & Ensures the value within the attribute conforms to a defined regular expression\\ \hline
+    Min & Ensures the value within the attribute has a minimum length\\ \hline
+	Max & Ensures the value within the attribute has a maximum length\\ \hline
+	NotNull & Ensures the value within the attribute does not have a null value\\ \hline
+    \end{tabular}
+\end{center}
+\caption{Class Constraints}
+\label{fig:classConstraints}
+\end{table}
+
+
+\subsection{Timetable - Persistence Changes}
+\subsection{Tournaments and Events}
+\subsection{Administration - Security and Session Management}
+
+The \textit{Administration} section of the application deals with the implementation, and configuration, of the security and session management aspects of the application. A administrator has the same structure as a \textit{User} and is defined by the \textit{Role} it has, as seen previously in Figure ~\ref{fig:secRoles}.
+
+\section{Model View Controller}
+\subsection{Controller Layer}
+\subsection{View Layer}
+\subsubsection{Apache Tiles Configuration and Implementation}
+
+Apache Tiles is configured within the web application core XML file. There are two classes that the configuration is concerned with: TilesViewResolver and TileConfigurer. Both are declared as beans within the configuration file and automatically created when the application is launched. The TilesConfigurer object, see Figure ~\ref{fig:tilesXML}, takes one parameter: a location of the template that the default tile, and its subsequent children, will use. \newline
+
+\begin{table}[H]
+\begin{lstlisting}
+<bean id="tilesViewResolver"
+	class="org.springframework.web.servlet.view.tiles2.TilesViewResolver">
+</bean>
+
+<bean id="tilesConfig"
+	class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+	<property name="definitions">
+	<list>
+		<value>/WEB-INF/layout/default.xml</value>
+	</list>
+	</property>
+</bean>
+\end{lstlisting}
+\caption{Apache Tiles Configuration}
+\label{fig:tilesXML}
+\end{table}
+
+The default tile consists of a number of sections identified by a specific tag. These tags correspond to values within the tile layout configuration file. Using a version of inheritance, these can be overwritten and replaced with other pages in order to change the content of a page, while maintaining cohesion across the design of the application. 
+
+The following examples shows the implementation within the configuration file. The first section of code is the overall template. This specifies the default values that make up a JSP page within the application. The second segment of code is the the definition for the initial home page for the web application. By the inclusion of the \textit{extends="users.base"} within the definition tags, it is defining the index as a sub class of the users.base definition. Consequently, it is possible to override any of the attributes within the users.base definition. In this example, the title and content of the default page are being overridden with different values in order construct a more suitable page. The header, links and footer however remain the same, and will do so will all pages following this format, as shown in Figure ~\ref{fig:tilesConfig}.
+
+\begin{table}[H]
+\begin{lstlisting}
+<definition name="users.base" template="/WEB-INF/templates/default.jsp">
+	<put-attribute name="title" value="Monaleen Tennis Club - Default Template"></put-attribute>
+	<put-attribute name="header" value="/WEB-INF/tiles/header.jsp"></put-attribute>
+	<put-attribute name="links" value="/WEB-INF/tiles/links.jsp"></put-attribute>
+	<put-attribute name="content" value="/WEB-INF/tiles/content.jsp"></put-attribute>
+	<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp"></put-attribute>
+</definition>
+
+<definition name="index" extends="users.base">
+	<put-attribute name="title" value="Monaleen Tennis Club - Home Page"></put-attribute>
+	<put-attribute name="content" value="/WEB-INF/tiles/index.jsp"></put-attribute>
+</definition>
+
+<definition name="admin" extends="users.base">
+	<put-attribute name="title" value="Monaleen Tennis Club - Admin"></put-attribute>
+	<put-attribute name="content" value="/WEB-INF/tiles/admin.jsp"></put-attribute>
+</definition>
+\end{lstlisting}
+\caption{Apache Tiles Configuration}
+\label{fig:tilesConfig}
+\end{table}
+
+\subsubsection{JSTL}
+
+JSTL is used within the application to manage how information was displayed. It was preferred, during the development of the application, that all of the logic be handled at the Controller level, and that the JSP pages would resolve the models passed to it into the view seen by the user. It was not desirable for the pages to contain JSP directives, or to use the implicit objects contained within JSP pages. 
+
+The main tags used within the application were the JSTL Core tags.  These tags allow the usage of conditional statements and the definition of parameters within the JSP page. In order to use this technology, the relevant jar must be made available in the build path or within the Maven dependencies of the project. The following statement must be included in all JSP pages that wish to make use of the tags also.\newline
+
+\begin{lstlisting}
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+\end{lstlisting}
+
+Within the application, the controller will create a model and pass it to the JSP page. The page uses the JSTL tags to manage and display relevant information from the model, and user actions based on the information contained within. The example below is taken from the Timetable display page from the application.\newline
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+    Model Name & Summary \\ \hline
+    name & The username of the currently authenticated user  \\ \hline
+    realName & The real name of the currently authenticated user\\ \hline
+	bookings & The number of remaining bookings of the currently authenticated users\\ \hline
+	date & The current week of the year and the current date. Calculated using separate method.\\ \hline
+	next & The id number of the court following the current court, if applicable\\ \hline
+    prev & The id number of the court preceding the current court, if applicable\\ \hline
+	court & The current court, determined by the current week, provided by the java.util.Date class \\
+    \hline
+    \end{tabular}
+\end{center}
+\caption{Model Attributes}
+\end{table}
+\pagebreak
+\begin{lstlisting}
+@RequestMapping(value = "/gotoCourt", method = RequestMethod.POST)
+public String chooseCourt(Model model, HttpServletRequest request) {
+	//abbreviated method to display court, logic removed
+	//highlighting the attributes within the model
+	model = addDateToTimetable(model, id));
+	model.addAttribute("series",timetableService.getById(id).getSeries());
+	model.addAttribute("name", SecurityContextHolder.getContext().getAuthentication().getName());
+	model.addAttribute("court", current);
+	model.addAttribute("realname", name);
+	model.addAttribute("bookings", left);
+	if (seriesMatch(courtID, nextCourt)) {
+		model.addAttribute("next", (current.getId() + 1));
+	}
+	if (seriesMatch(courtID, prevCourt)) {
+		model.addAttribute("prev", (current.getId() - 1));
+	}
+	return "court";
+}
+\end{lstlisting}	
+
+This example is an excerpt from the TimetableContoller class. The logic determining the values has been removed. This is to highlight how attributes are added to the model from within the controller. This is the information that the JSP page will have access to once it has been displayed.
+
+The above code deals with the display of \textit{Monday} within the Timetable display page. In the \textit{c:forEach} tags, it loops through each value in the \textit{court.monday} list that has been passed to it by the controller. The size of this list is determined by the user when the timetable is created, and the number of slots per day is specified. If the current value being examined in the loop is equal to the value "Free Court", it will display a link to the Book Form mapping. This aspect of the Timetable Controller will check that a user has any remaining bookings left and respond as appropriate. In the event that the value in the list does not equal "Free Court", it will make a choice. If the currently authenticated user made the booking, it will display an option to remove their booking from the slot. Otherwise, it will give any other user an option to report the user as a "no show" should a user fail to show for a previously booked slot. \newline
+
+\begin{table}[H]
+\begin{lstlisting}
+<c:forEach var="row" varStatus="loop" items="${court.monday}">
+<c:choose>
+<c:when test='${row eq "Free Court"}'><tr>
+<td class="inner"><form action="${pageContext.request.contextPath}/bookCourt"
+method="POST">
+<input type="hidden" value="${loop.index}" name="position" />
+<input type="hidden" value="monday" name="day" /> 
+<input type="hidden" value="${court.id }" name="ttid" />
+<input type="submit" value="Book">
+</form></td></tr>
+</c:when>
+<c:otherwise><tr><td class="inner">${row}
+<c:choose>
+<c:when test="${name eq pageContext['request'].userPrincipal.name && row eq realname }">
+<form action="${pageContext.request.contextPath}/unbookCourt" method="POST">
+<input type="hidden" value="${loop.index}" name="position" />
+<input type="hidden" value="monday" name="day" /> 
+<input type="hidden" value="${court.id }" name="ttid" /> 
+<input type="submit" value="Unbook">
+</form></c:when>
+<c:otherwise>
+<form action="${pageContext.request.contextPath}/reportNoShow" method="POST">
+<input type="hidden" value="${row}" name="bookedUser" />
+<input type="hidden" value="monday" name="day" /> 
+<input type="hidden" value="${court.id }" name="ttid" /> 
+<input type="submit" value="Report User">
+</form></c:otherwise>
+\end{lstlisting}
+\caption{Code Showing Display of Timetable}
+\end{table}
+
+
+\section{Logging the Application}
+
+The logging for this application was provided by \textit{log4j.} Logging became very useful for tracking down, and isolating bugs, throughout the application. Since there were a considerable number of dependencies and different technologies working together, it rapidly became very difficult to see where errors originated from. Stack-traces quickly became unmanageable. \textit{Log4j} works by allowing the developer to view a number of logs of varying types within the application.
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+    Log Type & Description \\ \hline
+    INFO & Messages that highlight the progress of the application at coarse-grained level  \\ \hline
+    DEBUG & Fine-grained informational events that are most useful to debug an application\\ \hline
+	TRACE & Finer-grained informational events than the DEBUG\\ \hline
+	WARN & Potentially harmful situations\\ \hline
+	ERROR & Error events that might still allow the application to continue running\\ \hline
+    FATAL & Very severe error events that will presumably lead the application to abort\\ \hline
+    \end{tabular}
+\end{center}
+\caption{Log Types}
+\end{table}
+
+\textit{Log4j} is configured with a properties file that allows you to see the various levels of logs displays by the applications running. Implementation of a logging system resolved a number of Spring Security issues within the web application. Spring Security, concerned with access rights to mappings within the application, did not output failed access attempts to the console. This made it very difficult to debug. When configuring \textit{Log4j} to catch the logs created by the security components, the application became much easier to debug. The properties file for this web application is detailed below.
+
+\begin{table}[H]
+\begin{lstlisting}
+log4j.rootLogger=INFO, CONSOLE
+log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+log4j.appender.CONSOLE.layout=org.apache.log4j.SimpleLayout
+log4j.logger.org.hibernate.SQL=DEBUG
+log4j.logger.org.hibernate.type=TRACE
+log4j.logger.org.springframework.security=DEBUG
+\end{lstlisting}
+\caption{Log4j Configuration}
+\end{table}
+
+Logging can be implemented on a class by class basis. Within this application, it was used to display informational messages to the developer. These included items such as database access, objects being created and updated. In order to enable logging on a class, a logger must be instantiated with reference to the class that requires logging. The logger object then is called with a method corresponding to the type of log you wish to throw along with a message.
+
+\begin{table}[H]
+\begin{lstlisting}
+private static Logger logger = Logger.getLogger(UserDAO.class);
+
+public Session session(){ 
+	logger.info("Session Factory returning current session.....");
+	return sessionFactory.getCurrentSession();
+}
+
+public List<User> getUsers() {
+	logger.info("Selecting All Enabled Members....");
+	return session().createQuery("from User where enabled = '1'").list();
+}
+
+public User getUserByName(String name) {
+	Criteria crit = session().createCriteria(User.class);
+	crit.add(Restrictions.eq("name", name)); 
+	try{
+	User user = (User) crit.uniqueResult();
+	}
+	catch(Exception e){
+	logger.error{"Must be unique result : Thrown from UserDAO.getUserByName(String name));
+	}
+	return user;
+}
+\end{lstlisting}
+\caption{Logger Usage within UserDAO.class}
+\end{table}
+
+\section{Configuration of the Application}
+
+In order to begin implementation with the Spring MVC framework, there are a number of configuration files that are necessary. The core file is the \textit{web.xml} file. This file is responsible for the configuration for the framework. One of the key responsibilities is the definition of the context xml files, whose purpose will be elaborated on later. Different development profiles can be configured within this file in order to produce different development environments, such as production and testing environments. The configuration of this file within the application is shown in Figure ~\ref{fig:springConfig} \newline 
+\begin{table}[H]
+\begin{lstlisting}
+<context-param>
+<param-name>contextConfigLocation</param-name>
+<param-value>
+	classpath:beans/dao-context.xml
+	classpath:beans/service-context.xml
+	classpath:beans/security-context.xml
+</param-value>
+ </context-param>
+\end{lstlisting}
+\caption{Spring Configuration}
+\label{fig:springConfig}
+\end{table}
+
+Of particular importance are the definition of the context parameters. In this project, there were three main context files.
+
+\begin{itemize}
+\item Data Access Object Context
+\item Service Context
+\item Security Context
+\end{itemize}
+
+The DAO Context file specifies the packages that contain the various DAO classes within the application. It also contains configurations for both the database connection details, and Hibernate configurations. Packages containing entity classes for Hibernate are specified within this context also. \newline
+
+\begin{table}
+\begin{lstlisting}
+<property name="hibernateProperties">
+<props>
+<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+</props>
+</property>
+\end{lstlisting}
+\caption{Hibernate Configuration}
+\end{table}
+
+
+The Service Context file is responsible for specifying the base package containing the Service classes necessary to facilitate the collaboration between the Controller classes and the DAO classes. This file specifies that annotations will be used to configure the Service classes.\newline
+
+\begin{lstlisting}
+<context:annotation-config></context:annotation-config>
+<context:component-scan base-package="service"></context:component-scan>
+\end{lstlisting}
+
+The Security Context file is the larger of the three files, and is responsible for the security configuration of the web application. There are four main areas within the file that were used to configure the web application created in this project. \newline The User Service aspect of the configuration file is responsible for retrieving users and their authority within the scope of the web application. \newline The URL access configuration ensures that only users who are authorised to access certain portions of the site are allowed access. \newline The Security Annotations allow the creation of an extra level of security into an application. At class level, annotations can be placed on methods to further ensure that proper access is enforced throughout the application. \newline Lastly, the Security Context is responsible for creating the password encoder bean in which passwords are encoded, and decoded, upon account creation and login. This ensures that no passwords in plain text form are ever stored on either the server or the database within the web application \pagebreak
+
+\begin{itemize}
+\item User Service
+\begin{lstlisting}
+<security:authentication-manager>	
+	<security:authentication-provider>
+	<security:jdbc-user-service data-source-ref="dataSource"
+		id="jdbcUserService" authorities-by-username-query="select username, authority from users where binary username = ?" />
+	<security:password-encoder ref="passwordEncoder"></security:password-encoder>
+	</security:authentication-provider>
+</security:authentication-manager>
+\end{lstlisting}
+\item URL Access
+\begin{lstlisting}
+<security:intercept-url pattern="/timetable" access="permitAll"/>
+<security:intercept-url pattern="/reportNoShow" access="permitAll"/>
+<security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
+<security:intercept-url pattern="/approveMembers" access="hasRole('ROLE_ADMIN')"/>
+\end{lstlisting}
+\item Security Annotation for Service Class
+\begin{lstlisting}
+<security:global-method-security secured-annotations="enabled"></security:global-method-security>
+//Java Code from TimetableService class. 
+//This code is invoked when booking a slot on the timetable and is only accessible by registered members.
+@Secured({"ROLE_ADMIN", "ROLE_MEMBER", "ROLE_COMMITTEE", "ROLE_WARNING", "ROLE_SUSPEND"})
+	public void update(Timetable t){
+		timetableDAO.updateTimetable(t);
+	}
+\end{lstlisting}
+\item Password Encoding
+\begin{lstlisting}
+<bean id="passwordEncoder"
+class="org.springframework.security.crypto.password.StandardPasswordEncoder">
+</bean>
+\end{lstlisting}
+\end{itemize}
+
+\section{Test Driven Development}
+
+The primary method of testing was implemented using JUnit. A Test Suite of JUnit tests were prepared to test the key features of the application. A separate test database was constructed. It was important to ensure that the testing environment was using the same context files as the production environment. The test class had to be annotated to enforce this. While the context files were the same, the DataSource file has changed as a different database is being using in this environment.
+
+
+\begin{table}[H]
+\begin{lstlisting}
+@ActiveProfiles("dev")
+@ContextConfiguration(locations = { "file:src/main/java/beans/dao-context.xml",
+"file:src/main/java/beans/security-context.xml",
+"classpath:test/config/datasource.xml" })
+@RunWith(SpringJUnit4ClassRunner.class)
+public class HibernateTests {
+	
+	@Autowired
+	private UserDAO userDAO;
+	
+	@Autowired
+	private TournamentDAO tournamentDAO;
+	
+	@Autowired
+	private DataSource dataSource;
+	
+	//Class truncated 
+}
+
+\end{lstlisting}
+\caption{JUnit Test Example}
+\end{table}
+
+The database is then initialised to ensure the tests are being run against the same database, and that repeat tests are consistent.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Before
+public void init(){
+	JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+	jdbc.execute("delete from users"); 
+}
+\end{lstlisting}
+\caption{JUnit @Before Test Configuration}
+\end{table}
+
+In these example tests, the UserDAO is being tested to ensure that it returns true when the exists() method is called on it. This is important within the scope of the application to ensure that primary keys are not duplicated. The method is annotated with \textit{@Test}. The methods \textit{assertTrue} and \textit{assertFalse} expect a return value of true and false respectively. They take two parameters: an error message and a boolean value, or a method that returns a boolean value. In the \textit{assertTrue} method below, the UserDAO will return true if the user exists. In the event that the user does not exist, it will fail the test and return the message "User should exist".\newline 
+
+\begin{table}[H]
+\begin{lstlisting}
+@Test
+public void testExists(){
+	userDAO.createUser(user1);
+	assertTrue("User should exist", userDAO.exists(user1.getUsername()));
+	assertFalse("User should not exist", userDAO.exists("jkljfksakfjahghdsopjclkhfkjafhkjdshFHajhgouwe"));
+}
+\end{lstlisting}
+\caption{JUnit UserDAO Exists() Test}
+\end{table}
+
+Another test with the UserDAO was to ensure that users were being saved correctly. In this example, users are being created and saved to the database. The method \textit{assertEquals} checks two interger values and returns an error message if they do not match.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Test 
+public void testCreateRetrieve(){
+	userDAO.createUser(user1);
+	List<User> users1 = userDAO.getAllUsers();
+	assertEquals("One user should have been created and retrieved", 1, users1.size());
+	assertEquals("Inserted user should match retrieved", user1, users1.get(0));
+	userDAO.createUser(user2);
+	userDAO.createUser(user3);
+	userDAO.createUser(user4);
+	List<User> users2 = userDAO.getAllUsers();
+	assertEquals("Number of users should be four", 4, users2.size());
+}
+\end{lstlisting}
+\caption{JUnit Create and Size Test}
+\end{table}
+
+
+\section{Conclusion}
