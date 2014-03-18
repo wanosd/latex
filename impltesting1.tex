@@ -10,7 +10,7 @@ This chapters focuses on the implementation of the application, with the focus o
 
 The \textit{User} class represents every user account within the application. (Link to appendice showing class attributes). This section will focus on a regular user, how it is configured within the application in terms of bean definition and persistence. 
 
-Firstly, as show in line one of Figure ~\ref{fig:userDef}, the class needs to be configured as a \textit{Component} for the application. This ensures that the Spring framework considers the User class as one for auto-detection, as the use of class path scanning and annotations prevalent within this application. The framework instantiates this bean, or object, automatically, without the developer having to use the \textit{new} keyword.
+Firstly, as shown in line one of Figure ~\ref{fig:userDef}, the class needs to be configured as a \textit{Component} for the application. This ensures that the Spring framework considers the User class as one for auto-detection, as the use of class path scanning and annotations prevalent within this application. The framework instantiates this bean, or object, automatically, without the developer having to use the \textit{new} keyword.
 
 \begin{table}[H]
 \begin{lstlisting}
@@ -50,7 +50,7 @@ public class User {
 
 The \textit{Entity} and \textit{Table} annotations that belong to the javax.persistance package. These annotations are used by Hibernate in order to manage and persist the class. The \textit{@Table} annotation has a 'name' attribute that refers to the schema table the class maps to. There are two ways that an attribute can be assigned to a table column by Hibernate. Both methods are shown in Figure ~\ref{fig:userDef}. An annotation may be placed on the attribute in order to specify a column name. Line 12 in Figure ~\ref{fig:userDef} shows the username attribute being mapped to the username column within the User database schema. The other way of specifying where an attribute should be persisted is to ensure that the attribute name matches the column name within the table. This implicitly allows Hibernate to map a class, without having to explicitly define the mapping for the persistence framework.
 
-The User class has a number of attribute constraints placed upon it. There are two types of constraints within this application: \textit{FormValidationGroup} and \textit{PersistenceValidationGroup}. These are interface classes with no attributes that just serve as identifiers. As shown in lines 10, 14, 19 and 25 of Figure ~\ref{fig:userDef}, an attribute may be constrained by one or more groups. An annotation, from the javax.validation.constraints, is applied to the attribute. The annotations used within this applicated were as detailed in Table ~\ref{fig:classConstraints}.
+The User class has a number of attribute constraints placed upon it. There are two types of constraints within this application: \textit{FormValidationGroup} and \textit{PersistenceValidationGroup}. These are interface classes with no attributes that just serve as identifiers. As shown in lines 10, 14, 19 and 25 of Figure ~\ref{fig:userDef}, an attribute may be constrained by one or more groups. An annotation, from the javax.validation.constraints, is applied to the attribute. The annotations used within this application were as detailed in Table ~\ref{fig:classConstraints}.
 
 \begin{table}[H]
 \begin{center}
@@ -67,6 +67,76 @@ The User class has a number of attribute constraints placed upon it. There are t
 \label{fig:classConstraints}
 \end{table}
 
+These validation package interfaces provide a \textit{groups} attribute, which is an array of objects. The \textit{FormValidationGroup} and \textit{PersistenceValidationGroup} are passed to this attribute. When using this attribute within the application, such as the creation of a user within a form, the MemberController class applies validation to the user input. The reason for having two groups of validation within this application is due to security. In every application, it is advisable to perform encryption on sensitive data, such as passwords. Within the scope of this application, user passwords were defined as being between 5 and 15 characters long, with no restriction to the content of the password. For example, a user password with 8 characters would pass form validation with no issues. When the PasswordEncoder bean is applied to the string prior to persistence, it will result in a value like \textit{'acb172137243c0b931321d7645dc4b2f5575a30ab48c31c2efb8346385ae0547d11b1d8de333215b'}, a value much longer than 15 characters. This will cause a failure with Hibernate persistence. This is because Hibernate works at a class level, and does take note of the constraints placed upon the class, while JDBC does not. The constraints that JDBC takes note of are those taken directly from the database itself. In this application, passing form validation is sufficient, as there are security annotations placed on the Service classes that manage data persistence. An example of how the controller handles validation is shown later in Figure ~\ref{fig:memberController}. 
+
+Alongside class configuration, it is also necessary to configure Hibernate to scan the packages that contain entities, as detailed in Figure ~\ref{fig:hibernateConfig}. This is done through the creation of a sessionFactory bean, which uses the AnnotationSessionFactoryBean class. This bean is responsible for the creation of session instances within the application, though each application usually only has one session. It is an immutable object, and cannot be changed once it is created, so proper configuration of classes to facilitate object-relational mapping is important.
+
+\begin{table}[H]
+\begin{lstlisting}
+<bean id="sessionFactory"
+class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+<property name="dataSource" ref="dataSource"></property>
+<property name="hibernateProperties">
+	<props>
+		<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+	</props>
+</property>
+<property name="packagesToScan">
+	<list>
+		<value>users</value>
+	</list>
+</property>
+</bean>
+\end{lstlisting}
+\caption{Hibernate SessionFactory Configuration}
+\label{fig:hibernateConfig}
+\end{table}
+
+
+(I really should talk about the Spring Form and Controller here, it's a big gap to leave out)
+
+
+
+Within this application, the Service layer is responsible for the Controller communicating with the DAO layer to persist objects like the User class. Since Hibernate is configured at a class level, in relation to attributes and column names, there is no need for any INSERT or UPDATE statements. The current session, see Figure ~\ref{fig:getSession} is returned to the DAO object via the configured bean, and the necessary methods, such as save() and delete(), are called upon it. An object must be passed to the \textit{save()} method of the current sessionFactory object, detailed in ~\ref{fig:hibernateConfig}. 
+
+\begin{table}[H]
+\begin{lstlisting}
+public Session session(){
+	logger.info("Session Factory returning current session.....");
+	return sessionFactory.getCurrentSession();
+}
+\end{lstlisting}
+\caption{UserDAO getSession()}
+\label{fig:getSession}
+\end{table}
+
+In the case of the User object, the password needs to be encoded prior to the object being persisted by the session(). In order to encode password, a bean responsible for the encoding must be defined within the application context, shown in Figure ~\ref{fig:passwordEncoder}. Spring provides a class that allows passwords to be encoded, and the bean for this class is defined within a security-context file.
+
+\begin{table}[H]
+\begin{lstlisting}
+<bean id="passwordEncoder"
+class="org.springframework.security.crypto.password.StandardPasswordEncoder">
+</bean>
+\end{lstlisting}
+\caption{Password Encoder Definition}
+\label{fig:passwordEncoder}
+\end{table}
+
+This Spring defined class provides an implementation for encoding data using SHA-256 hashing with 1024 iterations, with a random 8 byte salt value. This object then calls \textit{encode()} on the value passed from the form filled by the user. As a result, the actual password is never stored in the database, just an encrypted form of it, as shown in Figure ~\ref{fig:userPersist}. Once the password is encoded (Line 4, ~\ref{fig:userPersist}), the session() object can save the object. Due to the class configuration, there is no need to specify any database schema information within the DAO classes.
+
+\begin{table}[H]
+\begin{lstlisting}
+@Transactional
+public void createUser(User user) {
+	user.setPassword(passwordEncoder.encode(user.getPassword()));
+	session().save(user);
+}
+\end{lstlisting}
+\caption{Persisting User Object with Encoded Password}
+\label{fig:userPersist}
+\end{table}
+
+
 
 \subsection{Timetable - Persistence Changes}
 \subsection{Tournaments and Events}
@@ -76,6 +146,49 @@ The \textit{Administration} section of the application deals with the implementa
 
 \section{Model View Controller}
 \subsection{Controller Layer}
+
+\begin{table}[H]
+\begin{lstlisting}
+<!-- Excerpt from the User registration form. Formatting removed for clarity --!>
+<sf:form id="details" method="post" action="${pageContext.request.contextPath}/register" commandName="member">
+Name<<sf:input name = "name" path="name" type="text"/>
+<sf:errors path="name" cssClass="error"></sf:errors>
+Password<sf:input id="password" name = "password" path="password" type="password"/>
+<sf:errors path="password" cssClass="error"></sf:errors>
+</sf:form>
+
+//Method from the MembersController class
+//This method is responsible for validating the form that users complete to register.
+@RequestMapping(value = "/register", method = RequestMethod.POST)
+public String doRegister(Model model,
+@Validated(FormValidationGroup.class) @ModelAttribute("member") User member, BindingResult result) {
+if (result.hasErrors()) {
+	return "createmembers"; // if the result has errors, go back to create page
+}
+if (userService.exists(member.getUsername())) {
+	result.rejectValue("username", "Duplicate Key",
+	"This email address has already been used");
+	return "createmembers";
+	//if the email address already exists, return with this message.
+}
+	else {
+		try {
+			member.setAuthority("ROLE_MEMBER");
+			userService.create(member);
+			return "registerSuccess";
+			//successful creation of member
+			} catch (Exception e) {
+				return "error";
+			}
+		}
+}
+\end{lstlisting}
+\caption{Member Controller User Registration}
+\label{fig:memberController}
+\end{table}
+
+\subsection{Models within the Spring MVC Framework}
+
 \subsection{View Layer}
 \subsubsection{Apache Tiles Configuration and Implementation}
 
@@ -132,11 +245,15 @@ The following examples shows the implementation within the configuration file. T
 
 JSTL is used within the application to manage how information was displayed. It was preferred, during the development of the application, that all of the logic be handled at the Controller level, and that the JSP pages would resolve the models passed to it into the view seen by the user. It was not desirable for the pages to contain JSP directives, or to use the implicit objects contained within JSP pages. 
 
-The main tags used within the application were the JSTL Core tags.  These tags allow the usage of conditional statements and the definition of parameters within the JSP page. In order to use this technology, the relevant jar must be made available in the build path or within the Maven dependencies of the project. The following statement must be included in all JSP pages that wish to make use of the tags also.\newline
+The main tags used within the application were the JSTL Core tags.  These tags allow the usage of conditional statements and the definition of parameters within the JSP page. In order to use this technology, the relevant jar must be made available in the build path or within the Maven dependencies of the project. A declaration, as shown in Figure ~\ref{fig:jstldec} must be included in all JSP pages that wish to make use of the tags also.\newline
 
+\begin{table}[H]
 \begin{lstlisting}
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 \end{lstlisting}
+\caption{JSTL Tag Library Declaration}
+\label{fig:jstldec}
+\end{table}
 
 Within the application, the controller will create a model and pass it to the JSP page. The page uses the JSTL tags to manage and display relevant information from the model, and user actions based on the information contained within. The example below is taken from the Timetable display page from the application.\newline
 
