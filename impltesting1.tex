@@ -3,7 +3,7 @@
 
 \section{Introduction}
 
-This chapters focuses on the implementation of the application, with the focus on the application entities, and how they were configured.
+This chapters focuses on the implementation of the application, with the focus on the application entities, and how they were configured. Due to the overlapping nature of the application, concepts may be mentioned earlier than explained, but references will be made. 
 
 \section{Application Entities}
 \subsection{Users - Persistence}
@@ -57,7 +57,7 @@ The User class has a number of attribute constraints placed upon it. There are t
     \begin{tabular}{ | l | l | p{5cm} |}
     \hline
     Constraint Name & Description\\ \hline
-    Pattern & Ensures the value within the attribute conforms to a defined regular expression\\ \hline
+    Pattern & Ensures the value within the attribute conforms to a regular expression\\ \hline
     Min & Ensures the value within the attribute has a minimum length\\ \hline
 	Max & Ensures the value within the attribute has a maximum length\\ \hline
 	NotNull & Ensures the value within the attribute does not have a null value\\ \hline
@@ -92,10 +92,47 @@ class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBea
 \label{fig:hibernateConfig}
 \end{table}
 
+The Form Validation is provided by the Spring Security file, which will be examined in detail in the Administration Implementation section on page ~\pageref{sec:adminImp}. As discussed previously, there are a number of validation constraints placed on the \textit{User} class. Spring provides a facility to ensure these constraints are enforced, and to also provide a positive user experience. It does this through the use of a BindingResult object. This object holds a record of any errors from the form that the user populates. The controller that deals with the form will check the BindingResult object for errors, and can respond appropriately. In order for this to work, both the Controller and the form, see Figure ~\ref{fig:memberController} need to be defined clearly. The form needs to be created  using the Spring Framework form tag library, and errors needs to be specified for each input within the form. \pagebreak
 
-(I really should talk about the Spring Form and Controller here, it's a big gap to leave out)
+\begin{table}[H]
+\begin{lstlisting}
+<!-- Excerpt from the User registration form. Formatting removed for clarity --!>
+<sf:form id="details" method="post" action="${pageContext.request.contextPath}/register" commandName="member">
+Name <sf:input name = "name" path="name" type="text"/>
+<sf:errors path="name" cssClass="error"></sf:errors>
+Password <sf:input id="password" name = "password" path="password" type="password"/>
+<sf:errors path="password" cssClass="error"></sf:errors>
+</sf:form>
 
-
+//Method from the MembersController class
+//This method is responsible for validating the form that users complete to register.
+@RequestMapping(value = "/register", method = RequestMethod.POST)
+public String doRegister(Model model,
+@Validated(FormValidationGroup.class) @ModelAttribute("member") User member, BindingResult result) {
+if (result.hasErrors()) {
+	return "createmembers"; // if the result has errors, go back to create page
+}
+if (userService.exists(member.getUsername())) {
+	result.rejectValue("username", "Duplicate Key",
+	"This email address has already been used");
+	return "createmembers";
+	//if the email address already exists, return with this message.
+}
+	else {
+		try {
+			member.setAuthority("ROLE_MEMBER");
+			userService.create(member);
+			return "registerSuccess";
+			//successful creation of member
+			} catch (Exception e) {
+				return "error";
+			}
+		}
+}
+\end{lstlisting}
+\caption{User Registration Form}
+\label{fig:memberController}
+\end{table}
 
 Within this application, the Service layer is responsible for the Controller communicating with the DAO layer to persist objects like the User class. Since Hibernate is configured at a class level, in relation to attributes and column names, there is no need for any INSERT or UPDATE statements. The current session, see Figure ~\ref{fig:getSession} is returned to the DAO object via the configured bean, and the necessary methods, such as save() and delete(), are called upon it. An object must be passed to the \textit{save()} method of the current sessionFactory object, detailed in ~\ref{fig:hibernateConfig}. 
 
@@ -136,63 +173,273 @@ public void createUser(User user) {
 \label{fig:userPersist}
 \end{table}
 
-
-
 \subsection{Timetable - Persistence Changes}
-\subsection{Tournaments and Events}
-\subsection{Administration - Security and Session Management}
 
-The \textit{Administration} section of the application deals with the implementation, and configuration, of the security and session management aspects of the application. A administrator has the same structure as a \textit{User} and is defined by the \textit{Role} it has, as seen previously in Figure ~\ref{fig:secRoles}.
+One of the most difficult features to implement within the application was the Timetable. While the goal was to create a timetable suitable for Monaleen GAA Tennis Club, it was desirable that the timetable retain the ability to have some dynamic features, not pre-set features that were not user definable. One issue this raised was how to handle a varying number of slots in each day. If a user could defined 10 slots a day, how would be store this in such a way that a user could also define a timetable with 20 slots a day. Hibernate was able to facilitate this design with considerably less input from a developer.
 
-\section{Model View Controller}
-\subsection{Controller Layer}
+The solution implemented in this application was to use List objects to store the values for each day. There would be seven lists in the Timetable class, one for each day, as per Figure ~\ref{fig:timetableConfig}.
+
+
+\begin{lstlisting}
+@Entity
+@Component
+@Table(name = "timetable")
+public class MonaleenTTV1 implements Timetable {
+	@Id
+	@GeneratedValue
+	private int id;
+	/**
+	* Other Attributes Here
+	**/
+	
+	@ElementCollection
+	@CollectionTable (name = "monday", joinColumns=@JoinColumn(name="id"))
+	private List<String> monday;
+	
+	@ElementCollection
+	@CollectionTable (name = "tuesday", joinColumns=@JoinColumn(name="id"))
+	private List<String> tuesday;
+	
+	@ElementCollection
+	@CollectionTable (name = "wednesday", joinColumns=@JoinColumn(name="id"))
+	private List<String> wednesday;
+	
+	@ElementCollection
+	@CollectionTable (name = "thursday", joinColumns=@JoinColumn(name="id"))
+	private List<String> thursday;
+	
+	@ElementCollection
+	@CollectionTable (name = "friday", joinColumns=@JoinColumn(name="id"))
+	private List<String> friday;
+	
+	@ElementCollection
+	@CollectionTable (name = "saturday", joinColumns=@JoinColumn(name="id"))
+	private List<String> saturday;
+	
+	@ElementCollection
+	@CollectionTable (name = "sunday", joinColumns=@JoinColumn(name="id"))
+	private List<String> sunday;
+	
+	//getters and setters
+}
+\end{lstlisting}
+\begin{table}[H]
+\caption{Timetable Class List Configuration}
+\label{fig:timetableConfig}
+\end{table}
+
+This results in the Timetable object being made up of 8 database tables. The core of the class is stored in the 'Timetable' database table. This table contains the primary keys and all other attributes, such as name, number of slots, timetable series. The seven other tables each represent a collection within the Timetable class. Each of these tables has a non unique, foreign key that ties it back to the central table. For example, if we were to create a Timetable with 10 slots, with the primary key being 1, each of the collection tables would have 10 entries. Each of these entries would have an id of 1, to match the primary key in the core table, plus a value, such as 'Free Court'. The position in the table corresponds to the position within the collection class. 
+
+The following example, in Figure ~\ref{fig:ttdb}, shows a Timetable configured with two slots. Upon creation, a series is created for each timetable. Each series contains 52 timetables, one for each week. The currently displayed timetable is determined by its position in the series in relation to the current week of the year, as shown by the Java Calendar class. The 'preview' attribute determines how far ahead the application will display the next number of timetables. In this example, the next three weeks of timetables are available for viewing and booking. This allows the administrator to dynamically restrict how far in advance users can book slots.
+
+\begin{table}[H]
+    \begin{tabular}{| l | l | l | l | l | l | l | l | p{.8cm} |}
+    \hline
+    pid & name & slots & startTime & endTime & enabled & preview & series & total\\ \hline
+    1 & Court One Week 1 & 2 & 8 & 22 & 1 & 3 & 1 & 52\\ \hline
+	2 & Court One Week 2 & 2 & 8 & 22 & 0 & 3 & 1 & 52\\ \hline
+	3 & Court One Week 3 & 2 & 8 & 22 & 0 & 3 & 1 & 52\\ \hline
+	4 & Court One Week 4 & 2 & 8 & 22 & 0 & 3 & 1 & 52\\ \hline
+    \end{tabular}
+	\caption{Timetable Core Database Table}
+	\label{fig:ttdb}
+\end{table}
+
+\begin{table}
+\begin {center}
+    \begin{tabular}{| l | l | p{.8cm} |}
+	\hline
+	pid & monday \\ \hline
+	1 & Free Court \\ \hline
+	1 & Free Court \\ \hline
+	2 & Tournament \\ \hline
+	2 & Free Court \\ \hline
+	3 & User Booking \\ \hline
+	3 & Free Court \\ \hline
+	4 & Training \\ \hline
+	4 & Free Court \\ \hline
+	\end{tabular}
+	\end{center}
+	\caption{Timetable Storage Table for Monday Collection}
+\end{table}
+
+While the table structure of the \textit{User} and \textit{Timetable} differ considerably, since Hibernate deals with objects, that have table structures defined within their classes, there is no change to the way the Timetable is saved and updated, as per Figure ~\ref{timetableHibernate}. Using JDBC, there would have been 8 SQL queries to save to each of the 8 table, increasing the risk of bugs within the application, or invalid data being saved or retrieved.
 
 \begin{table}[H]
 \begin{lstlisting}
-<!-- Excerpt from the User registration form. Formatting removed for clarity --!>
-<sf:form id="details" method="post" action="${pageContext.request.contextPath}/register" commandName="member">
-Name<<sf:input name = "name" path="name" type="text"/>
-<sf:errors path="name" cssClass="error"></sf:errors>
-Password<sf:input id="password" name = "password" path="password" type="password"/>
-<sf:errors path="password" cssClass="error"></sf:errors>
-</sf:form>
-
-//Method from the MembersController class
-//This method is responsible for validating the form that users complete to register.
-@RequestMapping(value = "/register", method = RequestMethod.POST)
-public String doRegister(Model model,
-@Validated(FormValidationGroup.class) @ModelAttribute("member") User member, BindingResult result) {
-if (result.hasErrors()) {
-	return "createmembers"; // if the result has errors, go back to create page
-}
-if (userService.exists(member.getUsername())) {
-	result.rejectValue("username", "Duplicate Key",
-	"This email address has already been used");
-	return "createmembers";
-	//if the email address already exists, return with this message.
-}
-	else {
-		try {
-			member.setAuthority("ROLE_MEMBER");
-			userService.create(member);
-			return "registerSuccess";
-			//successful creation of member
-			} catch (Exception e) {
-				return "error";
-			}
-		}
+@Transactional
+public void createTimetable(Timetable t) {
+	session().save(t);
 }
 \end{lstlisting}
-\caption{Member Controller User Registration}
-\label{fig:memberController}
+\caption{Hibernate Save Timetable}
+\label{fig:timetableHibernate}
 \end{table}
+
+
+
+
+
+
+\subsection{Tournaments and Events}
+
+The third major area of the site were the \textit{Tournament} and \textit{Event} classes. The structure and configuration of these classes are not different from the \textit{User} or \textit{Timetable} classes. 
+
+\subsubsection{Tournament}
+
+The \textit{Tournament} class is configured similar to the \textit{Timetable} class, in that it has a secondary table which contains a list of members who have registered for the tournament. The key area for tournament implementation was for the application to differentiate between the various states of the tournament, such as registration being enabled, yet the tournament not having started yet. It was also important that the tournament could link up with the Timetable system, in order to book slots to play the tournament. In this regards, a tournament was required to manage an Event object, see Figure ~\ref{fig:tourCreate}, and to ensure that no ambiguity was present when dealing with multiple tournaments and possible multiple timetables. It was also necessary for this to be self managing, in order to minimize administrator involvement. 
+
+\begin{lstlisting}
+@RequestMapping(value = "/registerTournament", method = RequestMethod.POST)
+public String doCreateTournament(
+	Model model, BindingResult result,
+	@Validated(FormValidationGroup.class) @ModelAttribute("tournament") Tournament t) {
+	
+	if (result.hasErrors()) {
+		return "createTournament";
+	} 
+	if (tournamentService.exists(t.getTournamentName())){
+		if (eventService.exists(t.getTournamentName())){
+		result.rejectValue("tournamentName", "Duplicate Key",
+		"An event of this name already exists");
+		return "createTournament";
+	}
+	result.rejectValue("tournamentName", "Duplicate Key",
+		"A tournament of this name already exists");
+		return "createTournament";
+		}
+	else {
+		try {
+			tournamentService.create(t);
+			eventCreation(t);
+			logger.info("Tournament Created");
+			return "tournamentSuccess";
+		} catch (Exception e) {
+		return "error";
+	}
+}
+public void eventCreation(Tournament t){
+	Event e = new Event();
+	e.setName(t.getTournamentName());
+	e.setAuthor(userService.emailToName(SecurityContextHolder.getContext()
+	.getAuthentication().getName()));
+	eventService.createEvent(e);
+}
+\end{lstlisting}
+\begin{table}[H]
+\caption{Tournament Creation}
+\label{fig:tourCreate}
+\end{table}
+
+Deleting a tournament needed similar logic, as displayed in Figure ~\ref{fig:deleteTour}. Similar to the \textit{User} class, the Tournament name, much like the username, is used as a primary key, and can be recycled once a tournament is deleted. 
+
+\begin{lstlisting}
+	@RequestMapping("/confirmDelete")
+	public String deleteTournament(Model model, HttpServletRequest request){
+		Tournament t = tournamentService.getTournamentById(request
+				.getParameter("tournamentID"));
+		tournamentService.deleteTournament(t);
+		eventService.deleteEvent(eventService.getEventIdByName(t.getTournamentName()));
+		model.addAttribute("tour", tournamentService.getAllTournaments());
+		return "deleteTournament";
+	}
+\end{lstlisting}
+\begin{table}[H]
+\caption{Delete Tournament}
+\label{fig:deleteTour}
+\end{table}	
+
+Due to constraints on time within the final year project, it wasn't possible to fully flesh out this area of the site, though it was implemented in such a way to allow for extensibility such as an interface for the sorting of registered members into teams.
+
+\subsubsection{Events}
+
+Within the scope of this application, an \textit{Event} is any item that can be scheduled within the Timetable object. As with the \textit{Tournament} class, the \textit{Event} class is configured much like the \textit{User} and \textit{Timetable} classes. One event that is required by all versions of the Timetable is the 'Free Court' event. This event is created by default (see Figure ~\ref{fig:createEvent}) either the first time an administrator attempts to create an Event, or to create a Timetable. An Event has two attributes: a name and an author. In the case of a system event, the name will be the login of the person who booked the timetable slot, while the author is defined as \textit{BOOKING SYSTEM}. For an administrator event, the name is defined by that administrator, while the author is listed as the administrator who created the event.
+
+\begin{lstlisting}
+@RequestMapping(value = "/saveEvent", method = RequestMethod.POST)
+public String saveEvent(Model model, @ModelAttribute("event") Event e,
+	BindingResult result) {
+	if (eventService.getEventById(1).equals(null)){
+		e.setName("Free Court");
+		e.setAuthor(userService.emailToName(SecurityContextHolder
+		.getContext().getAuthentication().getName()));
+		e.setEnabled(true);
+		eventService.createEvent(e);
+	}
+	logger.info("Event Save Method....");
+	if (result.hasErrors()) {
+		return "createEvent";
+	}
+	if (eventService.exists(e.getName())) {
+		result.rejectValue("name", "Duplicate Key",
+		"This Event Name has already been used.");
+		return "createEvent";
+	} else {
+		e.setAuthor(userService.emailToName(SecurityContextHolder
+		.getContext().getAuthentication().getName()));
+		e.setEnabled(false);
+		eventService.createEvent(e);
+		return viewEvent(model);
+	}
+}
+\end{lstlisting}
+\begin{table}[H]
+\caption{Event Creation}
+\label{fig:createEvent}
+\end{table}
+
+In order for an event to show up as an option when creating, or editing, a timetable, it must be enabled, as shown in Figure ~\ref{fig:enableEvent}. This implementation allows the administrator to pre-create events for later use without overcrowding the timetable.
+
+\begin{lstlisting}
+@RequestMapping("/changeEventStatus")
+public String changeEventStatus(Model model, HttpServletRequest request) {
+	Event e = (Event) eventService.getEventById(Integer.valueOf(request
+	.getParameter("eventID")));
+	if (e.isEnabled()) {
+		e.setEnabled(false);
+		eventService.updateEvent(e);
+		return viewEvent(model);
+	} else {
+		e.setEnabled(true);
+		eventService.updateEvent(e);
+		return viewEvent(model);
+	}
+}
+\end{lstlisting}
+\begin{table}[H]
+\caption{Change Event Status}
+\label{fig:enableEvent}
+\end{table} 	
+	
+	
+\label{sec:adminImp}
+\subsection{Administration - Security and Session Management}
+
+The \textit{Administration} section of the application deals with the implementation, and configuration, of the security and session management aspects of the application. An administrator has the same structure as a \textit{User} and is defined by the \textit{Role} it has, as seen previously in Figure ~\ref{fig:secRoles}. These roles are configured through Spring Security, in which a specific database schema must be adhered to. By default, there should be two tables: \textit{users} and \textit{authorities}, with a foreign key constraint. In this application, as shown in Line 3, Figure ~\ref{fig:roleConfig}, this was modified to keep the user data within the same table.
+
+\begin{lstlisting}
+<security:authentication-provider>
+<security:jdbc-user-service data-source-ref="dataSource"
+id="jdbcUserService" authorities-by-username-query="select username, authority from users where binary username = ?" />
+<security:password-encoder ref="passwordEncoder"></security:password-encoder>
+</security:authentication-provider>
+\end{lstlisting}
+\begin{table}[H]
+\caption{Spring Role Configuration}
+\label{fig:roleConfig}
+\end{table}
+
+The security within the application is controlled by the \textit{security-context.xml} file, which used Expression Based Access Control in order to restrict site access to relevant roles. The base class used within this application is \textit{SecurityExpressionRoot}
+
+\section{Model View Controller}
+\subsection{Controller Layer}
 
 \subsection{Models within the Spring MVC Framework}
 
 \subsection{View Layer}
 \subsubsection{Apache Tiles Configuration and Implementation}
 
-Apache Tiles is configured within the web application core XML file. There are two classes that the configuration is concerned with: TilesViewResolver and TileConfigurer. Both are declared as beans within the configuration file and automatically created when the application is launched. The TilesConfigurer object, see Figure ~\ref{fig:tilesXML}, takes one parameter: a location of the template that the default tile, and its subsequent children, will use. \newline
+Apache Tiles is configured within the web application core XML file. There are two classes that the configuration is concerned with: TilesViewResolver and TileConfigurer. Both are declared as beans within the configuration file and automatically created when the application is launched. The primary function of the ViewResolver is to take in a String value, and return the relevant \textit{RequestMapping} value within the application. These mappings are defined within the Controller classes of the application. The TilesConfigurer object, see Figure ~\ref{fig:tilesXML}, takes one parameter: a location of the template that the default tile, and its subsequent children, will use. \newline
 
 \begin{table}[H]
 \begin{lstlisting}

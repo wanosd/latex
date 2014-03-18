@@ -44,45 +44,47 @@
 \contentsline {section}{\numberline {5.1}Introduction}{16}{section.5.1}
 \contentsline {section}{\numberline {5.2}Application Entities}{16}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Users - Persistence}{16}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Timetable - Persistence Changes}{21}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Tournaments and Events}{21}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Administration - Security and Session Management}{21}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}Model View Controller}{22}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Controller Layer}{22}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Models within the Spring MVC Framework}{23}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}View Layer}{23}{subsection.5.3.3}
-\contentsline {subsubsection}{Apache Tiles Configuration and Implementation}{23}{section*.11}
-\contentsline {subsubsection}{JSTL}{24}{section*.12}
-\contentsline {section}{\numberline {5.4}Logging the Application}{27}{section.5.4}
-\contentsline {section}{\numberline {5.5}Configuration of the Application}{29}{section.5.5}
-\contentsline {section}{\numberline {5.6}Test Driven Development}{33}{section.5.6}
-\contentsline {section}{\numberline {5.7}Conclusion}{34}{section.5.7}
-\contentsline {chapter}{\numberline {6}Software Quality}{35}{chapter.6}
-\contentsline {section}{\numberline {6.1}Application Summary}{35}{section.6.1}
-\contentsline {section}{\numberline {6.2}Software Quality Tools and Visualisations}{36}{section.6.2}
-\contentsline {section}{\numberline {6.3}Sample Refactorings}{38}{section.6.3}
-\contentsline {chapter}{\numberline {7}Evaluation}{39}{chapter.7}
-\contentsline {section}{\numberline {7.1}Usability}{39}{section.7.1}
-\contentsline {section}{\numberline {7.2}Architectural Quality}{39}{section.7.2}
-\contentsline {section}{\numberline {7.3}Process Metrics}{39}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusions}{40}{chapter.8}
-\contentsline {chapter}{\numberline {A}Appendices}{42}{appendix.A}
-\contentsline {section}{\numberline {A.1}Application Breakdown}{42}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Java Source}{42}{subsection.A.1.1}
-\contentsline {subsubsection}{Package: beans}{42}{section*.14}
-\contentsline {subsubsection}{Package: controllers}{43}{section*.15}
-\contentsline {subsubsection}{Package: dao}{43}{section*.16}
-\contentsline {subsubsection}{Package: email}{44}{section*.17}
-\contentsline {subsubsection}{Package: events}{44}{section*.18}
-\contentsline {subsubsection}{Package: events.tournaments}{44}{section*.19}
-\contentsline {subsubsection}{Package: logs}{44}{section*.20}
-\contentsline {subsubsection}{Package: news}{45}{section*.21}
-\contentsline {subsubsection}{Package: properties}{45}{section*.22}
-\contentsline {subsubsection}{Package: reports}{45}{section*.23}
-\contentsline {subsubsection}{Package: service}{45}{section*.24}
-\contentsline {subsubsection}{Package: timetable}{46}{section*.25}
-\contentsline {subsubsection}{Package: users}{46}{section*.26}
-\contentsline {section}{\numberline {A.2}Apache Struts and JSP Pages}{46}{section.A.2}
-\contentsline {subsubsection}{layout}{46}{section*.27}
-\contentsline {subsubsection}{templates}{46}{section*.28}
-\contentsline {subsubsection}{tiles}{47}{section*.29}
+\contentsline {subsection}{\numberline {5.2.2}Timetable - Persistence Changes}{22}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Tournaments and Events}{24}{subsection.5.2.3}
+\contentsline {subsubsection}{Tournament}{24}{section*.11}
+\contentsline {subsubsection}{Events}{26}{section*.12}
+\contentsline {subsection}{\numberline {5.2.4}Administration - Security and Session Management}{28}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Model View Controller}{28}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Controller Layer}{28}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Models within the Spring MVC Framework}{28}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}View Layer}{28}{subsection.5.3.3}
+\contentsline {subsubsection}{Apache Tiles Configuration and Implementation}{28}{section*.13}
+\contentsline {subsubsection}{JSTL}{30}{section*.14}
+\contentsline {section}{\numberline {5.4}Logging the Application}{33}{section.5.4}
+\contentsline {section}{\numberline {5.5}Configuration of the Application}{35}{section.5.5}
+\contentsline {section}{\numberline {5.6}Test Driven Development}{39}{section.5.6}
+\contentsline {section}{\numberline {5.7}Conclusion}{40}{section.5.7}
+\contentsline {chapter}{\numberline {6}Software Quality}{41}{chapter.6}
+\contentsline {section}{\numberline {6.1}Application Summary}{41}{section.6.1}
+\contentsline {section}{\numberline {6.2}Software Quality Tools and Visualisations}{42}{section.6.2}
+\contentsline {section}{\numberline {6.3}Sample Refactorings}{44}{section.6.3}
+\contentsline {chapter}{\numberline {7}Evaluation}{45}{chapter.7}
+\contentsline {section}{\numberline {7.1}Usability}{45}{section.7.1}
+\contentsline {section}{\numberline {7.2}Architectural Quality}{45}{section.7.2}
+\contentsline {section}{\numberline {7.3}Process Metrics}{45}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusions}{46}{chapter.8}
+\contentsline {chapter}{\numberline {A}Appendices}{48}{appendix.A}
+\contentsline {section}{\numberline {A.1}Application Breakdown}{48}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Java Source}{48}{subsection.A.1.1}
+\contentsline {subsubsection}{Package: beans}{48}{section*.16}
+\contentsline {subsubsection}{Package: controllers}{49}{section*.17}
+\contentsline {subsubsection}{Package: dao}{49}{section*.18}
+\contentsline {subsubsection}{Package: email}{50}{section*.19}
+\contentsline {subsubsection}{Package: events}{50}{section*.20}
+\contentsline {subsubsection}{Package: events.tournaments}{50}{section*.21}
+\contentsline {subsubsection}{Package: logs}{50}{section*.22}
+\contentsline {subsubsection}{Package: news}{51}{section*.23}
+\contentsline {subsubsection}{Package: properties}{51}{section*.24}
+\contentsline {subsubsection}{Package: reports}{51}{section*.25}
+\contentsline {subsubsection}{Package: service}{51}{section*.26}
+\contentsline {subsubsection}{Package: timetable}{52}{section*.27}
+\contentsline {subsubsection}{Package: users}{52}{section*.28}
+\contentsline {section}{\numberline {A.2}Apache Struts and JSP Pages}{52}{section.A.2}
+\contentsline {subsubsection}{layout}{52}{section*.29}
+\contentsline {subsubsection}{templates}{52}{section*.30}
+\contentsline {subsubsection}{tiles}{53}{section*.31}
