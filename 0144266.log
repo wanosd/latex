@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  18 MAR 2014 18:23
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  19 MAR 2014 19:59
 entering extended mode
 **0144266.tex
 (C:\Users\0144266\Documents\GitHub\latex\0144266.tex
@@ -452,60 +452,60 @@ Overfull \hbox (43.82425pt too wide) in paragraph at lines 342--343
 [][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 442--443
+[26] [27] [28] [29]
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
-[28] [29]
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
-
- []
-
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 505--506
-
- []
-
-
-Overfull \hbox (66.68245pt too wide) in paragraph at lines 509--521
- [] 
- []
-
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 548--549
+[30] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 564--565
 
  []
 
 [32]
-Overfull \hbox (14.54362pt too wide) in paragraph at lines 589--599
+Underfull \hbox (badness 10000) in paragraph at lines 574--575
+
+ []
+
+
+Overfull \hbox (66.68245pt too wide) in paragraph at lines 578--590
  [] 
  []
 
-[33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 650--664
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 617--618
 
  []
 
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 674--675
+[34]
+Overfull \hbox (14.54362pt too wide) in paragraph at lines 658--668
+ [] 
+ []
+
+[35] [36]
+Underfull \hbox (badness 10000) in paragraph at lines 719--733
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 743--744
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 688--689
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
 
  []
 
-[36] [37] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 776--777
+[38] [39] [40]
+Underfull \hbox (badness 10000) in paragraph at lines 845--846
 
  []
 
-[39]) [40] (C:\Users\0144266\Documents\GitHub\latex\squality.tex
+[41]) [42] (C:\Users\0144266\Documents\GitHub\latex\squality.tex
 Chapter 6.
 File: infusion1.PNG Graphic file (type QTm)
-<use  "infusion1.PNG" > [41
+<use  "infusion1.PNG" > [43
 
 
 
@@ -514,24 +514,24 @@ File: infusion3.PNG Graphic file (type QTm)
  <use  "infusion3.PNG" >
 File: infusion2.PNG Graphic file (type QTm)
  <use  "infusion2.PNG" >
-[42]
+[44]
 File: codecity2d.png Graphic file (type QTm)
  <use  "codecity2d.png" >
 File: codecity3d.png Graphic file (type QTm)
- <use  "codecity3d.png" > [43]) [44]
+ <use  "codecity3d.png" > [45]) [46]
 (C:\Users\0144266\Documents\GitHub\latex\evaluation.tex
 Chapter 7.
-) [45
+) [47
 
 
 
 ] (C:\Users\0144266\Documents\GitHub\latex\conclusion.tex
 Chapter 8.
-) [46
+) [48
 
 
 
-] (C:\Users\0144266\Documents\GitHub\latex\0144266.bbl) [47
+] (C:\Users\0144266\Documents\GitHub\latex\0144266.bbl) [49
 
 
 ]
@@ -557,7 +557,7 @@ Overfull \hbox (45.74629pt too wide) in paragraph at lines 26--39
  [] 
  []
 
-[48
+[50
 
 
 ]
@@ -575,7 +575,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--67
 []\OT1/cmr/m/n/10 No.
  []
 
-[49]
+[51]
 Underfull \hbox (badness 10000) in paragraph at lines 80--80
 []\OT1/cmr/m/n/10 No.
  []
@@ -595,7 +595,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []\OT1/cmr/m/n/10 No.
  []
 
-[50]
+[52]
 Underfull \hbox (badness 10000) in paragraph at lines 130--130
 []\OT1/cmr/m/n/10 No.
  []
@@ -625,7 +625,7 @@ Overfull \hbox (19.9962pt too wide) in paragraph at lines 172--178
  [] 
  []
 
-[51]
+[53]
 Underfull \hbox (badness 10000) in paragraph at lines 187--187
 []\OT1/cmr/m/n/10 No.
  []
@@ -665,7 +665,7 @@ Overfull \hbox (79.82959pt too wide) in paragraph at lines 227--259
  [] 
  []
 
-[52] [53]
+[54] [55]
 Underfull \hbox (badness 10000) in paragraph at lines 267--267
 []\OT1/cmr/m/n/10 No.
  []
@@ -675,7 +675,7 @@ Overfull \hbox (88.8853pt too wide) in paragraph at lines 265--291
  [] 
  []
 
-) [54]
+) [56]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 89.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
  (C:\Users\0144266\Documents\GitHub\latex\0144266.aux
@@ -698,12 +698,12 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
  ) 
 Here is how much of TeX's memory you used:
- 9937 strings out of 429035
- 138663 string characters out of 3167909
+ 9950 strings out of 429035
+ 138877 string characters out of 3167909
  270205 words of memory out of 3000000
- 13064 multiletter control sequences out of 15000+200000
+ 13077 multiletter control sequences out of 15000+200000
  10279 words of font info for 36 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  35i,10n,47p,1644b,1696s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 0144266.pdf (58 pages).
+Output written on 0144266.pdf (60 pages).

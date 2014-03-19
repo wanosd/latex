@@ -429,7 +429,76 @@ id="jdbcUserService" authorities-by-username-query="select username, authority f
 \label{fig:roleConfig}
 \end{table}
 
-The security within the application is controlled by the \textit{security-context.xml} file, which used Expression Based Access Control in order to restrict site access to relevant roles. The base class used within this application is \textit{SecurityExpressionRoot}
+The security within the application is controlled by the \textit{security-context.xml} file, which used Expression Based Access Control [EBAC] in order to restrict site access to relevant roles. EBAC allows complicated boolean logic to be encapsulated within a single expression, such as whether a user is authenticated or not. The base class used within this application is \textit{SecurityExpressionRoot}. These expressions are contained within the \textit{security-context.xml} file, as seen in Figure ~\ref{fig:secContext}. This configuration file is partly responsible for controller access to the mappings within the application. 
+
+\begin{lstlisting}
+<security:http use-expressions="true">
+<security:intercept-url pattern="/static/**" access="permitAll" />
+<security:intercept-url pattern="/images/**" access="permitAll" />
+<security:intercept-url pattern="/createmembers" access="permitAll" />
+<security:intercept-url pattern="/tournamentSuccess" access="hasAnyRole('ROLE_ADMIN', 'ROLE_COMMITTEE')" />
+<security:intercept-url pattern="/createNews" access="hasAnyRole('ROLE_ADMIN', 'ROLE_COMMITTEE')" />
+<security:intercept-url pattern="/members" access="isAuthenticated()" />
+</security:http>
+\end{lstlisting}
+\begin{table}[H]
+\caption{Security Context File Excerpt}
+\label{fig:secContext}
+\end{table}
+
+In addition to the expression level security, service-level security annotations are also in place. This gives the application a second layer of security, as it restricts the use of methods within the service layer to defined roles. This is configured within the \textit{security-context.xml} file, Figure ~\ref{fig:secAnnotate}, and is implemented, as shown in Figure ~\ref{fig:secAnonImpl}, within the service layer. These annotation use the same roles as defined previously within the application.
+
+\begin{lstlisting}
+<security:global-method-security secured-annotations="enabled"></security:global-method-security>
+\end{lstlisting}
+\begin{table}[H]
+\caption{Security Context Service Layer Annotation Configuration}
+\label{fig:secAnnotate}
+\end{table}
+
+\begin{lstlisting}
+@Service("timetableService")
+public class TimetableService {
+
+private TimetableDAO timetableDAO;
+
+	@Autowired
+	public void setTimetableDAO(TimetableDAO timetableDAO) {
+		this.timetableDAO = timetableDAO;
+	}
+	
+	@Secured("ROLE_ADMIN")
+	public void create(Timetable t){
+		timetableDAO.createTimetable(t);
+	}
+	
+	@Secured({"ROLE_ADMIN", "ROLE_MEMBER", "ROLE_COMMITTEE", "ROLE_WARNING", "ROLE_SUSPEND"})
+	public void update(Timetable t){
+		timetableDAO.updateTimetable(t);
+	}
+	
+	public List<Timetable> getAllTimetables(){
+		return timetableDAO.listTimetables();
+	}
+}
+\end{lstlisting}
+\begin{table}[H]
+\caption{Security Context Service Layer Annotation Implementation}
+\label{fig:secAnonImpl}
+\end{table}
+
+In the implementation shown above, there are some items to note: the \textit{Service} and \textit{Autowired} annotations. The \textit{Service} annotation allows implementation classes to be autodetected through classpath scanning. The package that contains the Service classes is defined within another XML file, \textit{service-context.xml} within this application, Figure ~\ref{fig:serviceContext}. This file configures Spring to look for Service classes via annotations, and where to look for them.
+
+\begin{lstlisting}
+<context:annotation-config></context:annotation-config>
+<context:component-scan base-package="service"></context:component-scan>
+\end{lstlisting}
+\begin{table}[H]
+\caption{Service Context Configuration}
+\label{fig:serviceContext}
+\end{table}
+
+
 
 \section{Model View Controller}
 \subsection{Controller Layer}
