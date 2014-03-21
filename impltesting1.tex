@@ -1,6 +1,7 @@
 \chapter{Implementation and Testing}
 \label{impltesting}
 
+\label{sec:impl}
 \section{Introduction}
 
 This chapters focuses on the implementation of the application, with the focus on the application entities, and how they were configured. Due to the overlapping nature of the application, concepts may be mentioned earlier than explained, but references will be made. 
@@ -10,7 +11,7 @@ This chapters focuses on the implementation of the application, with the focus o
 
 The \textit{User} class represents every user account within the application. (Link to appendice showing class attributes). This section will focus on a regular user, how it is configured within the application in terms of bean definition and persistence. 
 
-Firstly, as shown in line one of Figure ~\ref{fig:userDef}, the class needs to be configured as a \textit{Component} for the application. This ensures that the Spring framework considers the User class as one for auto-detection, as the use of class path scanning and annotations prevalent within this application. The framework instantiates this bean, or object, automatically, without the developer having to use the \textit{new} keyword.
+Firstly, as shown in line one of Figure ~\ref{fig:userDef}, the class needs to be configured as a \textit{Component} for the application. This ensures that the Spring framework considers the User class as one for auto-detection, through the use of class path scanning and annotations prevalent within this application. The framework instantiates this bean, or object, automatically, without the developer having to use the \textit{new} keyword.
 
 \begin{table}[H]
 \begin{lstlisting}
@@ -573,26 +574,8 @@ The main tags used within the application were the JSTL Core tags.  These tags a
 \label{fig:jstldec}
 \end{table}
 
-Within the application, the controller will create a model and pass it to the JSP page. The page uses the JSTL tags to manage and display relevant information from the model, and user actions based on the information contained within. The example below is taken from the Timetable display page from the application.\newline
+Within the application, the controller will create a model and pass it to the JSP page. The page uses the JSTL tags to manage and display relevant information from the model, as shown in Figure ~\ref{fig:ttmodelattributes}, and user actions based on the information contained within. The example below is taken from the Timetable display page, Figure ~\ref{fig:ttcontrollerchoosecourt} from the application.\newline
 
-\begin{table}[H]
-\begin{center}
-    \begin{tabular}{ | l | l | p{5cm} |}
-    \hline
-    Model Name & Summary \\ \hline
-    name & The username of the currently authenticated user  \\ \hline
-    realName & The real name of the currently authenticated user\\ \hline
-	bookings & The number of remaining bookings of the currently authenticated users\\ \hline
-	date & The current week of the year and the current date. Calculated using separate method.\\ \hline
-	next & The id number of the court following the current court, if applicable\\ \hline
-    prev & The id number of the court preceding the current court, if applicable\\ \hline
-	court & The current court, determined by the current week, provided by the java.util.Date class \\
-    \hline
-    \end{tabular}
-\end{center}
-\caption{Model Attributes}
-\end{table}
-\pagebreak
 \begin{lstlisting}
 @RequestMapping(value = "/gotoCourt", method = RequestMethod.POST)
 public String chooseCourt(Model model, HttpServletRequest request) {
@@ -613,6 +596,30 @@ public String chooseCourt(Model model, HttpServletRequest request) {
 	return "court";
 }
 \end{lstlisting}	
+\begin{table}[H]
+\caption{Timetable Controller chooseCourt() method}
+\label{fig:ttcontrollerchoosecourt}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+    Model Name & Summary \\ \hline
+    name & The username of the currently authenticated user  \\ \hline
+    realName & The real name of the currently authenticated user\\ \hline
+	bookings & The number of remaining bookings of the currently authenticated users\\ \hline
+	date & The current week of the year and the current date. Calculated using separate method.\\ \hline
+	next & The id number of the court following the current court, if applicable\\ \hline
+    prev & The id number of the court preceding the current court, if applicable\\ \hline
+	court & The current court, determined by the current week, provided by the java.util.Date class \\
+    \hline
+    \end{tabular}
+\end{center}
+\caption{Model Attributes}
+\label{fig:ttmodelattributes}
+\end{table}
+
 
 This example is an excerpt from the TimetableContoller class. The logic determining the values has been removed. This is to highlight how attributes are added to the model from within the controller. This is the information that the JSP page will have access to once it has been displayed.
 

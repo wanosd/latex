@@ -1,61 +1,67 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces DispatcherServlet }}{11}{table.2.1}
+\contentsline {table}{\numberline {2.1}{\ignorespaces DispatcherServlet }}{12}{table.2.1}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Spring DispatcherServlet Configuration}}{13}{table.2.2}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Default ViewResolver Configuration}}{14}{table.2.3}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Default ViewResolver Configuration}}{15}{table.2.4}
+\contentsline {table}{\numberline {2.5}{\ignorespaces Dependency XML Structure for Maven}}{16}{table.2.5}
+\contentsline {table}{\numberline {2.6}{\ignorespaces GitHub Visualisation of Commits/Day}}{17}{table.2.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces User Class Definition and Configuration}}{18}{table.5.1}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Class Constraints}}{19}{table.5.2}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Hibernate SessionFactory Configuration}}{20}{table.5.3}
-\contentsline {table}{\numberline {5.4}{\ignorespaces User Registration Form}}{21}{table.5.4}
-\contentsline {table}{\numberline {5.5}{\ignorespaces UserDAO getSession()}}{22}{table.5.5}
-\contentsline {table}{\numberline {5.6}{\ignorespaces Password Encoder Definition}}{22}{table.5.6}
-\contentsline {table}{\numberline {5.7}{\ignorespaces Persisting User Object with Encoded Password}}{22}{table.5.7}
-\contentsline {table}{\numberline {5.8}{\ignorespaces Timetable Class List Configuration}}{24}{table.5.8}
-\contentsline {table}{\numberline {5.9}{\ignorespaces Timetable Core Database Table}}{24}{table.5.9}
-\contentsline {table}{\numberline {5.10}{\ignorespaces Timetable Storage Table for Monday Collection}}{25}{table.5.10}
-\contentsline {table}{\numberline {5.11}{\ignorespaces Hibernate Save Timetable}}{25}{table.5.11}
-\contentsline {table}{\numberline {5.12}{\ignorespaces Tournament Creation}}{26}{table.5.12}
-\contentsline {table}{\numberline {5.13}{\ignorespaces Delete Tournament}}{27}{table.5.13}
-\contentsline {table}{\numberline {5.14}{\ignorespaces Event Creation}}{28}{table.5.14}
-\contentsline {table}{\numberline {5.15}{\ignorespaces Change Event Status}}{28}{table.5.15}
-\contentsline {table}{\numberline {5.16}{\ignorespaces Spring Role Configuration}}{29}{table.5.16}
-\contentsline {table}{\numberline {5.17}{\ignorespaces Security Context File Excerpt}}{29}{table.5.17}
-\contentsline {table}{\numberline {5.18}{\ignorespaces Security Context Service Layer Annotation Configuration}}{30}{table.5.18}
-\contentsline {table}{\numberline {5.19}{\ignorespaces Security Context Service Layer Annotation Implementation}}{30}{table.5.19}
-\contentsline {table}{\numberline {5.20}{\ignorespaces Service Context Configuration}}{31}{table.5.20}
-\contentsline {table}{\numberline {5.21}{\ignorespaces Apache Tiles Configuration}}{32}{table.5.21}
-\contentsline {table}{\numberline {5.22}{\ignorespaces Apache Tiles Configuration}}{33}{table.5.22}
-\contentsline {table}{\numberline {5.23}{\ignorespaces JSTL Tag Library Declaration}}{34}{table.5.23}
-\contentsline {table}{\numberline {5.24}{\ignorespaces Model Attributes}}{34}{table.5.24}
-\contentsline {table}{\numberline {5.25}{\ignorespaces Code Showing Display of Timetable}}{36}{table.5.25}
-\contentsline {table}{\numberline {5.26}{\ignorespaces Log Types}}{37}{table.5.26}
-\contentsline {table}{\numberline {5.27}{\ignorespaces Log4j Configuration}}{37}{table.5.27}
-\contentsline {table}{\numberline {5.28}{\ignorespaces Logger Usage within UserDAO.class}}{38}{table.5.28}
-\contentsline {table}{\numberline {5.30}{\ignorespaces Hibernate Configuration}}{39}{table.5.30}
-\contentsline {table}{\numberline {5.29}{\ignorespaces Spring Configuration}}{39}{table.5.29}
-\contentsline {table}{\numberline {5.31}{\ignorespaces JUnit Test Example}}{42}{table.5.31}
-\contentsline {table}{\numberline {5.32}{\ignorespaces JUnit @Before Test Configuration}}{42}{table.5.32}
-\contentsline {table}{\numberline {5.33}{\ignorespaces JUnit UserDAO Exists() Test}}{43}{table.5.33}
-\contentsline {table}{\numberline {5.34}{\ignorespaces JUnit Create and Size Test}}{43}{table.5.34}
+\contentsline {table}{\numberline {5.1}{\ignorespaces User Class Definition and Configuration}}{24}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Class Constraints}}{25}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Hibernate SessionFactory Configuration}}{26}{table.5.3}
+\contentsline {table}{\numberline {5.4}{\ignorespaces User Registration Form}}{27}{table.5.4}
+\contentsline {table}{\numberline {5.5}{\ignorespaces UserDAO getSession()}}{28}{table.5.5}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Password Encoder Definition}}{28}{table.5.6}
+\contentsline {table}{\numberline {5.7}{\ignorespaces Persisting User Object with Encoded Password}}{28}{table.5.7}
+\contentsline {table}{\numberline {5.8}{\ignorespaces Timetable Class List Configuration}}{30}{table.5.8}
+\contentsline {table}{\numberline {5.9}{\ignorespaces Timetable Core Database Table}}{30}{table.5.9}
+\contentsline {table}{\numberline {5.10}{\ignorespaces Timetable Storage Table for Monday Collection}}{31}{table.5.10}
+\contentsline {table}{\numberline {5.11}{\ignorespaces Hibernate Save Timetable}}{31}{table.5.11}
+\contentsline {table}{\numberline {5.12}{\ignorespaces Tournament Creation}}{32}{table.5.12}
+\contentsline {table}{\numberline {5.13}{\ignorespaces Delete Tournament}}{33}{table.5.13}
+\contentsline {table}{\numberline {5.14}{\ignorespaces Event Creation}}{34}{table.5.14}
+\contentsline {table}{\numberline {5.15}{\ignorespaces Change Event Status}}{34}{table.5.15}
+\contentsline {table}{\numberline {5.16}{\ignorespaces Spring Role Configuration}}{35}{table.5.16}
+\contentsline {table}{\numberline {5.17}{\ignorespaces Security Context File Excerpt}}{35}{table.5.17}
+\contentsline {table}{\numberline {5.18}{\ignorespaces Security Context Service Layer Annotation Configuration}}{36}{table.5.18}
+\contentsline {table}{\numberline {5.19}{\ignorespaces Security Context Service Layer Annotation Implementation}}{36}{table.5.19}
+\contentsline {table}{\numberline {5.20}{\ignorespaces Service Context Configuration}}{37}{table.5.20}
+\contentsline {table}{\numberline {5.21}{\ignorespaces Apache Tiles Configuration}}{38}{table.5.21}
+\contentsline {table}{\numberline {5.22}{\ignorespaces Apache Tiles Configuration}}{39}{table.5.22}
+\contentsline {table}{\numberline {5.23}{\ignorespaces JSTL Tag Library Declaration}}{40}{table.5.23}
+\contentsline {table}{\numberline {5.24}{\ignorespaces Timetable Controller chooseCourt() method}}{40}{table.5.24}
+\contentsline {table}{\numberline {5.25}{\ignorespaces Model Attributes}}{41}{table.5.25}
+\contentsline {table}{\numberline {5.26}{\ignorespaces Code Showing Display of Timetable}}{42}{table.5.26}
+\contentsline {table}{\numberline {5.27}{\ignorespaces Log Types}}{43}{table.5.27}
+\contentsline {table}{\numberline {5.28}{\ignorespaces Log4j Configuration}}{43}{table.5.28}
+\contentsline {table}{\numberline {5.29}{\ignorespaces Logger Usage within UserDAO.class}}{44}{table.5.29}
+\contentsline {table}{\numberline {5.31}{\ignorespaces Hibernate Configuration}}{45}{table.5.31}
+\contentsline {table}{\numberline {5.30}{\ignorespaces Spring Configuration}}{45}{table.5.30}
+\contentsline {table}{\numberline {5.32}{\ignorespaces JUnit Test Example}}{48}{table.5.32}
+\contentsline {table}{\numberline {5.33}{\ignorespaces JUnit @Before Test Configuration}}{48}{table.5.33}
+\contentsline {table}{\numberline {5.34}{\ignorespaces JUnit UserDAO Exists() Test}}{49}{table.5.34}
+\contentsline {table}{\numberline {5.35}{\ignorespaces JUnit Create and Size Test}}{49}{table.5.35}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Application Metrics}}{44}{table.6.1}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Application Metrics}}{50}{table.6.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces beans package}}{51}{table.A.1}
-\contentsline {table}{\numberline {A.2}{\ignorespaces controllers package}}{52}{table.A.2}
-\contentsline {table}{\numberline {A.3}{\ignorespaces dao package}}{52}{table.A.3}
-\contentsline {table}{\numberline {A.4}{\ignorespaces email package}}{53}{table.A.4}
-\contentsline {table}{\numberline {A.5}{\ignorespaces event package}}{53}{table.A.5}
-\contentsline {table}{\numberline {A.6}{\ignorespaces events.tournament package}}{53}{table.A.6}
-\contentsline {table}{\numberline {A.7}{\ignorespaces log package}}{53}{table.A.7}
-\contentsline {table}{\numberline {A.8}{\ignorespaces news package}}{54}{table.A.8}
-\contentsline {table}{\numberline {A.9}{\ignorespaces properties package}}{54}{table.A.9}
-\contentsline {table}{\numberline {A.10}{\ignorespaces reports package}}{54}{table.A.10}
-\contentsline {table}{\numberline {A.11}{\ignorespaces service package}}{54}{table.A.11}
-\contentsline {table}{\numberline {A.12}{\ignorespaces timetable package}}{55}{table.A.12}
-\contentsline {table}{\numberline {A.13}{\ignorespaces reports package}}{55}{table.A.13}
-\contentsline {table}{\numberline {A.14}{\ignorespaces struts layout}}{55}{table.A.14}
-\contentsline {table}{\numberline {A.15}{\ignorespaces templates layout}}{55}{table.A.15}
-\contentsline {table}{\numberline {A.16}{\ignorespaces templates layout}}{57}{table.A.16}
+\contentsline {table}{\numberline {A.1}{\ignorespaces beans package}}{57}{table.A.1}
+\contentsline {table}{\numberline {A.2}{\ignorespaces controllers package}}{58}{table.A.2}
+\contentsline {table}{\numberline {A.3}{\ignorespaces dao package}}{58}{table.A.3}
+\contentsline {table}{\numberline {A.4}{\ignorespaces email package}}{59}{table.A.4}
+\contentsline {table}{\numberline {A.5}{\ignorespaces event package}}{59}{table.A.5}
+\contentsline {table}{\numberline {A.6}{\ignorespaces events.tournament package}}{59}{table.A.6}
+\contentsline {table}{\numberline {A.7}{\ignorespaces log package}}{59}{table.A.7}
+\contentsline {table}{\numberline {A.8}{\ignorespaces news package}}{60}{table.A.8}
+\contentsline {table}{\numberline {A.9}{\ignorespaces properties package}}{60}{table.A.9}
+\contentsline {table}{\numberline {A.10}{\ignorespaces reports package}}{60}{table.A.10}
+\contentsline {table}{\numberline {A.11}{\ignorespaces service package}}{60}{table.A.11}
+\contentsline {table}{\numberline {A.12}{\ignorespaces timetable package}}{61}{table.A.12}
+\contentsline {table}{\numberline {A.13}{\ignorespaces reports package}}{61}{table.A.13}
+\contentsline {table}{\numberline {A.14}{\ignorespaces struts layout}}{61}{table.A.14}
+\contentsline {table}{\numberline {A.15}{\ignorespaces templates layout}}{61}{table.A.15}
+\contentsline {table}{\numberline {A.16}{\ignorespaces templates layout}}{63}{table.A.16}

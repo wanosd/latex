@@ -1,91 +1,90 @@
-\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
-\contentsline {section}{\numberline {1.1}General Introduction}{7}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}General Introduction}{7}{subsection.1.1.1}
-\contentsline {section}{\numberline {1.2}Objectives}{8}{section.1.2}
-\contentsline {section}{\numberline {1.3}Scope}{8}{section.1.3}
-\contentsline {section}{\numberline {1.4}Methodoloy}{8}{section.1.4}
-\contentsline {section}{\numberline {1.5}Overview of Report}{9}{section.1.5}
-\contentsline {section}{\numberline {1.6}Motivation}{9}{section.1.6}
-\contentsline {chapter}{\numberline {2}Background}{10}{chapter.2}
-\contentsline {section}{\numberline {2.1}Technologies}{10}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Web Application Framework}{10}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}View Resolver}{12}{subsection.2.1.2}
-\contentsline {subsubsection}{Structure}{12}{section*.4}
-\contentsline {subsubsection}{Language}{12}{section*.5}
-\contentsline {subsection}{\numberline {2.1.3}Application Server}{12}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Project Management Tool}{12}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}Database Model}{12}{subsection.2.1.5}
-\contentsline {subsection}{\numberline {2.1.6}Source Control}{12}{subsection.2.1.6}
-\contentsline {subsection}{\numberline {2.1.7}Integrated Development Environment}{12}{subsection.2.1.7}
-\contentsline {subsection}{\numberline {2.1.8}Logging}{12}{subsection.2.1.8}
-\contentsline {subsection}{\numberline {2.1.9}Version Control}{12}{subsection.2.1.9}
-\contentsline {section}{\numberline {2.2}Usability Studies}{12}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Case Study: Monaleen GAA Tennis Club}{12}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Case Study: Tralee Tennis Club}{12}{subsection.2.2.2}
-\contentsline {chapter}{\numberline {3}Requirements}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Method for Requirements}{13}{section.3.1}
-\contentsline {section}{\numberline {3.2}Application}{13}{section.3.2}
-\contentsline {section}{\numberline {3.3}Use Cases}{13}{section.3.3}
-\contentsline {section}{\numberline {3.4}Functional Requirements}{13}{section.3.4}
-\contentsline {section}{\numberline {3.5}Non Functional Requirements}{13}{section.3.5}
-\contentsline {chapter}{\numberline {4}Design}{14}{chapter.4}
-\contentsline {section}{\numberline {4.1}Key Features}{14}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Users}{14}{subsection.4.1.1}
-\contentsline {subsubsection}{Roles}{15}{section*.6}
-\contentsline {subsection}{\numberline {4.1.2}Tournaments}{16}{subsection.4.1.2}
-\contentsline {subsubsection}{Events}{16}{section*.7}
-\contentsline {subsection}{\numberline {4.1.3}Timetable}{16}{subsection.4.1.3}
-\contentsline {subsubsection}{Events}{16}{section*.8}
-\contentsline {subsection}{\numberline {4.1.4}Administration}{16}{subsection.4.1.4}
-\contentsline {subsubsection}{Logs}{16}{section*.9}
-\contentsline {subsubsection}{Analysis}{16}{section*.10}
-\contentsline {subsection}{\numberline {4.1.5}News}{16}{subsection.4.1.5}
-\contentsline {subsection}{\numberline {4.1.6}Look and Feel}{16}{subsection.4.1.6}
-\contentsline {chapter}{\numberline {5}Implementation and Testing}{17}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction}{17}{section.5.1}
-\contentsline {section}{\numberline {5.2}Application Entities}{17}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Users - Persistence}{17}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Timetable - Persistence Changes}{23}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Tournaments and Events}{25}{subsection.5.2.3}
-\contentsline {subsubsection}{Tournament}{25}{section*.11}
-\contentsline {subsubsection}{Events}{27}{section*.12}
-\contentsline {subsection}{\numberline {5.2.4}Administration - Security and Session Management}{29}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}Model View Controller}{31}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Controller Layer}{31}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Models within the Spring MVC Framework}{31}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}View Layer}{31}{subsection.5.3.3}
-\contentsline {subsubsection}{Apache Tiles Configuration and Implementation}{31}{section*.13}
-\contentsline {subsubsection}{JSTL}{33}{section*.14}
-\contentsline {section}{\numberline {5.4}Logging the Application}{36}{section.5.4}
-\contentsline {section}{\numberline {5.5}Configuration of the Application}{38}{section.5.5}
-\contentsline {section}{\numberline {5.6}Test Driven Development}{42}{section.5.6}
-\contentsline {section}{\numberline {5.7}Conclusion}{43}{section.5.7}
-\contentsline {chapter}{\numberline {6}Software Quality}{44}{chapter.6}
-\contentsline {section}{\numberline {6.1}Application Summary}{44}{section.6.1}
-\contentsline {section}{\numberline {6.2}Software Quality Tools and Visualisations}{45}{section.6.2}
-\contentsline {section}{\numberline {6.3}Sample Refactorings}{47}{section.6.3}
-\contentsline {chapter}{\numberline {7}Evaluation}{48}{chapter.7}
-\contentsline {section}{\numberline {7.1}Usability}{48}{section.7.1}
-\contentsline {section}{\numberline {7.2}Architectural Quality}{48}{section.7.2}
-\contentsline {section}{\numberline {7.3}Process Metrics}{48}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusions}{49}{chapter.8}
-\contentsline {chapter}{\numberline {A}Appendices}{51}{appendix.A}
-\contentsline {section}{\numberline {A.1}Application Breakdown}{51}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Java Source}{51}{subsection.A.1.1}
-\contentsline {subsubsection}{Package: beans}{51}{section*.16}
-\contentsline {subsubsection}{Package: controllers}{52}{section*.17}
-\contentsline {subsubsection}{Package: dao}{52}{section*.18}
-\contentsline {subsubsection}{Package: email}{53}{section*.19}
-\contentsline {subsubsection}{Package: events}{53}{section*.20}
-\contentsline {subsubsection}{Package: events.tournaments}{53}{section*.21}
-\contentsline {subsubsection}{Package: logs}{53}{section*.22}
-\contentsline {subsubsection}{Package: news}{54}{section*.23}
-\contentsline {subsubsection}{Package: properties}{54}{section*.24}
-\contentsline {subsubsection}{Package: reports}{54}{section*.25}
-\contentsline {subsubsection}{Package: service}{54}{section*.26}
-\contentsline {subsubsection}{Package: timetable}{55}{section*.27}
-\contentsline {subsubsection}{Package: users}{55}{section*.28}
-\contentsline {section}{\numberline {A.2}Apache Struts and JSP Pages}{55}{section.A.2}
-\contentsline {subsubsection}{layout}{55}{section*.29}
-\contentsline {subsubsection}{templates}{55}{section*.30}
-\contentsline {subsubsection}{tiles}{56}{section*.31}
+\contentsline {chapter}{\numberline {1}Introduction}{8}{chapter.1}
+\contentsline {section}{\numberline {1.1}General Introduction}{8}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}General Introduction}{8}{subsection.1.1.1}
+\contentsline {section}{\numberline {1.2}Objectives}{9}{section.1.2}
+\contentsline {section}{\numberline {1.3}Scope}{9}{section.1.3}
+\contentsline {section}{\numberline {1.4}Methodoloy}{9}{section.1.4}
+\contentsline {section}{\numberline {1.5}Overview of Report}{10}{section.1.5}
+\contentsline {section}{\numberline {1.6}Motivation}{10}{section.1.6}
+\contentsline {chapter}{\numberline {2}Background}{11}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{11}{section.2.1}
+\contentsline {section}{\numberline {2.2}Technologies}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Web Application Framework}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}View Resolver}{15}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Application Server}{15}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Project Management Tool}{15}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Database Model}{16}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Integrated Development Environment}{16}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}Source Control}{17}{subsection.2.2.7}
+\contentsline {subsection}{\numberline {2.2.8}Logging}{18}{subsection.2.2.8}
+\contentsline {section}{\numberline {2.3}Usability Studies}{18}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Case Study: Monaleen GAA Tennis Club}{18}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Case Study: Tralee Tennis Club}{18}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}Requirements}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Method for Requirements}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Application}{19}{section.3.2}
+\contentsline {section}{\numberline {3.3}Use Cases}{19}{section.3.3}
+\contentsline {section}{\numberline {3.4}Functional Requirements}{19}{section.3.4}
+\contentsline {section}{\numberline {3.5}Non Functional Requirements}{19}{section.3.5}
+\contentsline {chapter}{\numberline {4}Design}{20}{chapter.4}
+\contentsline {section}{\numberline {4.1}Key Features}{20}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Users}{20}{subsection.4.1.1}
+\contentsline {subsubsection}{Roles}{21}{section*.4}
+\contentsline {subsection}{\numberline {4.1.2}Tournaments}{22}{subsection.4.1.2}
+\contentsline {subsubsection}{Events}{22}{section*.5}
+\contentsline {subsection}{\numberline {4.1.3}Timetable}{22}{subsection.4.1.3}
+\contentsline {subsubsection}{Events}{22}{section*.6}
+\contentsline {subsection}{\numberline {4.1.4}Administration}{22}{subsection.4.1.4}
+\contentsline {subsubsection}{Logs}{22}{section*.7}
+\contentsline {subsubsection}{Analysis}{22}{section*.8}
+\contentsline {subsection}{\numberline {4.1.5}News}{22}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}Look and Feel}{22}{subsection.4.1.6}
+\contentsline {chapter}{\numberline {5}Implementation and Testing}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{23}{section.5.1}
+\contentsline {section}{\numberline {5.2}Application Entities}{23}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Users - Persistence}{23}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Timetable - Persistence Changes}{29}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Tournaments and Events}{31}{subsection.5.2.3}
+\contentsline {subsubsection}{Tournament}{31}{section*.9}
+\contentsline {subsubsection}{Events}{33}{section*.10}
+\contentsline {subsection}{\numberline {5.2.4}Administration - Security and Session Management}{35}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Model View Controller}{37}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Controller Layer}{37}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Models within the Spring MVC Framework}{37}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}View Layer}{37}{subsection.5.3.3}
+\contentsline {subsubsection}{Apache Tiles Configuration and Implementation}{37}{section*.11}
+\contentsline {subsubsection}{JSTL}{39}{section*.12}
+\contentsline {section}{\numberline {5.4}Logging the Application}{42}{section.5.4}
+\contentsline {section}{\numberline {5.5}Configuration of the Application}{44}{section.5.5}
+\contentsline {section}{\numberline {5.6}Test Driven Development}{48}{section.5.6}
+\contentsline {section}{\numberline {5.7}Conclusion}{49}{section.5.7}
+\contentsline {chapter}{\numberline {6}Software Quality}{50}{chapter.6}
+\contentsline {section}{\numberline {6.1}Application Summary}{50}{section.6.1}
+\contentsline {section}{\numberline {6.2}Software Quality Tools and Visualisations}{51}{section.6.2}
+\contentsline {section}{\numberline {6.3}Sample Refactorings}{53}{section.6.3}
+\contentsline {chapter}{\numberline {7}Evaluation}{54}{chapter.7}
+\contentsline {section}{\numberline {7.1}Usability}{54}{section.7.1}
+\contentsline {section}{\numberline {7.2}Architectural Quality}{54}{section.7.2}
+\contentsline {section}{\numberline {7.3}Functional and Non Functional Requirement Evaluation}{54}{section.7.3}
+\contentsline {section}{\numberline {7.4}FYP Process and Learnings}{54}{section.7.4}
+\contentsline {chapter}{\numberline {8}Conclusions}{55}{chapter.8}
+\contentsline {chapter}{\numberline {A}Appendices}{57}{appendix.A}
+\contentsline {section}{\numberline {A.1}Application Breakdown}{57}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Java Source}{57}{subsection.A.1.1}
+\contentsline {subsubsection}{Package: beans}{57}{section*.14}
+\contentsline {subsubsection}{Package: controllers}{58}{section*.15}
+\contentsline {subsubsection}{Package: dao}{58}{section*.16}
+\contentsline {subsubsection}{Package: email}{59}{section*.17}
+\contentsline {subsubsection}{Package: events}{59}{section*.18}
+\contentsline {subsubsection}{Package: events.tournaments}{59}{section*.19}
+\contentsline {subsubsection}{Package: logs}{59}{section*.20}
+\contentsline {subsubsection}{Package: news}{60}{section*.21}
+\contentsline {subsubsection}{Package: properties}{60}{section*.22}
+\contentsline {subsubsection}{Package: reports}{60}{section*.23}
+\contentsline {subsubsection}{Package: service}{60}{section*.24}
+\contentsline {subsubsection}{Package: timetable}{61}{section*.25}
+\contentsline {subsubsection}{Package: users}{61}{section*.26}
+\contentsline {section}{\numberline {A.2}Apache Struts and JSP Pages}{61}{section.A.2}
+\contentsline {subsubsection}{layout}{61}{section*.27}
+\contentsline {subsubsection}{templates}{61}{section*.28}
+\contentsline {subsubsection}{tiles}{62}{section*.29}
