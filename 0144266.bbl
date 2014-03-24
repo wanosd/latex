@@ -1,10 +1,91 @@
-\begin{thebibliography}{}
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-@article{bauer2005hibernate,
-  title={Hibernate in action},
-  author={Bauer, Christian and King, Gavin},
-  year={2005},
-  publisher={Manning Greenwich CT}
-}
+\entry{bauer2005hibernate}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bauer}{B.}%
+     {Christian}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {King}{K.}%
+     {Gavin}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Manning Greenwich CT}%
+  }
+  \strng{namehash}{BCKG1}
+  \strng{fullhash}{BCKG1}
+  \field{labelyear}{2005}
+  \field{sortinit}{B}
+  \field{title}{Hibernate in action}
+  \field{year}{2005}
+\endentry
 
-\end{thebibliography}
+\entry{holzinger2005usability}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Holzinger}{H.}%
+     {Andreas}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \strng{namehash}{HA1}
+  \strng{fullhash}{HA1}
+  \field{labelyear}{2005}
+  \field{sortinit}{H}
+  \field{number}{1}
+  \field{pages}{71\bibrangedash 74}
+  \field{title}{Usability engineering methods for software developers}
+  \field{volume}{48}
+  \field{journaltitle}{Communications of the ACM}
+  \field{year}{2005}
+\endentry
+
+\entry{rochkind1975source}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Rochkind}{R.}%
+     {Marc~J.}{M.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{RMJ1}
+  \strng{fullhash}{RMJ1}
+  \field{labelyear}{1975}
+  \field{sortinit}{R}
+  \field{number}{4}
+  \field{pages}{364\bibrangedash 370}
+  \field{title}{The source code control system}
+  \field{journaltitle}{Software Engineering, IEEE Transactions on}
+  \field{year}{1975}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

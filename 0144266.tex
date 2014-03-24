@@ -9,6 +9,8 @@
 \usepackage{hyperref}
 \usepackage{float}
 \restylefloat{table}
+\usepackage[style=authoryear,backend=bibtex8]{biblatex}
+\addbibresource{0144266.bib}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -48,7 +50,6 @@
 \pagestyle{plain}
 
 \begin{document}
-
 \title{Hibernate 'til Spring \\ Benefits of Spring MVC, Hibernate and Struts for the Development of a Web Application}
 \author{Chris O'Brien}
 %\date{}
@@ -81,8 +82,8 @@
 \include {squality}
 \include {evaluation}
 \include{conclusion}
-\bibliographystyle{plain}
-\bibliography{0144266}  
+\printbibheading
+\printbibliography
 \appendix
 \include{appendices}
 

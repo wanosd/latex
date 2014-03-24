@@ -39,7 +39,7 @@
 \BOOKMARK [1][-]{section.5.2}{Application\040Entities}{chapter.5}% 39
 \BOOKMARK [2][-]{subsection.5.2.1}{Users\040-\040Persistence}{section.5.2}% 40
 \BOOKMARK [2][-]{subsection.5.2.2}{Timetable\040-\040Persistence\040Changes}{section.5.2}% 41
-\BOOKMARK [2][-]{subsection.5.2.3}{Tournaments\040and\040Events}{section.5.2}% 42
+\BOOKMARK [2][-]{subsection.5.2.3}{Tournaments\040and\040Timetable\040Events}{section.5.2}% 42
 \BOOKMARK [2][-]{subsection.5.2.4}{Administration\040-\040Security\040and\040Session\040Management}{section.5.2}% 43
 \BOOKMARK [1][-]{section.5.3}{Model\040View\040Controller}{chapter.5}% 44
 \BOOKMARK [2][-]{subsection.5.3.1}{Controller\040Layer}{section.5.3}% 45
