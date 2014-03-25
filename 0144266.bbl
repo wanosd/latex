@@ -16,7 +16,7 @@
   {}
 \endgroup
 
-\entry{bauer2005hibernate}{article}{}
+\entry{bauer2005hibernate}{book}{}
   \name{author}{2}{}{%
     {{}%
      {Bauer}{B.}%
@@ -38,6 +38,25 @@
   \field{sortinit}{B}
   \field{title}{Hibernate in action}
   \field{year}{2005}
+\endentry
+
+\entry{softmetrics}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Fenton}{F.}%
+     {Norman~E.}{N.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Kluwer Academic Publishers}%
+  }
+  \strng{namehash}{FNE1}
+  \strng{fullhash}{FNE1}
+  \field{labelyear}{1991}
+  \field{sortinit}{F}
+  \field{title}{Spftware Metrics: A Rigorous Approach}
+  \field{year}{1991}
 \endentry
 
 \entry{holzinger2005usability}{article}{}

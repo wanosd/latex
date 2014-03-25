@@ -8,20 +8,29 @@ There are a number of components needs to build the architecture of a web applic
 \section{Technologies}
 
 \subsection{Web Application Framework}
-The Web Application Framework [WAF] chosen for this project is Spring MVC. Shan and Hua define a WAF as “a defined support structure in which other software applications can be organized and developed”. (Shan and Hua 2006). MVC, or Model-View-Controller, is a software pattern that facilitates the use of a user interface. The Model manages the behaviour and data of the application. The View will manage the information obtained from the model and display it to the user. The Controller takes user input, such as key strokes, mouse movements or a touch display, and can interact and invoke functionality within the Model and/or View.
+The Web Application Framework [WAF] chosen for this project is Spring MVC. Shan and Hua define a WAF as “a defined support structure in which other software applications can be organized and developed”. (Shan and Hua 2006). MVC, or Model-View-Controller, is a software pattern that facilitates the use of a user interface, shown in its classic form in Figure~\ref{fig:mvcclassic}. The intention of the pattern is to form a clear division between domain objects and presentation objects. The Model manages the behaviour and data of the application. The View will manage the information obtained from the model and display it to the user. The Controller takes user input, such as key strokes, mouse movements or a touch display, and can interact and invoke functionality within the Model and/or View.
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=9cm]{dispatchservlet.png}
+\includegraphics[width=9cm]{mvcclassic.png}
 \end{center}
-\caption{DispatcherServlet }
+\caption{Classic MVC}
+\label{fig:mvcclassic}
+\end{figure}
+
+Spring MVC has a \textit{DispatcherServlet}, defined within \textit{web.xml} (see Figure ~\ref{fig:webxml}) in the WEB-INF folder, which will try to load the application context from a servlet file, defined within this application as \textit{member-servlet.xml}. 
+
+Spring MVC provides a clear separation of roles. Each role, such as a View, Controller, Mapper, Validator, Model and View Resolver, can be encapsulated within a relevant object. It is a request driven framework designed around the \textit{DispatcherServlet}. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{dispatchservlet.png}
+\end{center}
+\caption{DispatcherServlet}
 \label{fig:dispatcherflow}
 \end{figure}
-(NEEDS TO BE CITED!!!)
 
-Spring MVC has a \textit{DispatcherServlet}, defined within \textit{web.xml} (see Figure ~\ref{fig:webxml}in the WEB-INF folder, which will try to load the application context from a servlet file, defined within this application as \textit{member-servlet.xml}. 
-
-The \textit{DispatcherServlet} is responsible for handling the initial HTTP request from the browser. Once it receives this request, it consults the HandlerMapper, which calls the appropriate Controller. A HandlerMapper takes a value, such as "/admin", and checks which controller handles this mapping. The Controller will take this request, and call the appropriate method, or methods, and interact with the Service layer of the application, if necessary. The View name is then returned to the \textit{DispatcherServlet}, which in turn passes the value to the ViewResolver. 
+The \textit{DispatcherServlet} is responsible for handling HTTP requests from the browser. Once it receives these requests, it consults the HandlerMapper, which calls the appropriate Controller. A HandlerMapper takes a value, such as "/admin", and checks which controller handles this mapping. The Controller will take this request, and call the appropriate method, or methods, and interact with the Service layer of the application, if necessary. The View name is then returned to the \textit{DispatcherServlet}, which in turn passes the value to the ViewResolver. 
 
 A ViewResolver provides a mapping between a \textit{view name} and the \textit{view}, that is to say, the web page requested. Once this view is finalised, the \textit{DispatcherServlet} passed any model created within the Controller to the View, which is then rendered by the browser. This process is shown in Figure ~\ref{fig:dispatcherflow}
 
@@ -188,5 +197,11 @@ Logging can also be used to analyse usability and a "log will contain statistics
 The important criteria that govern usability were looked at within this project. In doing this, two other websites were examined: the current website for the club, and a site that was recommended to me by a club member, Tralee Tennis club. For this task, usability studies by Jakob Nielson were examined. 
 
 \subsection{Case Study: Monaleen GAA Tennis Club}
+
+Basic HTML and PHP, Apache Webserver.
+Reasons: SImplicity, didn't need a lot of functionality at the time, point of presence
+Constraints: many, members only part of website not possible, add new functionality for allowing other committee members to do anything would be impossible
+NFRs: to be up! availability, 24 hours.
+Club: Naas tennis club
 
 \subsection{Case Study: Tralee Tennis Club}
