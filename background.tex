@@ -5,6 +5,8 @@
 
 There are a number of components needs to build the architecture of a web application. The nature of these components is explored below, and their contribution to the creation of a web application is analysed. A more details breakdown on their usage within the application is explored in subsequent chapters.
 
+(bit about usability to go here)
+
 \section{Technologies}
 
 \subsection{Web Application Framework}
@@ -198,10 +200,12 @@ The important criteria that govern usability were looked at within this project.
 
 \subsection{Case Study: Monaleen GAA Tennis Club}
 
-Basic HTML and PHP, Apache Webserver.
-Reasons: SImplicity, didn't need a lot of functionality at the time, point of presence
-Constraints: many, members only part of website not possible, add new functionality for allowing other committee members to do anything would be impossible
-NFRs: to be up! availability, 24 hours.
-Club: Naas tennis club
+The first site examined was the existing site for the club. This site is located at \newline\textit{http://www.monaleengaatennisclub.com/}. The current site is a basic HTML site with a CSS stylesheet, that occasionally uses a PHP script to facilitate users to register for tournaments. It uses a basic architecture stack consisting of these HTML pages coupled with an Apache HTTP Server. The reasons for this choice that the club just needed a presence on the internet, there was no need for much functionality at the time, and simplicity.
+
+This architectural choice places a number of constraints on the potential growth of the site however. The definition of roles within the system is not possible. An example would be that committee members cannot add news stories themselves, but must contain the web-master to perform this action on their behalf. There is also no scope to add secure features to the site, such as a members only feature. Any introduction of these features would require a considerable overhaul of the existing architecture.
+
+The only NFR looked at during the development of the site was availability, which is fulfilled by the choice of architecture and lightweight implementation. 
+
+(usability stuff will go here, leading onto sites that were admired by the club (ie Tralee))
 
 \subsection{Case Study: Tralee Tennis Club}

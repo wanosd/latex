@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  25 MAR 2014 18:10
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  25 MAR 2014 18:54
 entering extended mode
 **C:/Users/0144266/Documents/GitHub/latex/0144266.tex
 (C:/Users/0144266/Documents/GitHub/latex/0144266.tex
@@ -694,7 +694,7 @@ Requested font "cmti10" at 10.0pt
  -> cmti10
 File: dispatchservlet.png Graphic file (type QTm)
  <use  "dispatchservlet.png" >
-Overfull \hbox (0.85359pt too wide) in paragraph at lines 27--28
+Overfull \hbox (0.85359pt too wide) in paragraph at lines 29--30
  [] 
  []
 
@@ -705,11 +705,11 @@ Requested font "cmtt9" at 9.0pt
  -> cmtt9
  [14] [15] [16] [17] [18]
 
-LaTeX Warning: Reference `fig:git' on page 19 undefined on input line 179.
+LaTeX Warning: Reference `fig:git' on page 19 undefined on input line 181.
 
 File: git.png Graphic file (type QTm)
 <use  "git.png" >
-Overfull \hbox (29.30635pt too wide) in paragraph at lines 183--184
+Overfull \hbox (29.30635pt too wide) in paragraph at lines 185--186
  [] 
  []
 
@@ -754,17 +754,17 @@ Overfull \hbox (0.85359pt too wide) in paragraph at lines 97--98
 [24] [25]
 File: usecaselogin.png Graphic file (type QTm)
  <use  "usecaselogin.png" >
-Overfull \hbox (0.85359pt too wide) in paragraph at lines 147--148
+Overfull \hbox (0.85359pt too wide) in paragraph at lines 149--150
  [] 
  []
 
 
-Underfull \hbox (badness 2951) in paragraph at lines 169--169
+Underfull \hbox (badness 2951) in paragraph at lines 171--171
 []\OT1/cmr/m/it/10 Stakeholders and In-
  []
 
 
-Underfull \vbox (badness 10000) detected at line 200
+Underfull \vbox (badness 10000) detected at line 202
  []
 
 [26]) [27] (C:\Users\0144266\Documents\GitHub\latex\design.tex
