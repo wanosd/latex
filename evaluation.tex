@@ -179,10 +179,63 @@ An issue with that is that it is reliant on the developer to identify the correc
 
 \section{Architectural Quality}
 
+
+
 Performance, Security and Evolution Support
 
 \section{Functional and Non Functional Requirement Evaluation}
 
 \section{FYP Process and Learnings}
 
+The FYP has been certainly been significant part of the overall college journey. Looking back, and knowing what I know now, there are a number of avenues that I would have liked to explore.
 
+Hibernate was a very powerful framework throughout the development of this project. It was very much a case of learning by doing. Having accumulated experience with the framework, I would like to apply it more in the design stage on an application. One idea that came to me late in the project was the idea of having a top level class that could build the entire application, as depecited in Figure~\ref{fig:toplevel}.
+
+\begin{figure}[H]
+\begin{lstlisting}
+@Entity
+public class WebApplication(){
+
+@ElementCollection
+@CollectionTable (name = "tournament", joinColumns=@JoinColumn(name="id"))
+private Tournaments tournaments;
+
+@ElementCollection
+@CollectionTable (name = "timetable", joinColumns=@JoinColumn(name="id"))
+private Timetable timetable;
+
+@ElementCollection
+@CollectionTable (name = "news", joinColumns=@JoinColumn(name="id"))
+private News news;
+
+@ElementCollection
+@CollectionTable (name = "events", joinColumns=@JoinColumn(name="id"))
+private Events events;
+
+@ElementCollection
+@CollectionTable (name = "users", joinColumns=@JoinColumn(name="id"))
+private User users;
+
+public WebApplication(){
+	create();
+}
+
+private void create(){
+	tournaments = getTournaments();
+	etc.....
+}
+
+//getters and setters
+
+\end{lstlisting}
+\caption{'Top Level' Class}
+\label{fig:toplevel}
+\end{figure}
+
+(This section needs to be rewritten. I'm tired right now so just doing stream of conciousness) 
+
+It would be possible to build the application so that all classes were linked through a hierarchy to one root class. This may impact performance, but it would allow a number of benefits such as ease of deployment, and the ability to take snapshots of the application at any stage.
+
+I also would have like to use Hibernate with more complicated objects rather than just collection classes, but time constraints did not allow this.
+
+Other aspects of a web application, such as web services and HTML5 were omitted from the final submission due to time constraints, but are definitely something that I would have an interest in looking at later on.
