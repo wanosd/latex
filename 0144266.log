@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  25 MAR 2014 18:54
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  26 MAR 2014 16:48
 entering extended mode
 **C:/Users/0144266/Documents/GitHub/latex/0144266.tex
 (C:/Users/0144266/Documents/GitHub/latex/0144266.tex
@@ -650,14 +650,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [3]
 (C:\Users\0144266\Documents\GitHub\latex\0144266.lof [4
 
-] [5])
-\tf@lof=\write6
- [6]
-(C:\Users\0144266\Documents\GitHub\latex\0144266.lot [7
-
 ])
+\tf@lof=\write6
+ [5] [6]
+(C:\Users\0144266\Documents\GitHub\latex\0144266.lot)
 \tf@lot=\write7
- [8]
+ [7
+
+] [8]
 (C:\Users\0144266\Documents\GitHub\latex\intro.tex
 Chapter 1.
 Requested font "cmr17" at 20.74pt
@@ -713,14 +713,14 @@ Overfull \hbox (29.30635pt too wide) in paragraph at lines 185--186
  [] 
  []
 
-[19] [20]) [21] (C:\Users\0144266\Documents\GitHub\latex\requirements.tex
+[19]) [20] (C:\Users\0144266\Documents\GitHub\latex\requirements.tex
 Chapter 3.
 
 Overfull \hbox (36.16856pt too wide) in paragraph at lines 11--18
  [] 
  []
 
-[22
+[21
 
 
 
@@ -744,14 +744,14 @@ Overfull \hbox (1.24039pt too wide) in paragraph at lines 84--84
 []\OT1/cmr/m/n/10 N| 
  []
 
-[23]
+[22]
 File: storyboard.png Graphic file (type QTm)
  <use  "storyboard.png" >
 Overfull \hbox (0.85359pt too wide) in paragraph at lines 97--98
  [] 
  []
 
-[24] [25]
+[23] [24]
 File: usecaselogin.png Graphic file (type QTm)
  <use  "usecaselogin.png" >
 Overfull \hbox (0.85359pt too wide) in paragraph at lines 149--150
@@ -767,25 +767,25 @@ Underfull \hbox (badness 2951) in paragraph at lines 171--171
 Underfull \vbox (badness 10000) detected at line 202
  []
 
-[26]) [27] (C:\Users\0144266\Documents\GitHub\latex\design.tex
+[25]) [26] (C:\Users\0144266\Documents\GitHub\latex\design.tex
 Chapter 4.
-[28
+[27
 
 
 
-]) [29] [30] (C:\Users\0144266\Documents\GitHub\latex\impltesting1.tex
+]) [28] (C:\Users\0144266\Documents\GitHub\latex\impltesting1.tex
 Chapter 5.
-[31
+[29
 
 
 
-] [32]
+] [30]
 Overfull \hbox (35.29355pt too wide) in paragraph at lines 59--68
  [] 
  []
 
 
-LaTeX Warning: Reference `fig:dbflow' on page 33 undefined on input line 73.
+LaTeX Warning: Reference `fig:dbflow' on page 31 undefined on input line 73.
 
 File: dbflow.png Graphic file (type QTm)
 <use  "dbflow.png" >
@@ -793,68 +793,66 @@ Overfull \hbox (0.85359pt too wide) in paragraph at lines 77--78
  [] 
  []
 
-[33] [34]
+[31]
 Overfull \hbox (2.39996pt too wide) in paragraph at lines 94--95
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[35]
+[32] [33]
 
-LaTeX Warning: Reference `memberController' on page 36 undefined on input line 
+LaTeX Warning: Reference `memberController' on page 34 undefined on input line 
 140.
 
-[36] [37] [38] [39]
+[34] [35] [36] [37]
 Overfull \hbox (20.88902pt too wide) in paragraph at lines 276--284
 [][] 
  []
 
-[40]
 
-LaTeX Warning: Reference `timetableHibernate' on page 41 undefined on input lin
+LaTeX Warning: Reference `timetableHibernate' on page 38 undefined on input lin
 e 306.
 
+[38]
 File: timetable.png Graphic file (type QTm)
-<use  "timetable.png" >
+ <use  "timetable.png" >
 Overfull \hbox (0.85359pt too wide) in paragraph at lines 323--324
  [] 
  []
 
-[41] [42] [43] [44]
+[39] [40] [41]
 Overfull \hbox (43.82425pt too wide) in paragraph at lines 464--465
 [][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[45]
 
 Package caption Warning: \label without proper \caption on input line 36.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:secRoles' on page 46 undefined on input line 479.
+LaTeX Warning: Reference `fig:secRoles' on page 42 undefined on input line 479.
 
 
-[46] [47] [48] [49]
+[42] [43] [44] [45]
 
-LaTeX Warning: Reference `fig:deniedMapping' on page 50 undefined on input line
+LaTeX Warning: Reference `fig:deniedMapping' on page 46 undefined on input line
  622.
 
-[50] [51]
+[46] [47]
 Underfull \hbox (badness 10000) in paragraph at lines 702--703
 
  []
 
-[52] [53]
+[48] [49]
 Underfull \hbox (badness 10000) in paragraph at lines 755--756
 
  []
 
-[54]
 
 Package caption Warning: \label without proper \caption on input line 809.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:ttmodelattributes' on page 55 undefined on input 
+LaTeX Warning: Reference `fig:ttmodelattributes' on page 50 undefined on input 
 line 765.
 
 
@@ -862,40 +860,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 765--766
 
  []
 
-
+[50]
 Overfull \hbox (66.68245pt too wide) in paragraph at lines 795--807
  [] 
  []
 
-[55]
+
 Underfull \hbox (badness 10000) in paragraph at lines 815--816
 
  []
 
-[56]
+[51]
 Overfull \hbox (14.54362pt too wide) in paragraph at lines 857--867
  [] 
  []
 
-[57] [58]
+[52] [53]
 Underfull \hbox (badness 10000) in paragraph at lines 918--932
 
  []
 
-[59]
+[54]
 Underfull \hbox (badness 10000) in paragraph at lines 942--943
 
  []
 
-[60] [61] [62]
+[55] [56] [57]
 Underfull \hbox (badness 10000) in paragraph at lines 1046--1047
 
  []
 
-[63]) [64] [65] (C:\Users\0144266\Documents\GitHub\latex\squality.tex
+[58]) [59] (C:\Users\0144266\Documents\GitHub\latex\squality.tex
 Chapter 6.
 File: infusion1.PNG Graphic file (type QTm)
-<use  "infusion1.PNG" > [66
+<use  "infusion1.PNG" > [60
 
 
 
@@ -904,24 +902,25 @@ File: infusion3.PNG Graphic file (type QTm)
  <use  "infusion3.PNG" >
 File: infusion2.PNG Graphic file (type QTm)
  <use  "infusion2.PNG" >
-[67]
+[61]
 File: codecity2d.png Graphic file (type QTm)
  <use  "codecity2d.png" >
 File: codecity3d.png Graphic file (type QTm)
- <use  "codecity3d.png" > [68]) [69]
+ <use  "codecity3d.png" > [62]) [63]
 (C:\Users\0144266\Documents\GitHub\latex\evaluation.tex
 Chapter 7.
-) [70
+[64
 
 
 
-] (C:\Users\0144266\Documents\GitHub\latex\conclusion.tex
+] [65] [66] [67]) [68]
+(C:\Users\0144266\Documents\GitHub\latex\conclusion.tex
 Chapter 8.
-) [71
+) [69
 
 
 
-] [72
+] [70
 
 
 ] (C:\Users\0144266\Documents\GitHub\latex\appendices.tex
@@ -946,7 +945,7 @@ Overfull \hbox (45.74629pt too wide) in paragraph at lines 26--39
  [] 
  []
 
-[73
+[71
 
 
 ]
@@ -964,12 +963,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--67
 []\OT1/cmr/m/n/10 No.
  []
 
-[74]
+
 Underfull \hbox (badness 10000) in paragraph at lines 80--80
 []\OT1/cmr/m/n/10 No.
  []
 
-
+[72]
 Underfull \hbox (badness 10000) in paragraph at lines 93--93
 []\OT1/cmr/m/n/10 No.
  []
@@ -984,12 +983,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []\OT1/cmr/m/n/10 No.
  []
 
-[75]
+
 Underfull \hbox (badness 10000) in paragraph at lines 130--130
 []\OT1/cmr/m/n/10 No.
  []
 
-
+[73]
 Underfull \hbox (badness 10000) in paragraph at lines 143--143
 []\OT1/cmr/m/n/10 No.
  []
@@ -1004,7 +1003,7 @@ Overfull \hbox (67.91293pt too wide) in paragraph at lines 154--165
  [] 
  []
 
-[76]
+
 Underfull \hbox (badness 10000) in paragraph at lines 174--174
 []\OT1/cmr/m/n/10 No.
  []
@@ -1024,7 +1023,7 @@ Overfull \hbox (86.80174pt too wide) in paragraph at lines 185--194
  [] 
  []
 
-
+[74]
 Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []\OT1/cmr/m/n/10 No.
  []
@@ -1034,7 +1033,7 @@ Overfull \hbox (20.69061pt too wide) in paragraph at lines 203--208
  [] 
  []
 
-[77]
+
 Underfull \hbox (badness 10000) in paragraph at lines 217--217
 []\OT1/cmr/m/n/10 No.
  []
@@ -1054,7 +1053,7 @@ Overfull \hbox (79.82959pt too wide) in paragraph at lines 227--259
  [] 
  []
 
-[78] [79]
+[75] [76]
 Underfull \hbox (badness 10000) in paragraph at lines 267--267
 []\OT1/cmr/m/n/10 No.
  []
@@ -1064,7 +1063,7 @@ Overfull \hbox (88.8853pt too wide) in paragraph at lines 265--291
  [] 
  []
 
-) [80]
+) [77]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
  (C:\Users\0144266\Documents\GitHub\latex\0144266.aux
@@ -1091,12 +1090,12 @@ Package logreq Info: Writing requests to '0144266.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
- 16208 strings out of 429035
- 245067 string characters out of 3167909
+ 16269 strings out of 429035
+ 246042 string characters out of 3167909
  449757 words of memory out of 3000000
- 19269 multiletter control sequences out of 15000+200000
+ 19330 multiletter control sequences out of 15000+200000
  10279 words of font info for 36 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  37i,11n,61p,1166b,1753s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 0144266.pdf (84 pages).
+Output written on 0144266.pdf (81 pages).

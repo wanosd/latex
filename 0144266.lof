@@ -16,117 +16,127 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Dependency XML Structure for Maven\relax }}{18}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces GitHub Visualisation of Commits/Day\relax }}{20}{figure.caption.10}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces GitHub Visualisation of Commits/Day\relax }}{19}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Timetable Storyboard, October 2013\relax }}{24}{figure.caption.11}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Timetable Storyboard, October 2013\relax }}{23}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Use case for User login\relax }}{26}{figure.caption.12}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Use case for User login\relax }}{25}{figure.caption.12}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces User Class Definition and Configuration\relax }}{32}{figure.caption.18}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces DispatcherServlet \relax }}{34}{figure.caption.19}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces User Class Definition and Configuration\relax }}{30}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Hibernate SessionFactory Configuration\relax }}{35}{figure.caption.20}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces DispatcherServlet \relax }}{32}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces HQL-SQL Comparison\relax }}{35}{figure.caption.21}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Hibernate SessionFactory Configuration\relax }}{33}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces User Registration Form\relax }}{36}{figure.caption.22}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces HQL-SQL Comparison\relax }}{33}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces User Registration Controller\relax }}{37}{figure.caption.23}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces User Registration Form\relax }}{34}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces UserDAO getSession()\relax }}{38}{figure.caption.24}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces User Registration Controller\relax }}{35}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Password Encoder Definition\relax }}{38}{figure.caption.25}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces UserDAO getSession()\relax }}{36}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Persisting User object with encoded password\relax }}{38}{figure.caption.26}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Password Encoder Definition\relax }}{36}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Timetable Class List Configuration\relax }}{40}{figure.caption.27}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Persisting User object with encoded password\relax }}{36}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Hibernate Save Timetable\relax }}{41}{figure.caption.28}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Timetable Class List Configuration\relax }}{37}{figure.caption.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Timetable display within application\relax }}{42}{figure.caption.29}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Hibernate Save Timetable\relax }}{39}{figure.caption.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Event Creation\relax }}{43}{figure.caption.31}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Timetable display within application\relax }}{39}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Change Event Status\relax }}{44}{figure.caption.32}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Event Creation\relax }}{40}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Tournament Creation\relax }}{45}{figure.caption.34}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Change Event Status\relax }}{41}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Delete Tournament\relax }}{45}{figure.caption.35}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Tournament Creation\relax }}{42}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Spring Role Configuration\relax }}{46}{figure.caption.36}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Delete Tournament\relax }}{42}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Security Context File Excerpt\relax }}{47}{figure.caption.37}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Spring Role Configuration\relax }}{43}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Security Context Service Layer Annotation Configuration\relax }}{47}{figure.caption.38}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Security Context File Excerpt\relax }}{43}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Security Context Service Layer Annotation Implementation\relax }}{48}{figure.caption.39}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Security Context Service Layer Annotation Configuration\relax }}{44}{figure.caption.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Service Context Configuration\relax }}{48}{figure.caption.40}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Security Context Service Layer Annotation Implementation\relax }}{44}{figure.caption.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Service Context Configuration\relax }}{49}{figure.caption.41}
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Service Context Configuration\relax }}{45}{figure.caption.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Service Context Configuration\relax }}{49}{figure.caption.42}
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Service Context Configuration\relax }}{45}{figure.caption.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.24}{\ignorespaces Request Mapping\relax }}{50}{figure.caption.43}
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Service Context Configuration\relax }}{45}{figure.caption.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.25}{\ignorespaces Access denied Handler\relax }}{50}{figure.caption.44}
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Request Mapping\relax }}{46}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.26}{\ignorespaces Error Page Mapping\relax }}{50}{figure.caption.45}
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Access denied Handler\relax }}{46}{figure.caption.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.27}{\ignorespaces Model Definition\relax }}{51}{figure.caption.46}
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Error Page Mapping\relax }}{47}{figure.caption.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.28}{\ignorespaces JSP View of model\relax }}{52}{figure.caption.47}
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Model Definition\relax }}{47}{figure.caption.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.29}{\ignorespaces User message added to model\relax }}{52}{figure.caption.48}
+\contentsline {figure}{\numberline {5.28}{\ignorespaces JSP View of model\relax }}{48}{figure.caption.47}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.30}{\ignorespaces Apache Tiles Configuration\relax }}{53}{figure.caption.50}
+\contentsline {figure}{\numberline {5.29}{\ignorespaces User message added to model\relax }}{48}{figure.caption.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.31}{\ignorespaces Apache Tiles Configuration\relax }}{54}{figure.caption.51}
+\contentsline {figure}{\numberline {5.30}{\ignorespaces Apache Tiles Configuration\relax }}{49}{figure.caption.50}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.32}{\ignorespaces JSTL Tag Library Declaration\relax }}{55}{figure.caption.53}
+\contentsline {figure}{\numberline {5.31}{\ignorespaces Apache Tiles Configuration\relax }}{50}{figure.caption.51}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.33}{\ignorespaces Timetable Controller chooseCourt() method\relax }}{55}{figure.caption.54}
+\contentsline {figure}{\numberline {5.32}{\ignorespaces JSTL Tag Library Declaration\relax }}{50}{figure.caption.53}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.34}{\ignorespaces Code Showing Display of Timetable\relax }}{57}{figure.caption.55}
+\contentsline {figure}{\numberline {5.33}{\ignorespaces Timetable Controller chooseCourt() method\relax }}{51}{figure.caption.54}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.35}{\ignorespaces Log4j Configuration\relax }}{58}{figure.caption.56}
+\contentsline {figure}{\numberline {5.34}{\ignorespaces Code Showing Display of Timetable\relax }}{52}{figure.caption.55}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.36}{\ignorespaces Logger Usage within UserDAO.class\relax }}{59}{figure.caption.57}
+\contentsline {figure}{\numberline {5.35}{\ignorespaces Log4j Configuration\relax }}{53}{figure.caption.56}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.38}{\ignorespaces Hibernate Configuration\relax }}{60}{figure.caption.59}
+\contentsline {figure}{\numberline {5.36}{\ignorespaces Logger Usage within UserDAO.class\relax }}{54}{figure.caption.57}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.37}{\ignorespaces Spring Configuration\relax }}{60}{figure.caption.58}
+\contentsline {figure}{\numberline {5.38}{\ignorespaces Hibernate Configuration\relax }}{55}{figure.caption.59}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.39}{\ignorespaces Service Context Configuration\relax }}{61}{figure.caption.60}
+\contentsline {figure}{\numberline {5.39}{\ignorespaces Service Context Configuration\relax }}{55}{figure.caption.60}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.40}{\ignorespaces JUnit Test Example\relax }}{63}{figure.caption.61}
+\contentsline {figure}{\numberline {5.37}{\ignorespaces Spring Configuration\relax }}{55}{figure.caption.58}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.41}{\ignorespaces JUnit @Before Test Configuration\relax }}{63}{figure.caption.62}
+\contentsline {figure}{\numberline {5.40}{\ignorespaces JUnit Test Example\relax }}{58}{figure.caption.61}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.42}{\ignorespaces JUnit UserDAO Exists() Test\relax }}{64}{figure.caption.63}
+\contentsline {figure}{\numberline {5.41}{\ignorespaces JUnit @Before Test Configuration\relax }}{58}{figure.caption.62}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.43}{\ignorespaces JUnit Create and Size Test\relax }}{64}{figure.caption.64}
+\contentsline {figure}{\numberline {5.42}{\ignorespaces JUnit UserDAO Exists() Test\relax }}{59}{figure.caption.63}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.43}{\ignorespaces JUnit Create and Size Test\relax }}{59}{figure.caption.64}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Pre Re-factoring using Infusion\relax }}{67}{figure.caption.65}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Pre Re-factoring using Infusion\relax }}{61}{figure.caption.65}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Example of Class 'Bad Code Smell' Breakdown using Infusion\relax }}{67}{figure.caption.66}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Example of Class 'Bad Code Smell' Breakdown using Infusion\relax }}{61}{figure.caption.66}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Post Re-factoring using Infusion\relax }}{68}{figure.caption.67}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Post Re-factoring using Infusion\relax }}{62}{figure.caption.67}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces CodeCity 2D Visualisation of Application\relax }}{68}{figure.caption.68}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces CodeCity 2D Visualisation of Application\relax }}{62}{figure.caption.68}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces CodeCity 3D Visualisation of Application\relax }}{69}{figure.caption.69}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces CodeCity 3D Visualisation of Application\relax }}{63}{figure.caption.69}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.1}{\ignorespaces JDBC SQL INSERT\relax }}{64}{figure.caption.71}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.2}{\ignorespaces JDBC Vs Hibernate Test\relax }}{65}{figure.caption.72}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Hibernate-JDBC Code\relax }}{66}{figure.caption.73}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Manual Session Creation\relax }}{67}{figure.caption.75}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Session Authentication based on user level\relax }}{68}{figure.caption.76}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

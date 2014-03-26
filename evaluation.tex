@@ -7,8 +7,175 @@
 
 \subsubsection{Hibernate}
 
+One of the core technologies used within the application was Hibernate. One of the main benefits Hibernate provided to the project was simplifying the code in order to persist objects. When developing the application, the only concern was with objects as a whole, not on their individual attributes. With JDBC, there was a need to use SQL syntax within the application. In the case of the User class, there were 16 attributes which made the SQL INSERT statement for that class, shown in Figure~\ref{fig:jdbcsql}, difficult to read and troubleshoot.
+
+\begin{figure}[H]
+\begin{lstlisting}
+@Transactional
+public boolean createUserJDBC(User user) {
+	MapSqlParameterSource params = new MapSqlParameterSource();
+		//other params cut out to save space
+		params.addValue("role", "ROLE_MEMBER");
+		return jdbc
+			.update("insert into users (username, name, password, gender, 
+			member_type, grade, ad_line1, ad_line2, ad_city, ad_county,
+			contact_num, em_con_name, em_con_num, enabled, authority,
+			bookings_left) values (:username, :name, :password, 
+			:gender, :member_type, :grade, :ad_line1, :ad_line1, 
+			:ad_city, :ad_county, :contact_num,:em_con_name, :em_con_num,
+			false, :role, 0)",params) == 1;
+	}
+\end{lstlisting}
+\caption{JDBC SQL INSERT}
+\label{fig:jdbcsql}
+\end{figure}
+
+However, it could be arguing by supplying a framework, such as Hibernate, to automate the creation of a query language that performance of an application could be affected. To examine this briefly, a small test was created. This this test, the application would use JDBC to create 10,000 records, update those records and then delete them. The application would then perform the same actions with the same data using Hibernate. The time taken to perform these tasks as a whole would be recorded in nanoseconds. The test is illustrated in Figure~\ref{fig:jdbcvhibernate} below.
+
+\begin{figure}[H]
+\begin{lstlisting}
+@RequestMapping("/testdatabases")
+public String testdatabases(Model model){
+	User user = new User(); // create a new user
+	long jStart = System.nanoTime();
+	model.addAttribute("jdbcStart", jStart);
+	for (int i = 0; i < 10000; i++){
+		user.setUsername(i + "@test.ie");
+		userService.createJDBC(user);
+		userService.enableUserJDBC(user);
+		userService.deleteUserJDBC(user);
+	}
+	model.addAttribute("jdbcFinish", (System.nanoTime() - jStart));
+	
+	long hStart = System.nanoTime();
+	model.addAttribute("hibernateStart", hStart);
+	for (int i = 0; i < 10000; i++){
+		user.setUsername(i + "@test.ie");
+		userService.create(user);
+		user.setEnabled(true);
+		userService.updateUser(user);
+		userService.delete(user);
+	}
+	model.addAttribute("hibernateFinish", (System.nanoTime() - hStart));
+	return "testdatabases";
+}
+\end{lstlisting}
+\caption{JDBC Vs Hibernate Test}
+\label{fig:jdbcvhibernate}
+\end{figure}
+
+The results are displayed in Table~\ref{fig:resulttable} below. NS refers to NanoSeconds, and MM:SS refers to the total in minutes and seconds. The test was run three times and an average was created. The test machine was an Amazon EC-2 server, which was a 32-bit micro instance, with 650mb of RAM with one virtual CPU. This is running a modified version of Red Hat Enterprise Linux.
+
+\begin{table}[H]
+\caption{Hibernate Vs JDBC Results}
+\begin{center}
+    \begin{tabular}{ |l | l | l | l | p{2.5cm} |}
+    \hline
+     Run & Database & No Queries & Total (NS) & Total (MM:SS)\\ \hline
+	 1 & Hibernate & 10,000 &198469890740&03:20\\ \hline
+	 1 & JDBC & 10,000 &211883464327&03:30\\ \hline
+	 2 & Hibernate & 10,000 &188055485374&03:07\\ \hline
+	 2 & JDBC & 10,000 &200521721809&03:22\\ \hline
+	 3 & Hibernate & 10,000 &188423897510&03:06\\ \hline
+	 3 & JDBC & 10,000 &193541735201&03:20\\ \hline
+	Avg & Hibernate & 10,000 &191649757878 &03:12\\ \hline
+	Avg & JDBC & 10,000 & 201982307112&03:21\\ \hline
+    \end{tabular}
+\end{center}
+\label{fig:resulttable}
+\end{table}
+
+\begin{figure}[H]
+\begin{lstlisting}
+//Excepts from the UserDAO for Hibernate and JDBC actions
+//Hibernate
+return sessionFactory.getCurrentSession(); //return current session
+user.setPassword(passwordEncoder.encode(user.getPassword()));
+session().save(user);
+session().update(user);	
+session().delete(user);
+
+//JDBC
+MapSqlParameterSource params = new MapSqlParameterSource();//start create
+params.addValue("username", user.getUsername());
+params.addValue("name", user.getName());
+params.addValue("password", passwordEncoder.encode(user.getPassword()));
+params.addValue("gender", user.getGender());
+params.addValue("member_type", user.getMember_type());
+params.addValue("grade", user.getGrade());
+params.addValue("ad_line1", user.getAd_line1());
+params.addValue("ad_line2", user.getAd_line2());
+params.addValue("ad_city", user.getAd_city());
+params.addValue("ad_county", user.getAd_county());
+params.addValue("contact_num", user.getContact_num());
+params.addValue("em_con_name", user.getEm_con_name());
+params.addValue("em_con_num", user.getEm_con_num());
+params.addValue("role", "ROLE_MEMBER");
+return jdbc.update("insert", params) == 1; //end create
+MapSqlParameterSource params = new MapSqlParameterSource(); //start update
+params.addValue("enabled", enabled);
+params.addValue("username", username);
+jdbc.update("update",params); // end update
+MapSqlParameterSource params = new MapSqlParameterSource(); //start delete
+params.addValue("username", user.getUsername());
+jdbc.update("delete",params); //end delete
+\end{lstlisting}
+\caption{Hibernate-JDBC Code}
+\label{fig:jdbchibcode}
+\end{figure}
+
+In all tests, Hibernate took less time to perform all actions, though there was not much different between both technologies. However, due to the way Hibernate is configured, it is certainly much easier to develop with. Hibernate required 5 lines of code, shown in Figure~\ref{fig:jdbchibcode}, where JDBC requires 23 lines of code, with 3 different SQL queries, one for INSERT, UPDATE and DELETE. 
+
+By defining and mapping attributes in a database to the class with Hibernate, the DAO classes become much smaller and easier to manage with no impact on performance within the application. In this application, for example, there are more than 70 DAO operations, which would mean 70 or more SQL statements. Use of JDBC would also require the definition of SQL JOINs in relation to both the Timetable and Tournament classes, thereby again increasing complexity within the application. There is more configuration to be undertaken with Hibernate, but the end result is a much easier to manage persistence solution that reduces code complexity.
+
 \subsubsection{Session and Cookie Management}
-Apply frameworks from Chapter 2 to finished product
+One benefit of using a framework such as Spring is that the developer does not need to be overly concerned with defining and checking a session in each controller. In a previous project, the developer was responsible to creating and managing the session, as well as ensuring proper access to the site was maintained. Figure~\ref{fig:manualsession} shows how a session must be manually retrieved from a request object within a servlet.
+
+\begin{figure}[H]
+\begin{lstlisting}
+@Override
+protected void doGet(HttpServletRequest request, HttpServletResponse response)
+throws ServletException, IOException {
+    PrintWriter out = response.getWriter();
+    // Print Generic header then check authenitcation and print HTML
+    printHeader(out);
+    HttpSession currentSession = request.getSession(false);
+    checkAuthentication(out, currentSession);
+    // Print search form
+}
+\end{lstlisting}
+\caption{Manual Session Creation}
+\label{fig:manualsession}
+\end{figure}
+
+In the \textit{checkAuthentication()} method, depicted in Figure~\ref{fig:sessionlevel}, the developer must check the session for any attributes that match a certain value, and act accordingly. In this example, the id of a user. The id then needs to checked against a database to ensure that it is a valid id, and to determine what permissions the account has.
+
+\begin{figure}[H]
+\begin{lstlisting}
+private void checkAuthentication(PrintWriter out, HttpSession currentSession) {
+//Check Authentication
+	if (currentSession.getAttribute("ID") == null) {
+		//print registration screen
+    } else {
+        // Use ID and Username to identify users. At this point we know there is a session with an ID, verify it is a valid session
+        int intID = (Integer) currentSession.getAttribute("ID");
+        String username = (String) currentSession.getAttribute("username");
+        if (customerBean.checkCustomerId(intID) == true && customerBean.checkCustomerUsername(username) == true) {
+			Customer currentCustomer = customerBean.getCustomer(intID);
+			 // Print what customer should see
+            } 
+		else if (adminBean.checkAdminId(intID) == true && adminBean.checkAdminUsername(username) == true) {
+            Admin currentAdmin = adminBean.getAdmin(intID);
+			// Print what admin should see   
+            }
+        }
+	}
+\end{lstlisting}
+\caption{Session Authentication based on user level}
+\label{fig:sessionlevel}
+\end{figure}
+
+An issue with that is that it is reliant on the developer to identify the correct attribute. This is a user defined attribute that may not be unique to the application. Spring manages this through the \textit{security-context.xml} file, which encapsulates security for the application to one file, and the framework itself ensures that the correct session is created for a user. There is no need to specify any of this within the codebase of the application, which again reduces complexity, and minimises the possibility of security leaks being introduced through developer errors.
 
 \section{Architectural Quality}
 
