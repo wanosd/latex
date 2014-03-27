@@ -3,14 +3,14 @@
 
 \section{Introduction}
 
-There are a number of components needs to build the architecture of a web application. The nature of these components is explored below, and their contribution to the creation of a web application is analysed. A more details breakdown on their usage within the application is explored in subsequent chapters.
+There are a number of components needed to build the architecture of a web application. The nature of these components is explored below, and their contribution to the creation of a web application is analysed. A more detailed breakdown on their usage within the application is explored in subsequent chapters.
 
 (bit about usability to go here)
 
 \section{Technologies}
 
 \subsection{Web Application Framework}
-The Web Application Framework [WAF] chosen for this project is Spring MVC. Shan and Hua define a WAF as “a defined support structure in which other software applications can be organized and developed”. (Shan and Hua 2006). MVC, or Model-View-Controller, is a software pattern that facilitates the use of a user interface, shown in its classic form in Figure~\ref{fig:mvcclassic}. The intention of the pattern is to form a clear division between domain objects and presentation objects. The Model manages the behaviour and data of the application. The View will manage the information obtained from the model and display it to the user. The Controller takes user input, such as key strokes, mouse movements or a touch display, and can interact and invoke functionality within the Model and/or View.
+The Web Application Framework [WAF] chosen for this project is Spring MVC. Shan and Hua define a WAF as “a defined support structure in which other software applications can be organized and developed”. (Shan and Hua 2006). MVC, or Model-View-Controller, is a software pattern that facilitates the use of a user interface, shown in its classic form in Figure~\ref{fig:mvcclassic}. The intention of this pattern is to form a clear division between domain objects and presentation objects. The Model manages the behaviour and data of the application. The View manages the information obtained from the model and displays it to the user. The Controller manages user input, such as key strokes, mouse movements or a touch display, and can interact and invoke functionality within the Model and/or View.
 
 \begin{figure}[H]
 \begin{center}
@@ -20,7 +20,9 @@ The Web Application Framework [WAF] chosen for this project is Spring MVC. Shan 
 \label{fig:mvcclassic}
 \end{figure}
 
-Spring MVC has a \textit{DispatcherServlet}, defined within \textit{web.xml} (see Figure ~\ref{fig:webxml}) in the WEB-INF folder, which will try to load the application context from a servlet file, defined within this application as \textit{member-servlet.xml}. 
+
+
+Spring MVC has a \textit{DispatcherServlet}. This is defined within the \textit{web.xml} file, shown in Figure ~\ref{fig:webxml}. This file is located in the WEB-INF folder. Its purpose is to load the application context from a servlet file, defined within this application as \textit{member-servlet.xml}. An Application Context is an interface within the framework. This interface provides the configuration for the application. 
 
 Spring MVC provides a clear separation of roles. Each role, such as a View, Controller, Mapper, Validator, Model and View Resolver, can be encapsulated within a relevant object. It is a request driven framework designed around the \textit{DispatcherServlet}. 
 
@@ -107,7 +109,7 @@ Figure ~\ref{fig:webxml} is the configuration file needed for the \textit{Dispat
 
 The \textit{Controller}, within the Spring MVC framework, is designed for preparing a model with data, and selecting a view which will represent that data. This is done through the use of a \textit{RequestMapping} annotation, which is discussed in further detail in Section~\ref{sec:impl} of this report.
 
-The default \textit{ViewResolver} within the Spring MVC is the InteralResourceViewResolver, Figure ~\ref{fig:defaultViewRes}. This is defined with the \textit{members-servlet.xml} file in the application, which is the structure of the \textit{DispatcherServlet}. This class takes the value that is returned by a Controller and passes a View to the DispatcherServlet. The browser can then render this view. It is important that any views, such as JSP files within the scope of this application, are stored within the \textit{WEB-INF} folder. This is to ensure that the files are treated as an internal resource, and as such, are only accessible by the servlet, or the Controller classes within the application.
+The default \textit{ViewResolver} within the Spring MVC is the InteralResourceViewResolver, depicted in Figure ~\ref{fig:defaultViewRes}. This is defined with the \textit{members-servlet.xml} file in the application, which is the structure of the \textit{DispatcherServlet}. This class takes the value that is returned by a Controller, and passes a View to the DispatcherServlet. The browser can then render this view. It is important that any views, such as JSP files within the scope of this application, are stored within the \textit{WEB-INF} folder. This is to ensure that the files are treated as an internal resource, and as such, are only accessible by the servlet, or the Controller classes within the application.
 
 \begin{lstlisting}
 <bean id="jspViewResolver"
@@ -121,11 +123,11 @@ The default \textit{ViewResolver} within the Spring MVC is the InteralResourceVi
 \label{fig:defaultViewRes}
 \end{figure}
 
-This \textit{ViewResolver} was not used within this application. Instead, Apache Tiles provides its own \textit{ViewResolver} due to the change in how JSP pages are built as discussed in the next section.
+This \textit{ViewResolver} was not used within this application. Instead, Apache Tiles provides its own \textit{ViewResolver}. This is due to the changes in how JSP pages are constructed and displayed by Apache Tiles, as discussed in the next section.
 
 \subsection{View Resolver}
 
-The framework that provided the \textit{ViewResolver} for this application was Apache Time. This framework allows for the composition of a template. Apache Tiles allows the application developer to define page fragments, which are assembled into one page at run time, based on a template. This allows the application to reduce duplication of common page elements, such as headers, footers, link bar and advertising.  The defined templates allow for a consistent look and feel across the application, and a change in one place, such as modifying a link in a header, will change across all Views within the application.
+The framework that provided the \textit{ViewResolver} for this application was Apache Tiles. This framework allows for the composition of a template for a JSP page. Apache Tiles allows the application developer to define page fragments, which are assembled into one page at run time, based on a template. This allows the application to reduce duplication of common page elements, such as headers, footers, link bar and advertising.  The defined templates allow for a consistent look and feel across the application, and a change in one place, such as modifying a link in a header, will change across all Views within the application.
 
 In order to use the Apache Tiles \textit{ViewResolver}, it must be defined within the \textit{DispatcherServlet} XML file, see Figure ~\ref{fig:tilesViewRes}, in lieu of the default ViewResolver. This ViewResolver is part of the Spring Framework, and allows for interoperability between both the Spring and Apache Tiles frameworks. The reason that \textit{TilesViewResolver} is used instead of \textit{SimpleTilesListener} is for the support of JSTL within the JSP pages, as discussed within the Implementation.
 
@@ -141,7 +143,7 @@ In order to use the Apache Tiles \textit{ViewResolver}, it must be defined withi
 
 \subsection{Application Server}
 
-The application server, or web server, used for this project was Tomcat 7.  Tomcat is an open source project by Apache, which is a software implementation of Java Servlet and JavaServer Pages technologies. This application provides an environment in which Java code can run. Tomcat has a servlet-container called Catalina. A servlet container is the part of the web server that interacts with the servlets created by the application. It manages the life-cycle of the servlets, and is responsible for specifying the run time environment for the components within the application, and delivering this content. This includes security, transaction management, deployment and other service. 
+The application server, or web server, used for this project was Tomcat 7.  Tomcat is an open source project by Apache, which is a software implementation of Java Servlet and JavaServer Pages technologies. This application provides an environment in which Java code can run. Tomcat has a servlet-container called Catalina. A servlet container is the part of the web server that interacts with the servlets created by the application. It manages the life-cycle of the servlets, and is responsible for specifying the run time environment for the components within the application, and delivering this content. This includes security, transaction management, deployment and other services. 
 
 \subsection{Project Management Tool}
 
@@ -162,19 +164,21 @@ Maven also provided the archetype, or structure, for the application. It defined
 
 \subsection{Database Model}
 
-The database framework used within this project was the open source framework, Hibernate. Hibernate is an Object/Relational Mapping [ORM] solution, and is concerned with relational databases, and more importantly for programmers, objects. Programmers generally " prefer to work with persistent data held (for the moment, anyway) in program objects, rather than use SQL directly for data access" \parencite{bauer2005hibernate}. Hibernate implements an Entity Data Model, and "sits between the object world of applications and the underlying database(s)" \parencite{bauer2005hibernate}. Hibernate is derived from the Java Persistence API (JPA) and can be used in any environment that supports JPA, such as Java EE, Java SE and Enterprise applications.
+The database framework used within this project was the open source framework, Hibernate. Hibernate is an Object/Relational Mapping [ORM] solution, and is concerned with relational databases, and more importantly for programmers, objects. Programmers generally "prefer to work with persistent data held (for the moment, anyway) in program objects, rather than use SQL directly for data access" \parencite{bauer2005hibernate}. 
+
+Hibernate implements an Entity Data Model, and "sits between the object world of applications and the underlying database(s)" \parencite{bauer2005hibernate}. Hibernate is derived from the Java Persistence API (JPA) and can be used in any environment that supports JPA, such as Java EE, Java SE and Enterprise applications.
 
 It manages objects that need to be persisted, known as Entity Classes [EC], using annotations, which are detailed in subsequent sections. Each EC has a unique identifier "whose value is not important to the application apart from its use as an identifier" \parencite{bauer2005hibernate}. 
 
-A rudimentary examination of Hibernate with JDBC will be completed with regards towards the CRUD operations of each ORM database.
+A rudimentary examination of Hibernate with Java Database Connectivity [JDBC] will be completed with regards towards the CRUD operations of each ORM database. This is examined within the Evaluation section of this report.
 
 \subsection{Integrated Development Environment}
 
-The IDE used for this project was Spring Tool Suite [STS], a modified version of the open source IDE, Eclipse. The advantages of using STS over Eclipse are the pre configured services within the application. Tomcat, Maven, egit, and the core Spring dependencies themselves come pre-packaged within the application. Java EE and web application support are also present. One clear advantage of using STS over Eclipse is that if a organisation were using Eclipse as as IDE, they could be running a variety of different versions of application servers or plug ins. A pre-packages solution like STS reduces the risks of bugs being introduced, or not being able to reproduce bugs on different development environments.
+The IDE used for this project was Spring Tool Suite [STS], a modified version of the open source IDE, Eclipse. The advantages of using STS over Eclipse are the pre configured services within the application. Tomcat, Maven, egit, and the core Spring dependencies themselves come pre-packaged within the application. Java EE and web application support are also present. One clear advantage of using STS over Eclipse is that if a organisation were using Eclipse as as IDE, they could be running a variety of different versions of application servers or plug ins. A pre-packaged solution like STS reduces the risks of bugs being introduced, or not being able to reproduce bugs, on different development environments.
 
 \subsection{Source Control}
 
-Source Control is the management of changes to the source code of an application. In this day and age, it is not unusual for a program to be worked on my a number of different persons. In fact, it is more likely to be a globally dispersed team of programmers, so management of changes to the code base is very important. Essentially, it is a system that "provides facilities for storing, updating and retrieving all versions of modules, for controlling updating privileges, for identifying load modules by version number, and for recording who made each software change" \parencite{rochkind1975source}.
+Source Control is the management of changes to the source code of an application. In this day and age, it is not unusual for a program to be worked on by a number of different persons. In fact, it is more likely to be a globally dispersed team of programmers, so management of changes to the code base is very important. Essentially, it is a system that "provides facilities for storing, updating and retrieving all versions of modules, for controlling updating privileges, for identifying load modules by version number, and for recording who made each software change" \parencite{rochkind1975source}.
 
 The source control system used within this project was GitHub, a free open source solution located at \href{http://www.github.com}{www.github.com}. It provides integration with STS through the use of the \textit{egit} plugin, as well as GUI and Shell user interfaces for a variety of user systems. It was also used to manage the different versions of the report you are reading now. Within the scope of GitHub, each project is called a repository.
 
@@ -185,12 +189,12 @@ GitHub also provides graphs and statistics about each repository, such as which 
 \includegraphics[width=15cm]{git.png}
 \end{center}
 \caption{GitHub Visualisation of Commits/Day}
-\label{fig:dispatcherflow}
+\label{fig:git}
 \end{figure}
 
 \subsection{Logging}
 
-Logging was used within the application to check both the flow of the application, as well as to pin point where certain lines of code were being called. The logging implementation used was log4j, an open source logging solution created by Apache. Log4j is designed with the possibility of enabling or disabling logging at run time. This is important in an application that may have thousands of logging instances within it. This would be difficult to remove from production code, and would increase the risk of introducing bugs were it to be attempted. 
+Logging was used within the application to check both the flow of the application, as well as to pin point where certain lines of code were being called. The logging implementation used was log4j, an open source logging solution created by Apache. Log4j is designed with the possibility of enabling or disabling logging at run time. This is important in an application may have thousands of logging instances within it. This would be difficult to remove from production code, and would increase the risk of introducing bugs were it to be attempted. 
 
 Logging can also be used to analyse usability and a "log will contain statistics about the frequency with which each user has used each feature in the program and the frequency with which various events of interest (such as error messages) have occurred." \parencite{holzinger2005usability}
 

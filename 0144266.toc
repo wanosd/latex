@@ -166,6 +166,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.4}FYP Process and Learnings}{68}{section.7.4}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.4.1}Hibernate in Design}{69}{subsection.7.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.4.2}Tournament Business Logic}{70}{subsection.7.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.4.3}Web Services and HTML5}{70}{subsection.7.4.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {8}Conclusions}{71}{chapter.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Appendices}{73}{appendix.A}

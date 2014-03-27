@@ -70,8 +70,11 @@
 \BOOKMARK [1][-]{section.7.2}{Architectural\040Quality}{chapter.7}% 70
 \BOOKMARK [1][-]{section.7.3}{Functional\040and\040Non\040Functional\040Requirement\040Evaluation}{chapter.7}% 71
 \BOOKMARK [1][-]{section.7.4}{FYP\040Process\040and\040Learnings}{chapter.7}% 72
-\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 73
-\BOOKMARK [0][-]{appendix.A}{Appendices}{}% 74
-\BOOKMARK [1][-]{section.A.1}{Application\040Breakdown}{appendix.A}% 75
-\BOOKMARK [2][-]{subsection.A.1.1}{Java\040Source}{section.A.1}% 76
-\BOOKMARK [1][-]{section.A.2}{Apache\040Struts\040and\040JSP\040Pages}{appendix.A}% 77
+\BOOKMARK [2][-]{subsection.7.4.1}{Hibernate\040in\040Design}{section.7.4}% 73
+\BOOKMARK [2][-]{subsection.7.4.2}{Tournament\040Business\040Logic}{section.7.4}% 74
+\BOOKMARK [2][-]{subsection.7.4.3}{Web\040Services\040and\040HTML5}{section.7.4}% 75
+\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 76
+\BOOKMARK [0][-]{appendix.A}{Appendices}{}% 77
+\BOOKMARK [1][-]{section.A.1}{Application\040Breakdown}{appendix.A}% 78
+\BOOKMARK [2][-]{subsection.A.1.1}{Java\040Source}{section.A.1}% 79
+\BOOKMARK [1][-]{section.A.2}{Apache\040Struts\040and\040JSP\040Pages}{appendix.A}% 80

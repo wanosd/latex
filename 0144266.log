@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  26 MAR 2014 19:17
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  27 MAR 2014 15:44
 entering extended mode
 **C:/Users/0144266/Documents/GitHub/latex/0144266.tex
 (C:/Users/0144266/Documents/GitHub/latex/0144266.tex
@@ -516,11 +516,8 @@ File: english.lbx 2013/11/25 v2.8a biblatex localization (PK/JW/AB)
 (C:\Users\0144266\Documents\GitHub\latex\0144266.aux
 (C:\Users\0144266\Documents\GitHub\latex\abstract.aux)
 (C:\Users\0144266\Documents\GitHub\latex\intro.aux)
-(C:\Users\0144266\Documents\GitHub\latex\background.aux
-
-LaTeX Warning: Label `fig:dispatcherflow' multiply defined.
-
-) (C:\Users\0144266\Documents\GitHub\latex\requirements.aux)
+(C:\Users\0144266\Documents\GitHub\latex\background.aux)
+(C:\Users\0144266\Documents\GitHub\latex\requirements.aux)
 (C:\Users\0144266\Documents\GitHub\latex\design.aux
 
 LaTeX Warning: Label `fig:secRoles' multiply defined.
@@ -694,7 +691,7 @@ Requested font "cmti10" at 10.0pt
  -> cmti10
 File: dispatchservlet.png Graphic file (type QTm)
  <use  "dispatchservlet.png" >
-Overfull \hbox (0.85359pt too wide) in paragraph at lines 29--30
+Overfull \hbox (0.85359pt too wide) in paragraph at lines 31--32
  [] 
  []
 
@@ -704,12 +701,9 @@ Requested font "cmr9" at 9.0pt
 Requested font "cmtt9" at 9.0pt
  -> cmtt9
  [14] [15] [16] [17] [18]
-
-LaTeX Warning: Reference `fig:git' on page 19 undefined on input line 181.
-
 File: git.png Graphic file (type QTm)
-<use  "git.png" >
-Overfull \hbox (29.30635pt too wide) in paragraph at lines 185--186
+ <use  "git.png" >
+Overfull \hbox (29.30635pt too wide) in paragraph at lines 189--190
  [] 
  []
 
@@ -1090,10 +1084,10 @@ Package logreq Info: Writing requests to '0144266.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
- 16277 strings out of 429035
- 246159 string characters out of 3167909
+ 16278 strings out of 429035
+ 246172 string characters out of 3167909
  449757 words of memory out of 3000000
- 19338 multiletter control sequences out of 15000+200000
+ 19339 multiletter control sequences out of 15000+200000
  10279 words of font info for 36 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  37i,11n,61p,1166b,1753s stack positions out of 5000i,500n,10000p,200000b,50000s
