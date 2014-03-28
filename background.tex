@@ -5,12 +5,40 @@
 
 There are a number of components needed to build the architecture of a web application. The nature of these components is explored below, and their contribution to the creation of a web application is analysed. A more detailed breakdown on their usage within the application is explored in subsequent chapters.
 
-(bit about usability to go here)
+\section{Support for Quality Attributes}
+
+Within the scope of this application, there were a number of quality attributes that were examined.
+
+\begin{table}[H]
+\begin{itemize}
+\item Security
+\begin{itemize}
+\item This is the capability of the system to prevent actions that are outside the designed usage, or actions that are malicious in origin.
+\end{itemize}
+\item Performance
+\begin{itemize}
+\item This is the capability of the system to respond to actions performed on it within a reasonable time frame.
+\end{itemize}
+\item Usability
+\begin{itemize}
+\item This is the capability of the system to cater to the requirements of the user, and the how intuitive the system is to use.
+\end{itemize}
+\item Extensibility
+\begin{itemize}
+\item This is the capability of the system to cater for future requirements.
+\end{itemize}
+\item Productivity
+\begin{itemize}
+\item This is the influence that the architectural choices of the system affects developer productivity, which has an effect on other quality attributes.
+\end{itemize}
+\end{itemize}
+\label{fig:qualityAttributes}
+\end{table}
 
 \section{Technologies}
 
 \subsection{Web Application Framework}
-The Web Application Framework [WAF] chosen for this project is Spring MVC. Shan and Hua define a WAF as “a defined support structure in which other software applications can be organized and developed”. (Shan and Hua 2006). MVC, or Model-View-Controller, is a software pattern that facilitates the use of a user interface, shown in its classic form in Figure~\ref{fig:mvcclassic}. The intention of this pattern is to form a clear division between domain objects and presentation objects. The Model manages the behaviour and data of the application. The View manages the information obtained from the model and displays it to the user. The Controller manages user input, such as key strokes, mouse movements or a touch display, and can interact and invoke functionality within the Model and/or View.
+The Web Application Framework [WAF] chosen for this project is Spring MVC. Shan and Hua define a WAF as “a defined support structure in which other software applications can be organized and developed” \parencite{shan2006taxonomy}. MVC, or Model-View-Controller, is a software pattern that facilitates the use of a user interface, shown in its classic form in Figure~\ref{fig:mvcclassic}. The intention of this pattern is to form a clear division between domain objects and presentation objects. The Model manages the behaviour and data of the application. The View manages the information obtained from the model and displays it to the user. The Controller manages user input, such as key strokes, mouse movements or a touch display, and can interact and invoke functionality within the Model and/or View.
 
 \begin{figure}[H]
 \begin{center}
@@ -19,8 +47,6 @@ The Web Application Framework [WAF] chosen for this project is Spring MVC. Shan 
 \caption{Classic MVC}
 \label{fig:mvcclassic}
 \end{figure}
-
-
 
 Spring MVC has a \textit{DispatcherServlet}. This is defined within the \textit{web.xml} file, shown in Figure ~\ref{fig:webxml}. This file is located in the WEB-INF folder. Its purpose is to load the application context from a servlet file, defined within this application as \textit{member-servlet.xml}. An Application Context is an interface within the framework. This interface provides the configuration for the application. 
 
@@ -90,18 +116,45 @@ Figure ~\ref{fig:webxml} is the configuration file needed for the \textit{Dispat
 \item Define DispatcherServlet
 \begin{itemize}
 \item Line 9: This defines what class the DispatcherServlet implements.
+\begin{lstlisting}
+ <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+\end{lstlisting}
 \end{itemize}
 \item Define ApplicationContext
 \begin{itemize}
 \item Line 17-19: This specifies the file that defines the application context of the application
+\begin{lstlisting}
+<servlet-mapping>
+<servlet-name>members</servlet-name>
+<url-pattern>/</url-pattern>
+ </servlet-mapping>
+\end{lstlisting}
 \end{itemize}
 \item Define DataSource
 \begin{itemize}
 \item Lines 22-27: This defines the reference to the database, and the DataSource class
+\begin{lstlisting}
+<resource-ref>
+<description>DB Connection</description>
+<res-ref-name>jdbc/mtc</res-ref-name>
+<res-type>javax.sql.DataSource</res-type>
+<res-auth>Container</res-auth>
+</resource-ref>
+\end{lstlisting}
 \end{itemize}
 \item Define Context Config Location
 \begin{itemize}
 \item Lines 28-35: This defines the files that contain the configuration for the DAO, Service and Security context files.
+\begin{lstlisting}
+<context-param>
+<param-name>contextConfigLocation</param-name>
+<param-value>
+classpath:beans/dao-context.xml
+classpath:beans/service-context.xml
+classpath:beans/security-context.xml
+</param-value>
+</context-param>
+\end{lstlisting}
 \end{itemize}
 \end{itemize}
 \label{fig:webxmlExplain}
@@ -170,17 +223,15 @@ Hibernate implements an Entity Data Model, and "sits between the object world of
 
 It manages objects that need to be persisted, known as Entity Classes [EC], using annotations, which are detailed in subsequent sections. Each EC has a unique identifier "whose value is not important to the application apart from its use as an identifier" \parencite{bauer2005hibernate}. 
 
-A rudimentary examination of Hibernate with Java Database Connectivity [JDBC] will be completed with regards towards the CRUD operations of each ORM database. This is examined within the Evaluation section of this report.
+A rudimentary examination of Hibernate with Java Database Connectivity [JDBC] will be completed with regards towards the CRUD operations of each ORM database. This is examined within the Evaluation section of this report. CRUD is an acronym that relates to the four main operations that are performed on a database: Create, Read, Update and Delete.
 
-\subsection{Integrated Development Environment}
 
-The IDE used for this project was Spring Tool Suite [STS], a modified version of the open source IDE, Eclipse. The advantages of using STS over Eclipse are the pre configured services within the application. Tomcat, Maven, egit, and the core Spring dependencies themselves come pre-packaged within the application. Java EE and web application support are also present. One clear advantage of using STS over Eclipse is that if a organisation were using Eclipse as as IDE, they could be running a variety of different versions of application servers or plug ins. A pre-packaged solution like STS reduces the risks of bugs being introduced, or not being able to reproduce bugs, on different development environments.
 
 \subsection{Source Control}
 
 Source Control is the management of changes to the source code of an application. In this day and age, it is not unusual for a program to be worked on by a number of different persons. In fact, it is more likely to be a globally dispersed team of programmers, so management of changes to the code base is very important. Essentially, it is a system that "provides facilities for storing, updating and retrieving all versions of modules, for controlling updating privileges, for identifying load modules by version number, and for recording who made each software change" \parencite{rochkind1975source}.
 
-The source control system used within this project was GitHub, a free open source solution located at \href{http://www.github.com}{www.github.com}. It provides integration with STS through the use of the \textit{egit} plugin, as well as GUI and Shell user interfaces for a variety of user systems. It was also used to manage the different versions of the report you are reading now. Within the scope of GitHub, each project is called a repository.
+The source control system used within this project was GitHub, a free open source solution located at \href{http://www.github.com}{www.github.com}. It provides integration with STS through the use of the \textit{egit} plugin. egit is an open source plugin for Eclipse that allows for Git repositories to be imported in the IDE. It also allows actions, such as committing changes, to be performed within the IDE. GUI and Shell user interfaces also exist for a variety of operating systems. It was also used to manage the different versions of the report you are reading now. Within the scope of GitHub, each project is called a repository.
 
 GitHub also provides graphs and statistics about each repository, such as which days are the busiest for commits as shown in Figure ~\ref{fig:git}, the growth of the code base over time and many more.
 
@@ -192,6 +243,10 @@ GitHub also provides graphs and statistics about each repository, such as which 
 \label{fig:git}
 \end{figure}
 
+\subsection{Integrated Development Environment}
+
+The IDE used for this project was Spring Tool Suite [STS], a modified version of the open source IDE, Eclipse. The advantages of using STS over Eclipse are the pre configured services within the application. Tomcat, Maven, egit, and the core Spring dependencies themselves come pre-packaged within the application. Java EE and web application support are also present. One clear advantage of using STS over Eclipse is that if a organisation were using Eclipse as as IDE, they could be running a variety of different versions of application servers or plug ins. A pre-packaged solution like STS reduces the risks of bugs being introduced, or not being able to reproduce bugs, on different development environments.
+
 \subsection{Logging}
 
 Logging was used within the application to check both the flow of the application, as well as to pin point where certain lines of code were being called. The logging implementation used was log4j, an open source logging solution created by Apache. Log4j is designed with the possibility of enabling or disabling logging at run time. This is important in an application may have thousands of logging instances within it. This would be difficult to remove from production code, and would increase the risk of introducing bugs were it to be attempted. 
@@ -200,16 +255,136 @@ Logging can also be used to analyse usability and a "log will contain statistics
 
 \section{Usability Studies}
 
-The important criteria that govern usability were looked at within this project. In doing this, two other websites were examined: the current website for the club, and a site that was recommended to me by a club member, Tralee Tennis club. For this task, usability studies by Jakob Nielson were examined. 
+The criteria that govern usability were looked at within this project. In doing this, two other websites were examined: the current website for the club, and a site that was recommended to me by a club member, Tralee Tennis club. 
+
+\subsection{Method of Evaluation}
+
+The criteria for evaluating the websites in the case studies were adapted from \cite{smith2001applying}. Smith breaks down the criteria into two groups: \textit{Information Content Criteria} and \textit{Ease-of-use Criteria}. While accuracy of content is a factor in usability, it is outside the remit of a final year project. \textit{Ease-of-use Criteria} will be the sole group used for evaluation herein. 
+
 
 \subsection{Case Study: Monaleen GAA Tennis Club}
 
-The first site examined was the existing site for the club. This site is located at \newline\textit{http://www.monaleengaatennisclub.com/}. The current site is a basic HTML site with a CSS stylesheet, that occasionally uses a PHP script to facilitate users to register for tournaments. It uses a basic architecture stack consisting of these HTML pages coupled with an Apache HTTP Server. The reasons for this choice that the club just needed a presence on the internet, there was no need for much functionality at the time, and simplicity.
+The first site examined was the existing site for the club. This site is located at \newline\textit{http://www.monaleengaatennisclub.com/}. The current site is a basic HTML site with a CSS style sheet, that occasionally uses a PHP script to facilitate users to register for tournaments. It uses a basic architecture stack consisting of these HTML pages coupled with an Apache HTTP Server. The reasons for this choice that the club just needed a presence on the internet, there was no need for much functionality at the time, and simplicity.
 
 This architectural choice places a number of constraints on the potential growth of the site however. The definition of roles within the system is not possible. An example would be that committee members cannot add news stories themselves, but must contain the web-master to perform this action on their behalf. There is also no scope to add secure features to the site, such as a members only feature. Any introduction of these features would require a considerable overhaul of the existing architecture.
 
 The only NFR looked at during the development of the site was availability, which is fulfilled by the choice of architecture and lightweight implementation. 
 
-(usability stuff will go here, leading onto sites that were admired by the club (ie Tralee))
-
 \subsection{Case Study: Tralee Tennis Club}
+
+The second site chosen as a comparison was the site for the Tralee Tennis Club. This site was mentioned during requirements elicitation, as members from Monaleen had travelled there for a tournament. While there was no opportunity to speak with the site administrator, the site has the appearance of a professional design. The site is developed with PHP and JavaScript. It facilitates the booking of available timetable slots through a user login system. This system is available through the website, and a physical kiosk on location. The type of web architecture, and the information pertaining to why these choices were made, were not available.  
+
+The site is available at \textit{http://www.traleetennisclub.ie/}.
+
+\section{Usability Results}
+
+These critera are based on a Yes-No answer. A Yes results in 1 point, where a No results in 0. Any exceptions are noted within the relevant tables.
+
+\begin{table}[H]
+\caption{Table 1 - Links}
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+	\textbf{Criteria} & \textbf{Monaleen Tennis Club} & \textbf{Tralee Tennis Club}\\ \hline
+	Links are updated? & No & Yes\\ \hline
+	Short-cuts for frequent users? & No & No\\ \hline
+	Warning if link leads to large file? & n/a & n/a\\ \hline
+	Indication of restricted access for link & n/a & Yes\\ \hline
+	Link text indicates nature of target & No & Yes\\ \hline
+	Total & 0/5 & 3/5\\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:table1}
+\end{table}
+
+\begin{table}[H]
+\caption{Table 2 - Feedback Mechanisms}
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+	\textbf{Criteria} & \textbf{Monaleen Tennis Club} & \textbf{Tralee Tennis Club}\\ \hline
+	Contact Details for website maintainer & Yes & Yes\\ \hline
+	Link to page maintainer on each page & Yes & Yes\\ \hline
+	Forms provided for users to enter details & Yes* & No\\ \hline
+	FAQ provided & No & Yes\\ \hline
+	Feedback mechanisms are fully operational & No & No\\ \hline
+	Total & 2.5/5 & 3/5\\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:table2}
+\end{table}
+\textit{*Only when tournament sign ups are open, .5 mark as it is not a regular part of the site}
+
+\begin{table}[H]
+\caption{Table 3 - Accessability}
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+	\textbf{Criteria} & \textbf{Monaleen Tennis Club} & \textbf{Tralee Tennis Club}\\ \hline
+	Speed of site adequate& Yes & Yes\\ \hline
+	Site Availability High?* & Yes & Yes\\ \hline
+	Website made known through search tools** & .5/3 & 2.5/3\\ \hline
+	Link back to parent entity & Yes & Yes\\ \hline	
+	Name of entity reflected in URL & Yes & Yes\\ \hline	
+	URL is not over complex,likely to be mistyped & No& No\\
+	\hline	
+	Total & 4.5/8 & 6.5/8\\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:table3}
+\end{table}
+\textit{*While not possible to test extensively over a period of time, this write was never denied access at any time}\newline
+\textit{**This was tested with 3 search engines: Google, Bing and Yahoo! Marked out of 3 - 1pt for first result, .5pt for first page, 0 for page 2+. Search terms were 'Limerick Tennis' and 'Kerry Tennis'}
+
+\begin{table}[H]
+\caption{Table 4 - Design}
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+	\textbf{Criteria} & \textbf{Monaleen Tennis Club} & \textbf{Tralee Tennis Club}\\ \hline
+	Format,Graphic Design Appropriate & Yes & Yes\\ \hline
+	Pages appropriate length, clear, uncluttered& No & Yes\\ \hline
+	Consistent format through website & No & Yes\\ \hline
+	Site compatible with multiple browsers & Yes & Yes\\ \hline
+	Site can be used without graphics & No & No\\ \hline
+	Total & 2/5 & 4/5\\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:table4}
+\end{table}
+
+\begin{table}[H]
+\caption{Table 5 - Navigability}
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+	\textbf{Criteria} & \textbf{Monaleen Tennis Club} & \textbf{Tralee Tennis Club}\\ \hline
+	Website organised by anticipated user need & No & Yes\\ \hline
+	Navigation options are distinct& Yes & Yes\\ \hline
+	Conventional navigation models*& Yes & Yes\\ \hline
+	Navigation links are provided on all pages & Yes & Yes\\ \hline
+	Browsing facilitated by menu or site map &Yes & Yes\\ \hline
+	Reach any point in appropriate number of clicks** & Yes & Yes\\ \hline
+	Search Engine Provided & No & No\\ \hline
+	Total & 5/7 & 6/7\\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:table5}
+\end{table}
+\textit{*eg menu on top or left of screen}\newline
+\textit{**defined as 3,} \cite{smith2001applying}
+
+\begin{table}[H]
+\caption{Table 7 - Results}
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+	Site & Total\\ \hline
+	Monaleen Tennis Club & 14/30\\ \hline
+	Tralee Tennis Club & 22.5/30\\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:table5}
+\end{table}
+
+Tralee Tennis Club is a clear winner with a site that adheres to the usability criteria defined by Smith. This site provides a benchmark in which to compare the application developed for this project.

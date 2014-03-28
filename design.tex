@@ -3,14 +3,99 @@
 
 \section{Introduction}
 
-\section{Key Features}
+\section{Framework Design}
 
-\subsection{Users}
+Spring incorporates a number of design patterns within its own classes. 
+
+\begin{table}[H]
+\begin{itemize}
+\item Singleton
+\begin{itemize}
+\item Beans defined within the Spring MVC framework and singletons by default. 
+\end{itemize}
+\item Factory
+\begin{itemize}
+\item The Factory pattern is used for loading Beans through the \textit{BeanFactory} class, and the \textit{Application Context}. 
+\end{itemize}
+\item Inversion of Control
+\begin{itemize}
+\item This pattern is central to the dependency injection facilities of the Spring framework
+\end{itemize}
+\end{itemize}
+\label{fig:springdesignpatterns}
+\end{table}
+
+\section{Controller-Service-DAO Design}
+
+In order to achieve modularity across the application, the core of the application is separated into four key areas.
+
+\begin{table}[H]
+\begin{itemize}
+\item Entities
+\begin{itemize}
+\item A Java object that is persisted to a table in a relational database.
+\end{itemize}
+\item Controllers
+\begin{itemize}
+\item A controller will handled the user requests the application must deal with
+\end{itemize}
+\item Service
+\begin{itemize}
+\item The Service layer facilitates communication between the controller and the DAO layer.
+\end{itemize}
+\item Data Access Objects [DAO]
+\begin{itemize}
+\item This layer is responsible for persisting an entity or any changes to an entity.
+\end{itemize}
+\end{itemize}
+\label{fig:appbreakdown}
+\end{table}
+
+The flow between these objects is shown in Figure~\ref{fig:csdao}. An example flow would be the creation of a user objects. 
+\begin{table}[H]
+\begin{enumerate}
+\item Controller present user with 'Home' view.
+\item User clicks on 'Register' which sends a request to the 'Members' controller
+\begin{itemize}
+\item
+\begin{lstlisting}
+@RequestMapping("/createmembers")
+public String createMembers(Model model) {
+roleService.defaultRoles();
+logger.info("Showing Create Members Page....");
+model.addAttribute("member", new User());
+return "createmembers";
+}
+\end{lstlisting}
+\end{itemize}
+\item Service
+\begin{itemize}
+\item The Service layer facilitates communication between the controller and the DAO layer.
+\end{itemize}
+\item Data Access Objects [DAO]
+\begin{itemize}
+\item This layer is responsible for persisting an entity or any changes to an entity.
+\end{itemize}
+\end{enumerate}
+\label{fig:appbreakdown}
+\end{table}
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{csdao.png}
+\end{center}
+\caption{Controller-Service-DAO Flow}
+\label{fig:csdao}
+\end{figure}
+
+
+\subsection{User Roles}
 
 The User class was designed with the existing application form of Monaleen Tennis Club as a foundation. 
-Spring handles security a number of ways. Firstly, it uses an \textit{authority} hierarchy to separate different levels of users. For this web application, there were three main levels of authority, with one level containing three different branches.
+Spring controls access within the application. Firstly, it uses an \textit{authority} hierarchy to separate different levels of users. For this web application, there were three main levels of authority, with one level containing three different branches.
+
 \subsubsection{Roles}
-\begin{table}[H]
 \begin{itemize}
 \item ROLE ADMIN
 \begin{itemize}
@@ -26,31 +111,11 @@ Spring handles security a number of ways. Firstly, it uses an \textit{authority}
 \end{itemize}
 \item ROLE WARNING 
 \begin{itemize}
-\item A restriction placed upon a member. For example, a member who books time slots, but does not attend.
+\item A restriction placed upon a member. For example, a member who books time slots, but does not attend. In this application, it reduces the number of allowed bookings on a court per week from 3 to 2.
 \end{itemize}
 \item ROLE SUSPEND
 \begin{itemize}
-\item A further restriction placed upon a member.
+\item A further restriction placed upon a member. Number of bookings on a court per week reduced to 1.
 \end{itemize}
 \end{itemize}
 \label{fig:secRoles}
-\end{table}
-
-\subsection{Tournaments}
-
-\subsubsection{Events}
-
-\subsection{Timetable}
-
-\subsubsection{Events}
-
-\subsection{Administration}
-
-\subsubsection{Logs}
-
-\subsubsection{Analysis}
-
-\subsection{News}
-
-\subsection{Look and Feel}
-

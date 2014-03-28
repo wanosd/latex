@@ -104,6 +104,57 @@
   \field{year}{1975}
 \endentry
 
+\entry{shan2006taxonomy}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Shan}{S.}%
+     {Tony~Chao}{T.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hua}{H.}%
+     {Winnie~W}{W.~W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{STCHWW1}
+  \strng{fullhash}{STCHWW1}
+  \field{labelyear}{2006}
+  \field{sortinit}{S}
+  \field{booktitle}{e-Business Engineering, 2006. ICEBE'06. IEEE International
+  Conference on}
+  \field{pages}{378\bibrangedash 385}
+  \field{title}{Taxonomy of java web application frameworks}
+  \field{year}{2006}
+\endentry
+
+\entry{smith2001applying}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Smith}{S.}%
+     {Alastair~G}{A.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{SAG1}
+  \strng{fullhash}{SAG1}
+  \field{labelyear}{2001}
+  \field{sortinit}{S}
+  \field{number}{2}
+  \field{pages}{137\bibrangedash 149}
+  \field{title}{Applying evaluation criteria to New Zealand government
+  websites}
+  \field{volume}{21}
+  \field{journaltitle}{International journal of information management}
+  \field{year}{2001}
+\endentry
+
 \lossort
 \endlossort
 

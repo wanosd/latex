@@ -1077,5 +1077,37 @@ public void testCreateRetrieve(){
 \caption{JUnit Create and Size Test}
 \end{figure}
 
+\section{External Code}
+There are two aspects of external code being used within this web application. The first is the CSS file that the site is using. This was a free template obtained from \href{http://skylinestemplates.blogspot.ie/2011/11/greefies-solution-xhtml-and-css.html}{Skylines Templates}
+
+This template was modified in order to fit in with certain aspects of the site, but the look, feel and images remain consistent with those of the template.
+
+The other code used in this application that was not original is the Google Maps script, visible in the Contact Us page of the web application. This is provided at \href{https://developers.google.com/maps/documentation/javascript/examples/map-simple}{Google Maps Simple Map Example} and is available to use freely. The code was slightly modified, as depicted in Figure~\ref{fig:googlemaps}, to change both the GPS co-ordinates and the initial zoom level of the map. The page is included in the Contact Us tile.\newline
+
+\begin{table}[H]
+\begin{lstlisting}
+//code to include maps.jsp in contactus.jsp
+<div align="center"><%@include file="maps.jsp"%></div>
+
+//code of the maps.jsp change with modified Google javascript
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false">
+</script>
+<script>
+function initialize()
+{
+var mapProp = {
+center:new google.maps.LatLng(52.6565176,-8.5537577), //GPS Co-ords
+zoom:18, // Zoom level
+mapTypeId:google.maps.MapTypeId.ROADMAP
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+\end{lstlisting}
+\caption{Code Showing Google Maps Integration}
+\label{fig:googlemaps}
+\end{table}
 
 \section{Conclusion}

@@ -1,9 +1,17 @@
 \chapter{Evaluation}
 \label{evaluation}
 
+\section{Security}
 
-\section{Usability}
-\subsection{Productivity}
+\section{Extensibility}
+
+(example of changes to entity class and database structure would result in changes having to be made to controller and dao with jdbc, only controller with Hibernate)
+
+\section{Usability and Performance}
+
+(case study comparison here)
+
+\section{Productivity}
 
 \subsubsection{Hibernate}
 
@@ -150,7 +158,7 @@ throws ServletException, IOException {
 
 In the \textit{checkAuthentication()} method, depicted in Figure~\ref{fig:sessionlevel}, the developer must check the session for any attributes that match a certain value, and act accordingly. In this example, the id of a user. The id then needs to checked against a database to ensure that it is a valid id, and to determine what permissions the account has.
 
-\begin{figure}[H]
+
 \begin{lstlisting}
 private void checkAuthentication(PrintWriter out, HttpSession currentSession) {
 //Check Authentication
@@ -171,6 +179,7 @@ private void checkAuthentication(PrintWriter out, HttpSession currentSession) {
         }
 	}
 \end{lstlisting}
+\begin{figure}[H]
 \caption{Session Authentication based on user level}
 \label{fig:sessionlevel}
 \end{figure}

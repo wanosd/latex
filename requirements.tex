@@ -11,14 +11,31 @@ In eliciting possible requirements for the site, there was a discussion with thr
     \begin{tabular}{ | l | l | l | l | l| p{5cm} |}
     \hline
     Name & Age Bracket & Club Role & Club Membership & Work Background \\ \hline
-	'Larry' & 35 - 45& Committee Member & 5 years & Senior Software Engineer \\ \hline
-	'Moe' & 18 - 25 & New Member & 1 year & Graduate Software Engineer \\ \hline
-	'Curly' & 55+ & Senior Member & 10+ years & Retired Public Servant \\ \hline
+	S1 & 35 - 45& Committee Member & 5 years & Senior Software Engineer \\ \hline
+	S2 & 18 - 25 & New Member & 1 year & Graduate Software Engineer \\ \hline
+	S3 & 55+ & Senior Member & 10+ years & Retired Public Servant \\ \hline
     \end{tabular}
 \end{center}
 \label{fig:userelicit}
 \end{table}
 
+\section{Method for Requirements}
+
+\subsection{Storyboarding}
+
+At an early stage of the application, rough storyboards were prepared for the FYP presentation. These storyboards were used to demonstrate how a page, such as the timetable shown in Figure~\ref{fig:timetableSB}, would be displayed by the application.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{storyboard.png}
+\end{center}
+\caption{Timetable Storyboard, October 2013}
+\label{fig:timetableSB}
+\end{figure}
+
+The storyboarding visualised aspects of the site, and gave a rough idea of functionality that would be needed within the application. 
+
+\subsection{Interviews}
 
 
 \begin{table}[H]
@@ -79,28 +96,14 @@ Table ~\ref{fig:reqbreakdown} refers to each numbered requirement, and whether i
     \begin{tabular}{ | l | l | l | l | l| l| l| l| l| l|l| p{.22cm} |}
     \hline
      \textit{Name}& 1& 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11\\ \hline
-	 'Larry' & N & N & Y & Y & Y & N & Y & Y & Y & Y & N\\ \hline
-	  'Moe' & Y & Y & Y & Y & N & N & N & N & N & N & Y\\ \hline
-	    'Curly' & Y & Y & N & N & N & N & N & Y & Y & N & N\\ \hline
+	 S1 & N & N & Y & Y & Y & N & Y & Y & Y & Y & N\\ \hline
+	  S2 & Y & Y & Y & Y & N & N & N & N & N & N & Y\\ \hline
+	    S3 & Y & Y & N & N & N & N & N & Y & Y & N & N\\ \hline
     \end{tabular}
 \end{center}
 \label{fig:reqbreakdown}
 \end{table}
-\section{Method for Requirements}
 
-\subsection{Storyboarding}
-
-At an early stage of the application, rough storyboards were prepared for the FYP presentation. These storyboards were used to demonstrate how a page, such as the timetable shown in Figure~\ref{fig:timetableSB}, would be displayed by the application.
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=14cm]{storyboard.png}
-\end{center}
-\caption{Timetable Storyboard, October 2013}
-\label{fig:timetableSB}
-\end{figure}
-
-The storyboarding visualised aspects of the site, and gave a rough idea of functionality that would be needed within the application. 
 
 \section{Application}
 
@@ -209,6 +212,8 @@ From an administration point of view, there are many aspects that the applicatio
 \section{Non Functional Requirements}
 
 \subsection{Security}
+
+Since user details would be stored in the application, security of this data was highlighted as a concern.
 
 \subsection{Extensibility}
 
