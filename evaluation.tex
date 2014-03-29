@@ -1,15 +1,199 @@
 \chapter{Evaluation}
 \label{evaluation}
 
+(Evaluation as relates to architectural quality?)
+
 \section{Security}
+(Owasp Top 10?)
+
+Injection - prevented by the user of named parameters within both JDBC and Hibernate code.
+
+Broken Auth - Provided by the framework, 
+
+XSS - 
+
+Security Misconfiguration - Ensuring roles are defined clearly, and that security context is correct
+
+Sensitive Data Exposure - password encoding performed, password is never saved in database, just the encoded version
+
+Unvalidated Redirects - not used, ViewResolver performs all redirects. Invalid value passed to view will result in access denied error or a 404.
+
 
 \section{Extensibility}
 
-(example of changes to entity class and database structure would result in changes having to be made to controller and dao with jdbc, only controller with Hibernate)
+The goal of extensibility is "controlling the time and costs to implement, tests and deploy changes" \parencite{bass2003software}. The use of Hibernate in the architectural stack provides a measure of extensibility support for changes in entity classes. Any addition to an entity class would result in a change to a database schema. 
+
+An application using Hibernate, in conjunction with Spring MVC, would need only to modify the View, illustrated in Figure~\ref{fig:viewChange}. This would need to be changed to facilitate input of the new attribute. Spring MVC uses spring form tags to map values to the object within the Controller, and the DAO layer persists the object. Since the object is configured with database mapping at class level, no changes are necessary to the DAO. The addition of Line 14 is Figure~\ref{fig:ViewChange} is the only changed needed to allow for the attribute to be modified within the application. The Controller, Service layer and DAO would remain unchanged.
+
+\begin{table}[H]
+\begin{lstlisting}
+<sf:form id="details" method="post" action="${pageContext.request.contextPath}/adminProfileUpdate" commandName="member">
+<table class="formtable">
+Name:<sf:input name = "name" path="name" type="text"/>
+Email:<sf:input name = "username" path="username" type="text"/>
+Password:<sf:input name = "password" path="password" type="text"/>
+Address Line 1<sf:input name = "ad_line1" path="ad_line1" type="text"/>
+Address Line 2<sf:input name = "ad_line2" path="ad_line2" type="text"/>
+City/Town<sf:input name = "ad_city" path="ad_city" type="text"/><br/>
+County<sf:input name = "ad_county" path="ad_county" type="text"/><br/>
+Contact Number<sf:input name = "contact_num" path="contact_num" type="text"/>
+Emergency Contact Name<sf:input name = "em_con_name" path="em_con_name" type="text"/>
+Emergency Contact Number<sf:input name = "em_con_num" path="em_con_num" type="text"/>
+Role<sf:select path="authority"><sf:options items="${roles }"/></sf:select>
+New Attribute<sf:input name = "new_attribute" path="new_attribute" type="text"/> //new line added
+<input type="hidden" value="${member.username }" name="username"/>
+<input value="Change Details" type="submit"/>
+\end{lstlisting}
+\caption{Change to view to support new attributes}
+\label{fig:viewChange}
+\end{table}
+Using JDBC, again in partnership with Spring MVC, the View and the DAO object would need to be changed. Within the DAO, two actions must be performed, as depicted in Figure~\ref{fig:jdbcChanges}. Line 18 shows the addition of an extra parameter to map the value to a position in the SQL statement. The SQL statement must be modified also in order to correctly insert or update the persisted value in the database. This is shown in Lines 23 through 26, with the changes being shown in capital letters. 
+
+\begin{lstlisting}
+@Transactional
+public boolean createUserJDBC(User user) {
+MapSqlParameterSource params = new MapSqlParameterSource();
+params.addValue("username", user.getUsername());
+params.addValue("name", user.getName());
+params.addValue("password", passwordEncoder.encode(user.getPassword()));
+params.addValue("gender", user.getGender());
+params.addValue("member_type", user.getMember_type());
+params.addValue("grade", user.getGrade());
+params.addValue("ad_line1", user.getAd_line1());
+params.addValue("ad_line2", user.getAd_line2());
+params.addValue("ad_city", user.getAd_city());
+params.addValue("ad_county", user.getAd_county());
+params.addValue("contact_num", user.getContact_num());
+params.addValue("em_con_name", user.getEm_con_name());
+params.addValue("em_con_num", user.getEm_con_num());
+params.addValue("role", "ROLE_MEMBER");
+params.addValue("NEW_ATTRIBUTE", "user.getNEW_ATTRIBUTE());
+return jdbc
+	.update("insert into users (username, name, password, gender, 
+	member_type, grade, ad_line1, ad_line2, ad_city, ad_county,
+	contact_num, em_con_name, em_con_num, enabled, authority,
+	bookings_left, NEW_ATTRIBUTE) values (:username, :name, :password, 
+	:gender, :member_type, :grade, :ad_line1, :ad_line1, 
+	:ad_city, :ad_county, :contact_num,:em_con_name, :em_con_num,
+	false, :role, 0, :NEW_ATTRIBUTE)",params) == 1;
+	}
+\end{lstlisting}
+\begin{table}[H]
+\caption{JDBC DAO changes with entity change}
+\label{fig:jdbcChanges}
+\end{table}
+
+Hibernate provides better support for extensibility in this regard, allowing the developer to focus on database and view changes, with no need to modify the persistence layer between the application and the database.
 
 \section{Usability and Performance}
 
-(case study comparison here)
+The deliverable from this project was subjected to the same usability criteria as illustrated in Section~\ref{sec:usabilty}. The results are shown in Tables~\ref{fig:projecttable1} through~\ref{fig:projecttable5}. The overall results are compared in Figure~\ref{fig:projecttable6}.
+
+\begin{table}[H]
+\caption{Table 1 - Links}
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+\textbf{Criteria} & \textbf{Project Application}\\ \hline
+	Links are updated? & Yes\\ \hline
+	Short-cuts for frequent users? & Yes\\ \hline
+	Warning if link leads to large file? & n/a\\ \hline
+	Indication of restricted access for link & Yes \\ \hline
+	Link text indicates nature of target & Yes \\ \hline
+	Total & 4/5 \\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:projecttable1}
+\end{table}
+
+\begin{table}[H]
+\caption{Table 2 - Feedback Mechanisms}
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+\textbf{Criteria} & \textbf{Project Application}\\ \hline
+	Contact Details for website maintainer & Yes \\ \hline
+	Link to page maintainer on each page & Yes \\ \hline
+	Forms provided for users to enter details & Yes\\ \hline
+	FAQ provided & Yes \\ \hline
+	Feedback mechanisms are fully operational & Yes\\ \hline
+	Total & 5/5 \\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:projecttable2}
+\end{table}
+
+\begin{table}[H]
+\caption{Table 3 - Accessability}
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+\textbf{Criteria} & \textbf{Project Application}\\ \hline
+	Speed of site adequate& Yes\\ \hline
+	Site Availability High? & Yes\\ \hline
+	Website made known through search tools** & n/a \\ \hline
+	Link back to parent entity & Yes\\ \hline	
+	Name of entity reflected in URL & Yes \\ \hline	
+	URL is not over complex,likely to be mistyped & Yes \\
+	\hline	
+	Total & 5/8\\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:projecttable3}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Table 4 - Design}
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+\textbf{Criteria} & \textbf{Project Application}\\ \hline
+	Format,Graphic Design Appropriate & Yes \\ \hline
+	Pages appropriate length, clear, uncluttered& Yes \\ \hline
+	Consistent format through website & Yes \\ \hline
+	Site compatible with multiple browsers & Yes\\ \hline
+	Site can be used without graphics & No\\ \hline
+	Total & 4/5 \\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:projecttable4}
+\end{table}
+
+\begin{table}[H]
+\caption{Table 5 - Navigability}
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+	\textbf{Criteria} & \textbf{Project Application}\\ \hline
+	Website organised by anticipated user need & Yes\\ \hline
+	Navigation options are distinct& Yes \\ \hline
+	Conventional navigation models*& Yes\\ \hline
+	Navigation links are provided on all pages & Yes\\ \hline
+	Browsing facilitated by menu or site map &Yes \\ \hline
+	Reach any point in appropriate number of clicks** & Yes\\ \hline
+	Search Engine Provided & No\\ \hline
+	Total & 6/7 \\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:projecttable5}
+\end{table}
+\textit{*eg menu on top or left of screen}\newline
+\textit{**defined as 3,} \cite{smith2001applying}
+
+\begin{table}[H]
+\caption{Table 6 - Overall Results}
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+	Site & Total\\ \hline
+	Monaleen Tennis Club & 14/30\\ \hline
+	Tralee Tennis Club & 22.5/30\\ \hline
+	Project Application & 24/30\\ \hline	
+    \end{tabular}
+\end{center}
+\label{fig:projecttable6}
+\end{table}
 
 \section{Productivity}
 
@@ -188,6 +372,13 @@ An issue with that is that it is reliant on the developer to identify the correc
 
 \section{Architectural Quality}
 
+(Is there a need for this section? Does the preceding section suffice? Evolution support is covered, security can be measured in resisting, identifying and recovering from attacks \cite{bass2003software}
+
+\subsection{Performance}
+
+\subsection{Security}
+
+\subsection{Evolution Support}
 
 
 Performance, Security and Evolution Support

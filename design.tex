@@ -51,7 +51,7 @@ In order to achieve modularity across the application, the core of the applicati
 \label{fig:appbreakdown}
 \end{table}
 
-The flow between these objects is shown in Figure~\ref{fig:csdao}. An example flow would be the creation of a user objects. 
+The flow between these objects is shown in Figure~\ref{fig:csdao}. An example flow would be the creation of a user objects. (Do I need specific code samples here, or is defining the flow enough (or necessary)?) The current work done is an example, not finished.
 \begin{table}[H]
 \begin{enumerate}
 \item Controller present user with 'Home' view.
@@ -61,14 +61,12 @@ The flow between these objects is shown in Figure~\ref{fig:csdao}. An example fl
 \begin{lstlisting}
 @RequestMapping("/createmembers")
 public String createMembers(Model model) {
-roleService.defaultRoles();
-logger.info("Showing Create Members Page....");
 model.addAttribute("member", new User());
 return "createmembers";
 }
 \end{lstlisting}
 \end{itemize}
-\item Service
+\item Controller returns 'Create Members' View (Line 4)
 \begin{itemize}
 \item The Service layer facilitates communication between the controller and the DAO layer.
 \end{itemize}
@@ -77,7 +75,7 @@ return "createmembers";
 \item This layer is responsible for persisting an entity or any changes to an entity.
 \end{itemize}
 \end{enumerate}
-\label{fig:appbreakdown}
+\label{fig:layerExplain}
 \end{table}
 
 

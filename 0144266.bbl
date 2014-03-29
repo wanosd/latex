@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex version 2.3 $
+% $ biblatex version 2.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -15,6 +15,35 @@
       \aftergroup\endinput}
   {}
 \endgroup
+
+\entry{bass2003software}{book}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Bass}{B.}%
+     {Len}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Clements}{C.}%
+     {Paul}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kazman}{K.}%
+     {Rick}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Addison-Wesley Professional}%
+  }
+  \strng{namehash}{BLCPKR1}
+  \strng{fullhash}{BLCPKR1}
+  \field{labelyear}{2003}
+  \field{sortinit}{B}
+  \field{title}{Software architecture in practice}
+  \field{year}{2003}
+\endentry
 
 \entry{bauer2005hibernate}{book}{}
   \name{author}{2}{}{%
@@ -40,6 +69,49 @@
   \field{year}{2005}
 \endentry
 
+\entry{davis2006effectiveness}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Davis}{D.}%
+     {Alan}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dieste}{D.}%
+     {Oscar}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hickey}{H.}%
+     {Ann}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Juristo}{J.}%
+     {Natalia}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Moreno}{M.}%
+     {Ana~Mar{\'\i}a}{A.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{DA+1}
+  \strng{fullhash}{DADOHAJNMAM1}
+  \field{labelyear}{2006}
+  \field{sortinit}{D}
+  \field{booktitle}{Requirements Engineering, 14th IEEE International
+  Conference}
+  \field{pages}{179\bibrangedash 188}
+  \field{title}{Effectiveness of requirements elicitation techniques: Empirical
+  results derived from a systematic review}
+  \field{year}{2006}
+\endentry
+
 \entry{softmetrics}{book}{}
   \name{author}{1}{}{%
     {{}%
@@ -57,6 +129,26 @@
   \field{sortinit}{F}
   \field{title}{Spftware Metrics: A Rigorous Approach}
   \field{year}{1991}
+\endentry
+
+\entry{gorton2006essential}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Gorton}{G.}%
+     {Ian}{I.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{GI1}
+  \strng{fullhash}{GI1}
+  \field{labelyear}{2006}
+  \field{sortinit}{G}
+  \field{title}{Essential software architecture}
+  \field{volume}{14}
+  \field{year}{2006}
 \endentry
 
 \entry{holzinger2005usability}{article}{}

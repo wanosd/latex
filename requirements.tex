@@ -3,6 +3,8 @@
 
 \section{Introduction}
 
+Requirements Elicitation is an important step in the development of a software application. There are a number of techniques possible, such as "interviewing, protocol analysis, repertory grid, work groups" \parencite{davis2006effectiveness}. Structured interviews "appear to be one of the most effective elicitation techniques in a wide range of domains and situations" \parencite{davis2006effectiveness}. 
+
 In eliciting possible requirements for the site, there was a discussion with three club members with varying backgrounds and experience within the club.
 
 \begin{table}[H]
@@ -19,7 +21,7 @@ In eliciting possible requirements for the site, there was a discussion with thr
 \label{fig:userelicit}
 \end{table}
 
-\section{Method for Requirements}
+\section{Methods for Requirements Elicitation}
 
 \subsection{Storyboarding}
 
@@ -37,20 +39,18 @@ The storyboarding visualised aspects of the site, and gave a rough idea of funct
 
 \subsection{Interviews}
 
+In order to elicit requirements, a number of interviews were held with stakeholders. These questions are listed in~\ref{sec:regquestions},~\nameref{sec:regquestions}.
 
-\begin{table}[H]
+During the elicition process a number of areas were highlight as desired features.
+
 \begin{enumerate}
-\item Book Court
+\item Online Timetable
 \begin{itemize}
-\item Allow user to book a slot on a timetable for a court
+\item Allow members to view courts and make/view bookings
 \end{itemize}
-\item Remove Booking
+\item Tournaments
 \begin{itemize}
-\item Allow user to book a slot on a timetable for a court
-\end{itemize}
-\item Register for Tournament
-\begin{itemize}
-\item Allow users to register for a tournament
+\item Allow user to register for a tournament, and view tournaments ongoing.
 \end{itemize}
 \item Contact Members
 \begin{itemize}
@@ -84,47 +84,36 @@ The storyboarding visualised aspects of the site, and gave a rough idea of funct
 \begin{itemize}
 \item Such as games played, Win/Loss ratio
 \end{itemize}
-
-
 \end{enumerate}
-\label{fig:secRoles}
+\begin{table}[H]
+\label{fig:requirementsFeatures}
+\caption{Requested Features}
 \end{table}
 Table ~\ref{fig:reqbreakdown} refers to each numbered requirement, and whether it was brought up by a stakeholder during the elicitation process.
 \begin{table}[H]
 \caption{Requested Feature Breakdown}
 \begin{center}
-    \begin{tabular}{ | l | l | l | l | l| l| l| l| l| l|l| p{.22cm} |}
+    \begin{tabular}{ | l | l | l | l| l| l| l| l| l|l| p{.22cm} |}
     \hline
-     \textit{Name}& 1& 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11\\ \hline
-	 S1 & N & N & Y & Y & Y & N & Y & Y & Y & Y & N\\ \hline
-	  S2 & Y & Y & Y & Y & N & N & N & N & N & N & Y\\ \hline
-	    S3 & Y & Y & N & N & N & N & N & Y & Y & N & N\\ \hline
+     \textit{Name}& 1& 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\ \hline
+	 S1 & N & Y & Y & Y & Y & Y & Y & Y & Y & N\\ \hline
+	 S2 & Y & Y & Y & N & N & N & N & N & N & Y\\ \hline
+	 S3 & Y & N & N & N & N & N & Y & Y & N & N\\ \hline
+  Total & 2 & 2 & 2 & 1 & 1 & 1 & 2 & 2 & 1 & 1\\ \hline
     \end{tabular}
 \end{center}
 \label{fig:reqbreakdown}
 \end{table}
 
+This features were broken down into four categories: \textit{Timetable}, \textit{Tournaments}, \textit{Members}, and \textit{News}.
 
 \section{Application}
 
 \section{Functional Requirements}
 
-\subsection{User} 
 
-There are a number of actions that a user needs to be able to accomplish within the system. The user should be able to register their details within the system to create an account. Once the account is created, the user should be able to impact other site features, such as the timetable, based on their authority within the application. 
 
-\begin{enumerate}
-\item Register
-\item Login
-\item Register for a tournament
-\item View members registered for a tournament
-\item View all member contact details
-\item Book a slot on timetable
-\item Remove a booking that they placed on a timetable
-\item Report a no show for a booked slot
-\end{enumerate}
-
-\subsection{Timetable}
+\subsection{Timetable} 
 
 The timetable is the core aspect of the application, and one that would be most likely to be used by all members, not just those involved competitively. While the regular member would only be concerned with the booking of slots, there are a number of requirements defined for use by the administrator in order to configure a relevant timetable not the club. The timetable needs to be flexible to allow the administrator full control at all stages.
 
@@ -141,56 +130,28 @@ The timetable is the core aspect of the application, and one that would be most 
 
 \subsection{Tournament}
 
-\subsection{Administration}
+\subsection{News}
 
-From an administration point of view, there are many aspects that the application needs to support. 
+\subsection{Members}
 
 \section{Use Cases}
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=14cm]{usecaselogin.png}
-\end{center}
-\caption{Use case for User login}
-\label{fig:usecaselogin}
-\end{figure}
-
 \begin{usecase}
-
 \addtitle{Use Case 1}{View All Members} 
-
-%Scope: the system under design
 \addfield{Scope:}{System-wide}
-
-%Level: "user-goal" or "subfunction"
 \addfield{Level:}{User can view a list of all registered, and approved, members of the club}
-
-%Primary Actor: Calls on the system to deliver its services.
 \addfield{Primary Actor:}{All Registered and Authenticated Users}
-
-%Stakeholders and Interests: Who cares about this use case and what do they want?
 \additemizedfield{Stakeholders and Interests:}{
 	\item All Users: contact information for club members
 }
 
-%Preconditions: What must be true on start and worth telling the reader?
 \addfield{Preconditions:}{User is registered and approved}
-%when multiple
-%\additemizedfield{Preconditions:}{} 
-
-%Postconditions: What must be true on successful completion and worth telling the reader
 \addfield{Postconditions:}{User must be authenticated by the framework}
-%when multiple
-%\additemizedfield{Preconditions:}{}
-
-%Main Success Scenario: A typical, unconditional happy path scenario of success.
 \addscenario{Main Success Scenario:}{
 	\item User logs in
 	\item User clicks on View Members
 	\item System displays member information
 }
-
-%Extensions: Alternate scenarios of success or failure.
 \addscenario{Extensions:}{
 	\item[1.a] Invalid login data:
 		\begin{enumerate}
@@ -203,18 +164,24 @@ From an administration point of view, there are many aspects that the applicatio
 		\item[2.] Admin is emailed about attempted access by unapproved member
 		\end{enumerate}
 }
-
-%Frequency of Occurrence: Influences investigation, testing and timing of implementation.
 \addfield{Frequency of Occurrence:}{High}
-
 \end{usecase}
 
 \section{Non Functional Requirements}
 
 \subsection{Security}
 
-Since user details would be stored in the application, security of this data was highlighted as a concern.
+Since user details would be stored in the application, security of this data was highlighted as a concern. While no payment information would be held by the application, there would be names, addresses and phones numbers held within the application. The security of this information would need to be ensured.
 
 \subsection{Extensibility}
 
+Extensibility of the application was discussed with particular attention of the ability of the application to deal with changed to the club structure. Currently, the club has two courts in which users can book time for games. It is likely that the club will be expanding in the near future. This will result in the creation of four next courts in the near future. The application should be able to scale with this possibility without issue.
+
+Tournaments were also mentioned as an area where future requirements may stem from. Currently, the club operates three kinds of tournaments: Singles, Doubles and Mixed Doubles. These are broken down into Ladder style tournaments and Bracket style tournaments. The club regularly holds tournaments with other national tennis clubs. The ability to create tournaments that suit these events could be necessary.
+
 \subsection{Usability}
+
+The age of the club members range from 8 to 80, so ease of use of any software solution is important. If a system is going to replace the existing system that all can use, a similar level of usability is required. The most common function used by members is the reservation of time slot in one of the courts. A software alternative needs to be intuitive for all members.
+
+\subsection{Performance}
+
