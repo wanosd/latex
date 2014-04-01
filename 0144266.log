@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.21)  29 MAR 2014 15:44
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  1 APR 2014 20:06
 entering extended mode
-**C:/Users/FYP/Documents/GitHub/latex/0144266.tex
-(C:/Users/FYP/Documents/GitHub/latex/0144266.tex
+**C:/Users/0144266/Documents/GitHub/latex/0144266.tex
+(C:/Users/0144266/Documents/GitHub/latex/0144266.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -19,8 +19,10 @@ Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 File: fleqn.clo 1998/08/17 v1.1c Standard LaTeX option (flush left equations)
 \mathindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+Requested font "cmr10" at 10.95pt
+ -> cmr10
 )
 \c@part=\count80
 \c@chapter=\count81
@@ -86,15 +88,15 @@ File: xetex.def 2013/04/29 v0.96 LaTeX color/graphics driver for XeTeX (RRM/JK)
 \lst@maxwidth=\dimen117
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 \c@lstnumber=\count95
 \lst@skipnumbers=\count96
 \lst@framebox=\box27
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
-File: listings.cfg 2007/02/22 1.4 listings configuration
+File: listings.cfg 2013/08/26 1.5b listings configuration
 ))
-Package: listings 2007/02/22 1.4 (Carsten Heinz)
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
@@ -248,14 +250,25 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks17
 \@floatcapt=\box30
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+\fancy@headwidth=\skip44
+\f@ncyO@elh=\skip45
+\f@ncyO@erh=\skip46
+\f@ncyO@olh=\skip47
+\f@ncyO@orh=\skip48
+\f@ncyO@elf=\skip49
+\f@ncyO@erf=\skip50
+\f@ncyO@olf=\skip51
+\f@ncyO@orf=\skip52
+)
 \@float@every@table=\toks18
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty"
-Package: biblatex 2013/05/01 v2.6 programmable bibliographies (PK/JW/AB)
+Package: biblatex 2013/11/25 v2.8a programmable bibliographies (PK/JW/AB)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\biblatex1.sty"
-Package: biblatex1 2013/05/01 v2.6 programmable bibliographies (bibtex) (PK/JW/
-AB)
+Package: biblatex1 2013/11/25 v2.8a programmable bibliographies (bibtex) (PK/JW
+/AB)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
 Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
@@ -311,15 +324,15 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 \blx@notetype=\count145
 \blx@parenlevel@text=\count146
 \blx@parenlevel@foot=\count147
-\labelnumberwidth=\skip44
-\labelalphawidth=\skip45
-\shorthandwidth=\skip46
-\biblabelsep=\skip47
-\bibitemsep=\skip48
-\bibnamesep=\skip49
-\bibinitsep=\skip50
-\bibparsep=\skip51
-\bibhang=\skip52
+\labelnumberwidth=\skip53
+\labelalphawidth=\skip54
+\shorthandwidth=\skip55
+\biblabelsep=\skip56
+\bibitemsep=\skip57
+\bibnamesep=\skip58
+\bibinitsep=\skip59
+\bibparsep=\skip60
+\bibhang=\skip61
 \blx@auxin=\read2
 \blx@auxout=\write3
 \c@mincomprange=\count148
@@ -395,42 +408,46 @@ Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\blx-compat.def"
-File: blx-compat.def 2013/05/01 v2.6 biblatex compatibility (PK/JW/AB)
+File: blx-compat.def 2013/11/25 v2.8a biblatex compatibility (PK/JW/AB)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\biblatex.def"
 File: biblatex.def 
-\c@biburlnumpenalty=\count217
-\c@biburlucpenalty=\count218
-\c@biburllcpenalty=\count219
-\c@smartand=\count220
+\c@textcitecount=\count217
+\c@textcitetotal=\count218
+\c@textcitemaxnames=\count219
+\c@biburlnumpenalty=\count220
+\c@biburlucpenalty=\count221
+\c@biburllcpenalty=\count222
+\c@smartand=\count223
 )
 Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\bbx\authoryear.bbx"
-File: authoryear.bbx 2013/05/01 v2.6 biblatex bibliography style (PK/JW/AB)
+File: authoryear.bbx 2013/11/25 v2.8a biblatex bibliography style (PK/JW/AB)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\bbx\standard.bbx"
-File: standard.bbx 2013/05/01 v2.6 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count221
-\c@bbx:relatedtotal=\count222
+File: standard.bbx 2013/11/25 v2.8a biblatex bibliography style (PK/JW/AB)
+\c@bbx:relatedcount=\count224
+\c@bbx:relatedtotal=\count225
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\cbx\authoryear.cbx"
-File: authoryear.cbx 2013/05/01 v2.6 biblatex citation style (PK/JW/AB)
+File: authoryear.cbx 2013/11/25 v2.8a biblatex citation style (PK/JW/AB)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
 Package biblatex Info: Redefining '\footcitetext'.
 Package biblatex Info: Redefining '\smartcite'.
 Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
@@ -452,12 +469,12 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \caption@parindent=\dimen128
 \caption@hangindent=\dimen129
 )
-\c@ContinuedFloat=\count223
+\c@ContinuedFloat=\count226
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
-(C:\Users\FYP\Documents\GitHub\latex\usecases.sty
+(C:\Users\0144266\Documents\GitHub\latex\usecases.sty
 ("C:\Program Files\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen130
@@ -470,81 +487,85 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen137
 \cmidrulekern=\dimen138
 \defaultaddspace=\dimen139
-\@cmidla=\count224
-\@cmidlb=\count225
+\@cmidla=\count227
+\@cmidlb=\count228
 \@aboverulesep=\dimen140
 \@belowrulesep=\dimen141
-\@thisruleclass=\count226
-\@lastruleclass=\count227
+\@thisruleclass=\count229
+\@lastruleclass=\count230
 \@thisrulewidth=\dimen142
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\longtable.sty"
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip53
-\LTright=\skip54
-\LTpre=\skip55
-\LTpost=\skip56
-\LTchunksize=\count228
+\LTleft=\skip62
+\LTright=\skip63
+\LTpre=\skip64
+\LTpost=\skip65
+\LTchunksize=\count231
 \LTcapwidth=\dimen143
 \LT@head=\box31
 \LT@firsthead=\box32
 \LT@foot=\box33
 \LT@lastfoot=\box34
-\LT@cols=\count229
-\LT@rows=\count230
-\c@LT@tables=\count231
-\c@LT@chunks=\count232
+\LT@cols=\count232
+\LT@rows=\count233
+Normal \count register pool exhausted, switching to extended pool.
+\c@LT@tables=\count277
+\c@LT@chunks=\count278
 \LT@p@ftn=\toks19
 ))
+("C:\Program Files\MiKTeX 2.9\tex\latex\titlepic\titlepic.sty"
+Package: titlepic 2009/08/03 1.1 Package to display a picture on the title page
+
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2004/09/05 1.3 listings language file
+File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\lbx\english.lbx"
-File: english.lbx 2013/05/01 v2.6 biblatex localization (PK/JW/AB)
+File: english.lbx 2013/11/25 v2.8a biblatex localization (PK/JW/AB)
 )
-\@quotelevel=\count233
-Normal \count register pool exhausted, switching to extended pool.
-\@quotereset=\count277
+\@quotelevel=\count279
+\@quotereset=\count280
 
-(C:\Users\FYP\Documents\GitHub\latex\0144266.aux
-(C:\Users\FYP\Documents\GitHub\latex\abstract.aux)
-(C:\Users\FYP\Documents\GitHub\latex\intro.aux)
-(C:\Users\FYP\Documents\GitHub\latex\background.aux)
-(C:\Users\FYP\Documents\GitHub\latex\requirements.aux)
-(C:\Users\FYP\Documents\GitHub\latex\design.aux)
-(C:\Users\FYP\Documents\GitHub\latex\impltesting1.aux
+(C:\Users\0144266\Documents\GitHub\latex\0144266.aux
+(C:\Users\0144266\Documents\GitHub\latex\abstract.aux)
+(C:\Users\0144266\Documents\GitHub\latex\intro.aux)
+(C:\Users\0144266\Documents\GitHub\latex\background.aux)
+(C:\Users\0144266\Documents\GitHub\latex\requirements.aux)
+(C:\Users\0144266\Documents\GitHub\latex\design.aux)
+(C:\Users\0144266\Documents\GitHub\latex\impltesting1.aux
 
 LaTeX Warning: Label `fig:dispatcherflow' multiply defined.
 
 
 LaTeX Warning: Label `fig:accessDenied' multiply defined.
 
-) (C:\Users\FYP\Documents\GitHub\latex\squality.aux)
-(C:\Users\FYP\Documents\GitHub\latex\evaluation.aux)
-(C:\Users\FYP\Documents\GitHub\latex\conclusion.aux)
-(C:\Users\FYP\Documents\GitHub\latex\appendices.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-\c@lstlisting=\count278
+) (C:\Users\0144266\Documents\GitHub\latex\squality.aux)
+(C:\Users\0144266\Documents\GitHub\latex\evaluation.aux)
+(C:\Users\0144266\Documents\GitHub\latex\conclusion.aux)
+(C:\Users\0144266\Documents\GitHub\latex\appendices.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+\c@lstlisting=\count281
 \AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring OFF on input line 54.
+Package hyperref Info: Link coloring OFF on input line 56.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -552,14 +573,14 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count279
+\c@section@level=\count282
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
-LaTeX Info: Redefining \nameref on input line 54.
+LaTeX Info: Redefining \ref on input line 56.
+LaTeX Info: Redefining \pageref on input line 56.
+LaTeX Info: Redefining \nameref on input line 56.
 
-(C:\Users\FYP\Documents\GitHub\latex\0144266.out)
-(C:\Users\FYP\Documents\GitHub\latex\0144266.out)
+(C:\Users\0144266\Documents\GitHub\latex\0144266.out)
+(C:\Users\0144266\Documents\GitHub\latex\0144266.out)
 \@outlinefile=\write4
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
@@ -572,9 +593,9 @@ Package biblatex Warning: Data encoding is 'utf8'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file '0144266.bbl' found.
-(C:\Users\FYP\Documents\GitHub\latex\0144266.bbl)
-Package biblatex Info: Reference section=0 on input line 54.
-Package biblatex Info: Reference segment=0 on input line 54.
+(C:\Users\0144266\Documents\GitHub\latex\0144266.bbl)
+Package biblatex Info: Reference section=0 on input line 56.
+Package biblatex Info: Reference segment=0 on input line 56.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
 
@@ -603,12 +624,14 @@ Requested font "cmsy8" at 8.0pt
 Requested font "cmsy6" at 6.0pt
  -> cmsy6
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 59.
+(Font)              <12> on input line 61.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 59.
+(Font)              <8> on input line 61.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 59.
+(Font)              <6> on input line 61.
+File: ullogo.png Graphic file (type QTm)
 
+<use  "ullogo.png" >
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\se-ascii-print.def"
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
@@ -616,9 +639,9 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 [1
 
 ]
-Requested font "cmbx10" at 10.0pt
+Requested font "cmbx10" at 10.95pt
  -> cmbx10
- [1] (C:\Users\FYP\Documents\GitHub\latex\abstract.tex) [2
+ [1] (C:\Users\0144266\Documents\GitHub\latex\abstract.tex) [2
 
 ] [3
 
@@ -628,27 +651,29 @@ Requested font "cmr17" at 24.88pt
 Requested font "cmbx12" at 24.88pt
  -> cmbx12
 
-(C:\Users\FYP\Documents\GitHub\latex\0144266.toc
+(C:\Users\0144266\Documents\GitHub\latex\0144266.toc
+Requested font "cmmi10" at 10.95pt
+ -> cmmi10
+Requested font "cmsy10" at 10.95pt
+ -> cmsy10
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 5.
+(Font)              <10.95> on input line 5.
  [1
 
-] [2])
+] [2] [3])
 \tf@toc=\write5
- [3]
-(C:\Users\FYP\Documents\GitHub\latex\0144266.lof [4
+ [4]
+(C:\Users\0144266\Documents\GitHub\latex\0144266.lof [5
 
-] [5])
+] [6])
 \tf@lof=\write6
- [6]
-(C:\Users\FYP\Documents\GitHub\latex\0144266.lot [7
+ [7]
+(C:\Users\0144266\Documents\GitHub\latex\0144266.lot [8
 
 ])
 \tf@lot=\write7
- [8]
-(C:\Users\FYP\Documents\GitHub\latex\intro.tex
+ [9]
+(C:\Users\0144266\Documents\GitHub\latex\intro.tex
 Chapter 1.
 Requested font "cmr17" at 20.74pt
  -> cmr17
@@ -662,19 +687,20 @@ LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
+ [10
+
+
+]
 Requested font "cmbx12" at 12.0pt
  -> cmbx12
- [9
-
-
-]) [10]
-(C:\Users\FYP\Documents\GitHub\latex\background.tex
+) [11]
+(C:\Users\0144266\Documents\GitHub\latex\background.tex
 Chapter 2.
-Requested font "cmti10" at 10.0pt
+Requested font "cmti10" at 10.95pt
  -> cmti10
-[11
+[12
 
 
 
@@ -682,104 +708,130 @@ Requested font "cmti10" at 10.0pt
 Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
 File: mvcclassic.png Graphic file (type QTm)
- <use  "mvcclassic.png" > [12]
+ <use  "mvcclassic.png" > [13]
 File: dispatchservlet.png Graphic file (type QTm)
  <use  "dispatchservlet.png" >
 Overfull \hbox (0.85359pt too wide) in paragraph at lines 59--60
  [] 
  []
 
-[13]
-Requested font "cmr9" at 9.0pt
- -> cmr9
-Requested font "cmtt9" at 9.0pt
- -> cmtt9
- [14]
-Overfull \hbox (31.76306pt too wide) in paragraph at lines 122--123
+[14]
+Requested font "cmtt10" at 10.0pt
+ -> cmtt10
+ [15]
+Overfull \hbox (41.41101pt too wide) in paragraph at lines 84--85
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[15] [16] [17] [18]
+
+Overfull \hbox (78.70135pt too wide) in paragraph at lines 122--123
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[16] [17]
+Overfull \hbox (28.81094pt too wide) in paragraph at lines 171--172
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][]  
+ []
+
+[18]
+Overfull \hbox (7.81113pt too wide) in paragraph at lines 191--192
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][]  
+ []
+
+[19]
+Overfull \hbox (0.57597pt too wide) in paragraph at lines 228--229
+\OT1/cmr/m/n/10.95 will be com-pleted with re-gards to-wards the CRUD op-er-a-t
+ions of each ORM database.
+ []
+
+[20]
 File: git.png Graphic file (type QTm)
  <use  "git.png" >
 Overfull \hbox (29.30635pt too wide) in paragraph at lines 242--243
  [] 
  []
 
-[19] [20]
-Overfull \hbox (12.6142pt too wide) in paragraph at lines 289--299
- [] 
- []
-
-[21]
-Overfull \hbox (35.44763pt too wide) in paragraph at lines 306--316
+[21] [22]
+Overfull \hbox (48.15323pt too wide) in paragraph at lines 289--299
  [] 
  []
 
 
-Overfull \hbox (52.22542pt too wide) in paragraph at lines 324--336
+Overfull \hbox (73.15575pt too wide) in paragraph at lines 306--316
  [] 
  []
 
-[22]
-Overfull \hbox (40.16983pt too wide) in paragraph at lines 345--355
+[23]
+Overfull \hbox (91.52745pt too wide) in paragraph at lines 324--336
  [] 
  []
 
 
-Overfull \hbox (69.58656pt too wide) in paragraph at lines 362--374
+Overfull \hbox (78.3266pt too wide) in paragraph at lines 345--355
  [] 
  []
 
-) [23] (C:\Users\FYP\Documents\GitHub\latex\requirements.tex
+[24]
+Overfull \hbox (110.53781pt too wide) in paragraph at lines 362--374
+ [] 
+ []
+
+) [25] (C:\Users\0144266\Documents\GitHub\latex\requirements.tex
 Chapter 3.
 
-Overfull \hbox (31.14076pt too wide) in paragraph at lines 13--20
+Overfull \hbox (66.1599pt too wide) in paragraph at lines 13--20
  [] 
  []
 
 File: storyboard.png Graphic file (type QTm)
 <use  "storyboard.png" >
-Overfull \hbox (0.85359pt too wide) in paragraph at lines 32--33
+Overfull \hbox (0.85359pt too wide) in paragraph at lines 36--37
  [] 
  []
 
-[24
+[26
 
 
 
-] [25]
-Overfull \hbox (3.7404pt too wide) in paragraph at lines 98--98
-[]\OT1/cmr/m/n/10 10| 
+] [27]
+Overfull \hbox (4.69038pt too wide) in paragraph at lines 102--102
+[]\OT1/cmr/m/n/10.95 10| 
  []
 
 
-Overfull \hbox (1.24039pt too wide) in paragraph at lines 99--99
-[]\OT1/cmr/m/n/10 N| 
+Overfull \hbox (1.95288pt too wide) in paragraph at lines 103--103
+[]\OT1/cmr/m/n/10.95 N| 
  []
 
 
-Overfull \hbox (1.24039pt too wide) in paragraph at lines 100--100
-[]\OT1/cmr/m/n/10 Y| 
+Overfull \hbox (1.95288pt too wide) in paragraph at lines 104--104
+[]\OT1/cmr/m/n/10.95 Y| 
  []
 
 
-Overfull \hbox (1.24039pt too wide) in paragraph at lines 101--101
-[]\OT1/cmr/m/n/10 N| 
+Overfull \hbox (1.95288pt too wide) in paragraph at lines 105--105
+[]\OT1/cmr/m/n/10.95 N| 
  []
 
-[26]
-Underfull \hbox (badness 2951) in paragraph at lines 146--146
-[]\OT1/cmr/m/it/10 Stakeholders and In-
+[28]
+Overfull \hbox (1.00093pt too wide) in alignment at lines 141--168
+ [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 166
+Underfull \vbox (badness 10000) detected at line 168
  []
 
-[27]) [28] [29] (C:\Users\FYP\Documents\GitHub\latex\design.tex
+
+Overfull \hbox (1.00093pt too wide) in alignment at lines 168--170
+ [] [] 
+ []
+
+[29] [30]) [31] (C:\Users\0144266\Documents\GitHub\latex\design.tex
 Chapter 4.
-[30
+[32
 
 
 
@@ -790,19 +842,25 @@ Overfull \hbox (0.85359pt too wide) in paragraph at lines 84--85
  [] 
  []
 
-[31] [32]) [33] (C:\Users\FYP\Documents\GitHub\latex\impltesting1.tex
+[33] [34]) [35] (C:\Users\0144266\Documents\GitHub\latex\impltesting1.tex
 Chapter 5.
-[34
+[36
 
 
 
-] [35]
-Overfull \hbox (35.29355pt too wide) in paragraph at lines 59--68
+] [37]
+Overfull \hbox (3.67085pt too wide) in paragraph at lines 54--55
+\OT1/cmr/m/n/10.95 strained by one or more groups. An an-no-ta-tion, from the j
+avax.validation.constraints,
+ []
+
+
+Overfull \hbox (74.12723pt too wide) in paragraph at lines 59--68
  [] 
  []
 
 
-LaTeX Warning: Reference `fig:dbflow' on page 36 undefined on input line 73.
+LaTeX Warning: Reference `fig:dbflow' on page 38 undefined on input line 73.
 
 File: dbflow.png Graphic file (type QTm)
 <use  "dbflow.png" >
@@ -810,58 +868,88 @@ Overfull \hbox (0.85359pt too wide) in paragraph at lines 77--78
  [] 
  []
 
-[36]
-Overfull \hbox (2.39996pt too wide) in paragraph at lines 94--95
+[38]
+Overfull \hbox (85.38966pt too wide) in paragraph at lines 83--84
+\OT1/cmr/m/n/10.95 it will re-sult in a value like \OT1/cmr/m/it/10.95 'acb1721
+37243c0b931321d7645dc31c2efb8346385ae0547d11b1d8de333215b'\OT1/cmr/m/n/10.95 ,
+ []
+
+[39]
+Overfull \hbox (38.26122pt too wide) in paragraph at lines 90--91
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (44.61063pt too wide) in paragraph at lines 94--95
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[37] [38]
+[40]
 
-LaTeX Warning: Reference `memberController' on page 39 undefined on input line 
+LaTeX Warning: Reference `memberController' on page 41 undefined on input line 
 140.
 
-[39] [40] [41] [42]
-Overfull \hbox (20.88902pt too wide) in paragraph at lines 276--284
+[41] [42]
+Overfull \hbox (6.76149pt too wide) in paragraph at lines 194--195
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][]  
+ []
+
+[43] [44]
+Overfull \hbox (48.21198pt too wide) in paragraph at lines 276--284
 [][] 
  []
 
+[45]
 
-LaTeX Warning: Reference `timetableHibernate' on page 43 undefined on input lin
+LaTeX Warning: Reference `timetableHibernate' on page 46 undefined on input lin
 e 306.
 
-[43]
 File: timetable.png Graphic file (type QTm)
- <use  "timetable.png" >
+<use  "timetable.png" >
 Overfull \hbox (0.85359pt too wide) in paragraph at lines 323--324
  [] 
  []
 
-[44] [45] [46]
-Overfull \hbox (43.82425pt too wide) in paragraph at lines 464--465
+[46] [47] [48] [49]
+Overfull \hbox (7.81113pt too wide) in paragraph at lines 446--447
+[][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (92.86003pt too wide) in paragraph at lines 464--465
 [][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[47] [48] [49] [50]
+[50] [51] [52] [53] [54]
 
-LaTeX Warning: Reference `fig:deniedMapping' on page 51 undefined on input line
+LaTeX Warning: Reference `fig:deniedMapping' on page 55 undefined on input line
  622.
 
-[51] [52]
+[55] [56]
 Underfull \hbox (badness 10000) in paragraph at lines 702--703
 
  []
 
-[53] [54]
+
+Overfull \hbox (7.81113pt too wide) in paragraph at lines 707--708
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][]  
+ []
+
+[57] [58]
 Underfull \hbox (badness 10000) in paragraph at lines 755--756
 
  []
 
+[59]
 
 Package caption Warning: \label without proper \caption on input line 809.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:ttmodelattributes' on page 55 undefined on input 
+LaTeX Warning: Reference `fig:ttmodelattributes' on page 60 undefined on input 
 line 765.
 
 
@@ -869,45 +957,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 765--766
 
  []
 
-[55]
-Overfull \hbox (66.68245pt too wide) in paragraph at lines 795--807
- [] 
+
+Overfull \hbox (7.81113pt too wide) in paragraph at lines 773--774
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
+Overfull \hbox (6.81131pt too wide) in paragraph at lines 774--775
+[][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (108.49803pt too wide) in paragraph at lines 795--807
+ [] 
+ []
+
+[60]
 Underfull \hbox (badness 10000) in paragraph at lines 815--816
 
  []
 
-[56]
-Overfull \hbox (14.54362pt too wide) in paragraph at lines 857--867
+[61]
+Overfull \hbox (51.40593pt too wide) in paragraph at lines 857--867
  [] 
  []
 
-[57] [58]
-Underfull \hbox (badness 10000) in paragraph at lines 918--932
+[62] [63] [64]
+Overfull \hbox (23.61081pt too wide) in paragraph at lines 929--930
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 959--973
 
  []
 
-[59]
-Underfull \hbox (badness 10000) in paragraph at lines 942--943
+[65]
+Underfull \hbox (badness 10000) in paragraph at lines 983--984
 
  []
 
-[60] [61] [62]
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1047
+[66] [67]
+Overfull \hbox (34.13655pt too wide) in paragraph at lines 1039--1040
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][]  
+ []
+
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 1087--1088
 
  []
 
-[63]
-Underfull \hbox (badness 10000) in paragraph at lines 1085--1086
+[69]
+Overfull \hbox (1.56136pt too wide) in paragraph at lines 1095--1096
+[][][][][][][][][][][][][][][][][]  
+ []
+
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 1126--1127
 
  []
 
-[64]) [65] (C:\Users\FYP\Documents\GitHub\latex\squality.tex
+) [71] (C:\Users\0144266\Documents\GitHub\latex\squality.tex
 Chapter 6.
+
+Overfull \hbox (6.1173pt too wide) in paragraph at lines 19--29
+ [] 
+ []
+
 File: infusion1.PNG Graphic file (type QTm)
-<use  "infusion1.PNG" > [66
+<use  "infusion1.PNG" > [72
 
 
 
@@ -916,193 +1035,210 @@ File: infusion3.PNG Graphic file (type QTm)
  <use  "infusion3.PNG" >
 File: infusion2.PNG Graphic file (type QTm)
  <use  "infusion2.PNG" >
-[67]
+[73]
 File: codecity2d.png Graphic file (type QTm)
  <use  "codecity2d.png" >
 File: codecity3d.png Graphic file (type QTm)
- <use  "codecity3d.png" > [68]) [69]
-(C:\Users\FYP\Documents\GitHub\latex\evaluation.tex
+ <use  "codecity3d.png" > [74]) [75]
+(C:\Users\0144266\Documents\GitHub\latex\evaluation.tex
 Chapter 7.
 
-Overfull \hbox (2.29346pt too wide) in paragraph at lines 17--18
-[]\OT1/cmr/m/n/10 Sensitive Data Ex-po-sure - pass-word en-cod-ing per-formed, 
-pass-word is never saved in database,
+Overfull \hbox (11.89343pt too wide) in paragraph at lines 8--9
+\OT1/cmr/m/n/10.95 In analysing sup-port for se-cu-rity, the Open Web Ap-pli-ca
+-tion Se-cu-rity Project [OWASP]
  []
 
 
-LaTeX Warning: Reference `fig:ViewChange' on page 70 undefined on input line 26
-.
+Overfull \hbox (1.09552pt too wide) in paragraph at lines 19--20
+\OT1/cmr/m/n/10.95 ses-sion man-age-ment are of-ten not im-ple-mented cor-rectl
+y" ([]Wich-ers []2010[]).
+ []
 
-[70
+[76
 
 
 
-] [71] [72] [73] [74] [75] [76] [77] [78] [79]) [80] [81]
-(C:\Users\FYP\Documents\GitHub\latex\conclusion.tex
+] [77] [78] [79] [80] [81] [82] [83] [84]
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
+[]\OT1/cmr/m/n/10.95 Total
+ []
+
+[85] [86] [87] [88] [89]
+Overfull \hbox (3.1334pt too wide) in paragraph at lines 433--434
+\OT1/cmr/m/n/10.95 Hibernate was a very pow-er-ful frame-work through-out the d
+e-vel-op-ment of this project.
+ []
+
+[90] [91]) [92] (C:\Users\0144266\Documents\GitHub\latex\conclusion.tex
 Chapter 8.
-) [82
+) [93
 
 
 
-] [83
+] [94
 
 
-] (C:\Users\FYP\Documents\GitHub\latex\appendices.tex
+] (C:\Users\0144266\Documents\GitHub\latex\appendices.tex
 Appendix A.
 
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
-Overfull \hbox (59.13525pt too wide) in paragraph at lines 11--19
+Overfull \hbox (95.25082pt too wide) in paragraph at lines 11--19
  [] 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
-Overfull \hbox (45.74629pt too wide) in paragraph at lines 26--39
+Overfull \hbox (80.58986pt too wide) in paragraph at lines 26--39
  [] 
  []
 
-[84
+[95
 
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 48--48
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
-Overfull \hbox (24.99617pt too wide) in paragraph at lines 46--58
+Overfull \hbox (57.86856pt too wide) in paragraph at lines 46--58
  [] 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 67--67
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
-
+[96]
 Underfull \hbox (badness 10000) in paragraph at lines 80--80
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
-[85]
+
 Underfull \hbox (badness 10000) in paragraph at lines 93--93
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 105--105
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 118--118
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
-
+[97]
 Underfull \hbox (badness 10000) in paragraph at lines 130--130
-[]\OT1/cmr/m/n/10 No.
- []
-
-[86]
-Underfull \hbox (badness 10000) in paragraph at lines 143--143
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--156
-[]\OT1/cmr/m/n/10 No.
- []
-
-
-Overfull \hbox (67.91293pt too wide) in paragraph at lines 154--165
+Overfull \hbox (13.39937pt too wide) in paragraph at lines 128--134
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
-[]\OT1/cmr/m/n/10 No.
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
-Overfull \hbox (19.9962pt too wide) in paragraph at lines 172--178
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+[]\OT1/cmr/m/n/10.95 No.
+ []
+
+
+Overfull \hbox (104.86232pt too wide) in paragraph at lines 154--165
+ [] 
+ []
+
+[98]
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
+[]\OT1/cmr/m/n/10.95 No.
+ []
+
+
+Overfull \hbox (52.39363pt too wide) in paragraph at lines 172--178
  [] 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 187--187
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
-Overfull \hbox (86.80174pt too wide) in paragraph at lines 185--194
+Overfull \hbox (125.54572pt too wide) in paragraph at lines 185--194
  [] 
  []
 
-[87]
+
 Underfull \hbox (badness 10000) in paragraph at lines 205--205
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
-Overfull \hbox (20.69061pt too wide) in paragraph at lines 203--208
+Overfull \hbox (53.154pt too wide) in paragraph at lines 203--208
  [] 
  []
 
-
+[99]
 Underfull \hbox (badness 10000) in paragraph at lines 217--217
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
-Overfull \hbox (46.46844pt too wide) in paragraph at lines 215--220
+Overfull \hbox (81.3807pt too wide) in paragraph at lines 215--220
  [] 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 229--229
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
-Overfull \hbox (79.82959pt too wide) in paragraph at lines 227--259
+Overfull \hbox (117.91113pt too wide) in paragraph at lines 227--259
  [] 
  []
 
-[88] [89]
+[100] [101]
 Underfull \hbox (badness 10000) in paragraph at lines 267--267
-[]\OT1/cmr/m/n/10 No.
+[]\OT1/cmr/m/n/10.95 No.
  []
 
 
-Overfull \hbox (88.8853pt too wide) in paragraph at lines 265--291
+Overfull \hbox (127.82709pt too wide) in paragraph at lines 265--291
  [] 
  []
 
-) [90]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
- (C:\Users\FYP\Documents\GitHub\latex\0144266.aux
-(C:\Users\FYP\Documents\GitHub\latex\abstract.aux)
-(C:\Users\FYP\Documents\GitHub\latex\intro.aux)
-(C:\Users\FYP\Documents\GitHub\latex\background.aux)
-(C:\Users\FYP\Documents\GitHub\latex\requirements.aux)
-(C:\Users\FYP\Documents\GitHub\latex\design.aux)
-(C:\Users\FYP\Documents\GitHub\latex\impltesting1.aux)
-(C:\Users\FYP\Documents\GitHub\latex\squality.aux)
-(C:\Users\FYP\Documents\GitHub\latex\evaluation.aux)
-(C:\Users\FYP\Documents\GitHub\latex\conclusion.aux)
-(C:\Users\FYP\Documents\GitHub\latex\appendices.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 91.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 91.
+[102]) [103]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
+ (C:\Users\0144266\Documents\GitHub\latex\0144266.aux
+(C:\Users\0144266\Documents\GitHub\latex\abstract.aux)
+(C:\Users\0144266\Documents\GitHub\latex\intro.aux)
+(C:\Users\0144266\Documents\GitHub\latex\background.aux)
+(C:\Users\0144266\Documents\GitHub\latex\requirements.aux)
+(C:\Users\0144266\Documents\GitHub\latex\design.aux)
+(C:\Users\0144266\Documents\GitHub\latex\impltesting1.aux)
+(C:\Users\0144266\Documents\GitHub\latex\squality.aux)
+(C:\Users\0144266\Documents\GitHub\latex\evaluation.aux)
+(C:\Users\0144266\Documents\GitHub\latex\conclusion.aux)
+(C:\Users\0144266\Documents\GitHub\latex\appendices.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 94.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 94.
 
 
 LaTeX Warning: There were undefined references.
@@ -1111,15 +1247,15 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package logreq Info: Writing requests to '0144266.run.xml'.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
  ) 
 Here is how much of TeX's memory you used:
- 16290 strings out of 429035
- 245873 string characters out of 3167909
- 460152 words of memory out of 3000000
- 19351 multiletter control sequences out of 15000+200000
- 10279 words of font info for 36 fonts, out of 3000000 for 9000
+ 16544 strings out of 429035
+ 249417 string characters out of 3167909
+ 454866 words of memory out of 3000000
+ 19599 multiletter control sequences out of 15000+200000
+ 10897 words of font info for 38 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 38i,11n,61p,1162b,1753s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,11n,61p,1166b,1756s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 0144266.pdf (94 pages).
+Output written on 0144266.pdf (107 pages).

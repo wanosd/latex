@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex version 2.2 $
+% $ biblatex version 2.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -15,6 +15,40 @@
       \aftergroup\endinput}
   {}
 \endgroup
+
+\entry{alonso2004web}{book}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Alonso}{A.}%
+     {Gustavo}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Casati}{C.}%
+     {Fabio}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kuno}{K.}%
+     {Harumi}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Machiraju}{M.}%
+     {Vijay}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{AG+1}
+  \strng{fullhash}{AGCFKHMV1}
+  \field{labelyear}{2004}
+  \field{sortinit}{A}
+  \field{title}{Web services}
+  \field{year}{2004}
+\endentry
 
 \entry{bass2003software}{book}{}
   \name{author}{3}{}{%
@@ -245,6 +279,22 @@
   \field{volume}{21}
   \field{journaltitle}{International journal of information management}
   \field{year}{2001}
+\endentry
+
+\entry{owasp2013}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Wichers}{W.}%
+     {Dave}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{WD1}
+  \strng{fullhash}{WD1}
+  \field{labelyear}{2010}
+  \field{sortinit}{W}
+  \field{title}{OWASP Top-10 2013}
+  \field{year}{2010}
 \endentry
 
 \lossort

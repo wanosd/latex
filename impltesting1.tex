@@ -913,6 +913,47 @@ public User getUserByName(String name) {
 \caption{Logger Usage within UserDAO.class}
 \end{figure}
 
+\section{Web Services}
+
+Web services are defined as a "self contained, modular business  applications that have open, Internet-oriented, standards based interfaces" \parencite{alonso2004web}. The interface used within this application was JavaScript Object Notation [JSON]. JSON is an open standard, and provides a language independent data format. It consists of key-map pairs. For this project, the timetables for the current day were exposed as a web service. This allows the information to be potentially parsed by a mobile application or another web site with ease. The implemenation for this is showin in Figure~\ref{fig:json}.
+
+\begin{lstlisting}
+@RequestMapping(value="/jsoncurrentday", method=RequestMethod.GET, produces="application/json")
+@ResponseBody
+public Map<String, Object> getCurrentDay(){
+	int day_of_week = Calendar.getInstance().get(Calendar.DAY_OF_WEEK) - 1;
+	Map<String, Object> data = new HashMap<String, Object>();
+	for (int i = 1; i <= timetableService.getNewSeries(); i++){
+		String key = "court" + i;
+		List<Timetable> series = timetableService.getTimetableSeries(i);
+		Timetable current = series.get((Calendar.getInstance().get(Calendar.WEEK_OF_YEAR) - 1));
+		switch(day_of_week){
+			case 1: {
+				data.put(key, current.getMonday());
+			}
+			// repeat for 2 through 7
+		}
+	}// end for
+	return data;
+}
+\end{lstlisting}
+\begin{table}[H]
+\caption{JSON in Spring}
+\label{fig:json}
+\end{table}
+
+The \textit{RequestMapping} annotation must be changed to include a \textit{produces} attribute, shown in Line 2. This ensures that Spring returns a valid JSON statement to the HTTP response. This is ensured through the use of the \textit{ResponseBody} annotation in Line 2.  An example of the output is illustrated in Figure~\ref{fig:jsonex}.
+
+\begin{lstlisting}
+{"day2":["Free Court","Free Court","Free Court","Free Court","Free Court","Free Court","Free Court","Free Court"],"day1":["Free Court","Free Court"]}
+\end{lstlisting}
+\begin{table}
+\caption{JSON output statement}
+\label{fig:jsonex}
+\end{table}
+
+
+
 \section{Configuration of the Application}
 
 In order to begin implementation with the Spring MVC framework, there are a number of configuration files that are necessary. The core file is the \textit{web.xml} file. This file is responsible for the configuration for the framework. One of the key responsibilities is the definition of the context xml files, whose purpose will be elaborated on later. Different development profiles can be configured within this file in order to produce different development environments, such as production and testing environments. The configuration of this file within the application is shown in Figure ~\ref{fig:springConfig} \newline 

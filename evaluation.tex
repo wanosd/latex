@@ -1,29 +1,69 @@
 \chapter{Evaluation}
 \label{evaluation}
 
-(Evaluation as relates to architectural quality?)
-
 \section{Security}
-(Owasp Top 10?)
 
-Injection - prevented by the user of named parameters within both JDBC and Hibernate code.
+\subsection{OWASP Vulnerabilities}
 
-Broken Auth - Provided by the framework, 
+In analysing support for security, the Open Web Application Security Project [OWASP] was examined. OWASP provides a list of the top 10 vulnerabilities that exist within web applications. The following vulnerabilities are addressed directly by the frameworks used in this project.
 
-XSS - 
+\begin{enumerate}
+\item Injection
+\begin{itemize}
+\item Injection occurs when "untrusted data is sent to an interpreter as part of a command or query" \parencite{owasp2013}. This can allow unauthorised access to a database, and the exposure of the data within. Hibernate aids the prevention of Injection by providing support for named parameters. Hibernate further prevents injection by eliminating SQL queries entirely, and by creating objects through mapping of attributes to columns within the database. JDBC does not support the use of named parameters natively, but Spring does provided a \textit{NamedParameterJdbcTemplate} class which provides this functionality to the JDBC class. 
 
-Security Misconfiguration - Ensuring roles are defined clearly, and that security context is correct
+\end{itemize}
 
-Sensitive Data Exposure - password encoding performed, password is never saved in database, just the encoded version
+\item Broken Authentication and Session Management
+\begin{itemize}
+\item This occurs when "application functions related to authentication and session management are often not implemented correctly" \parencite{owasp2013}. When developers create their own session management schemes, they will inadvertently introduce flaws. Spring provides robust session management and authentication techniques through the use of EBAC, as discussed earlier. This allows the developer to focus more on the design of the application, and the business logic within, without having to be concerned with created a strong security solution.
+\end{itemize}
 
-Unvalidated Redirects - not used, ViewResolver performs all redirects. Invalid value passed to view will result in access denied error or a 404.
+\item Cross Site Scripting (XSS)
+\begin{itemize}
+\item XSS is "whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping" \parencite{owasp2013}. This allows the potential use of malicious scripts in a victims browser, which may enable an attacker to gain access to the user session. Spring provides an extension of the Java EE 6 class \textit{HttpServletRequestWrapper} called \textit{XSSWrapper}. This class takes a HTTP Request object, and checks the values of getParamters(), getParameterValues() and getHeaders(). The XSSWrapper object then performs a stripXSS() method that checked the validity of the parameters with an HttpServletRequest object, and in the event that an attempted XSS attack is present, nullifies it by escaping special characters.
+\end{itemize}
 
+\item Security Misconfiguration
+\begin{itemize}
+\item Security Misconfiguration is not "having a secure configuration defined and deployed for the application framework" \parencite{owasp2013}. Within Spring MVC, this refers to the configuration for EBAC. An example of poor configuration would be to implement this system by denying access to URL mappings, rather than denying access to all and allowing exceptions. While it is possible to deny access to relevant mappings, it is more likely that a mistake would slip through. A breakdown of the mappings organised by the type of access is depicted in Table~\ref{fig:accesstable}. permitAll refers to mappings that allow access to all users, isAuthenticated requires that the user be logged in, and admin requires that a user be logged in and possess an administrator role.
+
+\begin{table}[H]
+\caption{EBAC Breakdown}
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+	\textbf{permitAll} & \textbf{isAuthenticated}& \textbf{admin}\\ \hline
+	23 & 13 & 50\\ \hline
+    \end{tabular}
+\end{center}
+\label{fig:accesstable}
+\end{table} 
+\end{itemize}
+
+\item Sensitive Data Exposure
+\begin{itemize}
+\item Sensitive Data Exposure deals with the encryption of sensitive user information such as passwords, credit card details and anything that made lead to identity theft. This data "deserves extra protection such as 
+encryption at rest or in transit" \parencite{owasp2013}. Within the scope of this application, the main concern was user passwords, as no payment information is held. Spring provides methods for encoding data using 256bit AES encryption. The encrypted value is stored in the database, not the actual password. When the user logs in, the plaintext password is encrypted  using a key unique to that user. The encrypted password is then compared to the stored value. Each user has a unique key to generate the password so that even if two users have the same password, it will not appear the same in the stored values. 
+\end{itemize}
+
+\item Unvalidated Redirected and Forwards
+\begin{itemize}
+\item Within any web application, they will be scope for redirects. For example, if a user logs in, it is normal to redirect them to the home page. However, the application must be cognisant of where the redirect is coming from, and ensure its validity. "Without proper validation, attackers can redirect victims to phishing or malware sites, or use forwards to access unauthorized pages" \parencite{owasp2013}. The ViewResolver, provided in Spring and extended by Apache Tiles, is responsible for validating this information. All redirected are passed to the ViewResolver as a string. If a value corresponding to this string is not found within the ViewResolver configuration, an error will be returned in the form of a 404 Page Not Found value or an access denied value, as defined in the security-context file. 
+\end{itemize}
+\end{enumerate}
+
+\subsection{Security Bugs}
+
+A significant bug was discovered within the application during user testing. When a user was editing their profile, a model attribute was used to map the data changed in the View to create an object within the Controller. The application did not allow the user to edit all attributes within the user class, such as their role within the application. As a result, any changes to a user object where the attributes were not defined within the view resulted in attributes not present in the view being set as null. This meant that a user would have no role within the system, as the role attribute would be changed to null. To overcome this, a hidden value mapped to the role attribute was inserted into the form. This fixed the problem, but in doing so, introduced a significant security risk. 
+
+Using a tool to intercept HTTP Requests, such as WebScarab, it was possible to change the hidden field. This would allow a regular user to change their role from ROLE MEMBER to ROLE ADMIN, giving them full access to the site. This happened as the object was not checked before being persisted by the controller, service and dao layers. This method was tested using the WebScarab tool, and the vulnerability was confirmed. WebScarab is a framework that analysing applications that communicate using HTTP and HTTPS protocols, and was used to intercept GET and POST requests in this application. In order to circumvent this, the role of the currently logged in user was retrieved from the framework, and this value was saved, rather than a value defined within the view. This example showed that while the framework does provide a considerable layer of security, misuse and bad programming can expose the application. 
 
 \section{Extensibility}
 
 The goal of extensibility is "controlling the time and costs to implement, tests and deploy changes" \parencite{bass2003software}. The use of Hibernate in the architectural stack provides a measure of extensibility support for changes in entity classes. Any addition to an entity class would result in a change to a database schema. 
 
-An application using Hibernate, in conjunction with Spring MVC, would need only to modify the View, illustrated in Figure~\ref{fig:viewChange}. This would need to be changed to facilitate input of the new attribute. Spring MVC uses spring form tags to map values to the object within the Controller, and the DAO layer persists the object. Since the object is configured with database mapping at class level, no changes are necessary to the DAO. The addition of Line 14 is Figure~\ref{fig:ViewChange} is the only changed needed to allow for the attribute to be modified within the application. The Controller, Service layer and DAO would remain unchanged.
+An application using Hibernate, in conjunction with Spring MVC, would need only to modify the View, illustrated in Figure~\ref{fig:viewChange}. This would need to be changed to facilitate input of the new attribute. Spring MVC uses spring form tags to map values to the object within the Controller, and the DAO layer persists the object. Since the object is configured with database mapping at class level, no changes are necessary to the DAO. The addition of Line 14 is Figure~\ref{fig:viewChange} is the only changed needed to allow for the attribute to be modified within the application. The Controller, Service layer and DAO would remain unchanged.
 
 \begin{table}[H]
 \begin{lstlisting}
@@ -85,7 +125,7 @@ return jdbc
 
 Hibernate provides better support for extensibility in this regard, allowing the developer to focus on database and view changes, with no need to modify the persistence layer between the application and the database.
 
-\section{Usability and Performance}
+\section{Usability}
 
 The deliverable from this project was subjected to the same usability criteria as illustrated in Section~\ref{sec:usabilty}. The results are shown in Tables~\ref{fig:projecttable1} through~\ref{fig:projecttable5}. The overall results are compared in Figure~\ref{fig:projecttable6}.
 
@@ -195,9 +235,9 @@ The deliverable from this project was subjected to the same usability criteria a
 \label{fig:projecttable6}
 \end{table}
 
-\section{Productivity}
+\section{Productivity and Performance}
 
-\subsubsection{Hibernate}
+\subsection{Hibernate}
 
 One of the core technologies used within the application was Hibernate. One of the main benefits Hibernate provided to the project was simplifying the code in order to persist objects. When developing the application, the only concern was with objects as a whole, not on their individual attributes. With JDBC, there was a need to use SQL syntax within the application. In the case of the User class, there were 16 attributes which made the SQL INSERT statement for that class, shown in Figure~\ref{fig:jdbcsql}, difficult to read and troubleshoot.
 
@@ -320,7 +360,7 @@ In all tests, Hibernate took less time to perform all actions, though there was 
 
 By defining and mapping attributes in a database to the class with Hibernate, the DAO classes become much smaller and easier to manage with no impact on performance within the application. In this application, for example, there are more than 70 DAO operations, which would mean 70 or more SQL statements. Use of JDBC would also require the definition of SQL JOINs in relation to both the Timetable and Tournament classes, thereby again increasing complexity within the application. There is more configuration to be undertaken with Hibernate, but the end result is a much easier to manage persistence solution that reduces code complexity.
 
-\subsubsection{Session and Cookie Management}
+\subsection{Session and Cookie Management}
 One benefit of using a framework such as Spring is that the developer does not need to be overly concerned with defining and checking a session in each controller. In a previous project, the developer was responsible to creating and managing the session, as well as ensuring proper access to the site was maintained. Figure~\ref{fig:manualsession} shows how a session must be manually retrieved from a request object within a servlet.
 
 \begin{figure}[H]
@@ -441,5 +481,7 @@ I also would have like to use Hibernate with more complicated objects rather tha
 
 \subsection{Tournament Business Logic}
 
+The tournament section of the site is something that I would like to have done a bit more on, but unfortunately, due to the time constraints within a FYP, a decison had to be made to focus more on either the timetable or the tournament. The timetable provides a service for all members of a club, not just those playing competitively. In the interim, third party solutions such as \textit{http://ti.tournamentsoftware.com} exist. The tournament sorting mechanism was designed so that the logic of sorting members into teams is encapsulated in one method in an interface. Implementing a new version would not require any significant changes to the application. 
+
 \subsection{Web Services and HTML5}
-Other aspects of a web application, such as web services and HTML5 were omitted from the final submission due to time constraints, but are definitely something that I would have an interest in looking at later on.
+Other aspects of a web application, such as web services and HTML5 were omitted from the final submission due to time constraints, but are definitely something that I would have an interest in looking at later on. Web services were touched on briefly, through the exposure of part of information about the timetable. 

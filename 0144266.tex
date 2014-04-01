@@ -1,5 +1,5 @@
 %\documentclass[a4paper,10pt,fleqn]{PhDthesisPSnPDF}
-\documentclass[a4paper,10pt,fleqn]{report}
+\documentclass[a4paper,11pt,fleqn]{report}
 \usepackage{epsf}
 \linespread{1.1}    
 \usepackage{graphicx}
@@ -8,10 +8,12 @@
 \usepackage{multirow}
 \usepackage{hyperr	ef}
 \usepackage{float}
+\usepackage{fancyhdr}
 \restylefloat{table}
 \usepackage[style=authoryear,backend=bibtex8]{biblatex}
 \usepackage[tableposition=top]{caption}
 \usepackage{usecases}
+\usepackage[cc]{titlepic}
 \addbibresource{0144266.bib}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -52,6 +54,7 @@
 \pagestyle{plain}
 
 \begin{document}
+\titlepic{\includegraphics[width=\textwidth]{ullogo.png}}
 \title{Hibernate 'til Spring \\ Benefits of Spring MVC, Hibernate and Apache Tiles to Support Quality Attributes and Usability within Web Applications}
 \author{Chris O'Brien}
 %\date{}
