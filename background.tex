@@ -40,7 +40,7 @@ Within the scope of this application, there were a number of quality attributes 
 \section{Technologies}
 
 \subsection{Web Application Framework}
-The Web Application Framework [WAF] chosen for this project is Spring MVC. Shan and Hua define a WAF as “a defined support structure in which other software applications can be organized and developed” \parencite{shan2006taxonomy}. MVC, or Model-View-Controller, is a software pattern that facilitates the use of a user interface, shown in its classic form in Figure~\ref{fig:mvcclassic}. The intention of this pattern is to form a clear division between domain objects and presentation objects. The Model manages the behaviour and data of the application. The View manages the information obtained from the model and displays it to the user. The Controller manages user input, such as key strokes, mouse movements or a touch display, and can interact and invoke functionality within the Model and/or View.
+The Web Application Framework [WAF] chosen for this project is Spring MVC. A WAF is “a defined support structure in which other software applications can be organized and developed” \parencite{shan2006taxonomy}. Spring MVC is based on the Model-View-Controller [MVC] design pattern. The intention of this pattern is to form a clear division between domain objects and presentation objects. The Model manages the behaviour and data of the application, shown in its classic form in Figure~\ref{fig:mvcclassic}. The View manages the information obtained from the model and displays it to the user. The Controller manages user input, such as key strokes, mouse movements or a touch display, and can interact and invoke functionality within the Model and/or View.
 
 \begin{figure}[H]
 \begin{center}
@@ -50,7 +50,7 @@ The Web Application Framework [WAF] chosen for this project is Spring MVC. Shan 
 \label{fig:mvcclassic}
 \end{figure}
 
-Spring MVC has a \textit{DispatcherServlet}. This is defined within the \textit{web.xml} file, shown in Figure ~\ref{fig:webxml}. This file is located in the WEB-INF folder. Its purpose is to load the application context from a servlet file, defined within this application as \textit{member-servlet.xml}. An Application Context is an interface within the framework. This interface provides the configuration for the application. 
+Spring MVC has a \textit{DispatcherServlet}. This is defined within the \textit{web.xml} file, shown in Figure ~\ref{fig:webxml}. This file is located in the WEB-INF folder. Its purpose is to load the application context from a servlet file, defined within this application as \textit{member-servlet.xml}. An Application Context is an interface within the framework. A Servlet is a Java class that is responsible for extending the functionality of a server. This interface provides the configuration for the application. 
 
 Spring MVC provides a clear separation of roles. Each role, such as a View, Controller, Mapper, Validator, Model and View Resolver, can be encapsulated within a relevant object. It is a request driven framework designed around the \textit{DispatcherServlet}. 
 
@@ -62,9 +62,9 @@ Spring MVC provides a clear separation of roles. Each role, such as a View, Cont
 \label{fig:dispatcherflow}
 \end{figure}
 
-The \textit{DispatcherServlet} is responsible for handling HTTP requests from the browser. Once it receives these requests, it consults the HandlerMapper, which calls the appropriate Controller. A HandlerMapper takes a value, such as "/admin", and checks which controller handles this mapping. The Controller will take this request, and call the appropriate method, or methods, and interact with the Service layer of the application, if necessary. The View name is then returned to the \textit{DispatcherServlet}, which in turn passes the value to the ViewResolver. 
+The \textit{DispatcherServlet} is responsible for handling HTTP requests from the browser. Once it receives these requests, it consults the HandlerMapper, which calls the appropriate Controller. A HandlerMapper takes a value, such as "/admin", and checks which controller handles this mapping. The Controller will take this request, and call the appropriate method, or methods, and interact with the Service layer of the application, if necessary. The Service layer of the application consists of the group of classes that are responsible for facilitating communication between the controller classes and their respective dao classes. The View name is then returned to the \textit{DispatcherServlet}, which in turn passes the value to the ViewResolver. 
 
-A ViewResolver provides a mapping between a \textit{view name} and the \textit{view}, that is to say, the web page requested. Once this view is finalised, the \textit{DispatcherServlet} passed any model created within the Controller to the View, which is then rendered by the browser. This process is shown in Figure ~\ref{fig:dispatcherflow}
+A ViewResolver provides a mapping between a \textit{view name} and the \textit{view}, that is to say, the web page requested. A \textit{view name} is represented as a string value that is returned from a controller. Once this view is finalised, the \textit{DispatcherServlet} passes any model created within the Controller to the View, which is then rendered by the browser. This process is shown in Figure ~\ref{fig:dispatcherflow}
 
 
 \begin{lstlisting}
@@ -134,7 +134,7 @@ Figure ~\ref{fig:webxml} is the configuration file needed for the \textit{Dispat
 \end{itemize}
 \item Define DataSource
 \begin{itemize}
-\item Lines 22-27: This defines the reference to the database, and the DataSource class
+\item Lines 22-27: This defines the location of the database, and the DataSource class. A DataSource class creates a connection from the application to the physical data source.
 \begin{lstlisting}
 <resource-ref>
 <description>DB Connection</description>
@@ -162,7 +162,7 @@ classpath:beans/security-context.xml
 \label{fig:webxmlExplain}
 \end{table}
 
-The \textit{Controller}, within the Spring MVC framework, is designed for preparing a model with data, and selecting a view which will represent that data. This is done through the use of a \textit{RequestMapping} annotation, which is discussed in further detail in Section~\ref{sec:impl} of this report.
+The \textit{Controller}, within the Spring MVC framework, creates a model with data, and selects a view which will represent that data. This is done through the use of a \textit{RequestMapping} annotation, which is discussed in further detail in Section~\ref{sec:impl} of this report.
 
 The default \textit{ViewResolver} within the Spring MVC is the InteralResourceViewResolver, depicted in Figure ~\ref{fig:defaultViewRes}. This is defined with the \textit{members-servlet.xml} file in the application, which is the structure of the \textit{DispatcherServlet}. This class takes the value that is returned by a Controller, and passes a View to the DispatcherServlet. The browser can then render this view. It is important that any views, such as JSP files within the scope of this application, are stored within the \textit{WEB-INF} folder. This is to ensure that the files are treated as an internal resource, and as such, are only accessible by the servlet, or the Controller classes within the application.
 
@@ -184,7 +184,7 @@ This \textit{ViewResolver} was not used within this application. Instead, Apache
 
 The framework that provided the \textit{ViewResolver} for this application was Apache Tiles. This framework allows for the composition of a template for a JSP page. Apache Tiles allows the application developer to define page fragments, which are assembled into one page at run time, based on a template. This allows the application to reduce duplication of common page elements, such as headers, footers, link bar and advertising.  The defined templates allow for a consistent look and feel across the application, and a change in one place, such as modifying a link in a header, will change across all Views within the application.
 
-In order to use the Apache Tiles \textit{ViewResolver}, it must be defined within the \textit{DispatcherServlet} XML file, see Figure ~\ref{fig:tilesViewRes}, in lieu of the default ViewResolver. This ViewResolver is part of the Spring Framework, and allows for interoperability between both the Spring and Apache Tiles frameworks. The reason that \textit{TilesViewResolver} is used instead of \textit{SimpleTilesListener} is for the support of JSTL within the JSP pages, as discussed within the Implementation.
+In order to use the Apache Tiles \textit{ViewResolver}, it must be defined within the \textit{DispatcherServlet} XML file, see Figure ~\ref{fig:tilesViewRes}, in lieu of the default ViewResolver. This ViewResolver is part of the Spring Framework, and allows for interoperability between both the Spring and Apache Tiles frameworks. The reason that \textit{TilesViewResolver} is used instead of \textit{SimpleTilesListener} is for the support of JavaServerPages Standard Tag Library [JSTL] within the JSP pages, as discussed within the Implementation. JSTL uses tags to perform conditional functions without the use of directives with a JSP page. A directive is instructions that are performed within a JSP page, such as running Java code.
 
 \begin{lstlisting}
 <bean id="tilesViewResolver"
@@ -202,7 +202,7 @@ The application server, or web server, used for this project was Tomcat 7.  Tomc
 
 \subsection{Project Management Tool}
 
-The project management tool used for this project was Maven. Maven was used within the scope of this project to manage the dependencies required by the web application. Maven came pre-installed and configured within the Spring Tool Suite IDE. Dependency Management can be handled one of two ways. Dependencies can be added using the GUI interface provided by an IDE, in this case, Spring Tool Suite. This GUI links to the repository located at http://mvnrepository.com/, and the user searches for the required files. Otherwise, the \textit{pom.xml} file may be edited to define dependencies manually. Below is an example of the Apache Tiles v3.0.3 dependency.
+The project management tool used for this project was Maven. Maven was used within the scope of this project to manage the dependencies required by the web application. Dependencies within the project include the JAR files required for Hibernate, Spring MVC, Apache Tiles and the many other frameworks used in the project. A JAR is a archive package that contains Java packages and .class files. Maven came pre-installed and configured within the Spring Tool Suite IDE. Dependency Management can be handled one of two ways. Dependencies can be added using the GUI interface provided by an IDE, in this case, Spring Tool Suite. This GUI links to the repository located at http://mvnrepository.com/, and the user searches for the required files. Otherwise, the \textit{pom.xml} file may be edited to define dependencies manually. Below is an example of the Apache Tiles v3.0.3 dependency.
 
 \begin{figure}[H]
 \begin{lstlisting}
@@ -231,7 +231,7 @@ A rudimentary examination of Hibernate with Java Database Connectivity [JDBC] wi
 
 \subsection{Source Control}
 
-Source Control is the management of changes to the source code of an application. In this day and age, it is not unusual for a program to be worked on by a number of different persons. In fact, it is more likely to be a globally dispersed team of programmers, so management of changes to the code base is very important. Essentially, it is a system that "provides facilities for storing, updating and retrieving all versions of modules, for controlling updating privileges, for identifying load modules by version number, and for recording who made each software change" \parencite{rochkind1975source}.
+Source Control is the management of changes to the source code of an application. In this day and age, it is not unusual for a program to be worked on by a number of different people. In fact, it is more likely to be a globally dispersed team of programmers, so management of changes to the code base is very important. Essentially, it is a system that "provides facilities for storing, updating and retrieving all versions of modules, for controlling updating privileges, for identifying load modules by version number, and for recording who made each software change" \parencite{rochkind1975source}.
 
 The source control system used within this project was GitHub, a free open source solution located at \href{http://www.github.com}{www.github.com}. It provides integration with STS through the use of the \textit{egit} plugin. egit is an open source plugin for Eclipse that allows for Git repositories to be imported in the IDE. It also allows actions, such as committing changes, to be performed within the IDE. GUI and Shell user interfaces also exist for a variety of operating systems. It was also used to manage the different versions of the report you are reading now. Within the scope of GitHub, each project is called a repository.
 
@@ -251,7 +251,7 @@ The IDE used for this project was Spring Tool Suite [STS], a modified version of
 
 \subsection{Logging}
 
-Logging was used within the application to check both the flow of the application, as well as to pin point where certain lines of code were being called. The logging implementation used was log4j, an open source logging solution created by Apache. Log4j is designed with the possibility of enabling or disabling logging at run time. This is important in an application may have thousands of logging instances within it. This would be difficult to remove from production code, and would increase the risk of introducing bugs were it to be attempted. 
+Logging was used within the application to check both the flow of the application, as well as to pin point where certain lines of code were being called. The logging implementation used was log4j, an open source logging solution created by Apache. Log4j is designed to enable or disable logging at run time. This is important in an application may have thousands of logging instances within it. This would be difficult to remove from production code, and would increase the risk of introducing bugs were it to be attempted. 
 
 Logging can also be used to analyse usability and a "log will contain statistics about the frequency with which each user has used each feature in the program and the frequency with which various events of interest (such as error messages) have occurred." \parencite{holzinger2005usability}
 

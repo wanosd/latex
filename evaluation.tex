@@ -432,7 +432,7 @@ The FYP has been certainly been significant part of the overall college journey.
 \subsection{Hibernate in Design}
 Hibernate was a very powerful framework throughout the development of this project. It was very much a case of learning by doing. Having accumulated experience with the framework, I would like to apply it more in the design stage on an application. One idea that came to me late in the project was the idea of having a top level class that could build the entire application, as depecited in Figure~\ref{fig:toplevel}.
 
-\begin{figure}[H]
+
 \begin{lstlisting}
 @Entity
 public class WebApplication(){
@@ -469,6 +469,7 @@ private void create(){
 //getters and setters
 
 \end{lstlisting}
+\begin{figure}[H]
 \caption{'Top Level' Class}
 \label{fig:toplevel}
 \end{figure}
@@ -485,3 +486,6 @@ The tournament section of the site is something that I would like to have done a
 
 \subsection{Web Services and HTML5}
 Other aspects of a web application, such as web services and HTML5 were omitted from the final submission due to time constraints, but are definitely something that I would have an interest in looking at later on. Web services were touched on briefly, through the exposure of part of information about the timetable. 
+
+\subsection{Timetable}
+While the timetable works well in its current state, I would like to optimize the code to be more readable. I experimented with the use of key-map objects later in the development cycle, and beleive the use of these could reduce the code size in the View by at least 60\%, and help compartmentalize two or three methods into one.

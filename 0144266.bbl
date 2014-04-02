@@ -103,6 +103,44 @@
   \field{year}{2005}
 \endentry
 
+\entry{groundedtheory}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Berry}{B.}%
+     {Daniel~M}{D.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Godfrey}{G.}%
+     {Michael~W}{M.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Holt}{H.}%
+     {Ric}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kapser}{K.}%
+     {Cory~J}{C.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ramos}{R.}%
+     {Isabel}{I.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BDM+1}
+  \strng{fullhash}{BDMGMWHRKCJRI1}
+  \field{labelyear}{2013}
+  \field{sortinit}{B}
+  \field{title}{Requirements Specifications and Recovered Architectures as
+  Grounded Theories}
+  \field{journaltitle}{The Grounded Theory Review, Volume 12, Issue 1}
+  \field{year}{2013}
+\endentry
+
 \entry{davis2006effectiveness}{inproceedings}{}
   \name{author}{5}{}{%
     {{}%
@@ -163,6 +201,57 @@
   \field{sortinit}{F}
   \field{title}{Spftware Metrics: A Rigorous Approach}
   \field{year}{1991}
+\endentry
+
+\entry{fowler}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Fowler}{F.}%
+     {Martin}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{FM1}
+  \strng{fullhash}{FM1}
+  \field{labelyear}{2006}
+  \field{sortinit}{F}
+  \field{title}{Code Smell}
+  \verb{url}
+  \verb http://martinfowler.com/bliki/CodeSmell.html
+  \endverb
+  \field{month}{02}
+  \field{year}{2006}
+\endentry
+
+\entry{beck1999bad}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Fowler}{F.}%
+     {Martin}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Beck}{B.}%
+     {Kent}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Beck}{B.}%
+     {Grandma}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Addison-Wesley Object Technology Series}%
+  }
+  \strng{namehash}{FMBKBG1}
+  \strng{fullhash}{FMBKBG1}
+  \field{labelyear}{1999}
+  \field{sortinit}{F}
+  \field{pages}{75\bibrangedash 88}
+  \field{title}{Bad smells in code}
+  \field{journaltitle}{Refactoring: Improving the design of existing code}
+  \field{year}{1999}
 \endentry
 
 \entry{gorton2006essential}{book}{}
@@ -279,6 +368,29 @@
   \field{volume}{21}
   \field{journaltitle}{International journal of information management}
   \field{year}{2001}
+\endentry
+
+\entry{straussgrounded}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Strauss}{S.}%
+     {Anselm}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Corbin}{C.}%
+     {Juliet}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SACJ1}
+  \strng{fullhash}{SACJ1}
+  \field{labelyear}{1994}
+  \field{sortinit}{S}
+  \field{pages}{273\bibrangedash 285}
+  \field{title}{Grounded theory methodology}
+  \field{journaltitle}{Handbook of qualitative research}
+  \field{year}{1994}
 \endentry
 
 \entry{owasp2013}{article}{}
