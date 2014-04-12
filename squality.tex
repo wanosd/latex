@@ -3,7 +3,7 @@
 
 \section{Introduction}
 
-The use of software metrics within this project was to guide the development process and measure the quality of the application. Measurement is concerned with "capturing information about \textit{attributes} of \textit{objects}" \parencite{softmetrics}.
+The use of software metrics within this project was to guide the development process and measure the quality of the application. Measurement is concerned with "capturing information about \textit{attributes} of \textit{objects}" \parencite{softmetrics}. The use of metrics within this application was to support evolution by maximising developer comprehension about the application, and managing dependencies.
 
 \section{Application Metrics}
 
@@ -28,9 +28,11 @@ The measurement of metrics within the IDE was accomplishing through the use of a
 \label{fig:metricstable}
 \end{table}
 
-The \textit{McCabe Cyclomatic Complexity} metric measures the number of linearly independent paths through a program's source code. The higher this value, the more complex the code is, thereby increasing the cost of maintenance and affecting application extensibility. 
+The \textit{McCabe Cyclomatic Complexity} metric measures the number of linearly independent paths through a program's source code. The higher this value, the more complex the code is, thereby increasing the cost of maintenance and affecting application extensibility. This was used within the application to highlight some code that had high complexity, and alerted the developer that a potential issue may exist, especially in terms of maintenance later on in the application life-cycle.
 
 An example of how frameworks may negatively affect metrics in an application is illustrated within the User class. The user class contains the largest number of attributes with 16. In order for Hibernate to persist and retrieve the object correctly, getters and setters must be defined for each attribute. This would result in the creation of 32 methods in this class. These methods may not be used within the application other than by Hibernate. There are 126 class attributes within the application which require 252 getter and setter methods to be created. This accounts for 48.8\% of the methods within the application. This would also have an effect on the \textit{Method Lines of Code} metric, as it would add 252 lines of that metric, or 11.8\% of the total. 
+
+While metrics were not very important within the scope of the application, their utility to a multi faceted project, with a globally dispersed team of software engineers would be significant. One metric, McCabe Cyclomatic Complexity, could be utlised to ensure that the complexity of the application does not vary from one version to another. 
 
 \section{Software Quality Tools and Visualisations}
 
@@ -71,7 +73,7 @@ The bad code smells identified within this project as illustrated in Figure~\ref
 \end{itemize}
 \item Data Class
 \begin{itemize}
-\item This is a class that has attributes, and just getters and setters for those attributes. These classes "are dumb data holders and are almost certainly being manipulated in far too much detail by other classes" \parencite{beck1999bad}. In this application however, the use of getters and setters is as a result of the use of the Hibernate framework which relies on these methods to function efficiently. The inFusion application only flagged Hibernate entity classes as possessing this design flaw, and it is a flaw that is created by the use of this ORM framework. 
+\item This is a class that has attributes, and just getters and setters for those attributes. These classes "are dumb data holders and are almost certainly being manipulated in far too much detail by other classes" \parencite{beck1999bad}. In this application however, the use of getters and setters is as a result of the use of the Hibernate framework which relies on these methods to function efficiently. The inFusion application only flagged Hibernate entity classes as possessing this design flaw, and it is a flaw that is created by the use of this ORM framework. The User class was highlight as being a data class by inFusion. In this application, most user functionality is provided by the MemberController class. The User class contains 16 attributes, and getters/setters for Hibernate persistence, and as such, it is a design influenced by the choice of architecture.
 \end{itemize}
 \end{enumerate}
 \begin{figure}[h]

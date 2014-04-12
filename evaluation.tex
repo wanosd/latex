@@ -24,6 +24,11 @@ In analysing support for security, the Open Web Application Security Project [OW
 \item XSS is "whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping" \parencite{owasp2013}. This allows the potential use of malicious scripts in a victims browser, which may enable an attacker to gain access to the user session. Spring provides an extension of the Java EE 6 class \textit{HttpServletRequestWrapper} called \textit{XSSWrapper}. This class takes a HTTP Request object, and checks the values of getParamters(), getParameterValues() and getHeaders(). The XSSWrapper object then performs a stripXSS() method that checked the validity of the parameters with an HttpServletRequest object, and in the event that an attempted XSS attack is present, nullifies it by escaping special characters.
 \end{itemize}
 
+\item Insecure Direct Object References
+\begin{itemize}
+\item This is when an application doesn't "verify that the user is authorized for the target object" \parencite{owasp2013}. In this application, security access is controlled by Spring MVC, and the \textit{security-context} file. It is also reinforced by service level annotations to ensure role validation is checked each time a method call is invoked against any object within the system.
+\end{itemize}
+
 \item Security Misconfiguration
 \begin{itemize}
 \item Security Misconfiguration is not "having a secure configuration defined and deployed for the application framework" \parencite{owasp2013}. Within Spring MVC, this refers to the configuration for EBAC. An example of poor configuration would be to implement this system by denying access to URL mappings, rather than denying access to all and allowing exceptions. While it is possible to deny access to relevant mappings, it is more likely that a mistake would slip through. A breakdown of the mappings organised by the type of access is depicted in Table~\ref{fig:accesstable}. permitAll refers to mappings that allow access to all users, isAuthenticated requires that the user be logged in, and admin requires that a user be logged in and possess an administrator role.
@@ -51,13 +56,31 @@ encryption at rest or in transit" \parencite{owasp2013}. Within the scope of thi
 \begin{itemize}
 \item Within any web application, they will be scope for redirects. For example, if a user logs in, it is normal to redirect them to the home page. However, the application must be cognisant of where the redirect is coming from, and ensure its validity. "Without proper validation, attackers can redirect victims to phishing or malware sites, or use forwards to access unauthorized pages" \parencite{owasp2013}. The ViewResolver, provided in Spring and extended by Apache Tiles, is responsible for validating this information. All redirected are passed to the ViewResolver as a string. If a value corresponding to this string is not found within the ViewResolver configuration, an error will be returned in the form of a 404 Page Not Found value or an access denied value, as defined in the security-context file. 
 \end{itemize}
+
+\item Missing Function Level Access Control
+\begin{itemize}
+\item This is when the application "does not protect application functions properly" \parencite{owasp2013}. This is, for example, allowing a regular user to see links that they should not see, such as an administrator control panel. This is protected within this application by the use of a JSTL library, Spring Security, provided by Spring Core. This allows links to be placed within a JSP page as normal, but it only becomes visible should be correct user be logged in.
+\end{itemize}
+
+\item Using Components with Known Vulnerabilities
+\begin{itemize}
+\item When developers aren't aware of all the components that are being used within the application, such as if they are using the most up to date version, it can lead to vulnerability being introduced. While this is outside the scope of this project, as the data being held isn't sensitive, it is definitely a concern, especially with the Heartbleed SSL bug a recent concern. 
+\end{itemize}
+
+\item Cross-Site Request Forgery (CSRF)
+\begin{itemize}
+\item This attack exists because the web application allows "attackers to predict all the details of a particular action" \parencite{owasp2013}. Attackers can create malicious web pages, such as redirecting funds in a bank application. While outside the scope of this application, Spring provides CSRF protection by default within the framework.
+\end{itemize}
 \end{enumerate}
+
 
 \subsection{Security Bugs}
 
 A significant bug was discovered within the application during user testing. When a user was editing their profile, a model attribute was used to map the data changed in the View to create an object within the Controller. The application did not allow the user to edit all attributes within the user class, such as their role within the application. As a result, any changes to a user object where the attributes were not defined within the view resulted in attributes not present in the view being set as null. This meant that a user would have no role within the system, as the role attribute would be changed to null. To overcome this, a hidden value mapped to the role attribute was inserted into the form. This fixed the problem, but in doing so, introduced a significant security risk. 
 
-Using a tool to intercept HTTP Requests, such as WebScarab, it was possible to change the hidden field. This would allow a regular user to change their role from ROLE MEMBER to ROLE ADMIN, giving them full access to the site. This happened as the object was not checked before being persisted by the controller, service and dao layers. This method was tested using the WebScarab tool, and the vulnerability was confirmed. WebScarab is a framework that analysing applications that communicate using HTTP and HTTPS protocols, and was used to intercept GET and POST requests in this application. In order to circumvent this, the role of the currently logged in user was retrieved from the framework, and this value was saved, rather than a value defined within the view. This example showed that while the framework does provide a considerable layer of security, misuse and bad programming can expose the application. 
+Using a tool to intercept HTTP Requests, such as WebScarab, it was possible to change the hidden field. This would allow a regular user to change their role from ROLE MEMBER to ROLE ADMIN, giving them full access to the site. 
+
+This happened as the object was not checked before being persisted by the controller, service and dao layers. This method was tested using the WebScarab tool, and the vulnerability was confirmed. WebScarab is a framework that analysing applications that communicate using HTTP and HTTPS protocols, and was used to intercept GET and POST requests in this application. In order to circumvent this, the role of the currently logged in user was retrieved from the framework, and this value was saved, rather than a value defined within the view. This example showed that while the framework does provide a considerable layer of security, misuse and bad programming can expose the application. 
 
 \section{Extensibility}
 
@@ -80,7 +103,9 @@ Contact Number<sf:input name = "contact_num" path="contact_num" type="text"/>
 Emergency Contact Name<sf:input name = "em_con_name" path="em_con_name" type="text"/>
 Emergency Contact Number<sf:input name = "em_con_num" path="em_con_num" type="text"/>
 Role<sf:select path="authority"><sf:options items="${roles }"/></sf:select>
-New Attribute<sf:input name = "new_attribute" path="new_attribute" type="text"/> //new line added
+//new section
+New Attribute<sf:input name = "new_attribute" path="new_attribute" type="text"/> 
+//end new section
 <input type="hidden" value="${member.username }" name="username"/>
 <input value="Change Details" type="submit"/>
 \end{lstlisting}
@@ -107,23 +132,25 @@ params.addValue("contact_num", user.getContact_num());
 params.addValue("em_con_name", user.getEm_con_name());
 params.addValue("em_con_num", user.getEm_con_num());
 params.addValue("role", "ROLE_MEMBER");
+//new section
 params.addValue("NEW_ATTRIBUTE", "user.getNEW_ATTRIBUTE());
 return jdbc
 	.update("insert into users (username, name, password, gender, 
 	member_type, grade, ad_line1, ad_line2, ad_city, ad_county,
 	contact_num, em_con_name, em_con_num, enabled, authority,
-	bookings_left, NEW_ATTRIBUTE) values (:username, :name, :password, 
+	bookings_left, NEW_ATTRIBUTE) values (:username, :name, :password, //NEW ATTRIBUTE 
 	:gender, :member_type, :grade, :ad_line1, :ad_line1, 
 	:ad_city, :ad_county, :contact_num,:em_con_name, :em_con_num,
-	false, :role, 0, :NEW_ATTRIBUTE)",params) == 1;
-	}
+	false, :role, 0, :NEW_ATTRIBUTE)",params) == 1; //NEW ATTRIBUTE
+}
+//end new section
 \end{lstlisting}
 \begin{table}[H]
 \caption{JDBC DAO changes with entity change}
 \label{fig:jdbcChanges}
 \end{table}
 
-Hibernate provides better support for extensibility in this regard, allowing the developer to focus on database and view changes, with no need to modify the persistence layer between the application and the database.
+Hibernate provides better support for extensibility in this regard, allowing the developer to focus on database and view changes, with \uline{no need} to modify the persistence layer between the application and the database.
 
 \section{Usability}
 
@@ -229,13 +256,13 @@ The deliverable from this project was subjected to the same usability criteria a
 	Site & Total\\ \hline
 	Monaleen Tennis Club & 14/30\\ \hline
 	Tralee Tennis Club & 22.5/30\\ \hline
-	Project Application & 24/30\\ \hline	
+	FYP Application & 24/30\\ \hline	
     \end{tabular}
 \end{center}
 \label{fig:projecttable6}
 \end{table}
 
-\section{Productivity and Performance}
+\section{Performance}
 
 \subsection{Hibernate}
 
@@ -356,12 +383,14 @@ jdbc.update("delete",params); //end delete
 \label{fig:jdbchibcode}
 \end{figure}
 
-In all tests, Hibernate took less time to perform all actions, though there was not much different between both technologies. However, due to the way Hibernate is configured, it is certainly much easier to develop with. Hibernate required 5 lines of code, shown in Figure~\ref{fig:jdbchibcode}, where JDBC requires 23 lines of code, with 3 different SQL queries, one for INSERT, UPDATE and DELETE. 
+In all tests, Hibernate took less time to perform all actions However, due to the way Hibernate is configured, it is certainly much easier to develop with. Hibernate required 5 lines of code, shown in Figure~\ref{fig:jdbchibcode}, where JDBC requires 23 lines of code, with 3 different SQL queries, one for INSERT, UPDATE and DELETE. 
 
 By defining and mapping attributes in a database to the class with Hibernate, the DAO classes become much smaller and easier to manage with no impact on performance within the application. In this application, for example, there are more than 70 DAO operations, which would mean 70 or more SQL statements. Use of JDBC would also require the definition of SQL JOINs in relation to both the Timetable and Tournament classes, thereby again increasing complexity within the application. There is more configuration to be undertaken with Hibernate, but the end result is a much easier to manage persistence solution that reduces code complexity.
 
+\section{Productivity}
+
 \subsection{Session and Cookie Management}
-One benefit of using a framework such as Spring is that the developer does not need to be overly concerned with defining and checking a session in each controller. In a previous project, the developer was responsible to creating and managing the session, as well as ensuring proper access to the site was maintained. Figure~\ref{fig:manualsession} shows how a session must be manually retrieved from a request object within a servlet.
+One benefit of using a framework such as Spring is that the developer does not need to be overly concerned with defining and checking a session in each controller. In a Distributed Systems project, the developer was responsible for creating and managing the session, as well as ensuring proper access to the site was maintained. Figure~\ref{fig:manualsession} shows how a session must be manually retrieved from a request object within a servlet.
 
 \begin{figure}[H]
 \begin{lstlisting}
@@ -410,82 +439,82 @@ private void checkAuthentication(PrintWriter out, HttpSession currentSession) {
 
 An issue with that is that it is reliant on the developer to identify the correct attribute. This is a user defined attribute that may not be unique to the application. Spring manages this through the \textit{security-context.xml} file, which encapsulates security for the application to one file, and the framework itself ensures that the correct session is created for a user. There is no need to specify any of this within the codebase of the application, which again reduces complexity, and minimises the possibility of security leaks being introduced through developer errors.
 
-\section{Architectural Quality}
 
-(Is there a need for this section? Does the preceding section suffice? Evolution support is covered, security can be measured in resisting, identifying and recovering from attacks \cite{bass2003software}
-
-\subsection{Performance}
-
-\subsection{Security}
-
-\subsection{Evolution Support}
-
-
-Performance, Security and Evolution Support
 
 \section{Functional and Non Functional Requirement Evaluation}
 
-\section{FYP Process and Learnings}
+\subsection{Timetable}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | p{1cm} |}
+    \hline
+    Requirement & Achieved\\ \hline
+	Edit Individual Slots & \checkmark \\ \hline
+	Define Template & \checkmark \\ \hline
+	Reset Timetable & \checkmark \\ \hline
+	Define Look Ahead & \checkmark \\ \hline
+	Delete Timetable & \checkmark \\ \hline
+	Enable Timetable & \checkmark \\ \hline
+	Disable Timetable & \checkmark \\ \hline
+	Timetable Analysis & \checkmark \\ \hline
+	\end{tabular}
+\end{center}
+\caption{Timetable Functional Requirements}
+\end{table}
+
+
+\subsection{Tournament}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | p{1cm} |}
+    \hline
+    Requirement & Achieved\\ \hline
+	Create Tournament & \checkmark \\ \hline
+	Delete Tournament & \checkmark \\ \hline
+	Enable User Signup	& \checkmark \\ \hline
+	Finalise User Signup	& \checkmark \\ \hline
+	Display Tournament Times& X \\ \hline
+	Create Different Kinds of Tournaments & X \\ \hline
+	Organise Members into teams & X \\ \hline
+	Contact all members in a tournament & X \\ \hline
+	\end{tabular}
+\end{center}
+\caption{Tournament Functional Requirements}
+\end{table}
+
+
+\subsection{News}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | p{1cm} |}
+    \hline
+    Requirement & Achieved\\ \hline
+	Create News & \checkmark \\ \hline
+	Delete News & \checkmark \\ \hline
+	Allow more than one person access & \checkmark \\ \hline
+	\end{tabular}
+\end{center}
+\caption{News Functional Requirements}
+\end{table}
+
+
+\subsection{Members}
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| l | l | p{1cm} |}
+    \hline
+    Requirement & Achieved\\ \hline
+	Member Registration & \checkmark \\ \hline
+	Member only access & \checkmark \\ \hline
+	Approve Members & \checkmark \\ \hline
+	Block Members & \checkmark \\ \hline
+	Edit Profiles & \checkmark \\ \hline
+	View all members contact details & \checkmark \\ \hline
+	\end{tabular}
+\end{center}
+\caption{Members Functional Requirements}
+\end{table}
+
+\section{FYP Process}
 
 The FYP has been certainly been significant part of the overall college journey. Looking back, and knowing what I know now, there are a number of avenues that I would have liked to explore.
-
-\subsection{Hibernate in Design}
-Hibernate was a very powerful framework throughout the development of this project. It was very much a case of learning by doing. Having accumulated experience with the framework, I would like to apply it more in the design stage on an application. One idea that came to me late in the project was the idea of having a top level class that could build the entire application, as depecited in Figure~\ref{fig:toplevel}.
-
-
-\begin{lstlisting}
-@Entity
-public class WebApplication(){
-
-@ElementCollection
-@CollectionTable (name = "tournament", joinColumns=@JoinColumn(name="id"))
-private Tournaments tournaments;
-
-@ElementCollection
-@CollectionTable (name = "timetable", joinColumns=@JoinColumn(name="id"))
-private Timetable timetable;
-
-@ElementCollection
-@CollectionTable (name = "news", joinColumns=@JoinColumn(name="id"))
-private News news;
-
-@ElementCollection
-@CollectionTable (name = "events", joinColumns=@JoinColumn(name="id"))
-private Events events;
-
-@ElementCollection
-@CollectionTable (name = "users", joinColumns=@JoinColumn(name="id"))
-private User users;
-
-public WebApplication(){
-	create();
-}
-
-private void create(){
-	tournaments = getTournaments();
-	etc.....
-}
-
-//getters and setters
-
-\end{lstlisting}
-\begin{figure}[H]
-\caption{'Top Level' Class}
-\label{fig:toplevel}
-\end{figure}
-
-(This section needs to be rewritten. I'm tired right now so just doing stream of conciousness) 
-
-It would be possible to build the application so that all classes were linked through a hierarchy to one root class. This may impact performance, but it would allow a number of benefits such as ease of deployment, and the ability to take snapshots of the application at any stage.
-
-I also would have like to use Hibernate with more complicated objects rather than just collection classes, but time constraints did not allow this.
-
-\subsection{Tournament Business Logic}
-
-The tournament section of the site is something that I would like to have done a bit more on, but unfortunately, due to the time constraints within a FYP, a decison had to be made to focus more on either the timetable or the tournament. The timetable provides a service for all members of a club, not just those playing competitively. In the interim, third party solutions such as \textit{http://ti.tournamentsoftware.com} exist. The tournament sorting mechanism was designed so that the logic of sorting members into teams is encapsulated in one method in an interface. Implementing a new version would not require any significant changes to the application. 
-
-\subsection{Web Services and HTML5}
-Other aspects of a web application, such as web services and HTML5 were omitted from the final submission due to time constraints, but are definitely something that I would have an interest in looking at later on. Web services were touched on briefly, through the exposure of part of information about the timetable. 
-
-\subsection{Timetable}
-While the timetable works well in its current state, I would like to optimize the code to be more readable. I experimented with the use of key-map objects later in the development cycle, and beleive the use of these could reduce the code size in the View by at least 60\%, and help compartmentalize two or three methods into one.

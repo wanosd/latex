@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex version 2.3 $
+% $ biblatex version 2.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -103,44 +103,6 @@
   \field{year}{2005}
 \endentry
 
-\entry{groundedtheory}{article}{}
-  \name{author}{5}{}{%
-    {{}%
-     {Berry}{B.}%
-     {Daniel~M}{D.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Godfrey}{G.}%
-     {Michael~W}{M.~W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Holt}{H.}%
-     {Ric}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Kapser}{K.}%
-     {Cory~J}{C.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Ramos}{R.}%
-     {Isabel}{I.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{BDM+1}
-  \strng{fullhash}{BDMGMWHRKCJRI1}
-  \field{labelyear}{2013}
-  \field{sortinit}{B}
-  \field{title}{Requirements Specifications and Recovered Architectures as
-  Grounded Theories}
-  \field{journaltitle}{The Grounded Theory Review, Volume 12, Issue 1}
-  \field{year}{2013}
-\endentry
-
 \entry{davis2006effectiveness}{inproceedings}{}
   \name{author}{5}{}{%
     {{}%
@@ -221,6 +183,9 @@
   \endverb
   \field{month}{02}
   \field{year}{2006}
+  \field{urlday}{16}
+  \field{urlmonth}{03}
+  \field{urlyear}{2014}
 \endentry
 
 \entry{beck1999bad}{article}{}
@@ -297,6 +262,48 @@
   \field{year}{2005}
 \endentry
 
+\entry{usability}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Nielsen}{N.}%
+     {Jakob}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{NJ1}
+  \strng{fullhash}{NJ1}
+  \field{labelyear}{1994}
+  \field{sortinit}{N}
+  \field{title}{Usability engineering}
+  \field{year}{1994}
+\endentry
+
+\entry{udemy}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Purcell}{P.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PJ1}
+  \strng{fullhash}{PJ1}
+  \field{labelyear}{2013}
+  \field{sortinit}{P}
+  \field{title}{Udemy Java Spring Tutorial}
+  \verb{url}
+  \verb https://www.udemy.com/javaspring/
+  \endverb
+  \field{month}{09}
+  \field{year}{2013}
+  \field{urlday}{30}
+  \field{urlmonth}{01}
+  \field{urlyear}{2014}
+\endentry
+
 \entry{rochkind1975source}{article}{}
   \name{author}{1}{}{%
     {{}%
@@ -368,29 +375,6 @@
   \field{volume}{21}
   \field{journaltitle}{International journal of information management}
   \field{year}{2001}
-\endentry
-
-\entry{straussgrounded}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {Strauss}{S.}%
-     {Anselm}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Corbin}{C.}%
-     {Juliet}{J.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{SACJ1}
-  \strng{fullhash}{SACJ1}
-  \field{labelyear}{1994}
-  \field{sortinit}{S}
-  \field{pages}{273\bibrangedash 285}
-  \field{title}{Grounded theory methodology}
-  \field{journaltitle}{Handbook of qualitative research}
-  \field{year}{1994}
 \endentry
 
 \entry{owasp2013}{article}{}

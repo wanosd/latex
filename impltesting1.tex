@@ -9,7 +9,7 @@ This chapters deals with the implementation of the application, with the focus o
 \section{Application Entities}
 \subsection{Users - Persistence}
 
-The \textit{User} class represents every user account within the application. (Link to appendices showing class attributes). This section will focus on a regular user, how it is configured within the application in terms of bean definition and persistence. 
+The \textit{User} class represents every user account within the application. This section will focus on a regular user, how it is configured within the application in terms of bean definition and persistence. 
 
 Firstly, as shown in line one of Figure ~\ref{fig:userDef}, the class needs to be configured as a \textit{Component} for the application. This ensures that the Spring framework considers the User class as one for auto-detection, through the use of class path scanning and annotations prevalent within this application. The framework instantiates this bean, or object, automatically, without the developer having to use the \textit{new} keyword.
 
@@ -49,9 +49,9 @@ public class User {
 \label{fig:userDef}
 \end{figure}
 
-The \textit{Entity} and \textit{Table} annotations of lines 2 and 3 respectively belong to the javax.persistance package. These annotations are used by Hibernate in order to manage and persist the class. The \textit{@Table} annotation has a 'name' attribute that refers to the schema table the class maps to. There are two ways that an attribute can be assigned to a table column by Hibernate. Both methods are shown in Figure ~\ref{fig:userDef}. An annotation may be placed on the attribute in order to specify a column name. Line 12 in Figure ~\ref{fig:userDef} shows the username attribute being mapped to the username column within the User database schema. The other way of specifying where an attribute should be persisted is to ensure that the attribute name matches the column name within the table. This implicitly allows Hibernate to map a class, without having to explicitly define the mapping for the persistence framework.
+The \textit{Entity} and \textit{Table} annotations of lines 2 and 3 respectively belong to the javax.persistance package. These annotations are used by Hibernate in order to manage and persist the class. The \textit{@Table} annotation has a 'name' attribute that refers to the schema table the class maps to. There are two ways that an attribute can be assigned to a table column by Hibernate. Both methods are shown in Figure ~\ref{fig:userDef}. An annotation may be placed on the attribute in order to specify a column name. Line 11 in Figure ~\ref{fig:userDef} shows the username attribute being mapped to the username column within the User database schema. The other way of specifying where an attribute should be persisted is to ensure that the attribute name matches the column name within the table. This implicitly allows Hibernate to map a class, without having to explicitly define the mapping for the persistence framework.
 
-The User class has a number of attribute constraints placed upon it. There are two types of constraints within this application: \textit{FormValidationGroup} and \textit{PersistenceValidationGroup}. These are interface classes with no attributes that serve as identifiers. As shown in lines 10, 14, 19 and 25 of Figure ~\ref{fig:userDef}, an attribute may be constrained by one or more groups. An annotation, from the javax.validation.constraints, is applied to the attribute. The annotations used within this application were as detailed in Table ~\ref{fig:classConstraints}.
+The User class has a number of attribute constraints placed upon it. There are two types of constraints within this application: \textit{FormValidationGroup} and \textit{PersistenceValidationGroup}. These are interface classes with no attributes that serve as identifiers. As shown in lines 10, 14, 19 and 25 of Figure ~\ref{fig:userDef}, an attribute may be constrained by one or more groups. An annotation, from the javax.validation.constraints, is applied to the attribute. The annotations used within this application are as detailed in Table ~\ref{fig:classConstraints}.
 
 \begin{table}[H]
 \caption{Class Constraints}
@@ -76,8 +76,8 @@ These validation package interfaces provide a \textit{groups} attribute, which i
 \begin{center}
 \includegraphics[width=14cm]{dbflow.png}
 \end{center}
-\caption{DispatcherServlet }
-\label{fig:dispatcherflow}
+\caption{Application flow to persist User object}
+\label{fig:dbflow}
 \end{figure}
 
 For example, a user password with 8 characters would pass form validation with no issues. When the PasswordEncoder bean is applied to the string prior to persistence, it will result in a value like \textit{'acb172137243c0b931321d7645dc31c2efb8346385ae0547d11b1d8de333215b'}, a value much longer than 15 characters. This will cause a failure with Hibernate persistence. This is because Hibernate works at a class level, and does take note of the constraints placed upon the class, while JDBC does not. The constraints that JDBC takes note of are those taken directly from the database itself. In this application, passing form validation is sufficient, as there are security annotations placed on the Service classes that manage data persistence. An example of how the controller handles validation is shown later in Figure ~\ref{fig:memberController}. 
@@ -106,15 +106,14 @@ class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBea
 \label{fig:hibernateConfig}
 \end{figure}
 
-The HibernateProperties property defined in Line 4 refers to the SQL dialect used by Hibernate. This dialect provides the functionality to use human readable expressions to define query statements. Hibernate does not use SQL to structure these statement. It uses a variant called Hibernate Query Language [HQL]. HQL syntax is based has its basis in object oriented programming. The class itself defines the table, not the syntax. The different in implementation is shown in Figure~\ref{fig:hqlsql}.
+The HibernateProperties property defined in Line 4 refers to the SQL dialect used by Hibernate. This dialect provides the functionality to use human readable expressions to define query statements. Hibernate does not use SQL to structure these statement. It uses a variant called Hibernate Query Language [HQL]. HQL syntax is based has its basis in object oriented programming. The class itself defines the table, not the syntax. The difference in implementation is shown in Figure~\ref{fig:hqlsql}.
 
-\begin{figure}[H]
 \begin{lstlisting}
 SQL [JDBC]: jdbc.query("select * from users", new UserRowMapper());
 // UserRowMapper is a class that maps rows to objects
-
 HQL [Hibernate]: session().createQuery("from User").list;
 \end{lstlisting}
+\begin{figure}[H]
 \caption{HQL-SQL Comparison}
 \label{fig:hqlsql}
 \end{figure}
@@ -214,7 +213,7 @@ public void createUser(User user) {
 
 \subsection{Timetable - Persistence Changes}
 
-One of the most difficult features to implement within the application was the Timetable. While the goal was to create a timetable suitable for Monaleen Tennis Club, it was desirable that the timetable retain the portability and not rely on hard coded attributes. One issue this raised was how to handle a varying number of slots in each day. If a user could define 10 slots a day, how would be store this in such a way that a user could also define a timetable with 20 slots a day? Hibernate was able to facilitate this design with considerably less input from a developer.
+One of the most difficult features to implement within the application was the Timetable. While the goal was to create a timetable suitable for Monaleen Tennis Club, it was desirable that the timetable retain the portability and not rely on hard coded attributes. One issue arising from this constraint was the management of a varying varying number of slots in each day.A slot, within the scope of this application, is a portion of time in a day in which a booking can be made. If a user could define 10 slots a day, how would be store this in such a way that a user could also define a timetable with 20 slots a day? Hibernate was able to facilitate this design with considerably less input from a developer.
 
 The solution implemented in this application was to use List objects to store the values for each day. There would be seven lists in the Timetable class, one for each day, as per Figure ~\ref{fig:timetableConfig}.
 
@@ -269,7 +268,7 @@ public class MonaleenTTV1 implements Timetable {
 
 This results in the Timetable object being made up of 8 database tables. The core of the class is stored in the 'Timetable' database table. This table contains the primary keys and all other attributes, such as name, number of slots, timetable series. The seven other tables each represent a collection within the Timetable class. Each of these tables has a non unique, foreign key that ties it back to the central table. This is illustrated in Figure~\ref{fig:timetableConfig} with use of the \textit{CollectionTable} annotation. This annotation defines the table that each collection belongs to. It also specifies a column for the HQL and SQL JOIN statement in the \textit{JoinColumn} annotation. For example, if we were to create a Timetable with 10 slots, with the primary key being 1, each of the collection tables would have 10 entries. Each of these entries would have an id of 1, to match the primary key in the core table, plus a value, such as 'Free Court'. The position in the table corresponds to the position within the collection class. 
 
-The following example, in Figure ~\ref{fig:ttdb}, shows a timetable configured with two slots. Upon creation, a series is created for each timetable. Each series contains 52 timetables, one for each week. The currently displayed timetable is determined by its position in the series in relation to the current week of the year, as shown by the Java Calendar class. The 'preview' attribute determines how far ahead the application will allow the user to browse in a timetable series. By default, the application displays the current weeks timetable, and does not allow a user to go backwards. If the current week, as defined by the Java Calendar class, is 13, the user will be able to see weeks 14, 15 and 16, owing to the preview with a value of 3. In Table~\ref{fig:ttdb}, the next three weeks of timetables are available for viewing and booking. This allows the administrator to dynamically restrict how far in advance users can book slots.
+The example, in Figure ~\ref{fig:ttdb}, shows a timetable configured with two slots. Upon creation, a series is created for each timetable. Each series contains 52 timetables, one for each week. The currently displayed timetable is determined by its position in the series in relation to the current week of the year, as shown by the Java Calendar class. The 'preview' attribute determines how far ahead the application will allow the user to browse in a timetable series. By default, the application displays the current weeks timetable, and does not allow a user to go backwards. If the current week, as defined by the Java Calendar class, is 13, the user will be able to see weeks 14, 15 and 16, owing to the preview with a value of 3. In Table~\ref{fig:ttdb}, the next three weeks of timetables are available for viewing and booking. This allows the administrator to dynamically restrict how far in advance users can book slots.
 
 \begin{table}[H]
 	\caption{Timetable Core Database Table}
@@ -303,6 +302,8 @@ The following example, in Figure ~\ref{fig:ttdb}, shows a timetable configured w
 	\end{center}
 \end{table}
 
+The above tables shows 4 timetables, and the events that occur on a Monday. Timetable 1 has the events 'Free Court' and 'Free Court', while Timetable 4 has 'Training' and 'Free Court'. The amount of entries in determined by the number of slots specified when the timetable is created. 
+
 While the table structure of the \textit{User} and \textit{Timetable} differ considerably, since Hibernate deals with objects, that have table structures defined within their classes, there is no change to the way the Timetable is saved and updated, as per Figure ~\ref{timetableHibernate}. Using JDBC, there would have been 8 SQL queries to save to each of the 8 table, increasing the risk of bugs within the application, or invalid data being saved or retrieved.
 
 \begin{figure}[H]
@@ -320,9 +321,9 @@ The timetable is displayed in the application as shown in Figure~\ref{fig:timeta
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=14cm]{timetable.png}
+\includegraphics[width=15cm]{timetable.png}
 \end{center}
-\caption{Timetable display within application}
+\caption{Timetable snapshot within the application}
 \label{fig:timetablesite}
 \end{figure}
 
@@ -382,7 +383,7 @@ public void createNewEvent(I_Event e){
 \label{fig:createEvent}
 \end{figure}
 
-Lines 4 through 10 are necessary to ensure no NullPointerExceptions are introduced when creating a timetable. If no events exist within the system either the first time a timetable is created or, as illustrated above in Figure~\ref{fig:createEvent}, an event is created, the system will create a \textit{Free Court} event which is needed for the timetable to function correctly.
+Lines 4 through 10 are necessary to ensure no NullPointerExceptions are introduced when creating a timetable. If no events exist within the system either the first time a timetable is created or, as illustrated above in Figure~\ref{fig:createEvent}, the system will create a \textit{Free Court} event which is needed for the timetable to function correctly.
 
 In order for an event to show up as an option when creating, or editing, a timetable, it must be enabled, as shown in Figure ~\ref{fig:enableEvent}. This implementation allows the administrator to pre-create events for later use without overcrowding the timetable.
 
@@ -409,7 +410,17 @@ public String changeEventStatus(Model model, HttpServletRequest request) {
 
 \subsubsection{Tournament}
 
-The \textit{Tournament} class is configured similar to the \textit{Timetable} class, in that it has a secondary table which contains a list of members who have registered for the tournament. The key area for tournament implementation was for the application to differentiate between the various states of the tournament, such as registration being enabled, yet the tournament not having started yet. It was also important that the tournament could link up with the Timetable system, in order to book slots to play the tournament. In this regards, a tournament was required to manage an Event object, see Figure ~\ref{fig:tourCreate}, and to ensure that no ambiguity was present when dealing with multiple tournaments and possible multiple timetables. It was also necessary for a Tournament object to manage its own event in order to minimise both the risk of ambiguity and administration involvement.
+The \textit{Tournament} class is configured similar to the \textit{Timetable} class, in that it has a secondary table which contains a list of members who have registered for the tournament. The key area for tournament implementation was for the application to differentiate between the various states of the tournament, such as registration being enabled, yet the tournament not having started yet. This proces is shown in Figure~\ref{fig:tourstate} It was also important that the tournament could link up with the Timetable system, in order to book slots to play the tournament. In this regards, a tournament was required to manage an Event object, see Figure ~\ref{fig:tourCreate}, and to ensure that no ambiguity was present when dealing with multiple tournaments and possible multiple timetables. It was also necessary for a Tournament object to manage its own event in order to minimise both the risk of ambiguity and administration involvement.
+
+
+\begin{center}
+\includegraphics[scale=0.3]{tourstate.png}
+\end{center}
+\begin{figure}[H]
+\caption{Tournament State Chart}
+\label{fig:tourstate}
+\end{figure}
+
 
 \begin{lstlisting}
 @RequestMapping(value = "/registerTournament", method = RequestMethod.POST)
@@ -445,7 +456,9 @@ public void eventCreation(Tournament t){
 	e.setName(t.getTournamentName());
 	e.setAuthor(userService.emailToName(SecurityContextHolder.getContext()
 	.getAuthentication().getName()));
-	eventService.createEvent(e);
+	eventService.createEvent(e); 
+	// this method invokes the createEvent() method within the service class
+	// the service layer then called on the EventDAO object to persist the Event
 }
 \end{lstlisting}
 \begin{figure}[H]
@@ -471,7 +484,50 @@ Deleting a tournament needed similar logic, as displayed in Figure ~\ref{fig:del
 \label{fig:deleteTour}
 \end{figure}	
 
-Due to constraints on time within the final year project, it wasn't possible to fully flesh out this area of the site, though it was implemented in such a way to allow for extensibility such as an interface for the sorting of registered members into teams. This interface would allow the specification of business logic to allow the system to, for example, sort tournament teams by experience and ranking.
+Due to constraints on time within the final year project, it wasn't possible to fully flesh out this area of the site, though it was implemented in such a way to allow for extensibility such as an interface for the sorting of registered members into teams. This interface would allow the specification of business logic to allow the system to, for example, sort tournament teams by experience and ranking. This interface, and the current implementation, in Figure~\ref{fig:tsort}.
+
+\begin{lstlisting}
+// Interface for Tournament Sorter
+public interface I_TournamentSorter {
+	public Map<String, String> sort(List<String> registered); //sorts tournament
+	public boolean check(Tournament t); //checks if tournament can be sorted
+}
+//Implementation
+public class BasicTournamentSort implements I_TournamentSorter {
+//returns a Map of teams, odd number of persons results in one person
+//getting no team
+public Map<String, String> sort(List<String> registered) {
+	Map<String, String> teams = new HashMap<String, String>();		
+	if ((registered.size() % 2) != 0){
+		teams.put("NoTeam", registered.get(registered.size()-1));
+		registered.remove(registered.size()-1);
+	}
+	int j = 1;
+	for (int i = 0; i < registered.size(); i++){
+		teams.put("Team"+j, registered.get(i) + " & " + registered.get(i+1));
+		i++;
+		j++;
+	}
+		return teams;
+}
+//Checks to ensure at least two teams are registered
+public boolean check(Tournament t) {
+	if ((t.getUsername().size()) < 4){
+		return false;
+	}
+	if (t.getTournamentType().equalsIgnoreCase("s")){
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+\end{lstlisting}
+\begin{figure}
+\caption{Existing Tournament Sort and Interface}
+\label{fig:tsort}
+\end{figure}
+
 	
 \label{sec:adminImp}
 \subsection{Administration - Security and Session Management}

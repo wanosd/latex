@@ -1,19 +1,24 @@
 \chapter{Introduction}
 \label{intro}
 
-\section{General Introduction - This whole section needs to be reworks, place holder from interim}
-This project concerns the development of a web application using a web framework in conjunction with a number of other tools. Throughout development, there is a particular cognisance towards the support of Non-Functional Requirements [NFRs] by both the web framework and the supporting tools throughout the development process.
-
-The main goal of this project is to reflectively analyse a WAF [Web Application Framework], and architecture stack, in the creation of a website. This will be analysed in respect to both functional and non-functional requirements. Two key requirements are extensibility and maintenance. Extensibility refers to the ability of the framework to allow added functionality to the web application without having to modify the core workings of the application. Maintenance refers to the upkeep of the code, and facilitates the modification of the source code after the product is deployed. This may be to correct faults, improve attributes such as performance and security.
-The creative driver of the project is the development of a website to meet the requirements and needs of Monaleen Tennis Club, for both members of the club and of the committee. These needs will overlap as all committee representatives are all club members, but not all members are on the committee. From this, it was important to identify the precise requirements for each type of user. The main focus of this project was for the club to be able to perform their core functions through the website. This extended to the registration of members, a timetable for the courts, the creation and distribution of tournament schedules, the organisation and timetabling of training sessions, a method to contact all members and a news section to update and advise members of changes and upcoming events .  
-
-\begin{itemize}
-\item	Member Management
-\item	Timetable Management
-\item	Tournament Management
-\end{itemize}
+\section{General Introduction}
+This project concerns the development of a web application using a web framework in conjunction with a number of other tools. Throughout development, there is a particular cognisance towards the support of Non-Functional Requirements [NFRs] by both the web framework and the supporting tools throughout the development process. This project consists of both a software engineering component, in the shape of the web application developed using the tools discussed within this report, and a research component consisting of this report.
 
 \section{Technology}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.24]{webapp.PNG}
+\end{center}
+\caption{Typical architecture of a web application}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.24]{projarch.PNG}
+\end{center}
+\caption{Typical architecture of a web application}
+\end{figure}
 
 \section{Objectives}
 
@@ -35,6 +40,35 @@ The secondary objectives of this project are:
 
 \section{Scope}
 
+
+
 \section{Methodology}
 
-\
+The methodology used for this project was as follows
+
+\begin{enumerate}
+\item Learn the technology
+\begin{itemize}
+\item The first thing that was examined was the configuration of the technologies needed to implement a web application using Spring, Hibernate and Tiles. As such a set of tutorial videos provided by an educational website called Udemy provided a starting point. The paid videos totalled about 28 hours of content spread over 170 videos.\parencite{udemy}
+\end{itemize}
+\item Define objectives
+\begin{itemize}
+\item The next step was to define learning objectives from the project. The decision was made to focus on the support of specific quality attributes by the use of web application frameworks. This is the main objective of the paper, with secondary objectives relating to the use of metrics within a development in order to support overall quality of the application.
+\end{itemize}
+\item Requirements Engineering
+\begin{itemize}
+\item The elicitation of requirements from key stakeholders was an important step, and ensured that development of the application was in line with the expectations of those eventually utilising the application.
+\end{itemize}
+\item Design
+\begin{itemize}
+\item The design of the system, such as the structure for user authentication, and the overall design of the application were examined, with cognisance of design patterns.
+\end{itemize}
+\item Implementation, Testing and Deployment
+\begin{itemize}
+\item Once design of the application was completed, it needed to be implemented. Due to time constraints within a final year project, unit testing and some light user testing were the only techniques available to use. Deployment was a personal goal, as previous project had all been local applications.
+\end{itemize}
+\item Evaluation
+\begin{itemize}
+\item Evaluation of the application was performed by comparing the final application to methods use to other applications to achieve the same results. A usability study was also performed.
+\end{itemize}
+\end{enumerate}

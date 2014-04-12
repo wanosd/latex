@@ -5,6 +5,10 @@
 
 Requirements Elicitation is an important step in the development of a software application. There are a number of techniques possible, such as "interviewing, protocol analysis, repertory grid, work groups" \parencite{davis2006effectiveness}. Structured interviews "appear to be one of the most effective elicitation techniques in a wide range of domains and situations" \parencite{davis2006effectiveness}. 
 
+While the time constraints on this project did not allow for an in depth study of the requirements, or requirements process, the importance of requirements is not to be understated. (Put Franklin(?) quote here!)
+
+\section{Methods for Requirements Elicitation}
+
 In eliciting possible requirements for the site, there was a discussion with three club members with varying backgrounds and experience within the club.
 
 \begin{table}[H]
@@ -21,40 +25,6 @@ In eliciting possible requirements for the site, there was a discussion with thr
 \label{fig:userelicit}
 \end{table}
 
-\section{Methodology - Grounded Theory}
-
-A methodology for analysing requirements that was examined in this project was the concept of Grounded Theory [GT]. Grounded Theory refers to theories that are "grounded in data systematically gathered and analyzed" \parencite{straussgrounded}. There are a number of steps required for a GT process.
-
-\begin{enumerate}
-\item Data Collection
-\begin{itemize}
-\item Data collection is "collecting requirements ideas" \parencite{groundedtheory}. In this project, interviews were used as the primary method of collecting data for possible requirements.
-\end{itemize}
-\item Coding
-\begin{itemize}
-\item Coding refers to the "classifying requirements into functional or non-functional" \parencite{groundedtheory}. It also involves ranking of requirements by such criteria as necessity, feasibility, cost etc.
-\end{itemize}
-\item Sampling
-\begin{itemize}
-\item Sampling is asking stakeholders follow up questions about the "codings of the requirements ideas" \parencite{groundedtheory}.
-\end{itemize}
-\item Memoing
-\begin{itemize}
-\item Memoing is the how the requirements are represented. These could be examples such as user stories, scenarios, a specification such as Volere. 
-\end{itemize}
-\item Sorting
-\begin{itemize}
-\item This ensures that the requirements are sorted according to a category. This can be application specific, such as Timetable, Tournaments, or a higher level like Functional and Non Functional requirements.
-\end{itemize}
-\item Writing up
-\begin{itemize}
-\item This is the preparation of the final document that contains the final requirements specification. They type of documents will depend on the software life cycle process. An example of a template used to create a Requirements Specification would be Volere or ISO 9126.
-\end{itemize}
-\end{enumerate}
-
-Due to the time constraints present within a FYP, it was not possible to follow this process empirically. An abbreviated version of the process was followed with regard towards data collection, coding, sampling and sorting. The representation and creation of a requirements document were outside the scope of this project.
-
-\section{Methods for Requirements Elicitation}
 
 \subsection{Storyboarding}
 
@@ -70,9 +40,27 @@ At an early stage of the application, rough storyboards were prepared for the FY
 
 The storyboarding visualised aspects of the site, and gave a rough idea of functionality that would be needed within the application. These were shown to interviewees in order to help them visualise requirements.
 
-\subsection{Interviews}
+\subsection{First Interviews}
 
-In order to elicit requirements, a number of interviews were held with stakeholders. These questions are listed in~\ref{sec:regquestions},~\nameref{sec:regquestions}.
+In order to elicit requirements, a number of interviews were held with stakeholders. A set of questions were prepared as a guideline, and some storyboards were presented. The Tralee Tennis Club website was also presented to the interviewees.
+
+\begin{enumerate}
+\item Are you aware there is a site for Monaleen Tennis Club?
+\item If are, what do you you it for?
+\item What are the best features of the site? 
+\item What features are needed?
+\item If you were not aware, why? 
+\item Would you use a website if you had known it was there?
+\item Looking at the examples provided, are there any things you feel this club could benefit from?
+\item How do you feel current tournaments are organised?
+\item Is it easy to register for tournaments?
+\item Have you ever had issues finding information about club events?
+\item Do you know when club events are happening?
+\item Is it easy to contact club members or find out how to contact them?
+\item How easy is it to become a member/renew your membership?
+\item How do you contact club committee members?  
+\end{enumerate}
+
 
 During the elicitation process a number of areas were highlight as desired features.
 
@@ -138,13 +126,9 @@ Table ~\ref{fig:reqbreakdown} refers to each numbered requirement, and whether i
 \label{fig:reqbreakdown}
 \end{table}
 
+\section{Second Interview}
 
-
-
-
-\section{Application}
-
-This features were broken down into four categories: \textit{Timetable}, \textit{Tournaments}, \textit{Members}, and \textit{News}.
+With the information obtained from the first set of interview, a second interview was held with S1, a club committee member, in order to obtain more detail on what functional requirements would be need to implement any site features. These features were broken down into four categories: \textit{Timetable}, \textit{Tournaments}, \textit{Members}, and \textit{News}.
 
 \section{Functional Requirements}
 
@@ -165,9 +149,57 @@ The timetable is the core aspect of the application, and one that would be most 
 
 \subsection{Tournament}
 
+\begin{enumerate}
+\item Create tournament
+\item Delete tournament
+\item Enable user signup
+\item Finalize user signup
+\item Display tournament times
+\item Create different kinds of tournaments
+\item Organise members into teams
+\item Contact all members in tournament
+\end{enumerate}
+
+
 \subsection{News}
 
+\begin{enumerate}
+\item Create news
+\item Delete news
+\item Allow more than one person to post news
+\end{enumerate}
+
 \subsection{Members}
+
+\begin{enumerate}
+\item Member registration
+\item Member only access
+\item Approve/Block members
+\item Edit profiles
+\item View all members contact details
+\end{enumerate}
+
+\section{Non Functional Requirements}
+
+As a software developer, S1 mentioned a number of areas that would also need to be part of the application. These attributes were key to having the application being useful to both the club and its members.
+
+\subsection{Security}
+
+Since user details would be stored in the application, security of this data was highlighted as a concern. While no payment information would be held by the application, there would be names, addresses and phones numbers held within the application. The security of this information would need to be ensured.
+
+\subsection{Extensibility}
+
+Extensibility of the application was discussed with particular attention of the ability of the application to deal with changed to the club structure. Currently, the club has two courts in which users can book time for games. It is likely that the club will be expanding in the near future. This will result in the creation of four next courts in the near future. The application should be able to scale with this possibility without issue.
+
+Tournaments were also mentioned as an area where future requirements may stem from. Currently, the club operates three kinds of tournaments: Singles, Doubles and Mixed Doubles. These are broken down into Ladder style tournaments and Bracket style tournaments. The club regularly holds tournaments with other national tennis clubs. The ability to create tournaments that suit these events could be necessary.
+
+\subsection{Usability}
+
+The age of the club members range from 8 to 80, so ease of use of any software solution is important. If a system is going to replace the existing system that all can use, a similar level of usability is required. The most common function used by members is the reservation of time slot in one of the courts. A software alternative needs to be intuitive for all members.
+
+\subsection{Performance}
+
+The site needs to be fast to use, and cheap to run. There's no funds to pay for a high end server, so it needs to be able to run on a virtual server, or a Amazon micro-instance, without any performance hits. It also needs to be able to cope with multiple users at the same time. 
 
 \section{Use Cases}
 
@@ -202,21 +234,6 @@ The timetable is the core aspect of the application, and one that would be most 
 \addfield{Frequency of Occurrence:}{High}
 \end{usecase}
 
-\section{Non Functional Requirements}
+\section{Conclusion}
 
-\subsection{Security}
-
-Since user details would be stored in the application, security of this data was highlighted as a concern. While no payment information would be held by the application, there would be names, addresses and phones numbers held within the application. The security of this information would need to be ensured.
-
-\subsection{Extensibility}
-
-Extensibility of the application was discussed with particular attention of the ability of the application to deal with changed to the club structure. Currently, the club has two courts in which users can book time for games. It is likely that the club will be expanding in the near future. This will result in the creation of four next courts in the near future. The application should be able to scale with this possibility without issue.
-
-Tournaments were also mentioned as an area where future requirements may stem from. Currently, the club operates three kinds of tournaments: Singles, Doubles and Mixed Doubles. These are broken down into Ladder style tournaments and Bracket style tournaments. The club regularly holds tournaments with other national tennis clubs. The ability to create tournaments that suit these events could be necessary.
-
-\subsection{Usability}
-
-The age of the club members range from 8 to 80, so ease of use of any software solution is important. If a system is going to replace the existing system that all can use, a similar level of usability is required. The most common function used by members is the reservation of time slot in one of the courts. A software alternative needs to be intuitive for all members.
-
-\subsection{Performance}
-
+The interview process, in collaboration with storyboarding, gave a wide range of potential requirements to be implemented in the final application. It also showed demand for certain features, and allowed requirements to be prioritised to meet this demand.

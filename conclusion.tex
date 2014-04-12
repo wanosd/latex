@@ -1,3 +1,71 @@
 \chapter{Conclusions}
 \label{conclusion}
 
+\section{Summary}
+
+\section{Key Findings}
+
+\section{Future Work}
+
+\subsection{Hibernate in Design}
+Hibernate was a very powerful framework throughout the development of this project. It was very much a case of learning by doing. Having accumulated experience with the framework, I would like to apply it more in the design stage on an application. One idea that came to me late in the project was the idea of having a top level class that could build the entire application, as depicted in Figure~\ref{fig:toplevel}.
+
+
+\begin{lstlisting}
+@Entity
+public class WebApplication(){
+
+@ElementCollection
+@CollectionTable (name = "tournament", joinColumns=@JoinColumn(name="id"))
+private Tournaments tournaments;
+
+@ElementCollection
+@CollectionTable (name = "timetable", joinColumns=@JoinColumn(name="id"))
+private Timetable timetable;
+
+@ElementCollection
+@CollectionTable (name = "news", joinColumns=@JoinColumn(name="id"))
+private News news;
+
+@ElementCollection
+@CollectionTable (name = "events", joinColumns=@JoinColumn(name="id"))
+private Events events;
+
+@ElementCollection
+@CollectionTable (name = "users", joinColumns=@JoinColumn(name="id"))
+private User users;
+
+public WebApplication(){
+	create();
+}
+
+private void create(){
+	tournaments = getTournaments();
+	etc.....
+}
+
+//getters and setters
+
+\end{lstlisting}
+\begin{figure}[H]
+\caption{'Top Level' Class}
+\label{fig:toplevel}
+\end{figure}
+
+(This section needs to be rewritten. I'm tired right now so just doing stream of conciousness) 
+
+It would be possible to build the application so that all classes were linked through a hierarchy to one root class. This may impact performance, but it would allow a number of benefits such as ease of deployment, and the ability to take snapshots of the application at any stage.
+
+I also would have like to use Hibernate with more complicated objects rather than just collection classes, but time constraints did not allow this.
+
+\subsection{Tournament Business Logic}
+
+The tournament section of the site is something that I would like to have done a bit more on, but unfortunately, due to the time constraints within a FYP, a decison had to be made to focus more on either the timetable or the tournament. The timetable provides a service for all members of a club, not just those playing competitively. In the interim, third party solutions such as \textit{http://ti.tournamentsoftware.com} exist. The tournament sorting mechanism was designed so that the logic of sorting members into teams is encapsulated in one method in an interface. Implementing a new version would not require any significant changes to the application. 
+
+\subsection{Web Services and HTML5}
+Other aspects of a web application, such as web services and HTML5 were omitted from the final submission due to time constraints, but are definitely something that I would have an interest in looking at later on. Web services were touched on briefly, through the exposure of part of information about the timetable. 
+
+\subsection{Timetable}
+While the timetable works well in its current state, I would like to optimize the code to be more readable. I experimented with the use of key-map objects later in the development cycle, and beleive the use of these could reduce the code size in the View by at least 60\%, and help compartmentalize two or three methods into one.
+
+\section{Personal Perspective}
