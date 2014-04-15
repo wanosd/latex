@@ -3,7 +3,7 @@
 
 \section{Introduction}
 
-The use of software metrics within this project was to guide the development process and measure the quality of the application. Measurement is concerned with "capturing information about \textit{attributes} of \textit{objects}" \parencite{softmetrics}. The use of metrics within this application was to support evolution by maximising developer comprehension about the application, and managing dependencies.
+The use of software metrics within this project was to guide the development process and to measure the quality of the application. Measurement is concerned with "capturing information about \textit{attributes} of \textit{objects}" \parencite{softmetrics}. The use of metrics within this application was to support evolution by maximising developer comprehension about the application, and to manage dependencies.
 
 \section{Application Metrics}
 
@@ -32,7 +32,7 @@ The \textit{McCabe Cyclomatic Complexity} metric measures the number of linearly
 
 An example of how frameworks may negatively affect metrics in an application is illustrated within the User class. The user class contains the largest number of attributes with 16. In order for Hibernate to persist and retrieve the object correctly, getters and setters must be defined for each attribute. This would result in the creation of 32 methods in this class. These methods may not be used within the application other than by Hibernate. There are 126 class attributes within the application which require 252 getter and setter methods to be created. This accounts for 48.8\% of the methods within the application. This would also have an effect on the \textit{Method Lines of Code} metric, as it would add 252 lines of that metric, or 11.8\% of the total. 
 
-While metrics were not very important within the scope of the application, their utility to a multi faceted project, with a globally dispersed team of software engineers would be significant. One metric, McCabe Cyclomatic Complexity, could be utlised to ensure that the complexity of the application does not vary from one version to another. 
+While metrics were not very important within the scope of the application, their utility to a multi faceted project, with a globally dispersed team of software engineers would be significant. One metric, McCabe Cyclomatic Complexity, could be utilised to ensure that the complexity of the application does not vary from one version to another. 
 
 \section{Software Quality Tools and Visualisations}
 
@@ -58,18 +58,18 @@ The bad code smells identified within this project as illustrated in Figure~\ref
 	Roles & Check amount of bookings allowed per role \\ \hline	
     \end{tabular}
 \end{center}
-\caption{Application Metrics}
+\caption{Timetable Dependencies}
 \label{fig:godclass}
 \end{table}
 
 \end{itemize}
 \item Feature Envy
 \begin{itemize}
-\item This is when a method in a class "seems more interested in a class other than the one it is actually in" \parencite{beck1999bad}. The application suggest the use of \textit{Move Method} refactoring. This requires the creation of new method with a similar structure within the second class, which the old method performs a simple delegation or is eliminated entirely.
+\item This is when a method in a class "seems more interested in a class other than the one it is actually in" \parencite{beck1999bad}. The application suggest the use of \textit{Move Method} refactoring. This requires the creation of new method with a similar structure within the second class, which the old method performs a simple delegation or is eliminated entirely. An example of this was a method in the TimetableController. This method was concerned with making a deep copy of a Timetable object. This should be re-factored into the Timetable class, with a method to return a new Timetable object. 
 \end{itemize}
 \item Data Clumps
 \begin{itemize}
-\item This is when the same data types are passed to methods when it would make sense to encapsulate this data within its own object. The solution is to use \textit{Extract Class} refactoring on the data fields to "turn the clumps into an object" \parencite{beck1999bad}. Attention then needs to be paid to the method signatures using \textit{Introduce Parameter Object} refactoring to slim them down. Using these refactoring methods, "you can shrink a lot of parameter lists and simplify method calling" within a system \parencite{beck1999bad}.
+\item This is when the same data types are passed to methods when it would make sense to encapsulate this data within its own object. The solution is to use \textit{Extract Class} refactoring on the data fields to "turn the clumps into an object" \parencite{beck1999bad}. Attention then needs to be paid to the method signatures using \textit{Introduce Parameter Object} refactoring to slim them down. Using these refactoring methods, "you can shrink a lot of parameter lists and simplify method calling" within a system \parencite{beck1999bad}. The main case where this occurred was the method to send a message to club members. The method took a number of parameters, such as \textit{to, from, a MailSender object} and more. These should be encapsulated within one object to locate all attributes within one place, which improves the maintainability of the application.
 \end{itemize}
 \item Data Class
 \begin{itemize}
@@ -81,12 +81,14 @@ The bad code smells identified within this project as illustrated in Figure~\ref
 \label{fig:badcodesmells}
 \end{figure}
 
+The below figures show screen shots from the inFusion program. The bad code smells discovered by this software, previously discussed in~\ref{fig:badcodesmells}, provide examples on how refactorings were performed. 
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.7]{infusion1.PNG}
 \end{center}
 \caption{Pre Re-factoring using Infusion}
+\label{fig:infusion1}
 \end{figure}
 
 \begin{figure} [H]
@@ -103,6 +105,8 @@ The bad code smells identified within this project as illustrated in Figure~\ref
 \end{center}
 \end{figure}
 
+While this tool was useful in terms of finding potential issues, it was difficult to know how good, or bad, my application was. There was no threshold indentified by the application, and a score of 42.5, as shown in Figure~\ref{fig:infusion1}, does not carry much weight if I have no benchmark to compare it against. 
+
 \subsection{Visualisations}
 
 The software used to visualise the code was CodeCity, available at \hyperref[Code City]{http://www.inf.usi.ch/phd/wettel/codecity.html}. In order to run CodeCity, a MSE file needed to be created by inFusion. The CodeCity application reads this file, and represents your code as a city. The city is broken down into blocks, defined by a package, and within each block, there are a number of buildings, that represent classes. The size of the building is related to the size and complexity of the class it represents. Figures~\ref{fig:2dcc} and~\ref{fig:3dcc} show the 2D and 3D representations of the application created for this project. 
@@ -111,6 +115,7 @@ The software used to visualise the code was CodeCity, available at \hyperref[Cod
 \begin{center}
 \includegraphics[scale=0.5]{codecity2d.png}
 \caption{CodeCity 2D Visualisation of Application}
+\label{fig:2dcc}
 \end{center}
 \end{figure}
 
@@ -118,9 +123,8 @@ The software used to visualise the code was CodeCity, available at \hyperref[Cod
 \begin{center}
 \includegraphics[scale=0.5]{codecity3d.png}
 \caption{CodeCity 3D Visualisation of Application}
+\label{fig:3dcc}
 \end{center}
 \end{figure}
 
 Visualisation is a quick way to highlight potential issues and bad code smells, such as data classes, by looking at the size of a building. While this does not fix any problems, it aids in drawing attention to potential issues through the development cycle. 
-
-\section{Sample Refactorings}

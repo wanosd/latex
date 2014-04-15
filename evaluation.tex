@@ -344,7 +344,7 @@ The results are displayed in Table~\ref{fig:resulttable} below. NS refers to Nan
 \label{fig:resulttable}
 \end{table}
 
-\begin{figure}[H]
+
 \begin{lstlisting}
 //Excepts from the UserDAO for Hibernate and JDBC actions
 //Hibernate
@@ -379,6 +379,7 @@ MapSqlParameterSource params = new MapSqlParameterSource(); //start delete
 params.addValue("username", user.getUsername());
 jdbc.update("delete",params); //end delete
 \end{lstlisting}
+\begin{figure}[H]
 \caption{Hibernate-JDBC Code}
 \label{fig:jdbchibcode}
 \end{figure}
@@ -477,6 +478,7 @@ An issue with that is that it is reliant on the developer to identify the correc
 	Create Different Kinds of Tournaments & X \\ \hline
 	Organise Members into teams & X \\ \hline
 	Contact all members in a tournament & X \\ \hline
+	Statistics & X \\ \hline
 	\end{tabular}
 \end{center}
 \caption{Tournament Functional Requirements}
@@ -509,12 +511,10 @@ An issue with that is that it is reliant on the developer to identify the correc
 	Approve Members & \checkmark \\ \hline
 	Block Members & \checkmark \\ \hline
 	Edit Profiles & \checkmark \\ \hline
-	View all members contact details & \checkmark \\ \hline
+	View all Members & \checkmark \\ \hline
+	Contact Members& \checkmark \\ \hline
 	\end{tabular}
 \end{center}
 \caption{Members Functional Requirements}
 \end{table}
 
-\section{FYP Process}
-
-The FYP has been certainly been significant part of the overall college journey. Looking back, and knowing what I know now, there are a number of avenues that I would have liked to explore.

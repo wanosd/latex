@@ -2,29 +2,40 @@
 \label{intro}
 
 \section{General Introduction}
-This project concerns the development of a web application using a web framework in conjunction with a number of other tools. Throughout development, there is a particular cognisance towards the support of Non-Functional Requirements [NFRs] by both the web framework and the supporting tools throughout the development process. This project consists of both a software engineering component, in the shape of the web application developed using the tools discussed within this report, and a research component consisting of this report.
+
+This project concerns the development of a web application using a web framework in conjunction with a number of other tools. This project concerns the development of a web application using a web framework in conjunction with a number of other tools. Throughout development, there is a particular cognisance towards the support of Non-Functional Requirements (NFR) by both the web framework and the supporting tools throughout the development process.  The web application framework used within the project is Spring MVC and the Object Relational Mapping (ORM) framework Hibernate for data persistence. This project consists of both a software engineering component, in the shape of the web application developed using the tools discussed within this report, and a research component consisting of this report.
+
+This project intends to discover any benefits, and limitations, that the use of a framework has in the development of a web application, and its non functional requirements. The scope of this project will focus on security, productivity, extensibility, usability and performance and the effect that the use of frameworks has on these attributes.
+
+The application resulting from this project will be evaluated a number of ways. The Open Web Application Security Project (OWASP) Top 10 vulnerabilities are used to evaluate security within the application. Previous experience, specifically obtained from both \textit{Systems Architecture and Design} and \textit{Distributed Systems}, was used to guide evaluation of productivity and performance. These modules exposed this author to Message Passing Interfaces (MPI), the use of architectural patterns in order to support extensibility, and the concept of servlets within an web application, and the environment in which it runs. Examples in the Evaluation section are taken from the \textit{Distributed Systems} project, and show how security is implemented without the use of a framework. This is used to evaluate how these frameworks support productivity and performance. The usability study is a framework taken from \parencite{holzinger2005usability} and applied to the final application resulting from this FYP, and two other related web applications. 
+
+
 
 \section{Technology}
+
+The technology needed for a web application such as the one created for this FYP requires a certain architecture, shown in Figure~\ref{fig:webarch}. The application consists of three layers: Presentation, Business and Data. The application runs on an application server, namely Tomcat 7. Other alternatives are the open source Glassfish 4, and IBMs WebSphere. Tomcat 7 was chosen ahead of Glassfish as while Glassfish provides more utility in that it supports Enterprise Java Beans, these were not needed for this application. Tomcat 7 requires considerably less memory than Glassfish to operate, and will require less resources to run. 
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.24]{webapp.PNG}
 \end{center}
 \caption{Typical architecture of a web application}
+\label{fig:webarch}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.24]{projarch.PNG}
 \end{center}
-\caption{Typical architecture of a web application}
+\caption{Architecture of FYP application}
+\label{fig:projstack}
 \end{figure}
 
 \section{Objectives}
 
 \subsection{Primary Objectives}
 
-The primary objectives of this project are the support for quality attributes that the use of an architectural stack provides. The architectural stack within this project contains Spring MVC, Hibernate ORM and Apache Tiles. 
+The primary objective of this project is to show the benefits to quality attributes that the use of an architectural stack provides. The architectural stack within this project contains Spring MVC, Hibernate ORM and Apache Tiles. 
 
 This project will examine the support provided for specific quality attributes: Security, Productivity, Extensibility and Performance. The provision of these attributed as provided by these frameworks will be examined, with cognisance of usability. 
 
@@ -40,7 +51,7 @@ The secondary objectives of this project are:
 
 \section{Scope}
 
-
+This report, and project, are focused on the effect that frameworks have on quality attributes. As such, the full functionality of the web application is outside the scope of this project. While requirements are an important part of every software lifecycle process, the full methodology for requirements elicitation is outside the scope of this project. Though web services are touched on briefly, they, and mobile viewing, are not important to the overall project, and are not discussed. 
 
 \section{Methodology}
 
@@ -57,11 +68,11 @@ The methodology used for this project was as follows
 \end{itemize}
 \item Requirements Engineering
 \begin{itemize}
-\item The elicitation of requirements from key stakeholders was an important step, and ensured that development of the application was in line with the expectations of those eventually utilising the application.
+\item The elicitation of requirements from key stakeholders was an important step, and ensured that development of the application was in line with the expectations of those eventually utilising the application. Storyboarding, exploratory interviews and focus groups were used to elicit possible functional requirements, and to identify non function requirements key to the application.
 \end{itemize}
 \item Design
 \begin{itemize}
-\item The design of the system, such as the structure for user authentication, and the overall design of the application were examined, with cognisance of design patterns.
+\item The design of the system, such as the structure for user authentication, and the overall design of the application were examined, with cognisance of design patterns. The frameworks used within this application mandate programmers technique, and guide developers towards best practice.
 \end{itemize}
 \item Implementation, Testing and Deployment
 \begin{itemize}
@@ -69,6 +80,6 @@ The methodology used for this project was as follows
 \end{itemize}
 \item Evaluation
 \begin{itemize}
-\item Evaluation of the application was performed by comparing the final application to methods use to other applications to achieve the same results. A usability study was also performed.
+\item Evaluation of the application was performed by comparing the final application to previous work involving security completed in a previous module, Distributed Systems. OWASP was chosen to evaluate the security component of the application. Productivity was examined through a comparative use of both Hibernate and JDBC within one of the Data Access Object (DAO) classes. A performance test was prepared for comparing Hibernate and JDBC. A usability study, based on a framework \parencite{holzinger2005usability}, is also documented and a number of applications evaluated.
 \end{itemize}
 \end{enumerate}

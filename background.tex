@@ -32,10 +32,10 @@ Within the scope of this application, there were a number of quality attributes 
 \item This is the influence that the architectural choices of the system affects developer productivity, which has an effect on other quality attributes.
 \end{itemize}
 \end{itemize}
-\begin{table}[H]
+\begin{figure}[H]
 \caption{Quality Attributes}
 \label{fig:qualityAttributes}
-\end{table}
+\end{figure}
 
 \section{Technologies}
 
@@ -112,8 +112,6 @@ version="2.5">
 
 Figure ~\ref{fig:webxml} is the configuration file needed for the \textit{DispatcherServlet}. The file has a number of responsibilities within the application.
 
-\begin{table}[H]
-\caption{DispatcherServlet Code}
 \begin{itemize}
 \item Define DispatcherServlet
 \begin{itemize}
@@ -159,8 +157,10 @@ classpath:beans/security-context.xml
 \end{lstlisting}
 \end{itemize}
 \end{itemize}
+\begin{figure}[H]
+\caption{DispatcherServlet Code}
 \label{fig:webxmlExplain}
-\end{table}
+\end{figure}
 
 The \textit{Controller}, within the Spring MVC framework, creates a model with data, and selects a view which will represent that data. This is done through the use of a \textit{RequestMapping} annotation, which is discussed in further detail in Section~\ref{sec:impl} of this report.
 

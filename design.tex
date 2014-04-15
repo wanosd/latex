@@ -25,6 +25,7 @@ Spring incorporates a number of design patterns within its own classes.
 \label{fig:springdesignpatterns}
 \end{table}
 
+\label{sec:design}
 \section{Controller-Service-DAO Design}
 
 In order to achieve modularity across the application, the core of the application is separated into four key areas.
@@ -51,33 +52,9 @@ In order to achieve modularity across the application, the core of the applicati
 \label{fig:appbreakdown}
 \end{table}
 
-The flow between these objects is shown in Figure~\ref{fig:csdao}. An example flow would be the creation of a user objects. (Do I need specific code samples here, or is defining the flow enough (or necessary)?) The current work done is an example, not finished.
-\begin{table}[H]
-\begin{enumerate}
-\item Controller present user with 'Home' view.
-\item User clicks on 'Register' which sends a request to the 'Members' controller
-\begin{itemize}
-\item
-\begin{lstlisting}
-@RequestMapping("/createmembers")
-public String createMembers(Model model) {
-model.addAttribute("member", new User());
-return "createmembers";
-}
-\end{lstlisting}
-\end{itemize}
-\item Controller returns 'Create Members' View (Line 4)
-\begin{itemize}
-\item The Service layer facilitates communication between the controller and the DAO layer.
-\end{itemize}
-\item Data Access Objects [DAO]
-\begin{itemize}
-\item This layer is responsible for persisting an entity or any changes to an entity.
-\end{itemize}
-\end{enumerate}
-\label{fig:layerExplain}
-\end{table}
+This structure follows a design principle called \textit{Separation of Concerns}. This separates an application into a number of component parts in order to minimise the effect that changes in one module have on other modules. In this application, any changes to the DAO layer will have no effect on the Controller layer for example. This is realised through this design principle, and the use of the Hibernate framework.
 
+The flow between these objects is shown in Figure~\ref{fig:csdao}. An example flow would be the creation of a user objects. 
 
 \begin{figure}[H]
 \begin{center}
@@ -86,6 +63,19 @@ return "createmembers";
 \caption{Controller-Service-DAO Flow}
 \label{fig:csdao}
 \end{figure}
+
+\subsection{Database Design}
+
+The database was designed using MySQL Workbench, and created using the same tool. The database design is illustrated in Figure~\ref{fig:dbdesign}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{dbdesign.png}
+\end{center}
+\caption{Database Design}
+\label{fig:dbdesign}
+\end{figure}
+
 
 
 \subsection{User Roles}

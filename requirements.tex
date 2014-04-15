@@ -40,7 +40,7 @@ At an early stage of the application, rough storyboards were prepared for the FY
 
 The storyboarding visualised aspects of the site, and gave a rough idea of functionality that would be needed within the application. These were shown to interviewees in order to help them visualise requirements.
 
-\subsection{First Interviews}
+\subsection{Exploratory Interviews}
 
 In order to elicit requirements, a number of interviews were held with stakeholders. A set of questions were prepared as a guideline, and some storyboards were presented. The Tralee Tennis Club website was also presented to the interviewees.
 
@@ -126,9 +126,9 @@ Table ~\ref{fig:reqbreakdown} refers to each numbered requirement, and whether i
 \label{fig:reqbreakdown}
 \end{table}
 
-\section{Second Interview}
+\section{Focus group}
 
-With the information obtained from the first set of interview, a second interview was held with S1, a club committee member, in order to obtain more detail on what functional requirements would be need to implement any site features. These features were broken down into four categories: \textit{Timetable}, \textit{Tournaments}, \textit{Members}, and \textit{News}.
+With the information obtained from the exploratory interviews, a focus was held with the interviewees in order to obtain more detail on what functional requirements would be needed to implement any site features. These features were broken down into four categories: \textit{Timetable}, \textit{Tournaments}, \textit{Members}, and \textit{News}.
 
 \section{Functional Requirements}
 
@@ -149,6 +149,8 @@ The timetable is the core aspect of the application, and one that would be most 
 
 \subsection{Tournament}
 
+The tournament is a section that would be heavily used by those players who compete regularly. Key requirements for all users were the ability to view, and register for, tournaments. Administrators would need to be able to create and control tournaments within the application.
+
 \begin{enumerate}
 \item Create tournament
 \item Delete tournament
@@ -158,10 +160,13 @@ The timetable is the core aspect of the application, and one that would be most 
 \item Create different kinds of tournaments
 \item Organise members into teams
 \item Contact all members in tournament
+\item Statistics
 \end{enumerate}
 
 
 \subsection{News}
+
+The news section is the main contact point between the committee and members of the club. All committee members should have access to the ability to create, and delete, news. 
 
 \begin{enumerate}
 \item Create news
@@ -171,12 +176,15 @@ The timetable is the core aspect of the application, and one that would be most 
 
 \subsection{Members}
 
+A key finding was a easy to use registration system, as the current paper based system can be problematic as it is necessary to contact one person to become a club member. Administration management of existing and potential members was also an area that was highlighted as key to any system.
+
 \begin{enumerate}
 \item Member registration
 \item Member only access
 \item Approve/Block members
 \item Edit profiles
-\item View all members contact details
+\item View all Members
+\item Contact Members
 \end{enumerate}
 
 \section{Non Functional Requirements}

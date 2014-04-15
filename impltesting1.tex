@@ -663,9 +663,9 @@ public String showHome(Model model) {
 \label{fig:requestmapping}
 \end{figure}
 
-This mapping responds to a request with the value '/', Line 1. On Tomcat servers, this the home page, as the URL will be \textit{localhost:8080/<application-name>/}. In this example, the latest news story is retrieved on Line 4, and values from it are added to the model displayed on the returned view.
+This mapping responds to a request with the value '/', Line 1. On Tomcat servers, the home page will be \textit{localhost:8080/application-name/}. In this example, the latest news story is retrieved on Line 4, and values from it are added to the model displayed on the returned view.
 
-Any value specified after \textit{localhost:8080/<application-name>/} will search for a mapping within all controllers in the application. If a mapping does not exist, a resource not found will be displayed. This is default behaeviour for a denied access attempt. In order to ensure the site can deal with invalid requests, an access denied handler can be defined within the Spring Security context file, as depicted in Figure~\ref{fig:accessDenied}. This allows a mapping to be specified for invalid requests,
+Any value specified after \textit{localhost:8080/application-name/} will search for a mapping within all controllers in the application. If a mapping does not exist, a resource not found will be displayed. This is default behaviour for a denied access attempt. In order to ensure the site can deal with invalid requests, an access denied handler can be defined within the Spring Security context file, as depicted in Figure~\ref{fig:accessDenied}. This allows a mapping to be specified for invalid requests,
 
 \begin{lstlisting}
 <security:access-denied-handler error-page="/denied" />
@@ -675,7 +675,7 @@ Any value specified after \textit{localhost:8080/<application-name>/} will searc
 \label{fig:accessDenied}
 \end{figure}
 
-In this example, the \textit{denied} mapping, shown in Figure~\ref{fig:deniedMapping} is called, and the corresponding view displayed. 
+In this example, the \textit{denied} mapping, shown in Figure~\ref{fig:accessDenied} is called, and the corresponding view displayed, illustrated in Figure~\ref{fig:viewDenied}. 
 
 \begin{lstlisting}
 @RequestMapping("/denied")
@@ -690,14 +690,14 @@ return "error";
 \end{lstlisting}
 \begin{figure}[H]
 \caption{Error Page Mapping}
-\label{fig:accessDenied}
+\label{fig:viewDenied}
 \end{figure}
 
 Line 3 shows a message being added to a model, which is added to a standard error page. This message will change depending on what error is being caught by the application. The message is then displayed by the 'error' View for the user, and the site appearance is not disrupted by a generic error page.
 
 \subsection{Models within the Spring MVC Framework}
 
-A model is a map containing a key-value pair that can be modified by a Controller and displayed by a View. A model is implicitly created by the framework by including a reference to it within the method signature in a controller, as illustrated in Figure~\ref{fig:modelDefine}. The below example adds two lists to a model: a list of disabled events and a list of enabled events, shown in Lines 5 and 6. The Controller then returns the value \textit{viewEvents} to the ViewResolver. The ViewResolver displays the relevant page that displays the information held within the model for the user, as depicted in Figure~\ref{fig:modelJSP}
+A model is a map containing a key-value pair that can be modified by a Controller and displayed by a View. A model is implicitly created by the framework by including a reference to it within the method signature in a controller, as illustrated in Figure~\ref{fig:modelDefine}. The example shown in Figure~\ref{fig:modelDefine} adds two lists to a model: a list of disabled events and a list of enabled events, shown in Lines 5 and 6. The Controller then returns the value \textit{viewEvents} to the ViewResolver. The ViewResolver displays the relevant page that displays the information held within the model for the user, as depicted in Figure~\ref{fig:modelJSP}
 
 \begin{figure}[H]
 \begin{lstlisting}
@@ -740,7 +740,7 @@ commandName="eventsEnabled">
 \label{fig:modelJSP}
 \end{figure}
 
-The page contains a conditional loop, Line 1, that checks if the model attribute, eventsEnabled, is empty. In the event that it is not, it will create a table to display the information to the user, as shown in Lines 2 through 17. The \textit{c:forEach} tag is the JSTL version of a for loop, which will be looked at in a later section. Line 18 is a message, that will display if the value is not null. This is used to display a confirmation or error message to the user when an action is performed on an event. An example would be an attempt to disable the \textit{Free Court} event. This will display a message, shown below in Figure~\ref{fig:modelFail}, that the action cannot be performed.
+The page contains a conditional loop, Line 1, that checks if the model attribute, eventsEnabled, is empty. If it is not, it will create a table to display the information to the user, as shown in Lines 2 through 17. The \textit{c:forEach} tag is the JSTL version of a for loop, which will be looked at in a later section. Line 18 is a message, that will display if the value is not null. This is used to display a confirmation or error message to the user when an action is performed on an event. An example would be an attempt to disable the \textit{Free Court} event. This will display a message, shown below in Figure~\ref{fig:modelFail}, that the action cannot be performed.
 
 \begin{figure}[H]
 \begin{lstlisting}
@@ -806,7 +806,7 @@ The following examples shows the implementation within the configuration file. T
 
 \subsubsection{JSTL}
 
-JSTL is used within the application to manage how information was displayed. It was preferred, during the development of the application, that all of the logic be handled at the Controller level, and that the JSP pages would resolve the models passed to it into the view seen by the user. It was not desirable for the pages to contain JSP directives, or to use the implicit objects contained within JSP pages. 
+JSTL is used within the application to manage how information was displayed. It was preferred that all of the logic be handled at the Controller level, and that the JSP pages would resolve the models passed to it into the view seen by the user. It was not desirable for the pages to contain JSP directives, or to use the implicit objects contained within JSP pages. 
 
 The main tags used within the application were the JSTL Core tags.  These tags allow the usage of conditional statements and the definition of parameters within the JSP page. In order to use this technology, the relevant jar must be made available in the build path or within the Maven dependencies of the project. A declaration, as shown in Figure ~\ref{fig:jstldec} must be included in all JSP pages that wish to make use of the tags also.\newline
 
@@ -865,10 +865,9 @@ public String chooseCourt(Model model, HttpServletRequest request) {
 \label{fig:ttmodelattributes}
 \end{table}
 
-
 This example is an excerpt from the TimetableContoller class. The logic determining the values has been removed. This is to highlight how attributes are added to the model from within the controller. This is the information that the JSP page will have access to once it has been displayed.
 
-The above code deals with the display of \textit{Monday} within the Timetable display page. In the \textit{c:forEach} tags, it loops through each value in the \textit{court.monday} list that has been passed to it by the controller. The size of this list is determined by the user when the timetable is created, and the number of slots per day is specified. If the current value being examined in the loop is equal to the value "Free Court", it will display a link to the Book Form mapping. This aspect of the Timetable Controller will check that a user has any remaining bookings left and respond as appropriate. In the event that the value in the list does not equal "Free Court", it will make a choice. If the currently authenticated user made the booking, it will display an option to remove their booking from the slot. Otherwise, it will give any other user an option to report the user as a "no show" should a user fail to show for a previously booked slot. \newline
+The code in Figure~\ref{fig:ttmodelattributes} deals with the display of \textit{Monday} within the Timetable display page. In the \textit{c:forEach} tags, it loops through each value in the \textit{court.monday} list that has been passed to it by the controller. The size of this list is determined by the user when the timetable is created, and the number of slots per day is specified. If the current value being examined in the loop is equal to the value "Free Court", it will display a link to the Book Form mapping. This aspect of the Timetable Controller will check that a user has any remaining bookings left and respond as appropriate. In the event that the value in the list does not equal "Free Court", it will make a choice. If the currently authenticated user made the booking, it will display an option to remove their booking from the slot. Otherwise, it will give any other user an option to report the user as a "no show" should a user fail to show for a previously booked slot. \newline
 
 \begin{figure}[H]
 \begin{lstlisting}
@@ -906,7 +905,7 @@ method="POST">
 
 \section{Logging the Application}
 
-The logging for this application was provided by \textit{log4j.} Logging became very useful for tracking down, and isolating bugs, throughout the application. Since there were a considerable number of dependencies and different technologies working together, it rapidly became very difficult to see where errors originated from. Stack-traces quickly became unmanageable. \textit{Log4j} works by allowing the developer to view a number of logs of varying types within the application.
+The logging for this application was provided by \textit{log4j.} Logging became very useful for tracking down and isolating bugs throughout the application. Since there were a considerable number of dependencies and different technologies working together, it rapidly became very difficult to see where errors originated from. Stack-traces quickly became unmanageable. \textit{Log4j} works by allowing the developer to view a number of logs of varying types within the application.
 \begin{table}[H]
 \caption{Log Types}
 \begin{center}
@@ -1032,8 +1031,8 @@ Of particular importance are the definition of the context parameters. In this p
 
 \begin{itemize}
 \item Data Access Object Context
-\item Service Context
-\item Security Context
+\item Service Context, discussed in~\ref{sec:design}
+\item Security Context, discussed in~\ref{sec:adminImp}
 \end{itemize}
 
 The DAO Context file specifies the packages that contain the various DAO classes within the application. It also contains configurations for both the database connection details, and Hibernate configurations. Packages containing entity classes for Hibernate are specified within this context also. \newline
@@ -1059,10 +1058,9 @@ The Service Context file is responsible for specifying the base package containi
 \caption{Service Context Configuration}
 \end{figure}
 
-The Security Context file is the larger of the three files, and is responsible for the security configuration of the web application. There are four main areas within the file that were used to configure the web application created in this project. \newline The User Service aspect of the configuration file is responsible for retrieving users and their authority within the scope of the web application. \newline The URL access configuration ensures that only users who are authorised to access certain portions of the site are allowed access. \newline The Security Annotations allow the creation of an extra level of security into an application. At class level, annotations can be placed on methods to further ensure that proper access is enforced throughout the application. \newline Lastly, the Security Context is responsible for creating the password encoder bean in which passwords are encoded, and decoded, upon account creation and login. This ensures that no passwords in plain text form are ever stored on either the server or the database within the web application \pagebreak
-
+The Security Context file is the larger of the three files, and is responsible for the security configuration of the web application. There are four main areas within the file that were used to configure the web application created in this project.
 \begin{itemize}
-\item User Service
+\item The User Service aspect of the configuration file is responsible for retrieving users and their authority within the scope of the web application.
 \begin{lstlisting}
 <security:authentication-manager>	
 	<security:authentication-provider>
@@ -1072,14 +1070,14 @@ The Security Context file is the larger of the three files, and is responsible f
 	</security:authentication-provider>
 </security:authentication-manager>
 \end{lstlisting}
-\item URL Access
+\item The URL access configuration ensures that only users who are authorised to access certain portions of the site are allowed access.
 \begin{lstlisting}
 <security:intercept-url pattern="/timetable" access="permitAll"/>
 <security:intercept-url pattern="/reportNoShow" access="permitAll"/>
 <security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
 <security:intercept-url pattern="/approveMembers" access="hasRole('ROLE_ADMIN')"/>
 \end{lstlisting}
-\item Security Annotation for Service Class
+\item The Security Annotations allow the creation of an extra level of security into an application. At class level, annotations can be placed on methods to further ensure that proper access is enforced throughout the application.
 \begin{lstlisting}
 <security:global-method-security secured-annotations="enabled"></security:global-method-security>
 //Java Code from TimetableService class. 
@@ -1089,7 +1087,7 @@ The Security Context file is the larger of the three files, and is responsible f
 		timetableDAO.updateTimetable(t);
 	}
 \end{lstlisting}
-\item Password Encoding
+\item Lastly, the Security Context is responsible for creating the password encoder bean in which passwords are encoded, and decoded, upon account creation and login. This ensures that no passwords in plain text form are ever stored on either the server or the database within the web application
 \begin{lstlisting}
 <bean id="passwordEncoder"
 class="org.springframework.security.crypto.password.StandardPasswordEncoder">
@@ -1174,14 +1172,41 @@ public void testCreateRetrieve(){
 \caption{JUnit Create and Size Test}
 \end{figure}
 
+\section{Deployment}
+
+An objective of this project was to have the application running in a real world environment, not just on a local machine. To this end, an Amazon EC2 micro instance server was used. This is a free service offered by Amazon, with paid options depending on the speed and memory requirements of the application. The server used was a 	t1.micro instance. This contains one CPU, an Intel Xeon CPU E5-2650 2.00 GHz 64 bit 8 core processor, with 650mb of RAM. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.6]{putty.png}
+\end{center}
+\caption{PuTTY Configuration}
+\label{fig:putty}
+\end{figure}
+
+In order to connect to the server, a secure key was generated by Amazon, and provided to a SSH client, PuTTY, shows in Figure~\ref{fig:putty}. This allowed access to the server, where Tomcat and MySQL servers could be installed. In order to run the application, a WAR file of the application and its dependencies was needed. A WAR, or Web application ARchive, file is a archive of the project folder structure with .class files, and .jar files for the various dependencies.  Spring Tool Suite provides functionality to export a project to a WAR file. This file was uploaded to the Amazon server using WinSCP. Once the Tomcat server was running, the browser was directed to the extracted folder created by the WAR file.
+
+An issue that arose with the configuration of the Tomcat 7 server was the specification of a DataSource class. This class was included in the project dependencies, but was not being picked up by the server, though it had been working in the development environment. The fix was to specify this class within the \textit{context.xml} file for Tomcat, as illustrated in Figure~\ref{fig:tomcatconfig}, Line 5. \newpage
+
+\begin{lstlisting}
+<Resource name="jdbc/mtc" auth="Container" type="javax.sql.DataSource"
+maxActive="100" maxIdle="30" maxWait="10000" username="root"
+password="root" driverClassName="com.mysql.jdbc.Driver"
+url="jdbc:mysql://localhost:3306/mtc"
+factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+/>
+
+\end{lstlisting}
+\begin{figure}[H]
+\caption{Tomcat 7 Amazon Configuration}
+\label{fig:tomcatconfig}
+\end{figure}
+
 \section{External Code}
-There are two aspects of external code being used within this web application. The first is the CSS file that the site is using. This was a free template obtained from \href{http://skylinestemplates.blogspot.ie/2011/11/greefies-solution-xhtml-and-css.html}{Skylines Templates}
+There are two aspects of external code being used within this web application. The first is the CSS file that the site is using. This was a free template obtained from \href{http://skylinestemplates.blogspot.ie/2011/11/greefies-solution-xhtml-and-css.html}{Skylines Templates}. This template was modified in order to fit in with certain aspects of the site, but the look, feel and images remain consistent with those of the template.
 
-This template was modified in order to fit in with certain aspects of the site, but the look, feel and images remain consistent with those of the template.
+The other code used in this application that was not original is the Google Maps script, visible in the Contact Us page of the web application. This is provided at \href{https://developers.google.com/maps/documentation/javascript/examples/map-simple}{Google Maps Simple Map Example} and is available to use freely. 
 
-The other code used in this application that was not original is the Google Maps script, visible in the Contact Us page of the web application. This is provided at \href{https://developers.google.com/maps/documentation/javascript/examples/map-simple}{Google Maps Simple Map Example} and is available to use freely. The code was slightly modified, as depicted in Figure~\ref{fig:googlemaps}, to change both the GPS co-ordinates and the initial zoom level of the map. The page is included in the Contact Us tile.\newline
-
-\begin{table}[H]
 \begin{lstlisting}
 //code to include maps.jsp in contactus.jsp
 <div align="center"><%@include file="maps.jsp"%></div>
@@ -1203,8 +1228,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 \end{lstlisting}
+\begin{figure}[H]
 \caption{Code Showing Google Maps Integration}
 \label{fig:googlemaps}
-\end{table}
+\end{figure}
 
-\section{Conclusion}
+The code was slightly modified, as depicted in Figure~\ref{fig:googlemaps}, to change both the GPS co-ordinates and the initial zoom level of the map. The page is included in the Contact Us tile.\newline
