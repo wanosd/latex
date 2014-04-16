@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  16 APR 2014 14:46
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2014.2.25)  16 APR 2014 17:03
 entering extended mode
 **C:/Users/0144266/Documents/GitHub/latex/0144266.tex
 (C:/Users/0144266/Documents/GitHub/latex/0144266.tex
@@ -993,7 +993,10 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 ]
 Requested font "cmbx10" at 10.95pt
  -> cmbx10
- [1] (C:\Users\0144266\Documents\GitHub\latex\abstract.tex) [2
+ [1] (C:\Users\0144266\Documents\GitHub\latex\abstract.tex
+Requested font "cmti10" at 10.95pt
+ -> cmti10
+) [2
 
 ] [3
 
@@ -1040,8 +1043,6 @@ Requested font "cmr17" at 20.74pt
  -> cmr17
 Requested font "cmbx12" at 20.74pt
  -> cmbx12
-Requested font "cmti10" at 10.95pt
- -> cmti10
 [11
 
 
@@ -1350,17 +1351,12 @@ Overfull \hbox (28.0893pt too wide) in paragraph at lines 208--213
  []
 
 
-Overfull \hbox (56.316pt too wide) in paragraph at lines 220--225
- [] 
- []
-
-
-Overfull \hbox (55.31229pt too wide) in paragraph at lines 232--269
+Overfull \hbox (41.19884pt too wide) in paragraph at lines 232--269
  [] 
  []
 
 [114] [115]
-Overfull \hbox (62.33853pt too wide) in paragraph at lines 275--304
+Overfull \hbox (29.73186pt too wide) in paragraph at lines 275--304
  [] 
  []
 
@@ -1391,12 +1387,12 @@ Package logreq Info: Writing requests to '0144266.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 104.
  ) 
 Here is how much of TeX's memory you used:
- 27294 strings out of 429035
- 467401 string characters out of 3167909
- 667988 words of memory out of 3000000
- 30110 multiletter control sequences out of 15000+200000
+ 27296 strings out of 429035
+ 467423 string characters out of 3167909
+ 667999 words of memory out of 3000000
+ 30112 multiletter control sequences out of 15000+200000
  12166 words of font info for 43 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 55i,11n,61p,1204b,1819s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,11n,61p,2170b,1838s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on 0144266.pdf (121 pages).

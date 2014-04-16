@@ -5,9 +5,9 @@
 
 This project concerns the development of a web application using a web framework in conjunction with a number of other tools. Throughout the development process, there is a particular cognisance towards the support of Non-Functional Requirements (NFR) by both the web framework and the supporting tools used within the scope of this project. The web application framework used within the project is Spring MVC and the Object Relational Mapping (ORM) framework Hibernate for data persistence. This project consists of both a software engineering component, in the shape of the web application developed using the tools discussed within this report, and a research component consisting of this report.
 
-This project intends to discover any benefits, and limitations, that the use of a framework has in the development of a web application, and its non functional requirements. The scope of this project will focus on security, productivity, extensibility, usability and performance and the effect that the use of frameworks has on these attributes.
+This project intends to discover any relevant benefits, and limitations, that emerge while using a framework. The evaluations performed in this report are primarily concerned with the effect these frameworks have on non-functional requirements of the application. The NFRs of interest within the scope of this project are security, productivity, extensibility, usability and performance. 
 
-The application resulting from this project will be evaluated a number of ways. The Open Web Application Security Project (OWASP) Top 10 vulnerabilities are used to evaluate security within the application. Previous experience, specifically obtained from both \textit{Systems Architecture and Design} and \textit{Distributed Systems}, was used to guide evaluation of productivity and performance. These modules exposed this author to Message Passing Interfaces (MPI), the use of architectural patterns in order to support extensibility, and the concept of servlets within an web application, and the environment in which they run. Examples in the Evaluation section are taken from the \textit{Distributed Systems} project, and show how security is implemented without the use of a framework. This is used as a comparison in order to evaluate how these frameworks support both productivity and performance. The usability study is a framework taken from \parencite{holzinger2005usability} and applied to the final application resulting from this FYP, and two other web applications in the same domain. 
+The application resulting from this project will be evaluated a number of ways. The Open Web Application Security Project (OWASP) Top 10 vulnerabilities \parencite{owasp2013} are used to evaluate security within the application. The support that frameworks provide to prevent these vulnerabilities is examined and evaluated. Extensibility within the application is provided by the use of Hibernate to further separate the link between the DAO layer and the entity classes that it persists. As such, the system is designed with change in mind such that any changes to an entity will not require any changes to how the system persists data. Previous experience, specifically obtained from both \textit{Systems Architecture and Design} and \textit{Distributed Systems} modules, was used to guide evaluation of productivity and performance. These modules exposed this author to Message Passing Interfaces (MPI), the use of architectural patterns in order to support extensibility, and the concept of servlets within an web application, and the environment in which they run. In order to evaluate performance, a DAO object was created with both a JDBC and Hibernate connectivity. A number of Create, Read, Update and Delete operations were performed on the database, and the time taken to perform them was recorded and compared. Also measured in the comparison between  and JDBC were the lines of code required to implement DAO operations within the system, and the effect that any changes to entities would have on these operations. In order to measure productivity, code fragments taken from previous projects were used to compare the implementation of security within an application without the use of a framework. In these examples, the developer has to create and manage the HTTP session manually. This method is contrasted with the implementation provided by Spring MVC. The usability study is a framework taken from \parencite{holzinger2005usability} and applied to the final application resulting from this FYP, and two other web applications in the same domain. 
 
 \section{Technology}
 
@@ -15,7 +15,7 @@ The technology needed for a web application such as the one created for this FYP
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.20]{webapp.PNG}
+\includegraphics[scale=0.18]{webapp.PNG}
 \end{center}
 \caption{Typical architecture of a web application}
 \label{fig:webarch}
@@ -23,7 +23,7 @@ The technology needed for a web application such as the one created for this FYP
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.20]{projarch.PNG}
+\includegraphics[scale=0.18]{projarch.PNG}
 \end{center}
 \caption{Architecture of FYP application}
 \label{fig:projstack}
@@ -50,15 +50,15 @@ A more common stack within this course is the LAMP, or WAMP, open source solutio
 \end{itemize}
 \end{enumerate}
 
-A large benefit of this stack in the ease of deployment of any application created. The Tralee Tennis Club website seems to have been implemented using this solution.
+A large benefit of this stack in the ease of deployment of any application created. This stack seems to have been implemented by Tralee Tennis Club, whose web application is used in a comparative usability study later in this report.
 
 \section{Objectives}
 
 \subsection{Primary Objectives}
 
-The primary objective of this project is to show the benefits to quality attributes that the use of an architectural stack provides. The architectural stack within this project contains Spring MVC, Hibernate ORM and Apache Tiles. 
+The primary objective of this project is to show the benefits to non functional requirements that the use of an architectural stack provides. The architectural stack within this project contains Spring MVC, Hibernate ORM and Apache Tiles. 
 
-This project will examine the support provided for specific quality attributes: Security, Productivity, Extensibility and Performance. The provision of these attributed as provided by these frameworks will be examined, with cognisance of usability. 
+This project will examine the support provided for specific non functional requirements: Security, Productivity, Extensibility and Performance. The provision of these attributed as provided by these frameworks will be examined, with cognisance of usability. 
 
 \subsection{Secondary Objectives}
 

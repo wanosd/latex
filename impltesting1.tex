@@ -134,7 +134,7 @@ Password <sf:input id="password" name = "password" path="password" type="passwor
 \label{fig:memberForm}
 \end{figure}
 
-The form structure, illustrated partially in Figure~\ref{fig:memberForm}, contains a number of important attributes. The form used is an extended version of the HTML <form> object. The Spring MVC version adds extra functionality such as mapping to objects within the controller classes and error validation checking. The \textit{commandName} is a variable within the form that contains the information within the form. This temporarily persists data between the form and the controller. This benefits the user as the application repopulates valid fields in the form should an error be made. The \textit{sf:error} tags allow the controller to identify specific errors within the form. These also reference attributes within the class the form is linked with. In this example, the \textit{User} class is being created with this form. 
+The form structure, illustrated partially in Figure~\ref{fig:memberForm}, contains a number of important attributes. The form used is an extended version of the HTML form object. The Spring MVC version adds extra functionality such as mapping to objects within the controller classes and error validation checking. The \textit{commandName} is a variable within the form that contains the information within the form. This temporarily persists data between the form and the controller. This benefits the user as the application repopulates valid fields in the form should an error be made. The \textit{sf:error} tags allow the controller to identify specific errors within the form. These also reference attributes within the class the form is linked with. In this example, the \textit{User} class is being created with this form. 
 
 Figure~\ref{fig:memberController} Line 4 shows the declaration of a BindingResult object. This object holds the results of the form validation. Line 5 declares that if the result object has any errors, the controller returns to the form, where the \textit{sf:error} tags will highlight the error message relation to any attributes that broke their constraints. Lines 9 through 13 show home the application ensures that the primary key remains unique. 
 
@@ -284,7 +284,7 @@ The example, in Figure ~\ref{fig:ttdb}, shows a timetable configured with two sl
 	\label{fig:ttdb}
 \end{table}
 
-\begin{table}[H]f
+\begin{table}[H]
 	\caption{Timetable Storage Table for Monday Collection}
 \begin {center}
     \begin{tabular}{| l | l | p{.8cm} |}
@@ -998,7 +998,7 @@ The \textit{RequestMapping} annotation must be changed to include a \textit{prod
 \begin{lstlisting}
 {"day2":["Free Court","Free Court","Free Court","Free Court","Free Court","Free Court","Free Court","Free Court"],"day1":["Free Court","Free Court"]}
 \end{lstlisting}
-\begin{figure}
+\begin{figure}[H]
 \caption{JSON output statement}
 \label{fig:jsonex}
 \end{figure}

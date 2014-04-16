@@ -141,7 +141,7 @@ The tool is run from a command line prompt with ffmpeg, a video encoding tool, u
 gource -1024x768 --stop-position 1.0 --highlight-all-users --hide-filenames --seconds-per-day 5 --output-framerate 60 --output-ppm-stream output.ppm
 ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i output.ppm  -vcodec wmv1 -r 60 -qscale 0 out.wmv
 \end{lstlisting}
-\begin{figure}
+\begin{figure}[H]
 \caption{Commands for Gource output}
 \label{fig:gourcecmd}
 \end{figure}
@@ -156,5 +156,5 @@ The image in Figure~\ref{fig:gource} is a snapshot from the video output.
 \end{center}
 \end{figure}
 
-The output file is current hosted at http://youtu.be/Ct1E4jcmPKE.
+The output file is currently hosted at http://youtu.be/Ct1E4jcmPKE.
 
