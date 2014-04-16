@@ -31,7 +31,7 @@ In analysing support for security, the Open Web Application Security Project [OW
 
 \item Security Misconfiguration
 \begin{itemize}
-\item Security Misconfiguration is not "having a secure configuration defined and deployed for the application framework" \parencite{owasp2013}. Within Spring MVC, this refers to the configuration for EBAC. An example of poor configuration would be to implement this system by denying access to URL mappings, rather than denying access to all and allowing exceptions. While it is possible to deny access to relevant mappings, it is more likely that a mistake would slip through. A breakdown of the mappings organised by the type of access is depicted in Table~\ref{fig:accesstable}. permitAll refers to mappings that allow access to all users, isAuthenticated requires that the user be logged in, and admin requires that a user be logged in and possess an administrator role.
+\item Security Misconfiguration is not "having a secure configuration defined and deployed for the application framework" \parencite{owasp2013}. Within Spring MVC, this refers to the configuration for EBAC (Expression Based Access Control). An example of poor configuration would be to implement this system by denying access to URL mappings, rather than denying access to all and allowing exceptions. While it is possible to deny access to relevant mappings, it is more likely that a mistake would slip through. A breakdown of the mappings organised by the type of access is depicted in Table~\ref{fig:accesstable}. permitAll refers to mappings that allow access to all users, isAuthenticated requires that the user be logged in, and admin requires that a user be logged in and possess an administrator role.
 
 \begin{table}[H]
 \caption{EBAC Breakdown}
@@ -80,7 +80,7 @@ A significant bug was discovered within the application during user testing. Whe
 
 Using a tool to intercept HTTP Requests, such as WebScarab, it was possible to change the hidden field. This would allow a regular user to change their role from ROLE MEMBER to ROLE ADMIN, giving them full access to the site. 
 
-This happened as the object was not checked before being persisted by the controller, service and dao layers. This method was tested using the WebScarab tool, and the vulnerability was confirmed. WebScarab is a framework that analysing applications that communicate using HTTP and HTTPS protocols, and was used to intercept GET and POST requests in this application. In order to circumvent this, the role of the currently logged in user was retrieved from the framework, and this value was saved, rather than a value defined within the view. This example showed that while the framework does provide a considerable layer of security, misuse and bad programming can expose the application. 
+This occurred as the object was not validated before being persisted by the controller through the service and dao layers. This method was tested using the WebScarab tool, and the vulnerability was confirmed. WebScarab is a framework that analysing applications that communicate using HTTP and HTTPS protocols, and was used to intercept GET and POST requests in this application. In order to circumvent this, the role of the currently logged in user was retrieved from the framework, and this value was saved, rather than a value defined within the view. This example showed that while the framework does provide a considerable layer of security, misuse and bad programming can expose the application. 
 
 \section{Extensibility}
 
@@ -161,7 +161,7 @@ The deliverable from this project was subjected to the same usability criteria a
 \begin{center}
     \begin{tabular}{ | l | l | p{5cm} |}
     \hline
-\textbf{Criteria} & \textbf{Project Application}\\ \hline
+\textbf{Criteria} & \textbf{FYP Application}\\ \hline
 	Links are updated? & Yes\\ \hline
 	Short-cuts for frequent users? & Yes\\ \hline
 	Warning if link leads to large file? & n/a\\ \hline
@@ -178,7 +178,7 @@ The deliverable from this project was subjected to the same usability criteria a
 \begin{center}
     \begin{tabular}{ | l | l | p{5cm} |}
     \hline
-\textbf{Criteria} & \textbf{Project Application}\\ \hline
+\textbf{Criteria} & \textbf{FYP Application}\\ \hline
 	Contact Details for website maintainer & Yes \\ \hline
 	Link to page maintainer on each page & Yes \\ \hline
 	Forms provided for users to enter details & Yes\\ \hline
@@ -195,7 +195,7 @@ The deliverable from this project was subjected to the same usability criteria a
 \begin{center}
     \begin{tabular}{ | l | l | p{5cm} |}
     \hline
-\textbf{Criteria} & \textbf{Project Application}\\ \hline
+\textbf{Criteria} & \textbf{FYP Application}\\ \hline
 	Speed of site adequate& Yes\\ \hline
 	Site Availability High? & Yes\\ \hline
 	Website made known through search tools** & n/a \\ \hline
@@ -215,7 +215,7 @@ The deliverable from this project was subjected to the same usability criteria a
 \begin{center}
     \begin{tabular}{ | l | l | p{5cm} |}
     \hline
-\textbf{Criteria} & \textbf{Project Application}\\ \hline
+\textbf{Criteria} & \textbf{FYP Application}\\ \hline
 	Format,Graphic Design Appropriate & Yes \\ \hline
 	Pages appropriate length, clear, uncluttered& Yes \\ \hline
 	Consistent format through website & Yes \\ \hline
@@ -232,7 +232,7 @@ The deliverable from this project was subjected to the same usability criteria a
 \begin{center}
     \begin{tabular}{ | l | l | p{5cm} |}
     \hline
-	\textbf{Criteria} & \textbf{Project Application}\\ \hline
+\textbf{Criteria} & \textbf{FYP Application}\\ \hline
 	Website organised by anticipated user need & Yes\\ \hline
 	Navigation options are distinct& Yes \\ \hline
 	Conventional navigation models*& Yes\\ \hline
@@ -245,7 +245,7 @@ The deliverable from this project was subjected to the same usability criteria a
 \end{center}
 \label{fig:projecttable5}
 \end{table}
-\textit{*eg menu on top or left of screen}\newline
+\textit{*e.g. menu on top or left of screen}\newline
 \textit{**defined as 3,} \cite{smith2001applying}
 
 \begin{table}[H]

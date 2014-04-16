@@ -5,10 +5,10 @@
 
 \section{Framework Design}
 
-Spring incorporates a number of design patterns within its own classes. 
+Spring MVC and Hibernate incorporates a number of design patterns within its own classes. By using these frameworks, developers are guided towards best practice in terms of the application design
 
 \begin{table}[H]
-\begin{itemize}
+\begin{enumerate}
 \item Singleton
 \begin{itemize}
 \item Beans defined within the Spring MVC framework and singletons by default. 
@@ -19,9 +19,13 @@ Spring incorporates a number of design patterns within its own classes.
 \end{itemize}
 \item Inversion of Control
 \begin{itemize}
-\item This pattern is central to the dependency injection facilities of the Spring framework
+\item This pattern is central to the dependency injection facilities of the Spring framework, and is responsible for the instantiation of objects at run time, rather than compile time.
 \end{itemize}
+\item Query Object
+\begin{itemize}
+\item This pattern is used by Hibernate with its Criterion object. This delegates the execution of a query to another object. 
 \end{itemize}
+\end{enumerate}
 \label{fig:springdesignpatterns}
 \end{table}
 
@@ -30,8 +34,8 @@ Spring incorporates a number of design patterns within its own classes.
 
 In order to achieve modularity across the application, the core of the application is separated into four key areas.
 
-\begin{table}[H]
-\begin{itemize}
+
+\begin{enumerate}
 \item Entities
 \begin{itemize}
 \item A Java object that is persisted to a table in a relational database.
@@ -48,9 +52,10 @@ In order to achieve modularity across the application, the core of the applicati
 \begin{itemize}
 \item This layer is responsible for persisting an entity or any changes to an entity.
 \end{itemize}
-\end{itemize}
+\end{enumerate}
+\begin{figure}[H]
 \label{fig:appbreakdown}
-\end{table}
+\end{figure}
 
 This structure follows a design principle called \textit{Separation of Concerns}. This separates an application into a number of component parts in order to minimise the effect that changes in one module have on other modules. In this application, any changes to the DAO layer will have no effect on the Controller layer for example. This is realised through this design principle, and the use of the Hibernate framework.
 
@@ -63,20 +68,6 @@ The flow between these objects is shown in Figure~\ref{fig:csdao}. An example fl
 \caption{Controller-Service-DAO Flow}
 \label{fig:csdao}
 \end{figure}
-
-\subsection{Database Design}
-
-The database was designed using MySQL Workbench, and created using the same tool. The database design is illustrated in Figure~\ref{fig:dbdesign}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=14cm]{dbdesign.png}
-\end{center}
-\caption{Database Design}
-\label{fig:dbdesign}
-\end{figure}
-
-
 
 \subsection{User Roles}
 
@@ -107,3 +98,17 @@ Spring controls access within the application. Firstly, it uses an \textit{autho
 \end{itemize}
 \end{itemize}
 \label{fig:secRoles}
+
+
+\subsection{Database Design}
+
+The database was designed using MySQL Workbench, and created using the same tool. The database Entity Relationship (ER) diagram is illustrated in Figure~\ref{fig:dbdesign}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{dbdesign.png}
+\end{center}
+\caption{Database Design}
+\label{fig:dbdesign}
+\end{figure}
+

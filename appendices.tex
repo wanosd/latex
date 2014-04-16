@@ -12,7 +12,7 @@ The following section is a breakdown of the application into its various package
     \hline
     File Name & File Type & Function & No. Lines\\ \hline
     beans.xml & XML & Context Component Scan, Datasource Definition & 27 \\ \hline
-	dao-context.xml & XML & Hibernate Configuration, Database Exception Translator & 49 \\ \hline
+	dao-context.xml & XML & DB Config, Database Exception Translator & 49 \\ \hline
 	security-context.xml & XML & Security Configuration, Access Control & 118 \\ \hline
 	service.xml & XML & Service Configuration & 10 \\ \hline
     \end{tabular}
@@ -35,8 +35,8 @@ The following section is a breakdown of the application into its various package
 	NewsController & JAVA & Handles display and creation of News  & 100\\ \hline
 	RoleController & JAVA & Manages roles & 76 \\ \hline
 	SiteController & JAVA & Displays site pages with static data & 52\\ \hline
-	TimetableController & JAVA & Controls the Timetable Creation and Display & 708 \\ \hline
-	TournamentController & JAVA & Handles Creation and Management of Tournaments & 333 \\ \hline
+	TimetableController & JAVA & Timetable Creation and Display & 708 \\ \hline
+	TournamentController & JAVA & Management of Tournaments & 333 \\ \hline
     \end{tabular}
 \end{center}
 \caption{controllers package}
@@ -194,7 +194,7 @@ The following section is a breakdown of the application into its various package
 	PersistenceValidationGroup & JAVA & Hibernate Validation Class & n/a\\ \hline
 	Grade & JAVA & Defines structure of a Grade object& 40\\ \hline
 	User & JAVA & Defines structure of a User object & 276\\ \hline
-	Role & JAVA & Defines structure of Role object, and its attributes & 60\\ \hline	
+	Role & JAVA & Defines structure of Role object& 60\\ \hline	
     \end{tabular}
 \end{center}
 \caption{reports package}
@@ -305,4 +305,12 @@ The following section is a breakdown of the application into its various package
 \caption{templates layout}
 \end{table}
 
+\section{Permission Letter}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{letter.jpg}
+\end{center}
+\caption{Permission letter for interviews}
+\label{fig:letter}
+\end{figure}

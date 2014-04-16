@@ -5,7 +5,7 @@
 
 Requirements Elicitation is an important step in the development of a software application. There are a number of techniques possible, such as "interviewing, protocol analysis, repertory grid, work groups" \parencite{davis2006effectiveness}. Structured interviews "appear to be one of the most effective elicitation techniques in a wide range of domains and situations" \parencite{davis2006effectiveness}. 
 
-While the time constraints on this project did not allow for an in depth study of the requirements, or requirements process, the importance of requirements is not to be understated. (Put Franklin(?) quote here!)
+While the time constraints on this project did not allow for an in depth study of the requirements, or requirements process, the importance of requirements is not to be understated. "The hardest part of building a software system is deciding what to build … No other part of the work so cripples the resulting system if done wrong. No other part is more difficult to rectify later." \parencite{brooks}.
 
 \section{Methods for Requirements Elicitation}
 
@@ -25,10 +25,11 @@ In eliciting possible requirements for the site, there was a discussion with thr
 \label{fig:userelicit}
 \end{table}
 
+A copy of the letter issued to interviewees is shown in Figure~\ref{fig:letter} in the Appendices.
 
 \subsection{Storyboarding}
 
-At an early stage of the application, rough storyboards were prepared for the FYP presentation. These storyboards were used to demonstrate how a page, such as the timetable shown in Figure~\ref{fig:timetableSB}, would be displayed by the application.
+At an early stage of the application, rough storyboards were prepared for the FYP presentation. These storyboards were used to demonstrate how a page, such as the timetable shown in Figure~\ref{fig:timetableSB}, would be displayed by the application. 
 
 \begin{figure}[H]
 \begin{center}
@@ -40,9 +41,19 @@ At an early stage of the application, rough storyboards were prepared for the FY
 
 The storyboarding visualised aspects of the site, and gave a rough idea of functionality that would be needed within the application. These were shown to interviewees in order to help them visualise requirements.
 
+The style of the timetable was based on the existing paper based solution currently implemented by the club, displayed in Figure~\ref{fig:papertt}.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{originaltt.jpg}
+\end{center}
+\caption{Paper Timetable, Monaleen Tennis Club}
+\label{fig:papertt}
+\end{figure}
+
 \subsection{Exploratory Interviews}
 
-In order to elicit requirements, a number of interviews were held with stakeholders. A set of questions were prepared as a guideline, and some storyboards were presented. The Tralee Tennis Club website was also presented to the interviewees.
+In order to elicit requirements, a number of interviews were held with stakeholders. A set of questions were prepared as a guideline, and some storyboards were presented. The Tralee Tennis Club website was also presented to the interviewees:
 
 \begin{enumerate}
 \item Are you aware there is a site for Monaleen Tennis Club?
@@ -134,57 +145,57 @@ With the information obtained from the exploratory interviews, a focus was held 
 
 \subsection{Timetable} 
 
-The timetable is the core aspect of the application, and one that would be most likely to be used by all members, not just those involved competitively. While the regular member would only be concerned with the booking of slots, there are a number of requirements defined for use by the administrator in order to configure a relevant timetable not the club. The timetable needs to be flexible to allow the administrator full control at all stages.
+The timetable is the core aspect of the application, and one that would be most likely to be used by all members, not just those involved competitively. While the regular member would only be concerned with the booking of slots, there are a number of requirements defined for use by the administrator in order to configure a relevant timetable not the club. The timetable needs to be flexible to allow the administrator full control at all stages:
 
 \begin{enumerate}
-\item Flexible 
-\item Edit individual slots
-\item Define a template for a timetable
-\item Reset timetable
-\item Define look ahead for timetable (how many weeks in advance a user can see)
-\item Delete timetable
-\item Enable and disable timetable
-\item Timetable analysis (No slots free, booked etc)
+\item Flexible;
+\item Edit individual slots;
+\item Define a template for a timetable;
+\item Reset timetable;
+\item Define look ahead for timetable;
+\item Delete timetable;
+\item Enable and disable timetable;
+\item Timetable analysis;
 \end{enumerate}
 
 \subsection{Tournament}
 
-The tournament is a section that would be heavily used by those players who compete regularly. Key requirements for all users were the ability to view, and register for, tournaments. Administrators would need to be able to create and control tournaments within the application.
+The tournament is a section that would be heavily used by those players who compete regularly. Key requirements for all users were the ability to view, and register for, tournaments. Administrators would need to be able to create and control tournaments within the application:
 
 \begin{enumerate}
-\item Create tournament
-\item Delete tournament
-\item Enable user signup
-\item Finalize user signup
-\item Display tournament times
-\item Create different kinds of tournaments
-\item Organise members into teams
-\item Contact all members in tournament
-\item Statistics
+\item Create tournament;
+\item Delete tournament;
+\item Enable user signup;
+\item Finalize user signup;
+\item Display tournament times;
+\item Create different kinds of tournaments;
+\item Organise members into teams;
+\item Contact all members in tournament;
+\item Statistics;
 \end{enumerate}
 
 
 \subsection{News}
 
-The news section is the main contact point between the committee and members of the club. All committee members should have access to the ability to create, and delete, news. 
+The news section is the main contact point between the committee and members of the club. All committee members should have access to the ability to create, and delete, news:
 
 \begin{enumerate}
-\item Create news
-\item Delete news
-\item Allow more than one person to post news
+\item Create news;
+\item Delete news;
+\item Allow more than one person to post news;
 \end{enumerate}
 
 \subsection{Members}
 
-A key finding was a easy to use registration system, as the current paper based system can be problematic as it is necessary to contact one person to become a club member. Administration management of existing and potential members was also an area that was highlighted as key to any system.
+A key finding was a easy to use registration system, as the current paper based system can be problematic as it is necessary to contact one person to become a club member. Administration management of existing and potential members was also an area that was highlighted as key to any system:
 
 \begin{enumerate}
-\item Member registration
-\item Member only access
-\item Approve/Block members
-\item Edit profiles
-\item View all Members
-\item Contact Members
+\item Member registration;
+\item Member only access;
+\item Approve/Block members;
+\item Edit profiles;
+\item Contact Members;
+t\item View all Members;
 \end{enumerate}
 
 \section{Non Functional Requirements}
@@ -209,39 +220,6 @@ The age of the club members range from 8 to 80, so ease of use of any software s
 
 The site needs to be fast to use, and cheap to run. There's no funds to pay for a high end server, so it needs to be able to run on a virtual server, or a Amazon micro-instance, without any performance hits. It also needs to be able to cope with multiple users at the same time. 
 
-\section{Use Cases}
-
-\begin{usecase}
-\addtitle{Use Case 1}{View All Members} 
-\addfield{Scope:}{System-wide}
-\addfield{Level:}{User can view a list of all registered, and approved, members of the club}
-\addfield{Primary Actor:}{All Registered and Authenticated Users}
-\additemizedfield{Stakeholders and Interests:}{
-	\item All Users: contact information for club members
-}
-
-\addfield{Preconditions:}{User is registered and approved}
-\addfield{Postconditions:}{User must be authenticated by the framework}
-\addscenario{Main Success Scenario:}{
-	\item User logs in
-	\item User clicks on View Members
-	\item System displays member information
-}
-\addscenario{Extensions:}{
-	\item[1.a] Invalid login data:
-		\begin{enumerate}
-		\item[1.] System shows failure message
-		\item[2.] User returns to step 1
-		\end{enumerate}
-	\item[1.a] User not approved:
-		\begin{enumerate}
-		\item[1.] System shows failure message
-		\item[2.] Admin is emailed about attempted access by unapproved member
-		\end{enumerate}
-}
-\addfield{Frequency of Occurrence:}{High}
-\end{usecase}
-
 \section{Conclusion}
 
-The interview process, in collaboration with storyboarding, gave a wide range of potential requirements to be implemented in the final application. It also showed demand for certain features, and allowed requirements to be prioritised to meet this demand.
+The interview process, in collaboration with storyboarding, gave a wide range of potential requirements to be implemented in the final application. It also showed demand for certain features, and allowed requirements to be prioritised to meet this demand. The focus groups allowed for key requirements to be retrieved from potential feature sets gleaned from exploratory interviews.

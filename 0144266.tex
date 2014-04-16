@@ -6,12 +6,20 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{multirow}
-\usepackage{hyperr	ef}
+\usepackage{hyperref}
 \usepackage{float}
 \usepackage{fancyhdr}
 \usepackage{rotating}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\floatstyle{plaintop}
 \restylefloat{table}
 \usepackage[style=authoryear,backend=bibtex8]{biblatex}
+\DefineBibliographyStrings{english}{%
+  references = {Works Cited},% replace "references" with "bibliography"  for `book`/`report`
+}
+
 \usepackage[tableposition=top]{caption}
 \usepackage{usecases}
 \usepackage{tikz}
@@ -19,6 +27,7 @@
 \usepackage[normalem]{ulem}
 \usepackage[cc]{titlepic}
 \addbibresource{0144266.bib}
+
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -42,7 +51,7 @@
 \setlength{\textheight}{8.5in}
 \setlength{\oddsidemargin}{0.5in}
 \setlength{\evensidemargin}{0.5in}
-\setlength{\textwidth}{6in}
+\setlength{\textwidth}{6.1in}
 \setlength{\topmargin}{0.0in}
 \setlength{\headheight}{0in}
 \setlength{\headsep}{0in}
@@ -57,8 +66,8 @@
 \pagestyle{plain}
 
 \begin{document}
-\title{Hibernate 'til Spring \\ Benefits of Spring MVC, Hibernate and Apache Tiles to Support Quality Attributes and Usability within Web Applications}
-\author{Chris O'Brien \\ 0144266 \\ Supervisor: J.J. Collins}
+\title{Hibernate 'til Spring \\ \textit{Benefits of Spring MVC, Hibernate and Apache Tiles in Supporting Quality Attributes and Usability within Web Applications}}
+\author{Chris O'Brien \\ \textit{0144266} \\ \\ Supervisor: J.J. Collins}
 %\date{}
 \maketitle
 
@@ -89,7 +98,7 @@
 \include {squality}
 \include {evaluation}
 \include{conclusion}
-\printbibliography
+\printbibliography[title={References}]
 \appendix
 \include{appendices}
 \end{document}   

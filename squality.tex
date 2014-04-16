@@ -105,9 +105,11 @@ The below figures show screen shots from the inFusion program. The bad code smel
 \end{center}
 \end{figure}
 
-While this tool was useful in terms of finding potential issues, it was difficult to know how good, or bad, my application was. There was no threshold indentified by the application, and a score of 42.5, as shown in Figure~\ref{fig:infusion1}, does not carry much weight if I have no benchmark to compare it against. 
+While this tool was useful in terms of finding potential issues, it was difficult to know how good, or bad, my application was. There was no threshold identified by the application, and a score of 42.5, as shown in Figure~\ref{fig:infusion1}, does not carry much weight if I have no benchmark to compare it against. 
 
 \subsection{Visualisations}
+
+\subsubsection{CodeCity}
 
 The software used to visualise the code was CodeCity, available at \hyperref[Code City]{http://www.inf.usi.ch/phd/wettel/codecity.html}. In order to run CodeCity, a MSE file needed to be created by inFusion. The CodeCity application reads this file, and represents your code as a city. The city is broken down into blocks, defined by a package, and within each block, there are a number of buildings, that represent classes. The size of the building is related to the size and complexity of the class it represents. Figures~\ref{fig:2dcc} and~\ref{fig:3dcc} show the 2D and 3D representations of the application created for this project. 
  
@@ -128,3 +130,31 @@ The software used to visualise the code was CodeCity, available at \hyperref[Cod
 \end{figure}
 
 Visualisation is a quick way to highlight potential issues and bad code smells, such as data classes, by looking at the size of a building. While this does not fix any problems, it aids in drawing attention to potential issues through the development cycle. 
+
+\subsubsection{Gource}
+
+Gource is an open source version control visualisation tool. It visualises the work flow of an application by using the commits with a git repository. This was useful in showing how the application came together, the timeline of the work areas within the project, such as the creation of controllers, dao and service layers, and how the nature of the project changed from one of creation to modification. The source for this application is available at \textit{https://code.google.com/p/gource/}.
+
+The tool is run from a command line prompt with ffmpeg, a video encoding tool, used to convert the output from Gource to a wmv file. The commands used are illustrated in Figure~\ref{fig:gourcecmd}.
+\newpage
+\begin{lstlisting}
+gource -1024x768 --stop-position 1.0 --highlight-all-users --hide-filenames --seconds-per-day 5 --output-framerate 60 --output-ppm-stream output.ppm
+ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i output.ppm  -vcodec wmv1 -r 60 -qscale 0 out.wmv
+\end{lstlisting}
+\begin{figure}
+\caption{Commands for Gource output}
+\label{fig:gourcecmd}
+\end{figure}
+
+The image in Figure~\ref{fig:gource} is a snapshot from the video output.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.45]{gource.png}
+\caption{Gource Snapshot}
+\label{fig:gource}
+\end{center}
+\end{figure}
+
+The output file is current hosted at http://youtu.be/Ct1E4jcmPKE.
+

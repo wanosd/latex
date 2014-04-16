@@ -1,4 +1,4 @@
-\chapter{Implementation and Testing}
+\chapter{Implementation, Testing and Deployment}
 \label{impltesting}
 
 \label{sec:impl}
@@ -284,7 +284,7 @@ The example, in Figure ~\ref{fig:ttdb}, shows a timetable configured with two sl
 	\label{fig:ttdb}
 \end{table}
 
-\begin{table}
+\begin{table}[H]f
 	\caption{Timetable Storage Table for Monday Collection}
 \begin {center}
     \begin{tabular}{| l | l | p{.8cm} |}
@@ -410,7 +410,7 @@ public String changeEventStatus(Model model, HttpServletRequest request) {
 
 \subsubsection{Tournament}
 
-The \textit{Tournament} class is configured similar to the \textit{Timetable} class, in that it has a secondary table which contains a list of members who have registered for the tournament. The key area for tournament implementation was for the application to differentiate between the various states of the tournament, such as registration being enabled, yet the tournament not having started yet. This proces is shown in Figure~\ref{fig:tourstate} It was also important that the tournament could link up with the Timetable system, in order to book slots to play the tournament. In this regards, a tournament was required to manage an Event object, see Figure ~\ref{fig:tourCreate}, and to ensure that no ambiguity was present when dealing with multiple tournaments and possible multiple timetables. It was also necessary for a Tournament object to manage its own event in order to minimise both the risk of ambiguity and administration involvement.
+The \textit{Tournament} class is configured similar to the \textit{Timetable} class, in that it has a secondary table which contains a list of members who have registered for the tournament. The key area for tournament implementation was for the application to differentiate between the various states of the tournament, such as registration being enabled, yet the tournament not having started yet. This process is shown in Figure~\ref{fig:tourstate} It was also important that the tournament could link up with the Timetable system, in order to book slots to play the tournament. In this regards, a tournament was required to manage an Event object, see Figure~\ref{fig:tourCreate}, and to ensure that no ambiguity was present when dealing with multiple tournaments and possible multiple timetables. It was also necessary for a Tournament object to manage its own event in order to minimise both the risk of ambiguity and administration involvement.
 
 
 \begin{center}
@@ -665,7 +665,7 @@ public String showHome(Model model) {
 
 This mapping responds to a request with the value '/', Line 1. On Tomcat servers, the home page will be \textit{localhost:8080/application-name/}. In this example, the latest news story is retrieved on Line 4, and values from it are added to the model displayed on the returned view.
 
-Any value specified after \textit{localhost:8080/application-name/} will search for a mapping within all controllers in the application. If a mapping does not exist, a resource not found will be displayed. This is default behaviour for a denied access attempt. In order to ensure the site can deal with invalid requests, an access denied handler can be defined within the Spring Security context file, as depicted in Figure~\ref{fig:accessDenied}. This allows a mapping to be specified for invalid requests,
+Any value specified after \textit{localhost:8080/application-name/} will search for a mapping within all controllers in the application. If a mapping does not exist, a resource not found will be displayed. This is default behaviour for a denied access attempt. In order to ensure the site can deal with invalid requests, an access denied handler can be defined within the Spring Security context file, as depicted in Figure~\ref{fig:accessDenied}. This allows a mapping to be specified for invalid requests.
 
 \begin{lstlisting}
 <security:access-denied-handler error-page="/denied" />

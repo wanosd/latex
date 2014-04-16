@@ -3,12 +3,41 @@
 
 \section{Summary}
 
+This project has shown that the use of frameworks to support the development of a web application has positive benefits on the non functional requirements of that application. Each of the examined quality attributes were found to have benefited from the use of these frameworks. The use of these frameworks allowed focus to be placed on the functional requirements of the application, with less development needed to support the many non functional requirements contained in an application. 
+
+\begin{enumerate}
+\item Security
+\begin{itemize}
+\item The use of Spring MVC to abstract the key workings of security away from the developer resulted in an application that was robust in terms of the OWASP Top 10 vulnerabilities, with the software engineer focusing on configuration rather the development.
+\end{itemize}
+\item Performance
+\begin{itemize}
+\item The use of Hibernate over JDBC resulted in a faster data access layer. 
+\end{itemize}
+\item Productivity
+\begin{itemize}
+\item The use of Hibernate over JDBC resulted in fewer lines of code, and the elimination of potentially complex SQL queries. As a result, less code is needed in order for the application to perform as intended, and the cost of maintenance is reduced.
+\end{itemize}
+\item Extensibility
+\begin{itemize}
+\item The use of annotations within the Hibernate entity classes enforced the separation of the DAO layer from any changes to the entity classes. Any change to an entity class does not require any changes to the DAO objects that deal with them, unlike JDBC in which a change to the class would require a change to its corresponding DAO object. 
+\end{itemize}
+\item Usability
+\begin{itemize}
+\item The use of a framework to evaluate the usability of a web application, and the use of Apache Tiles to further support this, resulted in an application that conformed to usability standards,
+\end{itemize}
+\end{enumerate}
+
 \section{Key Findings}
+
+Metrics within the application, specifically the inFusion tool, were useful for identifying possible issues within the code. The visualisation of the code base through both inFusion, Gource and CodeCity allowed the scope and complexities of the application, as well as the work flow, to be communicated to those not as familiar with the finer details of the project. However, it is very difficult to place an exact value on the use of metrics within the project due to the absence of thresholds. It was difficult to determine how good, or bad, the application was as a whole with the values that were returned by the various tools. 
+
+One of the key findings at a personal level was the use of an automated source control system throughout this project. I strongly believe that this should be taught at the early stages of the Computer Systems course. It is an invaluable skill that when combined with the use of loggers made the development of this application a lot easier to manage.
 
 \section{Future Work}
 
 \subsection{Hibernate in Design}
-Hibernate was a very powerful framework throughout the development of this project. It was very much a case of learning by doing. Having accumulated experience with the framework, I would like to apply it more in the design stage on an application. One idea that came to me late in the project was the idea of having a top level class that could build the entire application, as depicted in Figure~\ref{fig:toplevel}.
+Hibernate was a very powerful framework throughout the development of this project. It was very much a case of learning by doing. Having accumulated experience with the framework, I would liked to apply it earlier in the design stage of the application. The idea of having a top level class that could build the entire application, as depicted in Figure~\ref{fig:toplevel}, using Hibernate is definitely something worth considering in future development projects.
 
 
 \begin{lstlisting}
@@ -52,20 +81,24 @@ private void create(){
 \label{fig:toplevel}
 \end{figure}
 
-(This section needs to be rewritten. I'm tired right now so just doing stream of conciousness) 
+It is possible to build the application so that all classes were linked through a hierarchy to one root class. This may impact performance, but it would allow for a number of benefits such as ease of deployment, and the ability to take snapshots of the application at any stage.
 
-It would be possible to build the application so that all classes were linked through a hierarchy to one root class. This may impact performance, but it would allow a number of benefits such as ease of deployment, and the ability to take snapshots of the application at any stage.
-
-I also would have like to use Hibernate with more complicated objects rather than just collection classes, but time constraints did not allow this.
+I also would have liked to use Hibernate with more complicated objects rather than just collection classes, but time constraints did not allow this.
 
 \subsection{Tournament Business Logic}
 
-The tournament section of the site is something that I would like to have done a bit more on, but unfortunately, due to the time constraints within a FYP, a decison had to be made to focus more on either the timetable or the tournament. The timetable provides a service for all members of a club, not just those playing competitively. In the interim, third party solutions such as \textit{http://ti.tournamentsoftware.com} exist. The tournament sorting mechanism was designed so that the logic of sorting members into teams is encapsulated in one method in an interface. Implementing a new version would not require any significant changes to the application. 
+The tournament section of the site is an element that I would like to have developed into a more mature system, but unfortunately, due to the time constraints within a FYP, a decision had to be made to focus more on either the timetable or the tournament. The timetable provides a service for all members of a club, not just those playing competitively. In the interim, third party solutions such as \textit{http://ti.tournamentsoftware.com} exist. The tournament sorting mechanism was designed so that the logic of sorting members into teams is encapsulated in one method in an interface. Implementing a new version would not require any significant changes to the application. 
 
 \subsection{Web Services and HTML5}
 Other aspects of a web application, such as web services and HTML5 were omitted from the final submission due to time constraints, but are definitely something that I would have an interest in looking at later on. Web services were touched on briefly, through the exposure of part of information about the timetable. 
 
 \subsection{Timetable}
-While the timetable works well in its current state, I would like to optimize the code to be more readable. I experimented with the use of key-map objects later in the development cycle, and beleive the use of these could reduce the code size in the View by at least 60\%, and help compartmentalize two or three methods into one.
+While the timetable works well in its current state, I would like to optimize the code to be more readable. I experimented with the use of key-map objects later in the development cycle, and believe the use of these could reduce the code size in the View by at least 60\%, and they would help compartmentalize two or three methods into one.
 
 \section{Personal Perspective}
+
+The initial goal that I set for myself was to learn an architectural stack that is used commonly in industry, and would give me an advantage with regards to finding employment. As the project evolved, the study of the quality attributes became more and more interesting when compared to the application itself. While the skills learned by developing this application will be useful, the skills I will take from this project primarily will be the ability to look at a software project from more than a development viewpoint. The implementation of theories and discussions throughout the past few years in relation to design was satisfying, and having real examples of techniques and principles discussed in a number of modules reinforces those concepts.
+
+The research portion of this project, something that I thought I would have difficulty with, was something that I really enjoyed. The process of evaluating concepts that I proposed was very satisfying, and while my methodologies are at a very basic level, this project certainly opened my mind to the possibility of exploring research in this area at a later stage. One such area is that of metrics, which is used in a number of engineering disciplines, which is misrepresented within software engineering. The use of frameworks within an application should not have a detrimental impact on the use of metrics, for example. 
+
+ 

@@ -10,7 +10,7 @@ There are a number of components needed to build the architecture of a web appli
 Within the scope of this application, there were a number of quality attributes that were examined. A quality attribute is "part of an applications non-functional requirements, which capture the many facets of \textit{how} the functional requirements of an application are achieved" \parencite{gorton2006essential}. They can related to system design, or may be specific to run time or user centric issues.
 
 
-\begin{itemize}
+\begin{enumerate}
 \item Security
 \begin{itemize}
 \item This is the capability of the system to prevent actions that are outside the designed usage, or actions that are malicious in origin. Within an application, "security boils down to understanding the precise security requirements for an application, and devising mechanisms to support them" \parencite{gorton2006essential}.
@@ -31,7 +31,7 @@ Within the scope of this application, there were a number of quality attributes 
 \begin{itemize}
 \item This is the influence that the architectural choices of the system affects developer productivity, which has an effect on other quality attributes.
 \end{itemize}
-\end{itemize}
+\end{enumerate}
 \begin{figure}[H]
 \caption{Quality Attributes}
 \label{fig:qualityAttributes}
@@ -233,7 +233,7 @@ A rudimentary examination of Hibernate with Java Database Connectivity [JDBC] wi
 
 Source Control is the management of changes to the source code of an application. In this day and age, it is not unusual for a program to be worked on by a number of different people. In fact, it is more likely to be a globally dispersed team of programmers, so management of changes to the code base is very important. Essentially, it is a system that "provides facilities for storing, updating and retrieving all versions of modules, for controlling updating privileges, for identifying load modules by version number, and for recording who made each software change" \parencite{rochkind1975source}.
 
-The source control system used within this project was GitHub, a free open source solution located at \href{http://www.github.com}{www.github.com}. It provides integration with STS through the use of the \textit{egit} plugin. egit is an open source plugin for Eclipse that allows for Git repositories to be imported in the IDE. It also allows actions, such as committing changes, to be performed within the IDE. GUI and Shell user interfaces also exist for a variety of operating systems. It was also used to manage the different versions of the report you are reading now. Within the scope of GitHub, each project is called a repository.
+The source control system used within this project was GitHub, a free open source solution located at \textit{\href{http://www.github.com}{www.github.com}}. It provides integration with STS through the use of the \textit{egit} plugin. \textit{egit} is an open source plugin for Eclipse that allows for Git repositories to be imported in the IDE. It also allows actions, such as committing changes, to be performed within the IDE. GUI and Shell user interfaces also exist for a variety of operating systems. It was also used to manage the different versions of the report you are reading now. Within the scope of GitHub, each project is called a repository.
 
 GitHub also provides graphs and statistics about each repository, such as which days are the busiest for commits as shown in Figure ~\ref{fig:git}, the growth of the code base over time and many more.
 
@@ -274,9 +274,7 @@ The only NFR looked at during the development of the site was availability, whic
 
 \subsection{Case Study: Tralee Tennis Club}
 
-The second site chosen as a comparison was the site for the Tralee Tennis Club. This site was mentioned during requirements elicitation, as members from Monaleen had travelled there for a tournament. While there was no opportunity to speak with the site administrator, the site has the appearance of a professional design. The site is developed with PHP and JavaScript. It facilitates the booking of available timetable slots through a user login system. This system is available through the website, and a physical kiosk on location. The type of web architecture, and the information pertaining to why these choices were made, were not available.  
-
-The site is available at \textit{http://www.traleetennisclub.ie/}.
+The second site chosen as a comparison was the site for the Tralee Tennis Club. This site was mentioned during requirements elicitation, as members from Monaleen had travelled there for a tournament. While there was no opportunity to speak with the site administrator, the site has the appearance of a professional design. The site is developed with PHP and JavaScript. It facilitates the booking of available timetable slots through a user login system. This system is available through the website, and a physical kiosk on location. The type of web architecture, and the information pertaining to why these choices were made, were not available. The site is available at \textit{http://www.traleetennisclub.ie/}.
 \newpage
 
 \begin{figure}[H]
@@ -304,7 +302,7 @@ These criteria are based on a Yes-No answer. A Yes results in 1 point, where a N
 \begin{center}
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
-	\textbf{Criteria} & \textbf{Monaleen Tennis Club} & \textbf{Tralee Tennis Club}\\ \hline
+	\textbf{Criteria} & \textbf{Monaleen} & \textbf{Tralee}\\ \hline
 	Links are updated? & No & Yes\\ \hline
 	Short-cuts for frequent users? & No & No\\ \hline
 	Warning if link leads to large file? & n/a & n/a\\ \hline
@@ -321,7 +319,7 @@ These criteria are based on a Yes-No answer. A Yes results in 1 point, where a N
 \begin{center}
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
-	\textbf{Criteria} & \textbf{Monaleen Tennis Club} & \textbf{Tralee Tennis Club}\\ \hline
+	\textbf{Criteria} & \textbf{Monaleen} & \textbf{Tralee}\\ \hline
 	Contact Details for website maintainer & Yes & Yes\\ \hline
 	Link to page maintainer on each page & Yes & Yes\\ \hline
 	Forms provided for users to enter details & Yes* & No\\ \hline
@@ -339,7 +337,7 @@ These criteria are based on a Yes-No answer. A Yes results in 1 point, where a N
 \begin{center}
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
-	\textbf{Criteria} & \textbf{Monaleen Tennis Club} & \textbf{Tralee Tennis Club}\\ \hline
+	\textbf{Criteria} & \textbf{Monaleen} & \textbf{Tralee}\\ \hline
 	Speed of site adequate& Yes & Yes\\ \hline
 	Site Availability High?* & Yes & Yes\\ \hline
 	Website made known through search tools** & .5/3 & 2.5/3\\ \hline
@@ -360,7 +358,7 @@ These criteria are based on a Yes-No answer. A Yes results in 1 point, where a N
 \begin{center}
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
-	\textbf{Criteria} & \textbf{Monaleen Tennis Club} & \textbf{Tralee Tennis Club}\\ \hline
+	\textbf{Criteria} & \textbf{Monaleen} & \textbf{Tralee}\\ \hline
 	Format,Graphic Design Appropriate & Yes & Yes\\ \hline
 	Pages appropriate length, clear, uncluttered& No & Yes\\ \hline
 	Consistent format through website & No & Yes\\ \hline
@@ -377,7 +375,7 @@ These criteria are based on a Yes-No answer. A Yes results in 1 point, where a N
 \begin{center}
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
-	\textbf{Criteria} & \textbf{Monaleen Tennis Club} & \textbf{Tralee Tennis Club}\\ \hline
+	\textbf{Criteria} & \textbf{Monaleen} & \textbf{Tralee}\\ \hline
 	Website organised by anticipated user need & No & Yes\\ \hline
 	Navigation options are distinct& Yes & Yes\\ \hline
 	Conventional navigation models*& Yes & Yes\\ \hline
@@ -390,7 +388,7 @@ These criteria are based on a Yes-No answer. A Yes results in 1 point, where a N
 \end{center}
 \label{fig:table5}
 \end{table}
-\textit{*eg menu on top or left of screen}\newline
+\textit{*e.g. menu on top or left of screen}\newline
 \textit{**defined as 3,} \cite{smith2001applying}
 
 \begin{table}[H]
@@ -406,4 +404,4 @@ These criteria are based on a Yes-No answer. A Yes results in 1 point, where a N
 \label{fig:table6}
 \end{table}
 
-Tralee Tennis Club is a clear winner with a site that adheres to the usability criteria defined by Smith. This site provides a benchmark in which to compare the application developed for this project.
+Tralee Tennis Club is a clear winner with a site that adheres to the usability criteria defined by \cite{smith2001applying}. This site provides a benchmark in which to compare the application developed for this project.
