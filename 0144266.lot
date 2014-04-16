@@ -6,112 +6,108 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.1}{\ignorespaces Table 1 - Links\relax }}{29}{table.2.1}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Table 1 - Links\relax }}{30}{table.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.2}{\ignorespaces Table 2 - Feedback Mechanisms\relax }}{29}{table.2.2}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Table 2 - Feedback Mechanisms\relax }}{30}{table.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.3}{\ignorespaces Table 3 - Accessability\relax }}{30}{table.2.3}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Table 3 - Accessability\relax }}{31}{table.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.4}{\ignorespaces Table 4 - Design\relax }}{30}{table.2.4}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Table 4 - Design\relax }}{31}{table.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.5}{\ignorespaces Table 5 - Navigability\relax }}{31}{table.2.5}
+\contentsline {table}{\numberline {2.5}{\ignorespaces Table 5 - Navigability\relax }}{32}{table.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.6}{\ignorespaces Table 6 - Results\relax }}{31}{table.2.6}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {3.1}{\ignorespaces Stakeholders for Requirements Elicitation\relax }}{32}{table.3.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {3.2}{\ignorespaces Requested Features\relax }}{36}{table.3.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {3.3}{\ignorespaces Requested Feature Breakdown\relax }}{36}{table.3.3}
+\contentsline {table}{\numberline {2.6}{\ignorespaces Table 6 - Results\relax }}{32}{table.2.6}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.1}{\ignorespaces Stakeholders for Requirements Elicitation\relax }}{33}{table.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.2}{\ignorespaces Requested Features\relax }}{37}{table.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.3}{\ignorespaces Requested Feature Breakdown\relax }}{37}{table.3.3}
+\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.1}{\ignorespaces Class Constraints\relax }}{46}{table.5.1}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.2}{\ignorespaces Timetable Core Database Table\relax }}{53}{table.5.2}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Class Constraints\relax }}{47}{table.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.2}{\ignorespaces Timetable Core Database Table\relax }}{54}{table.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {table}{\numberline {5.3}{\ignorespaces Timetable Storage Table for Monday Collection\relax }}{54}{table.5.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {table}{\numberline {5.4}{\ignorespaces Model Attributes\relax }}{70}{table.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.5}{\ignorespaces Log Types\relax }}{72}{table.5.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.7}{\ignorespaces JSON output statement\relax }}{74}{table.5.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.6}{\ignorespaces JSON in Spring\relax }}{74}{table.5.6}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Log Types\relax }}{71}{table.5.5}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {6.1}{\ignorespaces Application Metrics\relax }}{83}{table.6.1}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Application Metrics\relax }}{82}{table.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {6.2}{\ignorespaces Timetable Dependencies\relax }}{85}{table.6.2}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Timetable Dependencies\relax }}{84}{table.6.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.1}{\ignorespaces EBAC Breakdown\relax }}{92}{table.7.1}
+\contentsline {table}{\numberline {7.1}{\ignorespaces EBAC Breakdown\relax }}{91}{table.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.2}{\ignorespaces Change to view to support new attributes\relax }}{95}{table.7.2}
+\contentsline {table}{\numberline {7.2}{\ignorespaces Change to view to support new attributes\relax }}{94}{table.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.3}{\ignorespaces JDBC DAO changes with entity change\relax }}{96}{table.7.3}
+\contentsline {table}{\numberline {7.3}{\ignorespaces JDBC DAO changes with entity change\relax }}{95}{table.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.4}{\ignorespaces Table 1 - Links\relax }}{97}{table.7.4}
+\contentsline {table}{\numberline {7.4}{\ignorespaces Table 1 - Links\relax }}{96}{table.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.5}{\ignorespaces Table 2 - Feedback Mechanisms\relax }}{97}{table.7.5}
+\contentsline {table}{\numberline {7.5}{\ignorespaces Table 2 - Feedback Mechanisms\relax }}{96}{table.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.6}{\ignorespaces Table 3 - Accessability\relax }}{97}{table.7.6}
+\contentsline {table}{\numberline {7.6}{\ignorespaces Table 3 - Accessability\relax }}{96}{table.7.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.7}{\ignorespaces Table 4 - Design\relax }}{98}{table.7.7}
+\contentsline {table}{\numberline {7.7}{\ignorespaces Table 4 - Design\relax }}{97}{table.7.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.8}{\ignorespaces Table 5 - Navigability\relax }}{98}{table.7.8}
+\contentsline {table}{\numberline {7.8}{\ignorespaces Table 5 - Navigability\relax }}{97}{table.7.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.9}{\ignorespaces Table 6 - Overall Results\relax }}{98}{table.7.9}
+\contentsline {table}{\numberline {7.9}{\ignorespaces Table 6 - Overall Results\relax }}{97}{table.7.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.10}{\ignorespaces Hibernate Vs JDBC Results\relax }}{101}{table.7.10}
+\contentsline {table}{\numberline {7.10}{\ignorespaces Hibernate Vs JDBC Results\relax }}{100}{table.7.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.11}{\ignorespaces Timetable Functional Requirements\relax }}{104}{table.7.11}
+\contentsline {table}{\numberline {7.11}{\ignorespaces Timetable Functional Requirements\relax }}{103}{table.7.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.12}{\ignorespaces Tournament Functional Requirements\relax }}{104}{table.7.12}
+\contentsline {table}{\numberline {7.12}{\ignorespaces Tournament Functional Requirements\relax }}{103}{table.7.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.13}{\ignorespaces News Functional Requirements\relax }}{105}{table.7.13}
+\contentsline {table}{\numberline {7.13}{\ignorespaces News Functional Requirements\relax }}{104}{table.7.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {7.14}{\ignorespaces Members Functional Requirements\relax }}{105}{table.7.14}
+\contentsline {table}{\numberline {7.14}{\ignorespaces Members Functional Requirements\relax }}{104}{table.7.14}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.1}{\ignorespaces beans package\relax }}{111}{table.A.1}
+\contentsline {table}{\numberline {A.1}{\ignorespaces beans package\relax }}{110}{table.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.2}{\ignorespaces controllers package\relax }}{112}{table.A.2}
+\contentsline {table}{\numberline {A.2}{\ignorespaces controllers package\relax }}{111}{table.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.3}{\ignorespaces dao package\relax }}{112}{table.A.3}
+\contentsline {table}{\numberline {A.3}{\ignorespaces dao package\relax }}{111}{table.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.4}{\ignorespaces email package\relax }}{112}{table.A.4}
+\contentsline {table}{\numberline {A.4}{\ignorespaces email package\relax }}{111}{table.A.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.5}{\ignorespaces event package\relax }}{113}{table.A.5}
+\contentsline {table}{\numberline {A.5}{\ignorespaces event package\relax }}{112}{table.A.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.6}{\ignorespaces events.tournament package\relax }}{113}{table.A.6}
+\contentsline {table}{\numberline {A.6}{\ignorespaces events.tournament package\relax }}{112}{table.A.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.7}{\ignorespaces log package\relax }}{113}{table.A.7}
+\contentsline {table}{\numberline {A.7}{\ignorespaces log package\relax }}{112}{table.A.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.8}{\ignorespaces news package\relax }}{113}{table.A.8}
+\contentsline {table}{\numberline {A.8}{\ignorespaces news package\relax }}{112}{table.A.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.9}{\ignorespaces properties package\relax }}{114}{table.A.9}
+\contentsline {table}{\numberline {A.9}{\ignorespaces properties package\relax }}{113}{table.A.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.10}{\ignorespaces reports package\relax }}{114}{table.A.10}
+\contentsline {table}{\numberline {A.10}{\ignorespaces reports package\relax }}{113}{table.A.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.11}{\ignorespaces service package\relax }}{114}{table.A.11}
+\contentsline {table}{\numberline {A.11}{\ignorespaces service package\relax }}{113}{table.A.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.12}{\ignorespaces timetable package\relax }}{114}{table.A.12}
+\contentsline {table}{\numberline {A.12}{\ignorespaces timetable package\relax }}{113}{table.A.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.13}{\ignorespaces reports package\relax }}{115}{table.A.13}
+\contentsline {table}{\numberline {A.13}{\ignorespaces reports package\relax }}{114}{table.A.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.14}{\ignorespaces struts layout\relax }}{115}{table.A.14}
+\contentsline {table}{\numberline {A.14}{\ignorespaces struts layout\relax }}{114}{table.A.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.15}{\ignorespaces templates layout\relax }}{115}{table.A.15}
+\contentsline {table}{\numberline {A.15}{\ignorespaces templates layout\relax }}{114}{table.A.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A.16}{\ignorespaces templates layout\relax }}{117}{table.A.16}
+\contentsline {table}{\numberline {A.16}{\ignorespaces templates layout\relax }}{116}{table.A.16}

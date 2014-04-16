@@ -136,9 +136,8 @@ Password <sf:input id="password" name = "password" path="password" type="passwor
 
 The form structure, illustrated partially in Figure~\ref{fig:memberForm}, contains a number of important attributes. The form used is an extended version of the HTML <form> object. The Spring MVC version adds extra functionality such as mapping to objects within the controller classes and error validation checking. The \textit{commandName} is a variable within the form that contains the information within the form. This temporarily persists data between the form and the controller. This benefits the user as the application repopulates valid fields in the form should an error be made. The \textit{sf:error} tags allow the controller to identify specific errors within the form. These also reference attributes within the class the form is linked with. In this example, the \textit{User} class is being created with this form. 
 
-Figure~\ref{memberController} Line 4 shows the declaration of a BindingResult object. This object holds the results of the form validation. Line 5 declares that if the result object has any errors, the controller returns to the form, where the \textit{sf:error} tags will highlight the error message relation to any attributes that broke their constraints. Lines 9 through 13 show home the application ensures that the primary key remains unique. 
+Figure~\ref{fig:memberController} Line 4 shows the declaration of a BindingResult object. This object holds the results of the form validation. Line 5 declares that if the result object has any errors, the controller returns to the form, where the \textit{sf:error} tags will highlight the error message relation to any attributes that broke their constraints. Lines 9 through 13 show home the application ensures that the primary key remains unique. 
 
-\begin{figure}[H]
 \begin{lstlisting}
 //Method from the MembersController class
 //This method is responsible for validating the form that users complete to register.
@@ -166,6 +165,7 @@ if (userService.exists(member.getUsername())) {
 		}
 }
 \end{lstlisting}
+\begin{figure}[H]
 \caption{User Registration Controller}
 \label{fig:memberController}
 \end{figure}
@@ -523,7 +523,7 @@ public boolean check(Tournament t) {
 	}
 }
 \end{lstlisting}
-\begin{figure}
+\begin{figure}[H]
 \caption{Existing Tournament Sort and Interface}
 \label{fig:tsort}
 \end{figure}
@@ -574,28 +574,21 @@ In addition to the expression level security, service-level security annotations
 \caption{Security Context Service Layer Annotation Configuration}
 \label{fig:secAnnotate}
 \end{figure}
-
 \begin{lstlisting}
 @Service("timetableService")
 public class TimetableService {
-
-private TimetableDAO timetableDAO;
-
 	@Autowired
 	public void setTimetableDAO(TimetableDAO timetableDAO) {
 		this.timetableDAO = timetableDAO;
 	}
-	
 	@Secured("ROLE_ADMIN")
 	public void create(Timetable t){
 		timetableDAO.createTimetable(t);
 	}
-	
 	@Secured({"ROLE_ADMIN", "ROLE_MEMBER", "ROLE_COMMITTEE", "ROLE_WARNING", "ROLE_SUSPEND"})
 	public void update(Timetable t){
 		timetableDAO.updateTimetable(t);
 	}
-	
 	public List<Timetable> getAllTimetables(){
 		return timetableDAO.listTimetables();
 	}
@@ -636,7 +629,7 @@ public class TimetableController {
 \caption{Service Context Configuration}
 \label{fig:controller}
 \end{figure}
-
+\newpage
 \begin{lstlisting}
 <context:component-scan base-package="controllers, email"></context:component-scan>
 <mvc:annotation-driven></mvc:annotation-driven>
@@ -854,10 +847,10 @@ public String chooseCourt(Model model, HttpServletRequest request) {
     name & The username of the currently authenticated user  \\ \hline
     realName & The real name of the currently authenticated user\\ \hline
 	bookings & The number of remaining bookings of the currently authenticated users\\ \hline
-	date & The current week of the year and the current date. Calculated using separate method.\\ \hline
+	date & The current week of the year and the current date..\\ \hline
 	next & The id number of the court following the current court, if applicable\\ \hline
     prev & The id number of the court preceding the current court, if applicable\\ \hline
-	court & The current court, determined by the current week, provided by the java.util.Date class \\
+	court & The current court, determined by the current week, provided by Date class \\
     \hline
     \end{tabular}
 \end{center}
@@ -869,7 +862,7 @@ This example is an excerpt from the TimetableContoller class. The logic determin
 
 The code in Figure~\ref{fig:ttmodelattributes} deals with the display of \textit{Monday} within the Timetable display page. In the \textit{c:forEach} tags, it loops through each value in the \textit{court.monday} list that has been passed to it by the controller. The size of this list is determined by the user when the timetable is created, and the number of slots per day is specified. If the current value being examined in the loop is equal to the value "Free Court", it will display a link to the Book Form mapping. This aspect of the Timetable Controller will check that a user has any remaining bookings left and respond as appropriate. In the event that the value in the list does not equal "Free Court", it will make a choice. If the currently authenticated user made the booking, it will display an option to remove their booking from the slot. Otherwise, it will give any other user an option to report the user as a "no show" should a user fail to show for a previously booked slot. \newline
 
-\begin{figure}[H]
+
 \begin{lstlisting}
 <c:forEach var="row" varStatus="loop" items="${court.monday}">
 <c:choose>
@@ -899,6 +892,7 @@ method="POST">
 <input type="submit" value="Report User">
 </form></c:otherwise>
 \end{lstlisting}
+\begin{figure}[H]
 \caption{Code Showing Display of Timetable}
 \end{figure}
 
@@ -923,9 +917,9 @@ The logging for this application was provided by \textit{log4j.} Logging became 
 
 \end{table}
 
-\textit{Log4j} is configured with a properties file that allows you to see the various levels of logs displays by the applications running. Implementation of a logging system resolved a number of Spring Security issues within the web application. Spring Security, concerned with access rights to mappings within the application, did not output failed access attempts to the console. This made it very difficult to debug. When configuring \textit{Log4j} to catch the logs created by the security components, the application became much easier to debug. The properties file for this web application is detailed below.
+\textit{Log4j} is configured with a properties file that allows you to see the various levels of logs displays by the applications running. Implementation of a logging system resolved a number of Spring Security issues within the web application. Spring Security, concerned with access rights to mappings within the application, did not output failed access attempts to the console. This made it very difficult to debug. When configuring \textit{Log4j} to catch the logs created by the security components, the application became much easier to debug. The properties file for this web application is detailed in Figure~\ref{fig:log4jc}.
 
-\begin{figure}[H]
+
 \begin{lstlisting}
 log4j.rootLogger=INFO, CONSOLE
 log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
@@ -934,12 +928,13 @@ log4j.logger.org.hibernate.SQL=DEBUG
 log4j.logger.org.hibernate.type=TRACE
 log4j.logger.org.springframework.security=DEBUG
 \end{lstlisting}
+\begin{figure}[H]
 \caption{Log4j Configuration}
+\label{fig:log4jc}
 \end{figure}
 
 Logging can be implemented on a class by class basis. Within this application, it was used to display informational messages to the developer. These included items such as database access, objects being created and updated. In order to enable logging on a class, a logger must be instantiated with reference to the class that requires logging. The logger object then is called with a method corresponding to the type of log you wish to throw along with a message.
 
-\begin{figure}[H]
 \begin{lstlisting}
 private static Logger logger = Logger.getLogger(UserDAO.class);
 
@@ -965,6 +960,7 @@ public User getUserByName(String name) {
 	return user;
 }
 \end{lstlisting}
+\begin{figure}[H]
 \caption{Logger Usage within UserDAO.class}
 \end{figure}
 
@@ -992,20 +988,20 @@ public Map<String, Object> getCurrentDay(){
 	return data;
 }
 \end{lstlisting}
-\begin{table}[H]
+\begin{figure}[H]
 \caption{JSON in Spring}
 \label{fig:json}
-\end{table}
+\end{figure}
 
 The \textit{RequestMapping} annotation must be changed to include a \textit{produces} attribute, shown in Line 2. This ensures that Spring returns a valid JSON statement to the HTTP response. This is ensured through the use of the \textit{ResponseBody} annotation in Line 2.  An example of the output is illustrated in Figure~\ref{fig:jsonex}.
 
 \begin{lstlisting}
 {"day2":["Free Court","Free Court","Free Court","Free Court","Free Court","Free Court","Free Court","Free Court"],"day1":["Free Court","Free Court"]}
 \end{lstlisting}
-\begin{table}
+\begin{figure}
 \caption{JSON output statement}
 \label{fig:jsonex}
-\end{table}
+\end{figure}
 
 
 

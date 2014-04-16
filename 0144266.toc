@@ -50,65 +50,65 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.3}Case Study: Tralee Tennis Club}{26}{subsection.2.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Usability Results}{29}{section.2.5}
+\contentsline {section}{\numberline {2.5}Usability Results}{30}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Requirements}{32}{chapter.3}
+\contentsline {chapter}{\numberline {3}Requirements}{33}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Introduction}{32}{section.3.1}
+\contentsline {section}{\numberline {3.1}Introduction}{33}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Methods for Requirements Elicitation}{32}{section.3.2}
+\contentsline {section}{\numberline {3.2}Methods for Requirements Elicitation}{33}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Storyboarding}{33}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Storyboarding}{34}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Exploratory Interviews}{34}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Exploratory Interviews}{35}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Focus group}{36}{section.3.3}
+\contentsline {section}{\numberline {3.3}Focus group}{37}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Functional Requirements}{36}{section.3.4}
+\contentsline {section}{\numberline {3.4}Functional Requirements}{37}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.1}Timetable}{36}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.1}Timetable}{37}{subsection.3.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}Tournament}{37}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Tournament}{38}{subsection.3.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.3}News}{37}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.3}News}{39}{subsection.3.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.4}Members}{38}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.4}Members}{39}{subsection.3.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Non Functional Requirements}{38}{section.3.5}
+\contentsline {section}{\numberline {3.5}Non Functional Requirements}{39}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.1}Security}{38}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.1}Security}{39}{subsection.3.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.2}Extensibility}{38}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.2}Extensibility}{40}{subsection.3.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.3}Usability}{39}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.3}Usability}{40}{subsection.3.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.4}Performance}{39}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.4}Performance}{40}{subsection.3.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Conclusion}{39}{section.3.6}
+\contentsline {section}{\numberline {3.6}Conclusion}{40}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Design}{40}{chapter.4}
+\contentsline {chapter}{\numberline {4}Design}{41}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Introduction}{40}{section.4.1}
+\contentsline {section}{\numberline {4.1}Introduction}{41}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Framework Design}{40}{section.4.2}
+\contentsline {section}{\numberline {4.2}Framework Design}{41}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Controller-Service-DAO Design}{41}{section.4.3}
+\contentsline {section}{\numberline {4.3}Controller-Service-DAO Design}{42}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}User Roles}{42}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}User Roles}{43}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Roles}{42}{section*.22}
+\contentsline {subsubsection}{Roles}{43}{section*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Database Design}{43}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Database Design}{44}{subsection.4.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Implementation, Testing and Deployment}{44}{chapter.5}
+\contentsline {chapter}{\numberline {5}Implementation, Testing and Deployment}{45}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Introduction}{44}{section.5.1}
+\contentsline {section}{\numberline {5.1}Introduction}{45}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Application Entities}{44}{section.5.2}
+\contentsline {section}{\numberline {5.2}Application Entities}{45}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Users - Persistence}{44}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}Users - Persistence}{45}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Timetable - Persistence Changes}{51}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Timetable - Persistence Changes}{52}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2.3}Tournaments and Timetable Events}{55}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
@@ -116,7 +116,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Tournament}{57}{section*.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}Administration - Security and Session Management}{60}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4}Administration - Security and Session Management}{61}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.3}Model View Controller}{63}{section.5.3}
 \defcounter {refsection}{0}\relax 
@@ -136,114 +136,114 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.6}Configuration of the Application}{74}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Test Driven Development}{77}{section.5.7}
+\contentsline {section}{\numberline {5.7}Test Driven Development}{76}{section.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}Deployment}{79}{section.5.8}
+\contentsline {section}{\numberline {5.8}Deployment}{78}{section.5.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.9}External Code}{81}{section.5.9}
+\contentsline {section}{\numberline {5.9}External Code}{80}{section.5.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Software Quality}{83}{chapter.6}
+\contentsline {chapter}{\numberline {6}Software Quality}{82}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Introduction}{83}{section.6.1}
+\contentsline {section}{\numberline {6.1}Introduction}{82}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Application Metrics}{83}{section.6.2}
+\contentsline {section}{\numberline {6.2}Application Metrics}{82}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Software Quality Tools and Visualisations}{84}{section.6.3}
+\contentsline {section}{\numberline {6.3}Software Quality Tools and Visualisations}{83}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.1}Software Quality}{84}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.1}Software Quality}{83}{subsection.6.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.2}Visualisations}{88}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.2}Visualisations}{87}{subsection.6.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{CodeCity}{88}{section*.80}
+\contentsline {subsubsection}{CodeCity}{87}{section*.82}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Gource}{89}{section*.83}
+\contentsline {subsubsection}{Gource}{88}{section*.85}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Evaluation}{91}{chapter.7}
+\contentsline {chapter}{\numberline {7}Evaluation}{90}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Security}{91}{section.7.1}
+\contentsline {section}{\numberline {7.1}Security}{90}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1.1}OWASP Vulnerabilities}{91}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.1}OWASP Vulnerabilities}{90}{subsection.7.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1.2}Security Bugs}{94}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.2}Security Bugs}{93}{subsection.7.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Extensibility}{94}{section.7.2}
+\contentsline {section}{\numberline {7.2}Extensibility}{93}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Usability}{96}{section.7.3}
+\contentsline {section}{\numberline {7.3}Usability}{95}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.4}Performance}{99}{section.7.4}
+\contentsline {section}{\numberline {7.4}Performance}{98}{section.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.4.1}Hibernate}{99}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.1}Hibernate}{98}{subsection.7.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.5}Productivity}{102}{section.7.5}
+\contentsline {section}{\numberline {7.5}Productivity}{101}{section.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.5.1}Session and Cookie Management}{102}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.1}Session and Cookie Management}{101}{subsection.7.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.6}Functional and Non Functional Requirement Evaluation}{104}{section.7.6}
+\contentsline {section}{\numberline {7.6}Functional and Non Functional Requirement Evaluation}{103}{section.7.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.6.1}Timetable}{104}{subsection.7.6.1}
+\contentsline {subsection}{\numberline {7.6.1}Timetable}{103}{subsection.7.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.6.2}Tournament}{104}{subsection.7.6.2}
+\contentsline {subsection}{\numberline {7.6.2}Tournament}{103}{subsection.7.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.6.3}News}{105}{subsection.7.6.3}
+\contentsline {subsection}{\numberline {7.6.3}News}{104}{subsection.7.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.6.4}Members}{105}{subsection.7.6.4}
+\contentsline {subsection}{\numberline {7.6.4}Members}{104}{subsection.7.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusions}{106}{chapter.8}
+\contentsline {chapter}{\numberline {8}Conclusions}{105}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Summary}{106}{section.8.1}
+\contentsline {section}{\numberline {8.1}Summary}{105}{section.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Key Findings}{107}{section.8.2}
+\contentsline {section}{\numberline {8.2}Key Findings}{106}{section.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Future Work}{107}{section.8.3}
+\contentsline {section}{\numberline {8.3}Future Work}{106}{section.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3.1}Hibernate in Design}{107}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.1}Hibernate in Design}{106}{subsection.8.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3.2}Tournament Business Logic}{108}{subsection.8.3.2}
+\contentsline {subsection}{\numberline {8.3.2}Tournament Business Logic}{107}{subsection.8.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3.3}Web Services and HTML5}{109}{subsection.8.3.3}
+\contentsline {subsection}{\numberline {8.3.3}Web Services and HTML5}{108}{subsection.8.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3.4}Timetable}{109}{subsection.8.3.4}
+\contentsline {subsection}{\numberline {8.3.4}Timetable}{108}{subsection.8.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.4}Personal Perspective}{109}{section.8.4}
+\contentsline {section}{\numberline {8.4}Personal Perspective}{108}{section.8.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendices}{111}{appendix.A}
+\contentsline {chapter}{\numberline {A}Appendices}{110}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Application Breakdown}{111}{section.A.1}
+\contentsline {section}{\numberline {A.1}Application Breakdown}{110}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1.1}Java Source}{111}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.1}Java Source}{110}{subsection.A.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: beans}{111}{section*.93}
+\contentsline {subsubsection}{Package: beans}{110}{section*.95}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: controllers}{112}{section*.94}
+\contentsline {subsubsection}{Package: controllers}{111}{section*.96}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: dao}{112}{section*.95}
+\contentsline {subsubsection}{Package: dao}{111}{section*.97}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: email}{112}{section*.96}
+\contentsline {subsubsection}{Package: email}{111}{section*.98}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: events}{113}{section*.97}
+\contentsline {subsubsection}{Package: events}{112}{section*.99}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: events.tournaments}{113}{section*.98}
+\contentsline {subsubsection}{Package: events.tournaments}{112}{section*.100}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: logs}{113}{section*.99}
+\contentsline {subsubsection}{Package: logs}{112}{section*.101}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: news}{113}{section*.100}
+\contentsline {subsubsection}{Package: news}{112}{section*.102}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: properties}{114}{section*.101}
+\contentsline {subsubsection}{Package: properties}{113}{section*.103}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: reports}{114}{section*.102}
+\contentsline {subsubsection}{Package: reports}{113}{section*.104}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: service}{114}{section*.103}
+\contentsline {subsubsection}{Package: service}{113}{section*.105}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: timetable}{114}{section*.104}
+\contentsline {subsubsection}{Package: timetable}{113}{section*.106}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Package: users}{115}{section*.105}
+\contentsline {subsubsection}{Package: users}{114}{section*.107}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Apache Struts and JSP Pages}{115}{section.A.2}
+\contentsline {section}{\numberline {A.2}Apache Struts and JSP Pages}{114}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{layout}{115}{section*.106}
+\contentsline {subsubsection}{layout}{114}{section*.108}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{templates}{115}{section*.107}
+\contentsline {subsubsection}{templates}{114}{section*.109}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{tiles}{116}{section*.108}
+\contentsline {subsubsection}{tiles}{115}{section*.110}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Permission Letter}{118}{section.A.3}
+\contentsline {section}{\numberline {A.3}Permission Letter}{117}{section.A.3}

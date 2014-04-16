@@ -28,49 +28,49 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.9}{\ignorespaces GitHub Visualisation of Commits/Day\relax }}{25}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Monaleen Tennis Club\relax }}{27}{figure.caption.16}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Monaleen Tennis Club\relax }}{28}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Tralee Tennis Club\relax }}{28}{figure.caption.17}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Timetable Storyboard, October 2013\relax }}{33}{figure.caption.18}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Paper Timetable, Monaleen Tennis Club\relax }}{34}{figure.caption.19}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Tralee Tennis Club\relax }}{29}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Controller-Service-DAO Flow\relax }}{42}{figure.caption.21}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Timetable Storyboard, October 2013\relax }}{34}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Database Design\relax }}{43}{figure.caption.23}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Paper Timetable, Monaleen Tennis Club\relax }}{35}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces User Class Definition and Configuration\relax }}{45}{figure.caption.24}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Controller-Service-DAO Flow\relax }}{43}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Application flow to persist User object\relax }}{47}{figure.caption.25}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Database Design\relax }}{44}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Hibernate SessionFactory Configuration\relax }}{48}{figure.caption.26}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces HQL-SQL Comparison\relax }}{48}{figure.caption.27}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces User Class Definition and Configuration\relax }}{46}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces User Registration Form\relax }}{49}{figure.caption.28}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Application flow to persist User object\relax }}{48}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces User Registration Controller\relax }}{50}{figure.caption.29}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Hibernate SessionFactory Configuration\relax }}{49}{figure.caption.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces HQL-SQL Comparison\relax }}{49}{figure.caption.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces User Registration Form\relax }}{50}{figure.caption.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces User Registration Controller\relax }}{51}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.7}{\ignorespaces UserDAO getSession()\relax }}{51}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Password Encoder Definition\relax }}{51}{figure.caption.31}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Password Encoder Definition\relax }}{52}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Persisting User object with encoded password\relax }}{51}{figure.caption.32}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Persisting User object with encoded password\relax }}{52}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Timetable Class List Configuration\relax }}{53}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Hibernate Save Timetable\relax }}{54}{figure.caption.34}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Hibernate Save Timetable\relax }}{55}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.12}{\ignorespaces Timetable snapshot within the application\relax }}{55}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Event Creation\relax }}{56}{figure.caption.37}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Event Creation\relax }}{57}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.14}{\ignorespaces Change Event Status\relax }}{57}{figure.caption.38}
 \defcounter {refsection}{0}\relax 
@@ -122,60 +122,64 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.38}{\ignorespaces Logger Usage within UserDAO.class\relax }}{73}{figure.caption.65}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.40}{\ignorespaces Hibernate Configuration\relax }}{75}{figure.caption.67}
+\contentsline {figure}{\numberline {5.39}{\ignorespaces JSON in Spring\relax }}{73}{figure.caption.66}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.39}{\ignorespaces Spring Configuration\relax }}{75}{figure.caption.66}
+\contentsline {figure}{\numberline {5.40}{\ignorespaces JSON output statement\relax }}{74}{figure.caption.67}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.41}{\ignorespaces Service Context Configuration\relax }}{76}{figure.caption.68}
+\contentsline {figure}{\numberline {5.41}{\ignorespaces Spring Configuration\relax }}{74}{figure.caption.68}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.42}{\ignorespaces JUnit Test Example\relax }}{77}{figure.caption.69}
+\contentsline {figure}{\numberline {5.42}{\ignorespaces Hibernate Configuration\relax }}{75}{figure.caption.69}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.43}{\ignorespaces JUnit @Before Test Configuration\relax }}{78}{figure.caption.70}
+\contentsline {figure}{\numberline {5.43}{\ignorespaces Service Context Configuration\relax }}{75}{figure.caption.70}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.44}{\ignorespaces JUnit UserDAO Exists() Test\relax }}{78}{figure.caption.71}
+\contentsline {figure}{\numberline {5.44}{\ignorespaces JUnit Test Example\relax }}{77}{figure.caption.71}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.45}{\ignorespaces JUnit Create and Size Test\relax }}{79}{figure.caption.72}
+\contentsline {figure}{\numberline {5.45}{\ignorespaces JUnit @Before Test Configuration\relax }}{77}{figure.caption.72}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.46}{\ignorespaces PuTTY Configuration\relax }}{79}{figure.caption.73}
+\contentsline {figure}{\numberline {5.46}{\ignorespaces JUnit UserDAO Exists() Test\relax }}{78}{figure.caption.73}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.47}{\ignorespaces Tomcat 7 Amazon Configuration\relax }}{81}{figure.caption.74}
+\contentsline {figure}{\numberline {5.47}{\ignorespaces JUnit Create and Size Test\relax }}{78}{figure.caption.74}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.48}{\ignorespaces Code Showing Google Maps Integration\relax }}{81}{figure.caption.75}
+\contentsline {figure}{\numberline {5.48}{\ignorespaces PuTTY Configuration\relax }}{79}{figure.caption.75}
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.49}{\ignorespaces Tomcat 7 Amazon Configuration\relax }}{80}{figure.caption.76}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Bad Code Smells\relax }}{86}{figure.caption.76}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Pre Re-factoring using Infusion\relax }}{86}{figure.caption.77}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Example of Class 'Bad Code Smell' Breakdown using Infusion\relax }}{87}{figure.caption.78}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Post Re-factoring using Infusion\relax }}{87}{figure.caption.79}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces CodeCity 2D Visualisation of Application\relax }}{88}{figure.caption.81}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces CodeCity 3D Visualisation of Application\relax }}{89}{figure.caption.82}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Commands for Gource output\relax }}{90}{figure.caption.84}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Gource Snapshot\relax }}{90}{figure.caption.85}
+\contentsline {figure}{\numberline {5.50}{\ignorespaces Code Showing Google Maps Integration\relax }}{80}{figure.caption.77}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.1}{\ignorespaces JDBC SQL INSERT\relax }}{99}{figure.caption.86}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Bad Code Smells\relax }}{85}{figure.caption.78}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.2}{\ignorespaces JDBC Vs Hibernate Test\relax }}{100}{figure.caption.87}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Pre Re-factoring using Infusion\relax }}{85}{figure.caption.79}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Hibernate-JDBC Code\relax }}{102}{figure.caption.88}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Example of Class 'Bad Code Smell' Breakdown using Infusion\relax }}{86}{figure.caption.80}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Manual Session Creation\relax }}{103}{figure.caption.89}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Post Re-factoring using Infusion\relax }}{86}{figure.caption.81}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Session Authentication based on user level\relax }}{103}{figure.caption.90}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces CodeCity 2D Visualisation of Application\relax }}{87}{figure.caption.83}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces CodeCity 3D Visualisation of Application\relax }}{88}{figure.caption.84}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Commands for Gource output\relax }}{89}{figure.caption.86}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Gource Snapshot\relax }}{89}{figure.caption.87}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.1}{\ignorespaces 'Top Level' Class\relax }}{108}{figure.caption.91}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces JDBC SQL INSERT\relax }}{98}{figure.caption.88}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.2}{\ignorespaces JDBC Vs Hibernate Test\relax }}{99}{figure.caption.89}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Hibernate-JDBC Code\relax }}{101}{figure.caption.90}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Manual Session Creation\relax }}{102}{figure.caption.91}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Session Authentication based on user level\relax }}{102}{figure.caption.92}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Permission letter for interviews\relax }}{118}{figure.caption.109}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces 'Top Level' Class\relax }}{107}{figure.caption.93}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Permission letter for interviews\relax }}{117}{figure.caption.111}

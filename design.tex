@@ -3,11 +3,13 @@
 
 \section{Introduction}
 
+The design of the application was crucial especially with the use of a number of software frameworks being used in its development. A number of design principles are encapsulated within these frameworks, and by using them, the programmer is implicitly using sound design practices within the application. 
+
 \section{Framework Design}
 
 Spring MVC and Hibernate incorporates a number of design patterns within its own classes. By using these frameworks, developers are guided towards best practice in terms of the application design
 
-\begin{table}[H]
+
 \begin{enumerate}
 \item Singleton
 \begin{itemize}
@@ -21,19 +23,17 @@ Spring MVC and Hibernate incorporates a number of design patterns within its own
 \begin{itemize}
 \item This pattern is central to the dependency injection facilities of the Spring framework, and is responsible for the instantiation of objects at run time, rather than compile time.
 \end{itemize}
+\newpage
 \item Query Object
 \begin{itemize}
 \item This pattern is used by Hibernate with its Criterion object. This delegates the execution of a query to another object. 
 \end{itemize}
 \end{enumerate}
-\label{fig:springdesignpatterns}
-\end{table}
 
 \label{sec:design}
 \section{Controller-Service-DAO Design}
 
 In order to achieve modularity across the application, the core of the application is separated into four key areas.
-
 
 \begin{enumerate}
 \item Entities
